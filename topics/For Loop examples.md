@@ -34,7 +34,7 @@ for char in s:
 print("Longest substring in alphabetical order is: " + longestString)
 ```
 
-output `Longest substring in alphabetical order is: abcdefghij`
+    output `Longest substring in alphabetical order is: abcdefghij`
 
 
  * `previousAttempt = ""` is used to compare additional iterations through the `for loop` so that the current iteration for `char` is compared and evaluated.
