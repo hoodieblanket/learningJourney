@@ -3,7 +3,8 @@
 
 ## the longest alphabetical substring inside a string. 
     Create the variables I want to compare and contain the values outside the loop.
-    The alphabet has boolean values `a < b` is `True` and `e < c` is `False` which makes it simple to compare each letter in the string - Alphabetical is the same as smallest to largest.   
+    The alphabet has boolean values `a < b` is `True` and `e < c` is `False` which makes it simple to compare 
+    each letter in the string - Alphabetical is the same as smallest to largest.   
     So using the comparison operators `< > == etc.` I can compare to see if I have a string going in a row.
 
 ***
@@ -72,3 +73,24 @@ e.g
 ---|---|---|---
 B?|O?|B?||
  ||B?|O?|B?
+***
+# Counting the vowels
+
+Establish a variable thats going to keep count
+using `for loop` we can go through entire string and count each indices that is a vowel
+***
+```python
+s = 'azcbobobegghakl'
+
+vowels = 0
+
+for letter in s:
+    if letter == "a" or letter == "e" or \
+    letter == "i" or letter == "o" or letter == "u":
+        vowels += 1
+
+print("Number of vowels: " + str(vowels))
+```
+output: `Number of vowels: 5`
+
+* just rudimentary checking if each iteration of `letter` is equal to a,e,i,o,u. If so, it adds a counter to `vowels += 1`
