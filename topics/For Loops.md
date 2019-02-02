@@ -64,3 +64,11 @@ Output: `Number of times bob occurs is: 2`
 * `if s[i:i+3] == "bob"` s = string so this is indexing the string through each iteration (0, 1, 2, 3). 
 * as its indexing and checking, its going through iterations and checking for "bob". e.g it starts at [0] then checks [0] : [3] for "bob"
 * then it goes [1] and checks [1] : [4] etc..
+* This overlaps the letters so strings might have bobobob and it still finds all 3.
+
+e.g
+
+ 0 |1|2|3
+---|---|---|---
+chk|chk|chk|
+|chk|chk|chk
