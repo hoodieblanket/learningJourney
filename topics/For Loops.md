@@ -68,7 +68,7 @@ Output: `Number of times bob occurs is: 2`
 
 e.g
 
- 0 |1|2|3
+ (0) |(1)|(2)|(3)
 ---|---|---|---
 B?|O?|B?||
-|B?|O?|B?
+ |B?|O?|B?
