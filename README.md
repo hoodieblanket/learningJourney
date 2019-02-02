@@ -5,7 +5,7 @@ As I am going through the journey from scratch, it reflects my interests over ti
 It lets me put things into my own words and have my learning organised.
 
 ## Python
-   * hello
+   * [for loop](https://github.com/hoodieblanket/learningJourney/blob/master/topics/For%20Loops)
 
 ```python
 for char in range(5):
