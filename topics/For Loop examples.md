@@ -1,7 +1,9 @@
 # For Loops
+## The Breakdown
 
+## Examples
 
-## the longest alphabetical substring inside a string. 
+#### the longest alphabetical substring inside a string. 
     Create the variables I want to compare and contain the values outside the loop.
     The alphabet has boolean values `a < b` is `True` and `e < c` is `False` which makes it simple to compare 
     each letter in the string - Alphabetical is the same as smallest to largest.   
@@ -42,12 +44,12 @@ output `Longest substring in alphabetical order is: abcdefghij`
  * `previousAttempt = char` is used to keep track of the current attempt in the iterations `e.g having used "c" or "d"`. As we roll through the `for loop`, we can then keep comparing the `char` to `previousAttempt` to start working towards an **alphabetical** substring
 
 
-## Finding the number of times a Substring appears inside a String
+#### Finding the number of times a Substring appears inside a String
 
     Need a variable to `total` the number of times we find a substring
     using the `len()` function we can convert the string to its length.
     
-***
+
 ```python
 s = 'azcbobobegghakl'
 
@@ -59,26 +61,35 @@ for i in range(len(s)):
 
 print("Number of times bob occurs is: " + str(total))
 ```
-Output: `Number of times bob occurs is: 2`
-***
+
+
+    Output: `Number of times bob occurs is: 2`
+
+
 * `for i in range(len(s)):` this loops runs through and converts the string to its length (15)
 * `if s[i:i+3] == "bob"` s = string so this is indexing the string through each iteration (0, 1, 2, 3). 
 * as its indexing and checking, its going through iterations and checking for "bob". e.g it starts at [0] then checks [0] : [3] for "bob"
 * then it goes [1] and checks [1] : [4] etc..
 * This overlaps the letters so strings might have bobobob and it still finds all 3.
 
-e.g
 
- (0) |(1)|(2)|(3)
----|---|---|---
-B?|O?|B?||
- ||B?|O?|B?
-***
-# Counting the vowels
+    e.g
 
-Establish a variable thats going to keep count
-using `for loop` we can go through entire string and count each indices that is a vowel
-***
+
+    (0) |(1)|(2)|(3)
+    ---|---|---|---
+    B?|O?|B?||
+     ||B?|O?|B?
+
+
+
+#### Counting the vowels
+
+
+    Establish a variable thats going to keep count
+    using `for loop` we can go through entire string and count each indices that is a vowel
+
+
 ```python
 s = 'azcbobobegghakl'
 
@@ -91,6 +102,9 @@ for letter in s:
 
 print("Number of vowels: " + str(vowels))
 ```
-output: `Number of vowels: 5`
+
+
+    output: `Number of vowels: 5`
+
 
 * just rudimentary checking if each iteration of `letter` is equal to a,e,i,o,u. If so, it adds a counter to `vowels += 1`
