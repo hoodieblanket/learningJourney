@@ -78,7 +78,7 @@ print("Number of times bob occurs is: " + str(total))
 
 
     (0) |(1)|(2)|(3)
-    ---|---|---|---
+    :---:|:---:|:---:|:---:
     B?|O?|B?||
      ||B?|O?|B?
 
