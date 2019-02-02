@@ -1,4 +1,4 @@
-#For Loops
+# For Loops
 
 
 Below is for finding the longest alphabetical substring inside a string. 
@@ -35,4 +35,5 @@ for char in s:
 print(longestString)
 ```
 
+output `abcdefghij`
 
