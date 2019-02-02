@@ -1,10 +1,10 @@
 # For Loops
 
 
-Below is for finding the longest alphabetical substring inside a string. 
-   first I create the variables I want to compare and to contain the iterations
-   I had to realise that the alphabet has boolean values `a < b` is `True` and `e < c` is `False`
-   So using the comparison operators `< > == etc.` I can compare to see if I have a string going in a row.
+## the longest alphabetical substring inside a string. 
+    First I created the variables I want to compare and contain the values through the `for loop`
+    The alphabet has boolean values `a < b` is `True` and `e < c` is `False`    
+    So using the comparison operators `< > == etc.` I can compare to see if I have a string going in a row.
 
 ***
 
