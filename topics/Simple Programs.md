@@ -43,7 +43,7 @@ we can keep finding the middle and continue with the search.
 
 At each stage we are throwing away half the possible values. This is a significant jump in\
 efficiency at guessing in this example.
-
+___
 ### Square Root  example
 ```python
 x = 25
@@ -67,18 +67,31 @@ print(str(ans) + ' is close to quare root of ' + str(x))
 ```
 
 
-    We start with a search space from 0.0 up to 9. We know that the square root of 9 is 3, so we have an idea of where the algorithm will find the answer (this will help us through the explanation).
+We start with a search space from 0.0 up to 9. We know that the square root of 9 is 3, so we have an idea of where the\
+algorithm will find the answer (this will help us through the explanation).
+On each step, the algorithm determines if the answer is close enough to the answer we are looking for, within a margin\
+of error (epsilon). If we square the answer (the middle point of the search space) and we get that its either larger or\
+smaller than our initial number 9, it may still be the answer we are looking for if that difference is smaller than\
+epsilon. (For example, if we say epsilon is 0.5, and we want the square root of 9, if our answer squared gives us 8.6\
+or 9.4, those are "acceptable" answers because they are within that margin of error we've set, this is the meaning of\
+epsilon)
 
-    On each step, the algorithm determines if the answer is close enough to the answer we are looking for, within a margin of error (epsilon). If we square the answer (the middle point of the search space) and we get that its either larger or smaller than our initial number 9, it may still be the answer we are looking for if that difference is smaller than epsilon. (For example, if we say epsilon is 0.5, and we want the square root of 9, if our answer squared gives us 8.6 or 9.4, those are "acceptable" answers because they are within that margin of error we've set, this is the meaning of epsilon)
+If it's not within epsilon, it means it's not precise enough, and we have to reduce our search space even further.
+But how do we determine where to keep looking? We can reduce our search space BY HALF on each step!
 
-    If it's not within epsilon, it means it's not precise enough, and we have to reduce our search space even further.
+We can reduce our search space BY HALF! on each step by noting if the answer squared is too small or too large to be\
+the right answer.
+If our answer squared is too small, the algorithm will discard the half of the search space that contains numbers\
+smaller than our answer, and our new search space will be the other half that contains numbers larger than our previous\
+answer. Our new Low will be the previous answer (the middle point of the previous search space) and our High point\
+will remain the same.
 
-    But how do we determine where to keep looking? We can reduce our search space BY HALF on each step!
+On the contrary, if our answer squared is too large to be the right answer, the algorithm will discard the HALF of the\
+search space that contains numbers Larger than our previous answer. Our new High point will be the previous answer\
+(the middle point of the previous search space) and our Low point will remain the same.
 
-    We can reduce our search space BY HALF! on each step by noting if the answer squared is too small or too large to be the right answer.
+These steps will repeat until the algorithm finds an answer that, squared, is close enough to the initial number for\
+which we are trying to calculate the square root. (in this case 9)
 
-        If our answer squared is too small, the algorithm will discard the half of the search space that contains numbers smaller than our answer, and our new search space will be the other half that contains numbers larger than our previous answer. Our new Low will be the previous answer (the middle point of the previous search space) and our High point will remain the same.
-
-        On the contrary, if our answer squared is too large to be the right answer, the algorithm will discard the HALF of the search space that contains numbers Larger than our previous answer. Our new High point will be the previous answer (the middle point of the previous search space) and our Low point will remain the same.
-
-These steps will repeat until the algorithm finds an answer that, squared, is close enough to the initial number for which we are trying to calculate the square root. (in this case 9)
+___
+## Guess my number
