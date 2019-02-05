@@ -32,7 +32,7 @@ Below will capture that infinite loop:
 ```python
 while abs(guess**3 - cube) >= epsilon and guess <= cube:
 ```
-
+___
 ## Bisection Search
 The search checks if you are not close enough, is the guess *too big* or *too small*.\
 if `g**2 > x` then we know g is too big.\
@@ -95,3 +95,38 @@ which we are trying to calculate the square root. (in this case 9)
 
 ___
 ## Guess my number
+
+Using a `while True` loop and bisection search we can narrow down guessing of a number significantly by removing\
+half the possible solutions by asking if the answer is high or low.
+
+The following guesses in increments is by dividing the guesses in half on the side which the user inputs as the guess\
+being too high or too low. Then breaking it in half again and again until we find the guess which is correct.
+
+```python
+low = 0
+high = 100
+print("Please think of a number between 0 and 100")
+
+while True:
+    guess = int(high + low) //2 #this assigns the guess value with each iteration as high and low divided by 2
+    print("Is your secret number: " + str(guess) + "?")
+    ans = input("Enter 'h' to indicate the guess is too high. \
+            Enter 'l' to indicate the guess is too low. \
+            Enter 'c' to indicate I guessed correctly:")
+            #assigning the input to a variable. In this instance 'ans'
+
+    if ans == "c":
+        print("Game over. Your secret number is " + str(guess))
+        break
+        #the is the break statement to get out of the loop once the input is 'c'
+    elif ans == "h":
+        high = guess
+    elif ans == "l":
+        low = guess
+    else:
+        print("Sorry, I did not understand your input")
+        #else clause to catch any input that is not 'h', 'l' or 'c'.
+        #it is still part of the while loop so WHILE TRUE it will keep putting them back to the beginning.
+```
+___
+
