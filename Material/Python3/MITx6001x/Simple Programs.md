@@ -108,7 +108,7 @@ high = 100
 print("Please think of a number between 0 and 100")
 
 while True:
-    guess = int(high + low) //2 #this assigns the guess value with each iteration as high and low divided by 2
+    guess = int(high + low) //2 #this assigns the guess value to each iteration of high and low being divided by 2
     print("Is your secret number: " + str(guess) + "?")
     ans = input("Enter 'h' to indicate the guess is too high. \
             Enter 'l' to indicate the guess is too low. \
@@ -118,7 +118,7 @@ while True:
     if ans == "c":
         print("Game over. Your secret number is " + str(guess))
         break
-        #the is the break statement to get out of the loop once the input is 'c'
+        #this is the break statement to get out of the loop once the input is 'c'
     elif ans == "h":
         high = guess
     elif ans == "l":
@@ -128,5 +128,5 @@ while True:
         #else clause to catch any input that is not 'h', 'l' or 'c'.
         #it is still part of the while loop so WHILE TRUE it will keep putting them back to the beginning.
 ```
-___
+
 
