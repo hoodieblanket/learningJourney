@@ -99,3 +99,34 @@ caller.
 |- code inside function but after return statement not executed|- code inside function can be executed after print|
 |- has a value associated with it, given to function caller|- has a value associated with it, outputted to the console|
 
+#Recursion
+Inside the function, it calls itself. It breaks up the problems into pieces that I can use to reduce the problem\
+down to its solution.
+As long as it is not an infinite loop then I can solve the problem by reducing it into pieces until I find a solution
+
+For example the following recursion will take a simple process of finding a base variable and multiplying the base b\
+by itself for x amount of iterations.
+```python
+def recurPower(base, exp):
+    '''
+    base: int or float.
+    exp: int >= 0
+
+    returns: int or float, base^exp
+    '''
+    # Base case is when exp = 0
+    if exp <= 0:
+        return 1
+
+    # Otherwise, exp must be > 0, so return 
+    #  base* base^(exp-1). This is the recursive case.
+    return base * recurPower(base, exp - 1)
+
+recurPower(2.54,3)
+```
+So this is saying that we want to break it down into smaller steps to find out what 2.54^3 is equal to. Or alternately\
+what 2.54 is if we multiply it by 2.54 exactly 3 times.
+
+So while the exponent is greater than 0, then it will run a function within a function to break it down with each
+exponent. thne return the base times it. We covered for the fact that if exp = 0 then as per mathematical logic, the\
+base needs to evaluate 2.54^0 which will return 1.
