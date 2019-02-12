@@ -152,3 +152,36 @@ This code will take two inputs and find out what is the largest common integer t
 It finds the smallest of the two values and assigns it inside a variable.
 
 Then we keep looping until that variable divides both a & b evenly.
+
+#Combination of a Bisection Search and a Recursive solution
+If for example we needed to find a value or a letter in a string of letters and we want to do it in a way whereby\
+we halve the string and ask "is it in the upper half or lower half" and continue that question until we find it:\
+How could we code it to find the letter using a function, bisectional searching and recursion.
+
+```python
+def isIn(char,aStr):
+    '''
+    char: a letter
+    aStr: a string of letters
+    '''
+    #in order to make sure we place the string in alphabetical order we can use the following:
+    aStr = ''.join(sorted(aStr))
+    #we want to assign the value from the bisectional search to a variable so we can test cases. i.e the below
+    #will produce the middle of the string of letters, i.e "n" and then ask if n == char or else do code
+    m = aStr[len(aStr) // 2]
+    # for recursion, what is the base case or smallest case that is likely to happen
+    if n == '':
+        return False
+    # to capture if the string is None ''
+    if n == char:
+        return True
+    elif aStr == '' or aStr == len(1):
+        return False
+    else:
+        if char < m:
+            return isIn(char,aStr[:len(aStr) // 2])
+        elif char > m:
+            return isIn(char,aStr[len(aStr) // 2:])
+    
+    
+```
