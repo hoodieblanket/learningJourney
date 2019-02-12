@@ -130,3 +130,25 @@ what 2.54 is if we multiply it by 2.54 exactly 3 times.
 So while the exponent is greater than 0, then it will run a function within a function to break it down with each
 exponent. thne return the base times it. We covered for the fact that if exp = 0 then as per mathematical logic, the\
 base needs to evaluate 2.54^0 which will return 1.
+
+#Iterative finding the Greatest Common Divisor GCD
+```python
+def gcdIter(a, b):
+    '''
+    a, b: positive integers
+    
+    returns: a positive integer, the greatest common divisor of a & b.
+    '''
+    testValue = min(a, b)
+
+    # Keep looping until testValue divides both a & b evenly
+    while a % testValue != 0 or b % testValue != 0:
+        testValue -= 1
+
+    return testValue
+```
+
+This code will take two inputs and find out what is the largest common integer that both inputs are divided by.\
+It finds the smallest of the two values and assigns it inside a variable.
+
+Then we keep looping until that variable divides both a & b evenly.
