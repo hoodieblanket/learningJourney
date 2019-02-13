@@ -183,5 +183,5 @@ def isIn(char,aStr):
         elif char > m:
             return isIn(char,aStr[len(aStr) // 2:])
     
-    
+    isIn("r", "abcdefghijklmnopqrstuvwxyz")
 ```
