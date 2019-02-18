@@ -74,3 +74,61 @@ doesnt mutate it.\
 `List.sort()    :   will mutate the List into a sorted version`\
 `List.reverse() :   will mutate the List into a reversed version`\
 
+#Aliasing, Cloning and Mutating
+Aliasing is the act of using different variables to refer to the same object. If the object is a list then the\
+variables could be *Hot* and *Cold* that refers to that list but if we change the **List** then we affect the variables\
+that are the lists' alias.
+
+Cloning the act of taking separate variables and assigning a object or list to the variables *individually* so that\
+there is a clone of the objects which are in turn called by different variables. This way if you change one object or \
+list then it doesnt affect all the variables with similar *individual* objects.
+
+Mutating is the act of changing a list or object and as a result, having that change cascade and affect all variables \
+that were connected to it. So by using a methond such as `hot.append('sun')` and changing the list for hot (that also \
+ is the same list for *cold*) then we are mutating it and changing the base objects.
+ 
+#Defining a function and iterating through a list
+`testList = [1, -4, 8, -9]`
+
+Assuming we had a list of values and we wanted to define a function and run through the list, mutating it along the way:
+
+```python
+L = testList
+def applyToEach(L, f):
+    for i in range(len(L)):
+        L[i] = f(L[i])
+        
+applyToEach(L, abs)
+```
+
+We could for instance apply the above code that runs through a evaluates to the absolute value `abs` of each item in\
+the list.
+
+Or we could adjust the values in that list by adding one to each value.
+
+```python
+L = testList
+
+def applyToEach(L):
+    for i in range(len(L)):
+        L[i] = L[i] + 1
+
+applyToEach(L)
+```
+
+And say for example we wanted to use multiple functions to not only get an `abs` value but also multiply the value by\
+itself:
+```python
+L = testList
+
+def mult(b):
+    return b * b
+
+
+def applyToEach(L, f, b):
+    for i in range(len(L)):
+        L[i] = f(L[i])
+        L[i] = b(L[i])
+        
+applyToEach(L, abs, mult)
+```
