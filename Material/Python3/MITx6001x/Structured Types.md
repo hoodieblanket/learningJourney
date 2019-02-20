@@ -132,3 +132,53 @@ def applyToEach(L, f, b):
         
 applyToEach(L, abs, mult)
 ```
+#Dictionaries
+So far the limitation with lists is that for each data entry you may have, they have their separate list lengths and \
+the items are ordered in such a way that the way to call on that information is using index(0) or index(1) and with\
+large data sets this is a difficult way to capture and return that information.
+
+A dictionary is a little different to lists as we have a customer *key* that we assign and that *key* has its value\
+but does not need to be called at for example index(0). 
+
+A python dictionary stores *pairs* of values together. A KEY and a VALUE. we use the curly braces such as \
+`my_dict{}` or:
+
+```python
+grades = {'johann' : 'A', 'Erica' : 'A+', 'Lily' : 'B-'}
+```
+
+Using the KEY, we can return the value e.g `grades['johann']` will return 'A' 
+
+With dictionaries we do not rely on the order of the dictionary, we just need to know what we want to do or get out\
+of the dictionary.
+
+**Values** can be any type, immutable or mutable, and they can be duplicates or lists or other dictionaries
+**Keys** must be unique, immutable and there does not need to be an order to it. We have to be careful with floats\
+as calling on floats without a precise figure will not work for example in the instance of dealing with *close enough*\
+approximates.
+
+Immutable items such as a Float, Int, String, Tuple, Bool.
+
+Imagine we wanted to count how many animals are in a dictionary.
+
+animals = {'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati'], 'd': ['donkey', 'dog', 'dingo']}
+
+You can see that we have 3 key's with 3 values and a 4th key (d) that is a list itself.
+
+To count and find the sum of this dictionary we can define the following function:
+
+```python
+animals = {'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati'], 'd': ['donkey', 'dog', 'dingo']}
+
+
+def WhateverVariableWeWant(AnyVariableWeWantToCall):
+    count = 0 # we have a variable to keep track as we iterate through each value in the dictionary
+    for everyValue in AnyVariableWeWantToCall:
+        count += len(AnyVariableWeWantToCall[everyValue])
+    return count # the return function is to return whatever value we wanted from the function and give it to the caller
+    
+WhateverVariableWeWant(animals) # this will use the function "WhateverVariableWeWant" and access the animals dict
+
+# this tells us that there is 6 animals in the dictionary.
+
+```
