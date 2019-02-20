@@ -2,7 +2,7 @@
 
 As I am going through the journey from scratch; this reflects my interests over time.
 
-## Python
+## Python Topics
    * [For Loops](https://github.com/hoodieblanket/learningJourney/blob/master/topics/For%20Loop%20examples.md)
    * [Strings](https://github.com/hoodieblanket/learningJourney/blob/master/Material/Python3/MITx6001x/Simple%20Programs.md)
    * [Functions, Returns, Scope and Recursion](https://github.com/hoodieblanket/learningJourney/blob/master/Material/Python3/MITx6001x/Functions%2C%20Returns%2C%20Scope%20and%20Recursion.md)
