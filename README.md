@@ -21,4 +21,16 @@ As I am going through the journey from scratch; this reflects my interests over 
    * [Longest Substring](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Longest%20substring.py)
    * [Number of Repeating Substrings](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Number%20of%20substrings.py)
    
+## Network Security
+   * Security+  - Keeping the certification neutral rather than MSP or Cisco certification then you are tied.
+   * [OWASP - Open Web Application Security Project](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
+   * [OSCP](https://www.offensive-security.com)
+
+## OSCP Preparation
+   * [OSCP Syllabus](https://www.offensive-security.com/pwk-syllabus/)
+   * [HackTheBox](https://www.hackthebox.eu/)
+   * [PenTesterLab](https://pentesterlab.com/)
+   * [Tulpa Security Prep Guide](https://tulpa-security.com/2016/09/19/prep-guide-for-offsecs-pwk/)
+   * [abatchy's blog Prep Guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob.html)
    
+## Linux // Debian
