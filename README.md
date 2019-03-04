@@ -34,3 +34,5 @@ As I am going through the journey from scratch; this reflects my interests over 
    * [abatchy's blog Prep Guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob.html)
    
 ## Linux // Debian
+   * [Popular Terminal Uses]()
+   * [Aliases That Help]()
