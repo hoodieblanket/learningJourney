@@ -1,7 +1,7 @@
 from ps4a import *
 import time
 
-HAND_SIZE = 7
+HAND_SIZE = 9
 #
 #
 # Computer chooses a word
@@ -126,28 +126,56 @@ def playGame(wordList):
     """
     n = HAND_SIZE
     gameCount = 0
-    response = 'empty'
 
-    while len(response) >= 1:
+    while True:
         response = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
-        print()
         response = response.lower()
-        if response == 'n':
-            gameCount = gameCount + 1
-            hand = dealHand(n)
-            playHand(hand, wordList, n)
-        elif response == 'r':
-            if gameCount > 0:
-                playHand(hand, wordList, n)
-            else:
+        while response == 'r':
+            if gameCount <= 0:
                 print("You have not played a hand yet. Please play a new hand first!")
-                print()
-        elif response == 'e':
+                response = input("Enter n to deal a new hand, r to replay the last hand, or e to end game: ")
+                response = response.lower()
+                if response not in ('n', 'r', 'e'):
+                    print("Invalid command.")
+
+            else:
+                userComp = input("Enter u to have yourself play, c to have the computer play: ")
+                userComp = userComp.lower()
+                if userComp == 'u':
+                    print()
+                    playHand(hand, wordList, n)
+                    break
+                elif userComp == 'c':
+                    print()
+                    compPlayHand(hand, wordList, n)
+                    break
+                elif userComp not in ('u', 'c'):
+                    print("Invalid command.")
+
+        if response == 'e':
             break
-        else:
-            print("Invalid command.")
+        while response == 'n':
+            userComp = input("Enter u to have yourself play, c to have the computer play: ")
+            userComp = userComp.lower()
+            if userComp == 'u':
+                gameCount = gameCount + 1
+                hand = dealHand(n)
+                print()
+                playHand(hand, wordList, n)
+                break
+            elif userComp == 'c':
+                gameCount = gameCount + 1
+                hand = dealHand(n)
+                print()
+                compPlayHand(hand, wordList, n)
+                break
+            elif userComp not in ('u', 'c'):
+                print("Invalid command.")
+        if response not in ('n', 'e', 'r'):
+            print('Invalid command.')
 
 
+#TO DO: figure out why if you play a round then hit r, why does it randomise it again.
 
         
 #
