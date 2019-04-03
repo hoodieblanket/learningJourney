@@ -1,48 +1,33 @@
 #Classes
-Classes are a blueprint of creating new objects similar to how int, float and boolean are objects.\
-Objects are an instance of class. The difference would be as such `Class = Human` whereas `Object = Mary, Johan, Sue`\
 
-When using the dot notation with a list object = [], then we utilize *methods* `object.method` to interact with the\
-list. such as object.add() or object.remove() etc or object.get_total()
+Classes are a template of behaviours and structure that you use for things that behave the same way or share meaning.
 
+This template is used to make it easier to manage similar objects or classes of objects. For example: If you had \
+a `dog` class then you would share similarities between all dogs such as they all have a `name, colour and breed` and\
+they all have the same behaviour `barking, running and wagging tail`.
+
+the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of\
+the class is created. It's own frame is created and then the magic method initialises the template setup.
+
+So __init__ is used by programmers to initialise values when a given instance or frame is created.
+
+**For Example**
 ```python
-class Point:
-    def draw(self):
-        print("draw")
+class Article(object):
+    def __init__(self, title):
+        self.title = title
+        self.published = False
+    def __unicode__(self):
+        return self.title
+    def publish(self):
+        self.published = True
         
-point = Point() # now we can call the Point class and assign it to the point variable
-print(type(point)) #if we asked what type point would be, it would show __main__.Point. as we created our own object.
-point(isinstance(point, Point)) # Boolean True would return as point is an instance of the Point object.
-point(isinstance(point, int)) # Boolean False would return as point is not an instance of the class int
-
+nyt_article = Article("Christie Faces Scandal on Traffic Jam Aides Ordered")
 ```
 
-#Constructor
-__init__(self) is called a magic method and it is a constructor. self is a reference to the current Point object.
+*Self* refers to the instance or frame of a given class which in this case is a Article
+`nyt_article.title` This would return the title that was set for the self.title = "Christie faces scandal..."\
+`nyt_article.published` This would return the value of self.published which is currently in the instance set to False.\
+`unicode(nyt_article)` This would use the unicode method, which in this instance would *return self.title* "christie..."\
+`publish(nyt_article)` This would set self.published to True and as a result the instance would now be True for Published\
 
-A constructor is created or used when you first create a new point object.
-
-```python
-class Point:
-    def __init__(self, x, y): # all methods we define in a class need atleast 1 parameter. which is conventionally self\
-        self.x = x or 0
-        self.y = y
-        
-
-    def draw(self):
-        print(f"Point ({self.x}, {self.y})")
-
-point = Point(1,2)
-#now when you use the .operator then the x and y are methods
-
-point.draw() # this will print the draw function
-
-```
-Self is a reference to the current point object
-self - To explain self, as per above, when we call on the point class, python will internally create the point object\
-in memory and set self to reference that point object.\
-This point object has a bunch of methods we have used before (methods like upper, lower, sort etc) but can also be assigned\
-attributes as a method. An example above is assigned x and y variables are methods
-
-
-For example a Human class can have attributes like height, weight and colour but also functions like walk, talk and so on\
