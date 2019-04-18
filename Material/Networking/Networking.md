@@ -18,7 +18,7 @@ The internet is an example of `Packet-switched` network. There is no reservation
 
 # Total Nodal Delay (made up of nodal processing delay, queuing delay, transmission delay and propagation delay)
 
-###Types of Delay
+### Types of Delay
 
 *_Processing Delay_* time to examine the packets header and determine where to direct the packet is part of the processing delay. The packet header is referring to the address that the packet has for where its destination is. This delay can also include other factors such as the time needed to check for bit-level errors that may have happened while it was being sent through the upstream link.
 
@@ -29,3 +29,4 @@ The internet is an example of `Packet-switched` network. There is no reservation
 *_Propagation Delay_* The time required to propagate from the beginning of the link (when the packet has been pushed/transmitted into the link) and the time it arrives at the destination. It is limited by the technology of the physical medium such as twisted pair, fiber optic and so on.
 
 *_Packet Loss_* A packet can arrive at the queue and because queue capacity is finite, it would have no place to store the packet so the router will *drop* the packet. This overflow at the queue shows how packet loss can occur. The fraction of lost packets increases as the traffic intensity increases. Therefor the performance at the node is measured in delay as well as the probability of packet loss.
+
