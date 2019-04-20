@@ -26,6 +26,8 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 
 Using find we can narrow down our search to certain properties for example `find -user userName -group groupName -size 33c` will search the current directory for the above details. However if we want to *search the whole server* then we need to use `/` to augment `find / -user userName -group groupName -size 33c` to search whole server for our property restrictions. 
 
+Additionally adding in `-type f # to specify that we are looking for a FILE` will return all the files but also will return entries that we may not have access to which will display 'permission denied'. Using `2>/dev/null` will remove all error messages and narrow it down specifically to the file we need. 
+
 **_Single and Double dots (. or ..) when found with `ls -a` in directory_**\
 a *single dot* represents the current working directory, and *two dots* denote the parent (higher) directory. So using `cd .` will not perform anything as you are currently in that directory but `cd ..` will proceed to the parent directory even when you don't normally have access. For example `cd . (/home/hdy/documents)` and `cd .. (/home/hdy)`
 
