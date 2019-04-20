@@ -19,7 +19,9 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 `du fileordirectory` will tell you the estimated size of the file or directory recursively.\
 `find whatever` is used to find a particular file or directory. use the man pages for explanation `man find`\
 `cat filename` cat is used to concatenate files and print on the standard output for example if a standard text file is used then it will print the file into the terminal\
-`grep` is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.
+`grep` is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.\
+`sort` is useful dealing with large data sets and you want to organise the data in a certain way. To illustrate, if you wanted to organise the data to be grouped `-R` and to ignore upperlower case `-f`.
+
 
 **_"Find" Can Be Difficult to use_**\
 `find` is difficult if you don't know exactly what you are trying to find. For example using `find . -readable \! -executable -type f -size 1033c` the .(dot) will indicate to start searching from the current directory and any child directories. the *-readable \! -executable* just tells the terminal that the file is readable but not executable. Type specifies what type I am searching for (use *man find* pages to see all the options) and Size just specifies the size and the suffix specifies the category (i.e bytes)\
@@ -28,13 +30,17 @@ Using find we can narrow down our search to certain properties for example `find
 
 Additionally adding in `-type f # to specify that we are looking for a FILE` will return all the files but also will return entries that we may not have access to which will display 'permission denied'. Using `2>/dev/null` will remove all error messages and narrow it down specifically to the file we need. 
 
+**_grep and it's difficulties_**
+Searching for patterns or repeats within a file. Additionally you can print also print the above/below and surrounding entries to provide context within the file. For example having many entries of the same name and lastname however by using grep to provide context, you find that it has separate contact details/email address listed above or below it etc so you can clue in that they are not double ups but in fact legitimate entries.
+
+using options such as `-i` will ignore upper or lowercase. `-w` will use whole word searching only and reject any variance. `-n` will provide the line number that the searched word exists. `-r` will recursively search in not only the current directory but all its child directories.
+
 **_Single and Double dots (. or ..) when found with `ls -a` in directory_**\
 a *single dot* represents the current working directory, and *two dots* denote the parent (higher) directory. So using `cd .` will not perform anything as you are currently in that directory but `cd ..` will proceed to the parent directory even when you don't normally have access. For example `cd . (/home/hdy/documents)` and `cd .. (/home/hdy)`
 
 **_Using - as a filename_** \
 is convention for a lot of programs to mean `stdin/stdout` and is not a special property of the filename. the kernel doesn't recognise `- (dash)` as special so the system calls referring to `-` as a filename will use `-` literally as a filename. When using `cat` on the string `-`, it treats it as a synonym for `stdin` so you need to somehow force cat to read the file as the literal name of it being `-` and one way you can do this is to prefix the filename with a path to it such as `./-` or `/home/name/-` in order for cat to read it. Same way if the filename clashes with the command line such as naming a file `-e` which you would normally use on some command line such as `command -e do/something/here`. So this work around with `cat` will be useful if you prefix the path to the filename.
 
-
-
-
+**_2>/dev/null_**
+This redirects errors into /dev/null, which is sort-of 'file' that ignores and deletes everything it receives. This is how you remove the errors such as permission errors from your output and left with the result that you want. `>` redirects the output of a command to wherever you want; by default it will redirect what's called `stdout` (*which is what standard console output is called*) but if you were to do that in this case you'd end up not seeing ANY results as all of the output of your command would end up being directed to /dev/null and wiped out. So what you do is put a `2` infront so that its `2>` which is a parameter that specifics that just the *error messages* should be redirected.
 
