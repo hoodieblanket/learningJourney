@@ -22,7 +22,9 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 `grep` is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.
 
 **_"Find" Can Be Difficult to use_**\
-`find` is difficult if you don't know exactly what you are trying to find. For example using `find . -readable \! -executable -type f -size 1033c` the .(dot) will indicate to start searching from the current directory and any child directories. the *-readable \! -executable* just tells the terminal that the file is readable but not executable. Type specifies what type I am searching for (use *man find* pages to see all the options) and Size just specifies the size and the suffix specifies the category (i.e bytes)
+`find` is difficult if you don't know exactly what you are trying to find. For example using `find . -readable \! -executable -type f -size 1033c` the .(dot) will indicate to start searching from the current directory and any child directories. the *-readable \! -executable* just tells the terminal that the file is readable but not executable. Type specifies what type I am searching for (use *man find* pages to see all the options) and Size just specifies the size and the suffix specifies the category (i.e bytes)\
+
+Using find we can narrow down our search to certain properties for example `find -user userName -group groupName -size 33c` will search the current directory for the above details. However if we want to *search the whole server* then we need to use `/` to augment `find / -user userName -group groupName -size 33c` to search whole server for our property restrictions. 
 
 **_Single and Double dots (. or ..) when found with `ls -a` in directory_**\
 a *single dot* represents the current working directory, and *two dots* denote the parent (higher) directory. So using `cd .` will not perform anything as you are currently in that directory but `cd ..` will proceed to the parent directory even when you don't normally have access. For example `cd . (/home/hdy/documents)` and `cd .. (/home/hdy)`
