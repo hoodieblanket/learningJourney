@@ -30,3 +30,25 @@ The internet is an example of `Packet-switched` network. There is no reservation
 
 *_Packet Loss_* A packet can arrive at the queue and because queue capacity is finite, it would have no place to store the packet so the router will *drop* the packet. This overflow at the queue shows how packet loss can occur. The fraction of lost packets increases as the traffic intensity increases. Therefor the performance at the node is measured in delay as well as the probability of packet loss.
 
+### Protocol Layering
+
+|Five-Layer Internet Protocol Stack|Seven-Layer ISO OSI Reference|
+|:---:|:---:|
+|Application|Application|
+|           |Presentation|
+|           |Sessions|
+|Transport  |Transport|
+|Network    |Network|
+|Link       |Link|
+|Physical   |Physical|
+
+*application-layer protocols* such as HTTP and SMTP is almost always implemented in the software in the end systems; so are *transport-layer protocols*.\
+The *physical layer* and *data link layer* are responsible for handling communication over a specific link, they are typically implemented in a network interface card (such as ethernet or WiFi interface cards) associated with a given link
+*Network layering* is often a mixed implementation of hardware and software.
+
+**_Application Layer_**
+
+Network apps and their protocols reside in this layer. There include many protocols such as *HTTP* (which provides for web document request and transfer), *SMTP* (which provides for transfer of e-mail messages) and *FTP* (which provides for transfer of files between two end systems). Certain network functions such as translation of human-friendly names for internet end systems like www.google.com to a 32-bit network address, are also done with the help of a specific application-layer protocol *DNS* or *domain name system*. This transfer of information on the application layer is to exchange packets of info with an application in another end system so we can refer to this packet of information as the *_message_*.
+
+**_Transport Layer_**
+
