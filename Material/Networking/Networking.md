@@ -33,22 +33,52 @@ The internet is an example of `Packet-switched` network. There is no reservation
 ### Protocol Layering
 
 |Five-Layer Internet Protocol Stack|Seven-Layer ISO OSI Reference|
-|:---:|:---:|
-|Application|Application|
-|           |Presentation|
-|           |Sessions|
-|Transport  |Transport|
-|Network    |Network|
-|Link       |Link|
-|Physical   |Physical|
+|:---:      |:---:          |
+|Application|Application    |
+|           |Presentation   |
+|           |Sessions       |
+|Transport  |Transport      |
+|Network    |Network        |
+|Link       |Link           |
+|Physical   |Physical       |
 
 *application-layer protocols* such as HTTP and SMTP is almost always implemented in the software in the end systems; so are *transport-layer protocols*.\
 The *physical layer* and *data link layer* are responsible for handling communication over a specific link, they are typically implemented in a network interface card (such as ethernet or WiFi interface cards) associated with a given link
 *Network layering* is often a mixed implementation of hardware and software.
 
-**_Application Layer_**
+#### Application Layer
 
-Network apps and their protocols reside in this layer. There include many protocols such as *HTTP* (which provides for web document request and transfer), *SMTP* (which provides for transfer of e-mail messages) and *FTP* (which provides for transfer of files between two end systems). Certain network functions such as translation of human-friendly names for internet end systems like www.google.com to a 32-bit network address, are also done with the help of a specific application-layer protocol *DNS* or *domain name system*. This transfer of information on the application layer is to exchange packets of info with an application in another end system so we can refer to this packet of information as the *_message_*.
+Network apps and their protocols reside in this layer. There include many protocols such as *HTTP* (which provides for web document request and transfer), *SMTP* (which provides for transfer of e-mail messages) and *FTP* (which provides for transfer of files between two end systems). Certain network functions such as translation of human-friendly names for internet end systems like www.google.com to a 32-bit network address, are also done with the help of a specific application-layer protocol *DNS* or *domain name system*. This transfer of information on the application layer is to exchange packets of info with an application in another end system so we can refer to this packet of information as the __message__.
 
-**_Transport Layer_**
+#### Transport Layer
+
+The transport layer transports application-layer messages between app endpoints.\
+There are two transport protocols: TCP and UDP. Either one can transport app-layer messages.\
+
+__TCP__ provides a connection-oriented service to its apps. This services includes guaranteed delivery of app-layer messages to the destination and flow control (sender/receiver speed matching). __TCP__ breaks long messages into short segments and provides a congestion-control mechanism, so that a source throttles its transmission rate when the network is congested.
+
+__UDP__ protocol provides a connectionless service to its apps. This is a no-frills service that provides no reliability, no flow control and no congestion control.
+
+We can refer to the transport layer packet as a __segment__
+
+#### Network Layer
+
+The network layer is responsible for moving network-layer packets known as __datagrams__ from one host to another.
+
+Similar to providing a postal service the address of the destination, the transport layer is responsible for getting those segments or messages organised with an address and ready for transport. 
+
+The Network layer is responsible for the service of delivering the segment to the destination host.
+
+Network-layer includes the celebrated __IP Protocol__ which defines the fields in the datagram as well as how the end systems and routers act on these fields. There is only one __IP Protocol__ and all internet components that have a network layer must run a __IP Protocol__.
+
+The internet's network layer also contains __routing protocols__ that determine the routes that datagrams take between sources and destinations. There are many __routing protocols__ and the network admin can run any __routing protocol__ desired. Although the network layer has both the IP protocol and numerous routing protocols, it is often referred to as the __IP layer__.
+
+#### Link Layer
+
+We can refer to link-layer packets as __frames__. At each node within the chain from host to destination node, the network layer routes the __datagram__ to the link layer, which delivers the __datagram__ to the next node along the route. Some link-layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node.
+
+This reliable delivery service is different from the reliable delivery service of __TCP__; which provides reliable delivery from one end system to another. Examples of link-layer protocols include __Ethernet__, __WiFi__, and the __cable access networks' DOCSIS protocol__.
+
+As __datagrams__ need to traverse several links to travel from source to destination, a __datagram__ may be handled by different link-layer protocols at different links along its route.
+
 
