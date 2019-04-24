@@ -21,6 +21,7 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 `cat filename` cat is used to concatenate files and print on the standard output for example if a standard text file is used then it will print the file into the terminal\
 `grep` is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.\
 `sort` is useful dealing with large data sets and you want to organise the data in a certain way. To illustrate, if you wanted to organise the data to be grouped `-R` and to ignore upperlower case `-f`.
+`base64` to encode data that you feed or a file that you want to encode. using `base 64 -d` will decode the data back to what you had previously.
 
 
 **_"Find" Can Be Difficult to use_**\

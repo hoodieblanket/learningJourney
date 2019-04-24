@@ -81,4 +81,22 @@ This reliable delivery service is different from the reliable delivery service o
 
 As __datagrams__ need to traverse several links to travel from source to destination, a __datagram__ may be handled by different link-layer protocols at different links along its route.
 
+### The OSI Model
+
+The __International Organisation for Standardisation (ISO)__ proposed that computer networks be organised around seven layers referred to as __Open Systems Interconnection (OSI)__ model. These 5 layers are similar to the 5 layers internet protocol stack. The key differences is the 2 additional layers for the OSI model: Presentation Layer and Session Layer.
+
+#### Presentation Layer
+
+To provide services that allow communicating applications to interpret the meaning of data exchanged. These services include data compression and data encryption as well as data description.
+
+#### Session Layer
+
+Provides for delimiting and synchronisation of data exchange, including the means to build a checkpointing and recovery scheme.
+
+#### Which is preferred Five-layer or Seven-layer
+
+Difficult to say as the internet's answer is always the same: it's up to the developer. Whether the developer requires the services from the seven-layer osi model or just from the five-layer internet protocol stack; it is up to the application developer to build that functionality into the application.
+
+#### Encapsulation
+
 
