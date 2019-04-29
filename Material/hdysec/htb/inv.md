@@ -1,5 +1,4 @@
 # General usage to assist
-- Posting data with `wget --post-data URLHERE`
 - Sending POST REQUEST with `curl -XPOST URLHERE` and getting a response.
 - using `echo` and `|` to send a cypher to decode\
    * `echo T1JZRk0tVUZFRFItRVJHSU4tVlJER0ItV1hMTFo= | base64 -d`
