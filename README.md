@@ -1,6 +1,6 @@
 #  learning journey
 
-As I am going through the journey from scratch; this reflects my interests over time.
+My interests as they develop over time: progressing my self-learning.
 
 ## Python Topics
    * [For Loops](https://github.com/hoodieblanket/learningJourney/blob/master/topics/For%20Loop%20examples.md)
@@ -9,7 +9,7 @@ As I am going through the journey from scratch; this reflects my interests over 
    * [Simple Programs](https://github.com/hoodieblanket/learningJourney/blob/master/Material/Python3/MITx6001x/Simple%20Programs.md)
    * [Structured Types](https://github.com/hoodieblanket/learningJourney/blob/master/Material/Python3/MITx6001x/Simple%20Programs.md)
 
-## Python Programs and Games
+## Python Learning Programs
    * [(Game) Hangman](https://github.com/hoodieblanket/learningJourney/tree/master/Programs/Python3/(Game)%20Hangman)
    * [Bisection Search with Recursion](https://github.com/hoodieblanket/learningJourney/tree/master/Programs/Python3/(Game)%20Hangman)
    * [Counting Vowels](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Counting%20vowels.py)
