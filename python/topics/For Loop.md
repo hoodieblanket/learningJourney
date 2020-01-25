@@ -20,4 +20,3 @@ for char in s:
 `in s` is called an iterable. It says that we can write a loop that starts with the first element of s, then the\
 second element, then the third until it runs out of elements or characters in s in which case it will exit the\
 loop.
-

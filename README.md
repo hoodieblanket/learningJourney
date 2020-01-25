@@ -1,6 +1,6 @@
 #  learning journey
 
-My interests as they develop over time: progressing my self-learning.
+My interests as they develop over time: progressing my self-learning. Slow turtle wins the race.
 
 ## Python Topics
    * [For Loops](https://github.com/hoodieblanket/learningJourney/blob/master/topics/For%20Loop%20examples.md)
