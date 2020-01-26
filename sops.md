@@ -1,4 +1,4 @@
-# Running Debian 10 Buster non-frankendebian
+# Running Debian 10 Buster non-frankendebians
 
 ## installing tmux
 
