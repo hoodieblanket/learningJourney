@@ -127,6 +127,10 @@
         #Set git to use the credential memory cache
     git config --global credential.helper 'cache --timeout=7200'
         # Set the cache to timeout after 2 hour (setting is in seconds)
+    
+    git remote add origin https://github.com/repoowner/reponame.git
+        # setting up the origin git repo
+    git push -u origin master
 
 ## Popular
 
