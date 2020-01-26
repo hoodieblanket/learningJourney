@@ -1,16 +1,17 @@
 # Running Debian 10 Buster non-frankendebian
 
-
 ## installing tmux
+
     sudo apt install tmux
 
 ## configuring bluetooth
+
     add non-free sources for apt update
     sudo apt install pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware
     reboot
-    
 
 ## Configuring apt sources to include 'non-free'
+
     xdg-open /etc/apt/sources.list
     add non-free to the end of each entry eg:
         deb http://deb.debian.org/debian buster main contrib non-free
@@ -23,14 +24,16 @@
         deb-src http://deb.debian.org/debian buster-updates main contrib non-free
 
 ## Setting up firacode font
+
     sudo apt install fonts-firacode
 
-
 ## Installing cargo
+
     sudo apt install cargo
     cargo build --release
-    
+
 ## Installing alacritty
+
 __Installing cargo__
 
     sudo apt install cargo
@@ -62,18 +65,21 @@ __Link__
         cargo deb --install -p alacritty
         #choose default terminal app
             update-alternatives --config x-terminal-emulator    
-    
+
 ## Setting up Linux
+
     sudo apt install vim #Download VIM
     xdg-open ~/.bashrc_aliases #creates new bashrc_aliases file
 
     source ~/.bashrc #Force to launch the bashrc instead of logging in/out
     source ~/.bashrc_aliases #Force to launch the bashrc instead of logging in/out
-    
+
 ## Setting up latte-dock
+
     sudo apt install latte-dock
 
 ## Setting up Firefox
+
 *_Download latest tar-ball_*
 
         wget -O FirefoxSetup.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
@@ -94,34 +100,38 @@ __Link__
         sudo tar xjf FirefoxSetup.tar.bz2 -C /opt/firefox/
 
 *_Restore Debian's default_*
-    
+
     #If you need to revert
         sudo unlink /usr/lib/firefox-esr/firefox-esr
         sudo mv /usr/lib/firefox-esr/firefox-esr_orig /usr/lib/firefox-esr/firefox-esr
-    
+
 ## Setting up CherryTree
+
     Download from website
     Download dependencies as well gtk2 etc
     install both to get it to work
-    
+
 ## Setting up VS Code
+
     sudo apt install texlive-full
     Install VS code latex extension
     download python extension
     download github extension
 
 ## Setting up GIT
+
     sudo apt install git
     git config --global user.name __username__ #sets global settings for this machine
     git config --global user.name # to check that its set properly, repeat for email check as well
     git config --global user.email __email address__
     go to folder location and use git init to initialise that folder for repo
-    
-## Popular:
+
+## Popular
+
 *_Launching programs not tied to terminal_*
 
     firefox & disown #not tied to terminal or (firefox &) or nohup firefox&
-    
+
 *_Directory behaviour and removing folders/files_*
 
     #renaming a directory mv can move files around and also rename files or directories.
@@ -143,13 +153,13 @@ __Link__
 
     #unzip a zip file and using -d to indicate directory name
         unzip file.zip -d newdirectory
-        
+
 *_Common terminal commands_*
 
     "ls" - list all files and directories in current location
     "cd" - to open a location within bash
     "xdg-open" to open files or folders in dolphin
-    
+
 *_Installing .deb file_*
 
     sudo apt install ~/directory/directory/filename.deb
@@ -157,10 +167,9 @@ __Link__
 *_Uninstall software and remove artifact dependencies_*
 
     sudo apt purge --auto-remove gimp
-    
 
-        
-## standard aliases:
+## standard aliases
+
         alias sops='xdg-open /home/__username__/Dropbox/sops'
         alias ls="ls -a --color=auto --group-directories-first"
         alias o="xdg-open 2>/dev/null"
@@ -168,9 +177,8 @@ __Link__
         alias c='clear'
         alias notes="xdg-open /home/_username_/Dropbox/learningnotes.ctb"
 
+## alias apt4
 
-        
-## alias apt4:
         sudo apt update
         sudo apt dist-upgrade
         sudo apt autoremove
@@ -178,10 +186,12 @@ __Link__
         sudo apt-get update
         sudo apt-get upgrade
 
-## Helpful packages:
+## Helpful packages
+
         sudo apt install dirmngr # need this in order to install spotify
 
-## Optional aliases:
+## Optional aliases
+
     #Install package
         alias pkg-in='sudo apt install'
         
@@ -217,5 +227,3 @@ __Link__
 
     #Show list of upgradeable packages
         alias sys-list-up='sudo apt list --upgradable'
-
-
