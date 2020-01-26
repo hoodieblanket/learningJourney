@@ -27,32 +27,27 @@
 
     sudo apt install fonts-firacode
 
-## Installing cargo
-
-    sudo apt install cargo
-    cargo build --release
-
 ## Installing alacritty
 
-__Installing cargo__
+### Installing cargo
 
     sudo apt install cargo
     cargo build --release
 
-__Installing curl__
+### Installing curl
 
     sudo apt install curl
 
-__Installing kitty__
+### Installing kitty
 
     sudo apt install kitty
 
-__Installing rustup__
+### Installing rustup
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
         #need to remove rust so it doesn't mess with rustup
 
-__Link__
+### Link
 
     https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu
 
@@ -121,10 +116,17 @@ __Link__
 ## Setting up GIT
 
     sudo apt install git
-    git config --global user.name __username__ #sets global settings for this machine
-    git config --global user.name # to check that its set properly, repeat for email check as well
+    git config --global user.name __username__ 
+        #sets global settings for this machine
+    git config --global user.name 
+        # to check that its set properly, repeat for email check as well
     git config --global user.email __email address__
-    go to folder location and use git init to initialise that folder for repo
+        #go to folder location and use git init to initialise that folder for repo
+
+    git config --global credential.helper cache
+        #Set git to use the credential memory cache
+    git config --global credential.helper 'cache --timeout=7200'
+        # Set the cache to timeout after 2 hour (setting is in seconds)
 
 ## Popular
 
