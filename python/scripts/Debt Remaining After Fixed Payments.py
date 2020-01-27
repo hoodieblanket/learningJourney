@@ -1,6 +1,6 @@
 #Given debt and a fixed repayment, how much will you have left after a period of time
 
-balance = 428
+balance = 438
 annualInterestRate = 0.18
 monthlyPaymentRate = 0.05
 

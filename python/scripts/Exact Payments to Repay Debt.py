@@ -1,5 +1,5 @@
-balance = 172168 # balance of loan or debt
-annualInterestRate = 0.21 # annual interest rate
+balance = 250000 # balance of loan or debt
+annualInterestRate = 0.045 # annual interest rate
 
 initialBalance = balance
 lowerBound = balance / 12 # setting lowerbound of possible solutions
