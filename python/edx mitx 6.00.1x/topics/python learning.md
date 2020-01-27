@@ -27,27 +27,32 @@ not (not (46>25) and (5>6 or 6<3)) and (5<3 or not (3<5))
 
 The overall statement returns False
 
-    Precedence: not>and>or
+`Precedence in order to evaluate: not>and>or`
 
 ## Strings
 
 We can make changes to concatination
 
 Ask for the **Length**
+
 ```python
 len('eric')
 #asking for the length of a string will also count any blank spaces
 ```
+
 Ask for a **Slice**
 
 ***Note***: As with python beginning with index **i** and ends with **j**, the *roof* of this slice is **j** and is not included in the slice i.e s[i:j-1]. So we can say python is ***inclusive exlusive*** as we include the first index element and exclude the last index element
+
 ```python
 name = 'eric'
 name[0]
 #Will print the 0th digit in the variable/string, for example it will produce 'e'
 #In python, the count begins from 0
 ```
+
 Another example of different ways you can *slice*
+
 ```python
 s = 'Python is Fun!'
 s[1:5]
@@ -59,7 +64,9 @@ s[1:]
 s[:]
 #returns: 'Python is Fun!'
 ```
+
 You can also *add* a third parameter to your slicing, **k** that represents the **Step Size** that you want to increment by:
+
 ```python
 s[i:j:k]
 #This gives a slice of the string from index i to index j-1, with a step size k
@@ -81,6 +88,7 @@ s[::-1]
 The operators **in** and **not in** test for *collection membership*
 
 Say we had a collection 'coll' with a list, or tuple, or dictionary
+
 ```python
 element in coll
 #tests if 'element' is absent or within the variable 'coll'
@@ -95,7 +103,11 @@ not (element in coll)
 
 ## Input/Output
 
-With print statements as well as input statements. **input** expects the value entered by the user to be a *string*. We would need to remember that if we want to use it as an integer then we would need to convert after receiving the input.
+With print statements as well as input statements.
+
+`input expects the value entered by the user to be a string.`
+
+We would need to remember that if we want to use it as an integer then we would need to convert after receiving the input.
 
 ```python
 number = int(input('type something here: '))
