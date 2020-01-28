@@ -129,6 +129,47 @@ while (x<8):
         print('goodbye')
 #it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
 ```
+
+Another example of using a while loop to add numbers together from a starting point and the end being a variable that can easily be changed
+
+```python
+end = 6
+n = 0
+total = 0
+while n <= end:
+    total += n
+    n += 1
+print(total)
+#This will produce the combination of adding each value from 1 through to 6 iteratively.
+```
+
+Or decreasing in values as you go down from a starting point
+
+```python
+number = 10
+while number:
+    if number > 0:
+        print(number)
+        number -= 2
+```
+
+Squaring a number using variables to hold memory and a while loop to iterate.
+
+The following also shows the process of assigning variables outside of the **while loop** and then amending the variables inside the **while loop**. If we dont make changes to the variables inside the **while loop** then it will continue to grab the default assignments and not evaluate to the conclusion you want
+
+```python
+x = 3
+answer = 0
+iterationsleft = x #we are assigning the iterations we want to run through as a separate variable so that we can make changes in the loop to this variable without affecting **x**
+
+while (interationsleft != 0):
+    answer = answer + x
+    iterationsleft = iterationsleft - 1
+print (str(x) + '*' + str(x) + ' = ' + str(answer))
+```
+
+This code will step into the while loop, check if iterations is **0**. If not, then it will run the code until iterations is *equal to 0*. Meanwhile the variable **answer** is changed as we repeat the loop each time and **iterationsleft** is reduced for each repeated loop. This way our **x** variable remains unchanged and as **answer** gets adjusted by adding in **x** again, this way we are adding **x** to itself for **x** amount of times: Thereby ***squaring*** the number.
+
 ## For Loop Statements
 
 ```python
@@ -136,11 +177,34 @@ for n in range(5)
 # range will give us back the integers 0 though to and up till 5 but not including 5.
 ```
 
-You can also use slices and indices within the for loop
+You can also use *slices* and *indices* within the for loop
 
 ```python
 for n in range(5:11:2)
 # will complete the range starting at 5 and increment by 2 until we reach 11 but not including 11.
+```
+
+Similarly you can use the For loop in the following manner:
+
+```python
+for i in range(0,10,2):
+    print(i)
+# which will print 0, 2, 4, 6, 8 but not 10
+
+for i in range(10,0,-2):
+    print(i)
+#prints 10, 8, 6, 4, 2 but not 0
+```
+
+If you are given some variable that you need to combine or use and the variable is scalable and without your code breaking and you want to include the end-value **somenumber**
+
+```python
+somenumber = 10
+total = 0
+for i in range(1,somenumber+1):
+    total += i
+print(total)
+#this will run through the numbers and add each number to the **total** and this will also be inclusive of the end index **somenumber**
 ```
 
 ## Break Statement
