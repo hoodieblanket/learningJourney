@@ -105,7 +105,7 @@ not (element in coll)
 
 With print statements as well as input statements.
 
-`input expects the value entered by the user to be a string.`
+**input** expects the value entered by the user to be a string.
 
 We would need to remember that if we want to use it as an integer then we would need to convert after receiving the input.
 
@@ -113,4 +113,19 @@ We would need to remember that if we want to use it as an integer then we would 
 number = int(input('type something here: '))
 print(5 * number)
 # This converts the input provided and casts it into a **integer** type for our purposes or uses later.
+```
+
+## While Statements
+
+if the condition is true, then execute the code and go back to check the condition. Continue to do the condition until that condition is false.
+
+This includes conditions with multiple parameters such as **and**, **or**, **not** etc and other such statements. If it evaluates to True, then it will complete the code and go back up the top.
+
+```python
+x = 6
+while (x<8):
+    print('hello')
+    else:
+        print('goodbye')
+#it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
 ```
