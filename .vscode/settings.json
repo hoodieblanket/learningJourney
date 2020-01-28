@@ -1,4 +1,9 @@
 {
     "python.linting.enabled": false,
     "python.pythonPath": "/bin/python3"
+    "files.exclude": {
+        "**/.git": true
+        "**/.vscode": true
+        "**/.idea": true
+    }
 }

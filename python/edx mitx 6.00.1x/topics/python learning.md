@@ -105,7 +105,7 @@ not (element in coll)
 
 With print statements as well as input statements.
 
-`input expects the value entered by the user to be a string.`
+**input** expects the value entered by the user to be a string.
 
 We would need to remember that if we want to use it as an integer then we would need to convert after receiving the input.
 
@@ -114,3 +114,50 @@ number = int(input('type something here: '))
 print(5 * number)
 # This converts the input provided and casts it into a **integer** type for our purposes or uses later.
 ```
+
+## While Statements
+
+if the condition is true, then execute the code and go back to check the condition. Continue to do the condition until that condition is false.
+
+This includes conditions with multiple parameters such as **and**, **or**, **not** etc and other such statements. If it evaluates to True, then it will complete the code and go back up the top.
+
+```python
+x = 6
+while (x<8):
+    print('hello')
+    else:
+        print('goodbye')
+#it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
+```
+
+## For Loop Statements
+
+```python
+for n in range(5)
+# range will give us back the integers 0 though to and up till 5 but not including 5.
+```
+
+You can also use slices and indices within the for loop
+
+```python
+for n in range(5:11:2)
+# will complete the range starting at 5 and increment by 2 until we reach 11 but not including 11.
+```
+
+## Break Statement
+
+Using a statement to break out of some code at a certain point
+For example, if I evaluate something as **True** and no longer want to continue the code, **Break** provides a natural way to get out of the loop
+
+```python
+mysum = 0
+for i in range(5:11:2):
+    mysum += i
+    if mysum == 5:
+        break
+
+print(mysum)
+# This code says, if mysum == 5 then we want to stop the loop. As this range range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
+```
+
+
