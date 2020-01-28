@@ -129,7 +129,6 @@ while (x<8):
         print('goodbye')
 #it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
 ```
-
 ## For Loop Statements
 
 ```python
@@ -159,5 +158,4 @@ for i in range(5:11:2):
 print(mysum)
 # This code says, if mysum == 5 then we want to stop the loop. As this range range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
-
 
