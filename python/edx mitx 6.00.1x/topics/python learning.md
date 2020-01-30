@@ -222,4 +222,3 @@ for i in range(5:11:2):
 print(mysum)
 # This code says, if mysum == 5 then we want to stop the loop. As this range range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
-
