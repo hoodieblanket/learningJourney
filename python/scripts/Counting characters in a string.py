@@ -1,3 +1,6 @@
+#Counting letters or characters in a string
+#Finding patterns or looking for duplicates etc.
+
 s = 'azcbobobegghakl'
 
 vowels = 0

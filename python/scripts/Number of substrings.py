@@ -1,3 +1,4 @@
+#Looking for repeats or specific arrangements in a string
 s = 'azcbobobegghakl'
 
 total = 0
