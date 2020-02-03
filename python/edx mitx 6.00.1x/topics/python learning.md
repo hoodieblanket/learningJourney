@@ -222,3 +222,40 @@ for i in range(5:11:2):
 print(mysum)
 # This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
+
+## Modulus division
+
+Modulus division is an easy way to test for even or odd numbers.
+The mod sign % used in a test has the following general english explanation:
+
+```python
+0 % 2
+# The number 2 (on the right) goes into the number 0 (on the left) exactly 0 times (x amount of times). Afterwards there is 0 remaining.
+2 % 2
+# 2 goes into the number 2 exactly one time and there is 0 remaining.
+3 % 2
+# 2 goes into the number 3 exactly one time and there is 1 remaining.
+23 % 5
+# 5 goes into the number 23 example four times and there is 3 remaining.
+```
+
+Using this technique you can test for even numbers by using **mod** division and it will determine if the number is able to be evenly split, thereby being **even**.
+
+## abs() Function
+
+*abs(number)*
+
+Used to return the absolute value of a number.
+It can be integer, a floating point number or complex number.
+
+```python
+float = -54.22
+print('absolute value of this float is: ', abs(float))
+# prints 54.22
+integer = -88
+print('absolute value of this intege is: ', abs(integer))
+#prints 88
+complex = 3-4j
+print('absolute value or magnitude of complex is: ', abs(complex))
+#prints 5.0
+```

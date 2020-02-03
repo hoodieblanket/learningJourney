@@ -1,5 +1,12 @@
 # Running Debian 10 Buster non-frankendebians
 
+## Installing pip for VSCode & Python
+    
+    pip -V #check version
+    sudo apt install python3-pip
+    pip install ipykernel
+    pip install notebook --upgrade
+
 ## installing tmux
 
     sudo apt install tmux

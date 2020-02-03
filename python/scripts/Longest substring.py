@@ -1,27 +1,22 @@
-s = 'azcbobobegghaklabcdefghij'
+s = 'cnpazcboboaos'
 
-previousAttempt = ""
-currentAttempt = ""
-longestString = ""
+current = ""
+last = ""
+longest = ""
 
-for char in s: 
-    #iterate through each character in the string
-    if previousAttempt <= char:
-        #test is the character assigned to (previousAttempt) is alphabetically less than or equal to the character
-        currentAttempt += char 
-        #If the condition is true, then add the character to (currentAttempt)
-        if len(currentAttempt) > len(longestString):
-            # test if the length of currrentAttempt is greater than the longestString that we have saved so far.
-            longestString = currentAttempt 
-            #if true condition then the string is to be updated for our new longestString so far.
+for i in s:
+    if  last <= i:
+       current += i
+       if len(current) > len(longest):
+           longest = current
     else:
-        currentAttempt = char 
-        # reset currentAttempt back to character
-    previousAttempt = char 
-    # reset previousAttempt back to character
+        current = i
+    last = i
 
-
-
-
-
-print("Longest substring in alphabetical order is: " + longestString)
+#for every value in the variable *s*
+#   if the *last* string is less than or equal to the value *i*
+#       then append the *i* value to the *current* string
+#       if the length(size) of the *current* string is greater than the length(size) of the *longest* string
+#           then the *longest* string copies and becomes the *current* string which is larger.
+#   or else if not less than or equal; then *current* string resets and becomes just the value of *i* at this time
+#   also *last* is reset as well so that we can compare future *i* values to see if *i* is greater than the value of *last* and this will determine whether we continue to add more values to the *current* variable or if we reached a limit for the longest string we went in alphabetical order.
