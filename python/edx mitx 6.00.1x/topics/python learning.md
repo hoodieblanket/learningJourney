@@ -243,7 +243,7 @@ Using this technique you can test for even numbers by using **mod** division and
 
 ## abs() Function
 
-*abs(number)*
+### *abs(number)*
 
 Used to return the absolute value of a number.
 It can be integer, a floating point number or complex number.
@@ -264,7 +264,7 @@ print('absolute value or magnitude of complex is: ', abs(complex))
 
 if you are trying to find a specific number and you know the beginning and end parameters then bisectional search is a great way to efficiently and effectively reach the outcome. Each step you are halving the available data and then you continue to repeat the step until you have found your answer.
 
-*This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*
+### *This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*
 
 ```python
 x = 25
@@ -286,4 +286,3 @@ while abs(ans**2 - x) >= epsilon:
 print('numGuesses = ' + str(numGuesses))
 print(str(ans) + ' is close to a square root of ' + str(x))
 ```
-
