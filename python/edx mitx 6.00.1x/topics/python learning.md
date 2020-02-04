@@ -259,3 +259,31 @@ complex = 3-4j
 print('absolute value or magnitude of complex is: ', abs(complex))
 #prints 5.0
 ```
+
+## Bisectional Searching
+
+if you are trying to find a specific number and you know the beginning and end parameters then bisectional search is a great way to efficiently and effectively reach the outcome. Each step you are halving the available data and then you continue to repeat the step until you have found your answer.
+
+*This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*
+
+```python
+x = 25
+epsilon = 0.01
+numGuesses = 0
+low = 1.0
+high = x
+# high is initialised as our guess x = 25
+ans = (high + low)/2.0
+
+while abs(ans**2 - x) >= epsilon:
+    print('low = ' + str(low) + ' High = ' + str(high) + ' ans = ' + str(ans))
+    numGuesses += 1
+    if ans**2 < x:
+        low = ans
+    else:
+        high = ans
+    ans = (high + low)/2.0
+print('numGuesses = ' + str(numGuesses))
+print(str(ans) + ' is close to a square root of ' + str(x))
+```
+
