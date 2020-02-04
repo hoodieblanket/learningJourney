@@ -1,24 +1,4 @@
-# Integers into binary
-
-# num = 19
-#
-# if num < 0:
-#     isNeg = True
-#     num = abs(num)
-# else:
-#     isNeg = False
-#     result = ''
-# if num == 0:
-#     result = '0'
-# while num > 0:
-#     result = str(num%2) + result
-#     num = num//2
-# if isNeg:
-#     result = '-' + result
-#
-# print("The result is the following binary code " + str(result))
-
-#Floats into binary
+# Floats/fractions into binary
 
 x = float(input('enter a decimal number between 0 and 1:'))
 
