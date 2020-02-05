@@ -286,3 +286,28 @@ while abs(ans**2 - x) >= epsilon:
 print('numGuesses = ' + str(numGuesses))
 print(str(ans) + ' is close to a square root of ' + str(x))
 ```
+
+## Call/Invoke a Function
+
+Functions take a set of parameters; the number can be 0 and the parameters are set inside the function.
+
+```python
+def is_even (i): #keyword || name || parameters or arguments
+    """ 
+    Input: i, a positive int
+    Returns True if i is even, otherwise false
+    """
+    print('hi')
+    return i % 2 == 0
+
+is_even(3) # calling the function using its name and values for parameters.
+
+# as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
+```
+
+### *Some rules for functions*
+
+* Only one **return** will be completed as the **return** order throws you outside of the function.
+* Any code inside of the function but **after** the **return** statement will be ignored.
+* If you dont have an explicit return given inside the function, then it will return the value **None**
+* Value is given to the function caller, so functions have a value associated with it
