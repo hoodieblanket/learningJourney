@@ -304,6 +304,29 @@ is_even(3) # calling the function using its name and values for parameters.
 
 # as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
 ```
+### Returning a function
+
+Instead of invoking and calling a function. You can have another function *return* a function.
+You can imagine it follows as such: when *returning* a function by **not** providing parameters at all (parenthesis), then we are not asking for **that function we are returning** to return any *result*. Instead the function call will return a function and this new function returned is going to take the place of the entire intial function call
+
+```python
+def add (x,y):
+    return x + y
+def times(x,y):
+    return x*y
+def add_or_times (a):
+    if a > 5:
+        return add #returning a function but not calling on the function with parameters
+    else:
+        return times
+# for example:
+add_or_times(6)(3,1)
+#great than 5
+#return add
+add(3,1)
+>>>4
+#so we can see we replaced our initial function with the returned function but then we ran the parameters using that new function
+```
 
 ### *Some rules for functions*
 
@@ -311,3 +334,34 @@ is_even(3) # calling the function using its name and values for parameters.
 * Any code inside of the function but **after** the **return** statement will be ignored.
 * If you dont have an explicit return given inside the function, then it will return the value **None**
 * Value is given to the function caller, so functions have a value associated with it
+
+### Scopes inside scopes inside scopes, scopes all the way down
+
+Sometimes called an internal or helper function. It only belongs inside and to the function that we called. It's protected.
+
+```python
+def scope_one():
+    def scope_two():
+        print('a')
+
+    x = 3
+    y = 'and so forth'
+```
+
+## Inheritance
+
+Taking on the variables and set parameters from previous (higher) scopes that sit in a hierachy. As we progress down the rabbit hole with new scopes, the inheritance of the previous scopes follow through.
+
+```python
+def g(x):
+    def h():
+        x = 'abc'
+        #note there is no return statement so this variable is not returned to x
+    x = x + 1
+    print('in g(x): x =', x)
+    h() #calling that h() function now and creating that new scope
+    return x
+
+x = 3
+z = g(x)
+```
