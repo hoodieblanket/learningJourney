@@ -293,7 +293,7 @@ Functions take a set of parameters; the number can be 0 and the parameters are s
 
 ```python
 def is_even (i): #keyword || name || parameters or arguments
-    """ 
+    """
     Input: i, a positive int
     Returns True if i is even, otherwise false
     """
@@ -304,6 +304,7 @@ is_even(3) # calling the function using its name and values for parameters.
 
 # as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
 ```
+
 ### Returning a function
 
 Instead of invoking and calling a function. You can have another function *return* a function.
