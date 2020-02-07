@@ -366,3 +366,21 @@ def g(x):
 x = 3
 z = g(x)
 ```
+
+## Recursion
+
+Design solutions to problems by breaking it up into pieces that you can use.
+
+### *Some rules*
+
+* Each recursive call to a function creates its own scope/environment
+* Bindings of variables in a scope is not changed by recursive call
+* flow of controll passes back to previous scope once function call returns value
+
+```python
+def mult(a,b):
+    if b == 1:
+        return a
+    else:
+        return a + mult(a,b-1)
+```
