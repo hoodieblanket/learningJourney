@@ -376,6 +376,8 @@ Design solutions to problems by breaking it up into pieces that you can use.
 * Each recursive call to a function creates its own scope/environment
 * Bindings of variables in a scope is not changed by recursive call
 * flow of controll passes back to previous scope once function call returns value
+* Figure out what *Base Case* to use - i.e what is the bottom line.
+* Within recursion you won't have conditions to meet that will break you out of the loop. Therefore its important to make sure that you are **changing** the parameter so that you meet the base case. i.e you are running each successive recursion, with a smaller version of the parameter. Eventually hitting a floor, and your **test case**.
 
 ```python
 def mult(a,b):
