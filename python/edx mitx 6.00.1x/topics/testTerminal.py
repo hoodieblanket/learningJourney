@@ -1,10 +1,12 @@
-def polysum (n,s):
-    """
-    n = integer, representing the number of sides
-    s = integer, the length of the side
-    """
-    import math
-    sum_of_area = (0.25*(n))*(s**2)/math.tan(math.pi/n)
-    perim = n*s
-    ans = sum_of_area + perim**2
-    return round(ans,4)
+def oddTuples(aTup):
+    '''
+    aTup: a tuple
+    
+    returns: tuple, every other element of aTup. 
+    '''
+    # Your Code Here
+    newTup = aTup[0::2]
+    return newTup
+
+aTup = ('I', 'am', 'a', 'test', 'tuple')
+print(oddTuples(aTup))

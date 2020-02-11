@@ -34,7 +34,7 @@
 
 ## Move to Explorer window
 
-    Keyboard Shortcut: Ctrl+Shift+E
+    Keyboard Shortcut: Alt + Shift + E
 
 ## Side by side editing
 

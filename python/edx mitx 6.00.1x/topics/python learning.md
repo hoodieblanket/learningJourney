@@ -408,7 +408,7 @@ def is_palindrome (s):
         if len(s) <= 1:
             return True
         else:
-            return s[0] == s[-1] and is_pal(s[1:-1]) 
+            return s[0] == s[-1] and is_pal(s[1:-1])
             #purpose here is to test if the first letter and the last letter are equal and then to call on the function again recursively doing so on the remaining letters until we get a length of 1 or 0 letters (which is 100% a palindrome.
 
     return is_pal(to_chars(s)) # calling on the is_pal recursion and instead of doing it directly on the string; we call it on our function that converts the string into something useable.
@@ -451,7 +451,7 @@ This has the effect of creating bindings within our current shell or scope for a
 
 ### File handle
 
-handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other. 
+handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other.
 
 With the internal file handling, it doesn't require the operating system and can be done through various functions and options such as below
 
@@ -468,3 +468,14 @@ name_handle.close()
 ```
 
 There are some additional modularity such as **r** for only reading the file and as such can print lines or details from a file.
+
+## Tuples, List, Mutability, Cloning
+
+Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
+
+```
+Tuples make use of *parenthesis* () for values inside tuples
+```
+
+We cannot change the inner pieces of a Tuple, similar to how strings are immutable. We can add to it, we can splice it, but we cannot change the values.
+Tuples are also **Iterable** so it means you can walk down the tuple and use each value how you would like.

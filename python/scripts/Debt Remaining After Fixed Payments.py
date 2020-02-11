@@ -14,4 +14,4 @@ for month in year:
     balance = newbalance
 
 
-print("Remaining Balance: " + str((round(newbalance,2))))
+print("Remaining Balance: " + str((round(newbalance,2)))) # rounding it to 2 digits for the cents 
