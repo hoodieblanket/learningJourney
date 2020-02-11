@@ -386,3 +386,85 @@ def mult(a,b):
     else:
         return a + mult(a,b-1)
 ```
+
+We can also recursively solve characters or strings instead of only numbers. For example solving for a **palindrom** whereby the string reads left the same as it reads right (backwards).
+
+```python
+#step 1 write function to convert string into useable characters
+#step 2 recursive solution for checking first  and last
+#step 3 call on palindrom function then call function for converting string.
+#bundle this up into a single function or template is_palindrome (s)
+def is_palindrome (s):
+    def to_chars(s):
+        s = s.lower()
+        ans = ''
+        for c in s:
+            if c in 'abcdefghijklmnopqrstuvwxyz':
+                ans = ans + c
+                # purpose here is to convert a string or sentence into just its character form, thereby removing any spaces, special characters and numbers and converting it all the lower case.
+        return ans
+
+    def is_pal(s):
+        if len(s) <= 1:
+            return True
+        else:
+            return s[0] == s[-1] and is_pal(s[1:-1]) 
+            #purpose here is to test if the first letter and the last letter are equal and then to call on the function again recursively doing so on the remaining letters until we get a length of 1 or 0 letters (which is 100% a palindrome.
+
+    return is_pal(to_chars(s)) # calling on the is_pal recursion and instead of doing it directly on the string; we call it on our function that converts the string into something useable.
+
+print(is_palindrome('are weew era'))
+```
+
+## Modules and Files
+
+Modules is a .py file containing a collection of Python definitions and statements.
+
+You can import these .py files into the shell or into some other file if we want to use it there.
+
+Invoking the module:
+
+Inside some filename.py, we can define the variable pi = 3.14159 and have the definitions inside there be consistent with the variable we have there.
+
+In another file, we can import this file to use the definitions and code there within.
+
+```python
+import filename
+pi = 3
+print(pi)
+>>>3
+print(filename.pi)
+>>>3.14159
+print(filename.some_definition(3)))
+>>>will do the calculation based on using filename and applying it to the number we passed it
+```
+
+With the above code it means if we want to use the definitions or code from the file, we would need to append or use the **filename.*whatever*** in order to use the code inside the filename.
+
+Another option if we don't want to refer to variables by their module i.e **filename.*area*** or **filename.*variable_name***; we can use the:
+
+```python
+from filename import *
+```
+
+This has the effect of creating bindings within our current shell or scope for all objects defined inside **filename**
+
+### File handle
+
+handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other. 
+
+With the internal file handling, it doesn't require the operating system and can be done through various functions and options such as below
+
+```python
+name_handle = open('kids', 'w')
+
+
+#open is going to open up a file - access into a file.
+#the 'w' is for writing *directly* into it.
+
+name_handle.close()
+# The closed parenthesis shows we are *invoking* the close of the file.
+#When done I can close the file. shut up shop
+```
+
+There are some additional modularity such as **r** for only reading the file and as such can print lines or details from a file.
