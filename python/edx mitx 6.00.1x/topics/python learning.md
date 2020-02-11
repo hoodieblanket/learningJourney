@@ -471,6 +471,7 @@ There are some additional modularity such as **r** for only reading the file and
 
 ## Tuples, List, Mutability, Cloning
 
+### Tuples ()
 Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
 
 ```python
@@ -486,4 +487,100 @@ x = (1,) = Tuple
 x = (1) = Int
 However if the Tuple has multiple elements then you don't need to use the comma at the end to form a Tuple
 x = (1, 2, 3) = Tuple
+```
+
+### List []
+
+Big difference between **Tuples** and **Lists** is that the **Lists** are mutable; they can be changed.
+
+Lists containts elements, normally all of 1 type such as *all integers* or rarely mixed elements.
+
+They are also accessible by index, so you can do all the usual tests
+
+* len(List) # Get a length
+* List[0] # Find the index 
+* List[2] + 1 # Find the index and do something to it
+* List[3] # Go outside the list range and get errors
+
+The important distinction is that a List is mutable so we can perform the following
+
+* List[1] == 5 # changing index 1 to the integer 5
+
+### Operations on Lists
+
+Certain operations we can do with lists. As with lists, they are mutable so once you use operations on lists, it will change that variable or that list permanently.
+
+* The dot tells python to *get out some **method***
+
+```python
+List.append(n) # we can append or add another element to the list.
+List.extend[0,2] # Take a list and add to the end of it. Does not return anything until you call on the list
+del(List[1]) # to remove the element at index 1.
+pop(List)# Remove from the **end** of the list and returns the removed element
+List.remove(element) # a specific element by looking for the element and removes it, if multiple occurances then it will remove the first. If element not in the list then it will give an error.
+ListAB = ListA + ListB # We can concatenate two lists ListOne + ListTwo
+```
+
+#### Convert a List to Strings and back
+
+```python
+list(s) # returns a list with every character from s an element in the list\
+s.split() # Split the string on a character 
+s.split('<') # Split at this character
+''.join(list) # Will join all the characters i nthe list to produce a string
+'_'.join(list) # will do the same but place the special character '_' between each element of the list.
+```
+
+### Other Operations
+
+sorted() does not mutate the list while the **method** sort() mutates the list
+
+```python
+sorted(List) # returns a sorted version of List. Provides a sorted version of List but does not mutate it
+List.sort() # empty parenthesis to say invoke the function And this will mutate the List to be ordered
+List.reverse() # empty parenthesis to invoke the call. and this will mutate the list.
+List.insert(index, element) # inserting an element at the nth index. Returns none as it doesnt return anything
+List.count(element) # counts number of occurences. returns number
+```
+
+### Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS
+
+range is a special procedure and actually returns something that behaves like a **Tuple**
+
+For example  range(5) would bring a ***List*** [0, 1, 2, 3, 4].
+
+So this means you can think of it like a list similar to how you would slice or call on it. i.e range(5, 2, -1) using the step and going backwards and such.
+
+## Mutation, Aliasing, Cloning
+
+We need to be careful with variables with lists that we assign: assigning them to directly to each others list means if its mutated, it will affect both variables. 
+
+```python
+variable = ['sunny', 'windy', 'rainy']
+weather = variable
+# This points to the same list in the internal computer memory we have allocated. So if we change the list, it affects both variables and this may have unexpected consequences
+```
+
+Making a clone of this variable is easier in order to set up separate lists inside the memory allocation
+
+```python
+variable = ['sunny', 'windy', 'rainy']
+weather = variable[:]
+# this difference is that we are cloning and greater a second list for the variable *weather* so that each variable points to its own list.
+```
+
+Cloning is useful when I want to do something to a list that involves mutation but doesnt affect the original list.
+
+### Mutation and Iteration
+
+When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.
+
+Cloning lists is the best way to iterate correctly and keep python on track with each iteration
+
+```python
+def removeDuplicate(List1, List2):
+    List1_Copy = List1[:] # create a clone of List1
+    for e in List1_Copy:
+        if e in List2:
+            List1.remove(e) # Thereby iterate over each element in Copy, if the value is in List 2, then we remove it from List 1 and mutate the original: remove the duplicates
 ```

@@ -1,12 +1,4 @@
-def oddTuples(aTup):
-    '''
-    aTup: a tuple
-    
-    returns: tuple, every other element of aTup. 
-    '''
-    # Your Code Here
-    newTup = aTup[0::2]
-    return newTup
+[100, 0, 1, 7, 4, 1, 6, 3, 4]
+['x', 'z', 't', 'q']
 
-aTup = ('I', 'am', 'a', 'test', 'tuple')
-print(oddTuples(aTup))
+['q', 't', 'x']
