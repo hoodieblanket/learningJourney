@@ -473,9 +473,17 @@ There are some additional modularity such as **r** for only reading the file and
 
 Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
 
-```
+```python
 Tuples make use of *parenthesis* () for values inside tuples
 ```
 
 We cannot change the inner pieces of a Tuple, similar to how strings are immutable. We can add to it, we can splice it, but we cannot change the values.
 Tuples are also **Iterable** so it means you can walk down the tuple and use each value how you would like.
+
+```python
+for Tuples with only **1** element then you will make use of the comma in order to form a correct Tuple.
+x = (1,) = Tuple
+x = (1) = Int
+However if the Tuple has multiple elements then you don't need to use the comma at the end to form a Tuple
+x = (1, 2, 3) = Tuple
+```
