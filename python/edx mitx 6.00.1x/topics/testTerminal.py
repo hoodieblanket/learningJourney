@@ -1,4 +1,9 @@
-[100, 0, 1, 7, 4, 1, 6, 3, 4]
-['x', 'z', 't', 'q']
+testList = [-1, -2, -3, -4]
+def apply(testList,function):
+    for i in range(len(testList)):
+        testList[i] = function(testList[i])
+        print(testList)
+def power(a):
+    return a ** 2
 
-['q', 't', 'x']
+apply(testList, power)

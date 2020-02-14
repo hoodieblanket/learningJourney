@@ -472,6 +472,7 @@ There are some additional modularity such as **r** for only reading the file and
 ## Tuples, List, Mutability, Cloning
 
 ### Tuples ()
+
 Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
 
 ```python
@@ -498,7 +499,7 @@ Lists containts elements, normally all of 1 type such as *all integers* or rarel
 They are also accessible by index, so you can do all the usual tests
 
 * len(List) # Get a length
-* List[0] # Find the index 
+* List[0] # Find the index
 * List[2] + 1 # Find the index and do something to it
 * List[3] # Go outside the list range and get errors
 
@@ -525,7 +526,7 @@ ListAB = ListA + ListB # We can concatenate two lists ListOne + ListTwo
 
 ```python
 list(s) # returns a list with every character from s an element in the list\
-s.split() # Split the string on a character 
+s.split() # Split the string on a character
 s.split('<') # Split at this character
 ''.join(list) # Will join all the characters i nthe list to produce a string
 '_'.join(list) # will do the same but place the special character '_' between each element of the list.
@@ -553,7 +554,7 @@ So this means you can think of it like a list similar to how you would slice or 
 
 ## Mutation, Aliasing, Cloning
 
-We need to be careful with variables with lists that we assign: assigning them to directly to each others list means if its mutated, it will affect both variables. 
+We need to be careful with variables with lists that we assign: assigning them to directly to each others list means if its mutated, it will affect both variables.
 
 ```python
 variable = ['sunny', 'windy', 'rainy']
@@ -573,7 +574,7 @@ Cloning is useful when I want to do something to a list that involves mutation b
 
 ### Mutation and Iteration
 
-When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.
+When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.  
 
 Cloning lists is the best way to iterate correctly and keep python on track with each iteration
 
@@ -584,3 +585,76 @@ def removeDuplicate(List1, List2):
         if e in List2:
             List1.remove(e) # Thereby iterate over each element in Copy, if the value is in List 2, then we remove it from List 1 and mutate the original: remove the duplicates
 ```
+
+## Functions as Objects
+
+Functions are **first class objects** in saying that they :
+
+* Have types
+* can be elements of data structures like lists
+* can appear in expressions (as part of an assignment statement and as an argument to a function)
+
+Functions are particularly usefules as arguments when coupled with lists known as **higher order programming**
+
+```python
+def applyToEach(List,Function):
+    for i in range(len(List)):
+        L[i] = function(List[i]) # for each index I get out of the list, apply the function to it; then put it back into the list and replace that original [i] 
+# This will cycle through the list and at each index, apply the function and return it back to the list.
+# The list is amended and replaced with the function-applied index.
+List = [1, -2, 3.4]
+applyToEach(List,abs)
+# returns [1, 2, 3.4]
+applyToEach(List,int)
+# return [1, 2, 3]
+applyToEach (List, fact) #factorial function that we defined earlier on
+# returns [1, 2, 6]
+applyToEach(List, fib) #fibonacci function that we defined earlier on
+# returns [1, 2, 13]
+```
+
+In the reverse as well
+
+```python
+def applyFunctions(List, x):
+    for function in List:
+        print(function(x))
+
+applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we can to invoke in place of *List* and then apply those functions to the number 4 that we pass in
+#returns
+#4
+#4
+#24
+#5
+```
+
+### HOPS Higher Order Procedure
+
+#### Map 
+
+```python
+map(abs, [1, -2, 3, -4])
+# map will walk down the list provided in the argument and apply the function to each element. and allow us to print the outcome
+for elt in map(abs, [1, -2, 3, -4]):
+    print(elt)
+
+#returns [1, 2, 3, 4]
+```
+
+There is a difference here between what we did before; applying the functions to the index elements that we pull out and then we put the mutated elements back to that list
+
+That list always pointed to the same list in the memory so we are mutating that list with each iteration.
+
+By contrast, map gives me back a structure that acts like a list that I have to walk back out to get what I want; printing it out or using it.
+
+**map** can also be used to run down more than 1 list, apply a function to each item in each list and produce an outcome taking the **whole** data in to account
+
+```python
+list1 = [1, 28, 54]
+list2 = [2, 34, 17]
+for elt in map(min, list1, list2):
+    print(elt)
+#Returns the minimum of each index compared. so Index [0] for each list, the minimum is 1. For index [1] for each list, the minimum is 28 and for index [2] for each list, the minimum is 17
+#returns [1, 28, 17]
+```
+
