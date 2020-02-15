@@ -658,3 +658,97 @@ for elt in map(min, list1, list2):
 #returns [1, 28, 17]
 ```
 
+## Dictionaries
+
+With lists, you operate on a index starting at 0, and you have a element assigned to that index. as you walk through the list, the index and the element correspond to the place it is currently in the list
+
+With **dictionaries**, we have what is referred as ***keys*** and instead of asking for a zeroth element or ith element; we are going to say, *"give me the element associated with this key"*. 
+
+I can look up a **key** and retrieve all information associated with that **key**
+
+```python
+my_dictionary = {}
+#creating empty dictionary
+grades = {'Ana':'B', 'John':'A+', 'Casey':'C-'}
+grades['John']
+# Will return 'A+'
+grades ['Sylvan'] = 'A'
+# Will add a new entry into that dictionary
+'John' in grades
+# will return True or False if the key is in the dictionary
+del[grades['Ana']]
+# Deletes an entry
+grades.keys() #because its a method, open&close parenthesis calls the method
+# Returns an iterable of all keys, I can walk down all the collection of values and do something to them
+grades.values()
+# Returns an iterable of all values, I can walk down all the collection of values and do something to them
+```
+
+* Values = They can be anything, lists or even other dictionaries
+* Keys = Must be unique, Immutable type (int, float, string, tuple, bool)
+* Careful with using float type because if the float has a rounding or accuracy issue then we may no find the key associated with it
+* Dictionaries has no order guaranteed. Your **keys** are your calling cards and should not be thought of in terms of using indices to call positional elements.
+
+### List Comprehension and Dictionary Comprehension
+
+List comprehension and by extention dictionary comprehension is a great way of making readable, compact way of creating lists or dictionaries. Merging several lines into a single line that indicates which elements should be added to the list.
+
+#### List Comprehension
+
+```python
+list = []
+for i in range(15):
+    if i % 2 == 0:
+        list.append(i)
+```
+
+and then using **list comprehension**
+
+```python
+
+list = [i for i in range(15) if i % 2 == 0]
+# syntax being [value we return to list] for [element] in [sequence] if [condition]
+# so we iterate every each value from 0 to 14 but not including 15 and if the [condition] is met, the integer meets the criteria, then include the [value we return to the list] in the final list
+```
+
+For the above code:
+
+* the **condition** is optional as we can simply *i for i in range(15)* and return all integers into a list.
+* Not restricted to just integers, we can also have expressions to alter the [i] indices
+
+```python
+list = [i*3 for i in range(15) if i%2 == 0]
+# iterates over 0 - 14 and selects all *even* but we mutate the index value at each iteration.
+# if called, returns [0, 6, 12, 18, 24, 30, 36, 42]
+
+list = [value for value in namesDict.values() if value % 2 != 0]
+# depending on what is in the dictionary, we can iterate over each **value** in the dictionary and use the values to test the if [condition] then select those and assign them to the *list*
+```
+
+#### Dictionary Comprehension
+
+Python allows you to create new dictionaries from existing ones but assigning **different** ***values***
+
+```python
+dictionary = {key:new_vlaue for (key, value) in dictionary.items()}
+# iterates over the keys and values in a dictionary and adds the corresponding key and new value that is the result of an expression
+```
+
+For example for the following dictionary:
+
+```python
+grades = {"Nora": 90, "Lulu": 15, "Gino": 60}
+doubleGrades = {key: value*2 for (key, value) in grades.items()}
+doubleGrades
+# returns {'Nora': 180, 'Lulu': 30, 'Gino': 120}
+```
+
+You can also use **conditions** in dictionary comprehension
+
+```python
+grades = {"Nora": 90, "Lulu": 15, "Gino": 60}
+doubleGrades = {key: value*2 for (key, value) in grades.items() if value % 2 == 0}
+# selects only *even* if the **original** value was even
+doubleGrades
+# returns {'Nora': 180, 'Gino': 120}
+```
