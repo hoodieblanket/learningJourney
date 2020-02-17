@@ -599,7 +599,7 @@ Functions are particularly usefules as arguments when coupled with lists known a
 ```python
 def applyToEach(List,Function):
     for i in range(len(List)):
-        L[i] = function(List[i]) # for each index I get out of the list, apply the function to it; then put it back into the list and replace that original [i] 
+        L[i] = function(List[i]) # for each index I get out of the list, apply the function to it; then put it back into the list and replace that original [i]
 # This will cycle through the list and at each index, apply the function and return it back to the list.
 # The list is amended and replaced with the function-applied index.
 List = [1, -2, 3.4]
@@ -630,7 +630,7 @@ applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we
 
 ### HOPS Higher Order Procedure
 
-#### Map 
+#### Map
 
 ```python
 map(abs, [1, -2, 3, -4])
@@ -662,7 +662,7 @@ for elt in map(min, list1, list2):
 
 With lists, you operate on a index starting at 0, and you have a element assigned to that index. as you walk through the list, the index and the element correspond to the place it is currently in the list
 
-With **dictionaries**, we have what is referred as ***keys*** and instead of asking for a zeroth element or ith element; we are going to say, *"give me the element associated with this key"*. 
+With **dictionaries**, we have what is referred as ***keys*** and instead of asking for a zeroth element or ith element; we are going to say, *"give me the element associated with this key"*.
 
 I can look up a **key** and retrieve all information associated with that **key**
 
@@ -753,3 +753,55 @@ doubleGrades
 # returns {'Nora': 180, 'Gino': 120}
 ```
 
+## Global Variables
+
+Convenient when we want to keep track of information inside of a function
+
+Dangerous because:
+
+* Breaks the scoping of variables by function call
+* side effects unseen in your code by affecting the global scope
+
+**global** can be used by making the function or variables accessible **outside** of your define functions.
+
+### Fibonacci numbers using if statements and recursion versus dictionary and recursion
+
+```python
+numFibCalls = 0 # initialise our counter
+def fib(n):
+    global numFibCalls
+    numFibCalls += 1
+    if n == 0 or n == 1:
+        return n
+    #both base cases checked!
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(fib(12))
+print('Number of times the function is called: ', numFibCalls)
+
+# 144
+# Number of times the function is called:  465
+```
+
+and dictionary
+
+```python
+numFibCalls = 0
+def fibefficient(n, d):
+    global numFibCalls
+    numFibCalls += 1
+    if n in d:
+        return d[n]
+    else:
+        ans = fibefficient(n-1, d) + fibefficient(n-2, d)
+        d[n] = ans
+        return ans
+
+d = {0:0, 1:1}
+print(fibefficient(12,d))
+print('Number of times the function is called: ', numFibCalls)
+
+# 144
+# Number of times the function is called:  23
+```

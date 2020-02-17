@@ -5,6 +5,8 @@
     New File in Explorer window: alt + o
     New folder in explorer window: alt + k
     View/Move cursor to explorer: alt + shift + e
+    Open Interactive Python Window alt + shift + -
+    Open File in Interactive Python Window alt + shift + =
 
 ## Open Markdown preview
 
