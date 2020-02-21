@@ -12,4 +12,4 @@ def fib_efficient (n,d):
 
 #test case
 d = {0:0, 1:1}
-print(fib_efficient(12, d))
+print(fib_efficient(6, d))

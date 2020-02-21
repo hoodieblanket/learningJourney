@@ -725,6 +725,18 @@ list = [value for value in namesDict.values() if value % 2 != 0]
 # depending on what is in the dictionary, we can iterate over each **value** in the dictionary and use the values to test the if [condition] then select those and assign them to the *list*
 ```
 
+#### List comprehension with all()
+
+The all() method returns True boolean if all elements within an iterable is True otherwise it returns False
+
+Syntax `all (iterable)`
+
+```python
+secretWord = 'durian'
+lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
+
+all("".join c in lettersGuessed for c in secretWord)
+
 #### Dictionary Comprehension
 
 Python allows you to create new dictionaries from existing ones but assigning **different** ***values***
