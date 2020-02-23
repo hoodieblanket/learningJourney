@@ -723,6 +723,13 @@ list = [i*3 for i in range(15) if i%2 == 0]
 
 list = [value for value in namesDict.values() if value % 2 != 0]
 # depending on what is in the dictionary, we can iterate over each **value** in the dictionary and use the values to test the if [condition] then select those and assign them to the *list*
+
+#another example
+secretWord = 'durian'
+lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
+
+    return len(("".join(char for char in lettersGuessed if char in secretWord))) == len(secretWord)
+
 ```
 
 #### List comprehension with all()
@@ -735,7 +742,27 @@ Syntax `all (iterable)`
 secretWord = 'durian'
 lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
-all("".join c in lettersGuessed for c in secretWord)
+    all(c in lettersGuessed for c in secretWord)
+    # single liner using list comprehension rules to produce a boolean returned.
+    >>> True
+```
+
+#### List comprehension with set()
+
+Basic uses of set() includes membership testing and eliminating duplicate entries
+
+curly braces or the set() function can be used to creat sets.
+Note: to create an empty set, you have to use set(). Curly braces will only create an empty dictionary
+
+```python
+secretWord = 'durian'
+lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
+
+set(lettersGuessed) >= set(secretWord)
+#or
+set(c for c in lettersGuessed if c in secretWord)
+# returns {'a', 'd', 'i', 'n', 'r', 'u'} just need to compare the set to secretWord
+```
 
 #### Dictionary Comprehension
 
