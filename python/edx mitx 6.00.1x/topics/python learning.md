@@ -844,3 +844,65 @@ print('Number of times the function is called: ', numFibCalls)
 # 144
 # Number of times the function is called:  23
 ```
+
+## Testing and Debugging
+
+Design code that can easily test and debugged by breaking up the code into simplified modules that allows you to test each module to the design of how you wanted it to function.
+
+### Unit Testing
+
+* Take each piece of program and validate it
+* testing each function separately
+
+### Regression Testing
+
+* Add test for bugs as you find them in a function
+* Catch reintroduced errors that were previously fixed
+
+### Integration testing
+
+* Does overall program work?
+
+### Black Box Testing
+
+Testing by going through the specifications to realise any potential bugs. This method is designed to be done without looking at the code
+
+#### Summary (Black Box Testing)
+
+* designed without looking at the code
+* Just look at the specifications
+* Explore paths through specifications
+  * Empty list, list of 1 and list of many and so on
+  * What if I have any extreme cases of really large numbers, or really small numbers
+  * Testing floats and negatives if the specifications shows its designed for it
+
+### Glass Box Testing
+
+Testing by going through the **code** and following the available paths to reach potential bugs. This method is designed to just complete the grunt work.
+
+For example:
+
+```python
+def abs(x):
+    """ Assumes x is an int
+    returns x if x>=0 and -x otherwise"""
+    if x < -1:
+        return -x
+    else:
+        return x
+```
+
+The above code shows that path-complete tests could *miss a bug*, using path-complete testing such as **abs(2)** or **abs(-2)** would test each path however if you failed to complete boundary case testing then you would miss that **abs(-1)** incorrectly returns **-1**
+
+#### Summary (Glass Box Testing)
+
+* Designed with looking at the code
+* Use code directly to guide design of test cases
+* **path-complete** if every potential path through code is tested at least once
+* ***Drawbacks include:***
+  * can go through loops arbitrarily many times
+  * missing paths
+* ***Guidelines***
+  * **branches** - exercise all parts of a conditional
+  * **for loops** - loop not entered; body of loop executed exactly once; body of loop executed more than once
+  * **while loops** - same as **for loops**, cases that catch all ways to exit loop
