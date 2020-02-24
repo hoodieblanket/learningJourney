@@ -1,5 +1,61 @@
 # Python Learning
 
+## Table of Contents
+
+- [Python Learning](#python-learning)
+  - [Table of Contents](#table-of-contents)
+  - [IF Statements](#if-statements)
+  - [AND, OR, NOT](#and-or-not)
+  - [Strings](#strings)
+  - [Python 'in' operator](#python-in-operator)
+  - [Input/Output](#inputoutput)
+  - [While Statements](#while-statements)
+  - [For Loop Statements](#for-loop-statements)
+  - [Break Statement](#break-statement)
+  - [Modulus division](#modulus-division)
+  - [abs() Function](#abs-function)
+  - [Bisectional Searching](#bisectional-searching)
+    - [*This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*](#this-is-really-powerful-as-the-computation-time-is-dramatically-reduced-by-halving-and-throwing-away-the-data-we-dont-need)
+  - [Call/Invoke a Function](#callinvoke-a-function)
+    - [Returning a function](#returning-a-function)
+    - [*Some rules for functions*](#some-rules-for-functions)
+    - [Scopes inside scopes inside scopes, scopes all the way down](#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
+  - [Inheritance](#inheritance)
+  - [Recursion](#recursion)
+    - [*Some rules*](#some-rules)
+  - [Modules and Files](#modules-and-files)
+    - [File handle](#file-handle)
+  - [Tuples, List, Mutability, Cloning](#tuples-list-mutability-cloning)
+    - [Tuples ()](#tuples)
+    - [List []](#list)
+    - [Operations on Lists](#operations-on-lists)
+      - [Convert a List to Strings and back](#convert-a-list-to-strings-and-back)
+    - [Other Operations](#other-operations)
+    - [Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](#bringing-it-all-together-loops-functions-range-and-lists)
+  - [Mutation, Aliasing, Cloning](#mutation-aliasing-cloning)
+    - [Mutation and Iteration](#mutation-and-iteration)
+  - [Functions as Objects](#functions-as-objects)
+    - [HOPS Higher Order Procedure](#hops-higher-order-procedure)
+      - [Map](#map)
+  - [Dictionaries](#dictionaries)
+    - [List Comprehension and Dictionary Comprehension](#list-comprehension-and-dictionary-comprehension)
+      - [List Comprehension](#list-comprehension)
+      - [List comprehension with all()](#list-comprehension-with-all)
+      - [List comprehension with set()](#list-comprehension-with-set)
+      - [Dictionary Comprehension](#dictionary-comprehension)
+  - [Global Variables](#global-variables)
+    - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
+  - [Testing and Debugging](#testing-and-debugging)
+    - [Unit Testing](#unit-testing)
+    - [Regression Testing](#regression-testing)
+    - [Integration testing](#integration-testing)
+    - [Black Box Testing](#black-box-testing)
+      - [Summary (Black Box Testing)](#summary-black-box-testing)
+    - [Glass Box Testing](#glass-box-testing)
+      - [Summary (Glass Box Testing)](#summary-glass-box-testing)
+    - [Debugging](#debugging)
+      - [Error Messages](#error-messages)
+
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
 
 ## IF Statements
@@ -243,10 +299,10 @@ Using this technique you can test for even numbers by using **mod** division and
 
 ## abs() Function
 
-### *abs(number)*
+Syntax follows the `abs(number)` format.
 
-Used to return the absolute value of a number.
-It can be integer, a floating point number or complex number.
+- Used to return the absolute value of a number
+- It can be integer, a floating point number or complex number
 
 ```python
 float = -54.22
@@ -331,10 +387,10 @@ add(3,1)
 
 ### *Some rules for functions*
 
-* Only one **return** will be completed as the **return** order throws you outside of the function.
-* Any code inside of the function but **after** the **return** statement will be ignored.
-* If you dont have an explicit return given inside the function, then it will return the value **None**
-* Value is given to the function caller, so functions have a value associated with it
+- Only one **return** will be completed as the **return** order throws you outside of the function.
+- Any code inside of the function but **after** the **return** statement will be ignored.
+- If you dont have an explicit return given inside the function, then it will return the value **None**
+- Value is given to the function caller, so functions have a value associated with it
 
 ### Scopes inside scopes inside scopes, scopes all the way down
 
@@ -373,11 +429,11 @@ Design solutions to problems by breaking it up into pieces that you can use.
 
 ### *Some rules*
 
-* Each recursive call to a function creates its own scope/environment
-* Bindings of variables in a scope is not changed by recursive call
-* flow of controll passes back to previous scope once function call returns value
-* Figure out what *Base Case* to use - i.e what is the bottom line.
-* Within recursion you won't have conditions to meet that will break you out of the loop. Therefore its important to make sure that you are **changing** the parameter so that you meet the base case. i.e you are running each successive recursion, with a smaller version of the parameter. Eventually hitting a floor, and your **test case**.
+- Each recursive call to a function creates its own scope/environment
+- Bindings of variables in a scope is not changed by recursive call
+- flow of controll passes back to previous scope once function call returns value
+- Figure out what *Base Case* to use - i.e what is the bottom line.
+- Within recursion you won't have conditions to meet that will break you out of the loop. Therefore its important to make sure that you are **changing** the parameter so that you meet the base case. i.e you are running each successive recursion, with a smaller version of the parameter. Eventually hitting a floor, and your **test case**.
 
 ```python
 def mult(a,b):
@@ -498,20 +554,20 @@ Lists containts elements, normally all of 1 type such as *all integers* or rarel
 
 They are also accessible by index, so you can do all the usual tests
 
-* len(List) # Get a length
-* List[0] # Find the index
-* List[2] + 1 # Find the index and do something to it
-* List[3] # Go outside the list range and get errors
+- len(List) # Get a length
+- List[0] # Find the index
+- List[2] + 1 # Find the index and do something to it
+- List[3] # Go outside the list range and get errors
 
 The important distinction is that a List is mutable so we can perform the following
 
-* List[1] == 5 # changing index 1 to the integer 5
+- List[1] == 5 # changing index 1 to the integer 5
 
 ### Operations on Lists
 
 Certain operations we can do with lists. As with lists, they are mutable so once you use operations on lists, it will change that variable or that list permanently.
 
-* The dot tells python to *get out some **method***
+- The dot tells python to *get out some **method***
 
 ```python
 List.append(n) # we can append or add another element to the list.
@@ -590,9 +646,9 @@ def removeDuplicate(List1, List2):
 
 Functions are **first class objects** in saying that they :
 
-* Have types
-* can be elements of data structures like lists
-* can appear in expressions (as part of an assignment statement and as an argument to a function)
+- Have types
+- can be elements of data structures like lists
+- can appear in expressions (as part of an assignment statement and as an argument to a function)
 
 Functions are particularly usefules as arguments when coupled with lists known as **higher order programming**
 
@@ -684,10 +740,10 @@ grades.values()
 # Returns an iterable of all values, I can walk down all the collection of values and do something to them
 ```
 
-* Values = They can be anything, lists or even other dictionaries
-* Keys = Must be unique, Immutable type (int, float, string, tuple, bool)
-* Careful with using float type because if the float has a rounding or accuracy issue then we may no find the key associated with it
-* Dictionaries has no order guaranteed. Your **keys** are your calling cards and should not be thought of in terms of using indices to call positional elements.
+- Values = They can be anything, lists or even other dictionaries
+- Keys = Must be unique, Immutable type (int, float, string, tuple, bool)
+- Careful with using float type because if the float has a rounding or accuracy issue then we may no find the key associated with it
+- Dictionaries has no order guaranteed. Your **keys** are your calling cards and should not be thought of in terms of using indices to call positional elements.
 
 ### List Comprehension and Dictionary Comprehension
 
@@ -713,8 +769,8 @@ list = [i for i in range(15) if i % 2 == 0]
 
 For the above code:
 
-* the **condition** is optional as we can simply *i for i in range(15)* and return all integers into a list.
-* Not restricted to just integers, we can also have expressions to alter the [i] indices
+- the **condition** is optional as we can simply *i for i in range(15)* and return all integers into a list.
+- Not restricted to just integers, we can also have expressions to alter the [i] indices
 
 ```python
 list = [i*3 for i in range(15) if i%2 == 0]
@@ -798,8 +854,8 @@ Convenient when we want to keep track of information inside of a function
 
 Dangerous because:
 
-* Breaks the scoping of variables by function call
-* side effects unseen in your code by affecting the global scope
+- Breaks the scoping of variables by function call
+- side effects unseen in your code by affecting the global scope
 
 **global** can be used by making the function or variables accessible **outside** of your define functions.
 
@@ -851,17 +907,17 @@ Design code that can easily test and debugged by breaking up the code into simpl
 
 ### Unit Testing
 
-* Take each piece of program and validate it
-* testing each function separately
+- Take each piece of program and validate it
+- testing each function separately
 
 ### Regression Testing
 
-* Add test for bugs as you find them in a function
-* Catch reintroduced errors that were previously fixed
+- Add test for bugs as you find them in a function
+- Catch reintroduced errors that were previously fixed
 
 ### Integration testing
 
-* Does overall program work?
+- Does overall program work?
 
 ### Black Box Testing
 
@@ -869,12 +925,12 @@ Testing by going through the specifications to realise any potential bugs. This 
 
 #### Summary (Black Box Testing)
 
-* designed without looking at the code
-* Just look at the specifications
-* Explore paths through specifications
-  * Empty list, list of 1 and list of many and so on
-  * What if I have any extreme cases of really large numbers, or really small numbers
-  * Testing floats and negatives if the specifications shows its designed for it
+- designed without looking at the code
+- Just look at the specifications
+- Explore paths through specifications
+  - Empty list, list of 1 and list of many and so on
+  - What if I have any extreme cases of really large numbers, or really small numbers
+  - Testing floats and negatives if the specifications shows its designed for it
 
 ### Glass Box Testing
 
@@ -896,35 +952,35 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
 
 #### Summary (Glass Box Testing)
 
-* Designed with looking at the code
-* Use code directly to guide design of test cases
-* **path-complete** if every potential path through code is tested at least once
-* ***Drawbacks include:***
-  * can go through loops arbitrarily many times
-  * missing paths
-* ***Guidelines***
-  * **branches** - exercise all parts of a conditional
-  * **for loops** - loop not entered; body of loop executed exactly once; body of loop executed more than once
-  * **while loops** - same as **for loops**, cases that catch all ways to exit loop
+- Designed with looking at the code
+- Use code directly to guide design of test cases
+- **path-complete** if every potential path through code is tested at least once
+- ***Drawbacks include:***
+  - can go through loops arbitrarily many times
+  - missing paths
+- ***Guidelines***
+  - **branches** - exercise all parts of a conditional
+  - **for loops** - loop not entered; body of loop executed exactly once; body of loop executed more than once
+  - **while loops** - same as **for loops**, cases that catch all ways to exit loop
 
 ### Debugging
 
 #### Error Messages
 
-* **IndexError**
-  * trying to access beyond the limits of a list
-  * `test = [1,2,3]`
-  * `test[4]`
-* **TypeError**
-  * trying to convert an inappropriate type
-  * `int(test)`
-* **NameError**
-  * referencing a non-existing variable
-  * `a`
-* **TypeError**
-  * Mixing data types without appropriate coercion
-  * `'3'/4`
-* **SyntaxError**
-  * forgetting to close parenthesis, quotation etc
-  * `a = len([1, 2, 3, 4]`
-  * `print a`
+- **IndexError**
+  - trying to access beyond the limits of a list
+  - `test = [1,2,3]`
+  - `test[4]`
+- **TypeError**
+  - trying to convert an inappropriate type
+  - `int(test)`
+- **NameError**
+  - referencing a non-existing variable
+  - `a`
+- **TypeError**
+  - Mixing data types without appropriate coercion
+  - `'3'/4`
+- **SyntaxError**
+  - forgetting to close parenthesis, quotation etc
+  - `a = len([1, 2, 3, 4]`
+  - `print a`
