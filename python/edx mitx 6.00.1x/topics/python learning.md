@@ -906,3 +906,25 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
   * **branches** - exercise all parts of a conditional
   * **for loops** - loop not entered; body of loop executed exactly once; body of loop executed more than once
   * **while loops** - same as **for loops**, cases that catch all ways to exit loop
+
+### Debugging
+
+#### Error Messages
+
+* **IndexError**
+  * trying to access beyond the limits of a list
+  * `test = [1,2,3]`
+  * `test[4]`
+* **TypeError**
+  * trying to convert an inappropriate type
+  * `int(test)`
+* **NameError**
+  * referencing a non-existing variable
+  * `a`
+* **TypeError**
+  * Mixing data types without appropriate coercion
+  * `'3'/4`
+* **SyntaxError**
+  * forgetting to close parenthesis, quotation etc
+  * `a = len([1, 2, 3, 4]`
+  * `print a`
