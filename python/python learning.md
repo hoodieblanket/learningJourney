@@ -54,6 +54,7 @@
       - [Summary (Glass Box Testing)](#summary-glass-box-testing)
     - [Debugging](#debugging)
       - [Error Messages](#error-messages)
+    - [Print Statement Debugging](#print-statement-debugging)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
 
@@ -1023,3 +1024,14 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
   - forgetting to close parenthesis, quotation etc
   - `a = len([1, 2, 3, 4]`
   - `print a`
+
+### Print Statement Debugging
+
+Print statements are great for debugging, use the following steps to break it down:
+
+- Print when you enter a function
+- Print out the values of the parameter - Make sure they are what you expect.
+- Print Result to check if its expected
+- Bisection method used to debugging - Place the print statement in the middle of the code\
+and work through and see if the bug is higher or lower
+
