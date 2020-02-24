@@ -15,7 +15,6 @@
   - [Modulus division](#modulus-division)
   - [abs() Function](#abs-function)
   - [Bisectional Searching](#bisectional-searching)
-    - [*This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*](#this-is-really-powerful-as-the-computation-time-is-dramatically-reduced-by-halving-and-throwing-away-the-data-we-dont-need)
   - [Call/Invoke a Function](#callinvoke-a-function)
     - [Returning a function](#returning-a-function)
     - [*Some rules for functions*](#some-rules-for-functions)
@@ -67,6 +66,8 @@ elif Else this code
 else If nothing Else then proceed to this code
 ```
 
+[Back to Top](#table-of-contents)
+
 ## AND, OR, NOT
 
 ```python
@@ -84,6 +85,8 @@ not (not (46>25) and (5>6 or 6<3)) and (5<3 or not (3<5))
 The overall statement returns False
 
 `Precedence in order to evaluate: not>and>or`
+
+[Back to Top](#table-of-contents)
 
 ## Strings
 
@@ -139,6 +142,8 @@ s[::-1]
 #returns: '!nuF si nohtyP'
 ```
 
+[Back to Top](#table-of-contents)
+
 ## Python 'in' operator
 
 The operators **in** and **not in** test for *collection membership*
@@ -157,6 +162,8 @@ equivalant expression to
 not (element in coll)
 ```
 
+[Back to Top](#table-of-contents)
+
 ## Input/Output
 
 With print statements as well as input statements.
@@ -171,7 +178,7 @@ print(5 * number)
 # This converts the input provided and casts it into a **integer** type for our purposes or uses later.
 ```
 
-<a href="#Python Learning">back to top</a>
+[Back to Top](#table-of-contents)
 
 ## While Statements
 
@@ -228,6 +235,8 @@ print (str(x) + '*' + str(x) + ' = ' + str(answer))
 
 This code will step into the while loop, check if iterations is **0**. If not, then it will run the code until iterations is *equal to 0*. Meanwhile the variable **answer** is changed as we repeat the loop each time and **iterationsleft** is reduced for each repeated loop. This way our **x** variable remains unchanged and as **answer** gets adjusted by adding in **x** again, this way we are adding **x** to itself for **x** amount of times: Thereby ***squaring*** the number.
 
+[Back to Top](#table-of-contents)
+
 ## For Loop Statements
 
 ```python
@@ -265,6 +274,8 @@ print(total)
 #this will run through the numbers and add each number to the **total** and this will also be inclusive of the end index **somenumber**
 ```
 
+[Back to Top](#table-of-contents)
+
 ## Break Statement
 
 Using a statement to break out of some code at a certain point
@@ -280,6 +291,8 @@ for i in range(5:11:2):
 print(mysum)
 # This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
+
+[Back to Top](#table-of-contents)
 
 ## Modulus division
 
@@ -298,6 +311,8 @@ The mod sign % used in a test has the following general english explanation:
 ```
 
 Using this technique you can test for even numbers by using **mod** division and it will determine if the number is able to be evenly split, thereby being **even**.
+
+[Back to Top](#table-of-contents)
 
 ## abs() Function
 
@@ -318,11 +333,13 @@ print('absolute value or magnitude of complex is: ', abs(complex))
 #prints 5.0
 ```
 
+[Back to Top](#table-of-contents)
+
 ## Bisectional Searching
 
 if you are trying to find a specific number and you know the beginning and end parameters then bisectional search is a great way to efficiently and effectively reach the outcome. Each step you are halving the available data and then you continue to repeat the step until you have found your answer.
 
-### *This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need*
+This is really powerful as the computation time is dramatically reduced by halving and throwing away the data we dont need
 
 ```python
 x = 25
@@ -362,6 +379,8 @@ is_even(3) # calling the function using its name and values for parameters.
 
 # as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
 ```
+
+[Back to Top](#table-of-contents)
 
 ### Returning a function
 
@@ -425,9 +444,13 @@ x = 3
 z = g(x)
 ```
 
+[Back to Top](#table-of-contents)
+
 ## Recursion
 
 Design solutions to problems by breaking it up into pieces that you can use.
+
+[Back to Top](#table-of-contents)
 
 ### *Some rules*
 
@@ -507,6 +530,8 @@ from filename import *
 
 This has the effect of creating bindings within our current shell or scope for all objects defined inside **filename**
 
+[Back to Top](#table-of-contents)
+
 ### File handle
 
 handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other.
@@ -528,6 +553,8 @@ name_handle.close()
 There are some additional modularity such as **r** for only reading the file and as such can print lines or details from a file.
 
 ## Tuples, List, Mutability, Cloning
+
+[Back to Top](#table-of-contents)
 
 ### Tuples ()
 
@@ -630,6 +657,8 @@ weather = variable[:]
 
 Cloning is useful when I want to do something to a list that involves mutation but doesnt affect the original list.
 
+[Back to Top](#table-of-contents)
+
 ### Mutation and Iteration
 
 When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.  
@@ -685,6 +714,8 @@ applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we
 #24
 #5
 ```
+
+[Back to Top](#table-of-contents)
 
 ### HOPS Higher Order Procedure
 
@@ -746,6 +777,8 @@ grades.values()
 - Keys = Must be unique, Immutable type (int, float, string, tuple, bool)
 - Careful with using float type because if the float has a rounding or accuracy issue then we may no find the key associated with it
 - Dictionaries has no order guaranteed. Your **keys** are your calling cards and should not be thought of in terms of using indices to call positional elements.
+
+[Back to Top](#table-of-contents)
 
 ### List Comprehension and Dictionary Comprehension
 
@@ -861,6 +894,8 @@ Dangerous because:
 
 **global** can be used by making the function or variables accessible **outside** of your define functions.
 
+[Back to Top](#table-of-contents)
+
 ### Fibonacci numbers using if statements and recursion versus dictionary and recursion
 
 ```python
@@ -906,6 +941,8 @@ print('Number of times the function is called: ', numFibCalls)
 ## Testing and Debugging
 
 Design code that can easily test and debugged by breaking up the code into simplified modules that allows you to test each module to the design of how you wanted it to function.
+
+[Back to Top](#table-of-contents)
 
 ### Unit Testing
 
