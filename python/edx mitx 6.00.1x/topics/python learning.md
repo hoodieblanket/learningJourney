@@ -171,6 +171,8 @@ print(5 * number)
 # This converts the input provided and casts it into a **integer** type for our purposes or uses later.
 ```
 
+<a href="#Python Learning">back to top</a>
+
 ## While Statements
 
 if the condition is true, then execute the code and go back to check the condition. Continue to do the condition until that condition is false.
