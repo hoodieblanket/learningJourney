@@ -195,6 +195,8 @@ Difficult to say as the internet's answer is always the same: it's up to the dev
 |Link       |Link           |
 |Physical   |Physical       |
 
+![alt text](https://github.com/hoodieblanket/learningJourney/blob/master/images/protocolLayering.png "Layers upon layers like an onion")
+
 ### Application Layer
 
 Network apps and their protocols reside in this layer.
