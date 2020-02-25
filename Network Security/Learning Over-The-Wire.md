@@ -26,6 +26,10 @@
 `sort` is useful dealing with large data sets and you want to organise the data in a certain way. `-R` random shuffle but group identical keys. `-f` to fold lowercase to upper case. `-i` consider only printable characters
 `base64` to encode data that you feed or a file that you want to encode. using `base 64 -d` will decode the data back to what you had previously.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## SSH
 
 `ssh something.labs.org -p 80 -l username` is an example of the use of *-p* to set the port and *-l* to set the username\
@@ -43,6 +47,10 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 
 **_SSH Usage_** Secure Shell can log into a remote machine and execute commands but it also supports tunneling, forwarding TCP ports and X11 connections. Additionally it can also transfer files using SSH File Transfer `SFTP` or Secure Copy Protocols `SCP`.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## `Find` and its difficulties
 
 Modifiers
@@ -59,6 +67,10 @@ Using find we can narrow down our search to certain properties for example `find
 
 Additionally adding in `-type f # to specify that we are looking for a FILE` will return all the files but also will return entries that we may not have access to which will display 'permission denied'. Using `2>/dev/null` will remove all error messages and narrow it down specifically to the file we need.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## `grep` and its difficulties
 
 Modifiers
@@ -72,6 +84,10 @@ Searching for patterns or repeats within a file. Additionally you can print also
 
 using options such as `-i` will ignore upper or lowercase. `-w` will use whole word searching only and reject any variance. `-n` will provide the line number that the searched word exists. `-r` will recursively search in not only the current directory but all its child directories.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## Current Directory and Parent Directory navigation
 
 Commands
@@ -81,6 +97,10 @@ Commands
 
 **_Single and Double dots (. or ..) when found with `ls -a` in directory_**\
 a *single dot* represents the current working directory, and *two dots* denote the parent (higher) directory. So using `cd .` will not perform anything as you are currently in that directory but `cd ..` will proceed to the parent directory even when you don't normally have access. For example `cd . (/home/hdy/documents)` and `cd .. (/home/hdy)`
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Using '-' as a filename and its difficulties
 
@@ -94,9 +114,17 @@ When using `cat` on the string `-`, it treats it as a synonym for `stdin` so you
 
 Same way if the filename clashes with the command line such as naming a file `-e` which you would normally use on some command line such as `command -e do/something/here`. So this work around with `cat` will be useful if you prefix the path to the filename.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## 2>/dev/null and its difficulties
 
 This redirects errors into /dev/null, which is sort-of 'file' that ignores and deletes everything it receives. This is how you remove the errors such as permission errors from your output and left with the result that you want. `>` redirects the output of a command to wherever you want; by default it will redirect what's called `stdout` (*which is what standard console output is called*) but if you were to do that in this case yoeu'd end up not seeing ANY results as all of the output of your command would end up being directed to /dev/null and wiped out. So what you do is put a `2` infront so that its `2>` which is a parameter that specifics that just the *error messages* should be redirected.
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Nmap Network Mapper
 
@@ -118,3 +146,7 @@ In a nutshell:
 Examples
 
 `nmap -sC (for default scripts) -sV (enumerate versions) -oA (output all formats) nmap 10.10.10.117`
+
+[Back to Top](#table-of-contents)
+
+---

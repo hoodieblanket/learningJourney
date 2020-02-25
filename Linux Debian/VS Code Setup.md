@@ -31,6 +31,8 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Open Markdown preview
 
     In a Markdown file, use
@@ -39,6 +41,8 @@
     Keyboard Shortcut: Ctrl+Shift+V
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Markdown Commands
 
@@ -53,6 +57,8 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Side by side Markdown edit and preview
 
     In a Markdown file, use
@@ -63,11 +69,15 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Move to Explorer window
 
     Keyboard Shortcut: Alt + Shift + E
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Side by side editing
 
@@ -75,11 +85,15 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Toggle Sidebar
 
     Keyboard Shortcut: Ctrl+B
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Errors and warnings
 
@@ -87,11 +101,15 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Quickly jump to errors and warnings in the project
 
     Cycle through errors with F8 or Shift+F8
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Quick Open
 
@@ -99,11 +117,15 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Move line up and down
 
     Keyboard Shortcut: Alt+Up or Alt+Down
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Go to Symbol in Workspace e.g #todo
 
@@ -111,17 +133,23 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Code folding
 
     Keyboard Shortcut: Ctrl+Shift+[ and Ctrl+Shift+]
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Select current line
 
     Keyboard Shortcut: Ctrl+L
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Go to Definition
 
@@ -133,8 +161,12 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Rename Symbol
 
     Select a symbol then type F2. Alternatively, you can use the context menu.
 
 [Back to Top](#table-of-contents)
+
+---

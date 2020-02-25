@@ -57,6 +57,10 @@ My interests as they develop over time: progressing my self-learning. Slow and s
     - [Debugging](https://github.com/hoodieblanket/learningJourney/blob/master/python/edx%20mitx%206.00.1x/topics/python%20learning.md#debugging)
       - [Error Messages](https://github.com/hoodieblanket/learningJourney/blob/master/python/edx%20mitx%206.00.1x/topics/python%20learning.md#error-messages)
 
+[Back to Top](#learning-journey)
+
+---
+
 ## Python Programs and Scripts
 
 - [Hangman](https://github.com/hoodieblanket/learningJourney/tree/master/python/Programs%20and%20Scripts/hangman)
@@ -77,6 +81,10 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 - [Count the number of sets in a string](https://github.com/hoodieblanket/learningJourney/blob/master/python/Programs%20and%20Scripts/Number%20of%20substrings.py)
 - [Towers of Hanoi](https://github.com/hoodieblanket/learningJourney/blob/master/python/Programs%20and%20Scripts/Towers%20of%20Hanoi.py)
 
+[Back to Top](#learning-journey)
+
+---
+
 ## Network Security and What I am focusing on
 
 - [Networks and the Internet](https://github.com/hoodieblanket/learningJourney/blob/master/Networking/Networks%20and%20the%20Internet.md)
@@ -86,6 +94,10 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 - [OWASP - Open Web Application Security Project](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
 - [OSCP](https://www.offensive-security.com)
 
+[Back to Top](#learning-journey)
+
+---
+
 ## OSCP Studying Resources
 
 - [OSCP Syllabus](https://www.offensive-security.com/pwk-syllabus/)
@@ -93,6 +105,10 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 - [PenTesterLab](https://pentesterlab.com/)
 - [Tulpa Security Prep Guide](https://tulpa-security.com/2016/09/19/prep-guide-for-offsecs-pwk/)
 - [abatchy's blog Prep Guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob.html)
+
+[Back to Top](#learning-journey)
+
+---
 
 ## Linux // Debian
 
@@ -104,3 +120,7 @@ This document is just my own collection of typical processes, learnings and mapp
 - My learning journey through linux and using debian as my operating system
   
 - [Visual Studio Code shortcuts and setup](https://github.com/hoodieblanket/learningJourney/blob/master/Linux%20Debian/VS%20Code%20Setup.md)
+
+[Back to Top](#learning-journey)
+
+---

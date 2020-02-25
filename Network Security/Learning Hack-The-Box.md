@@ -18,12 +18,18 @@
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## For Base64 encoding
 
 Modifiers
 
 `-d` decode rather than encode the data
 `-i` ignore non-alphabetical characters and thereby remove garbage
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Using `echo` and pipe `|` to decode `base64` encoding
 
@@ -33,6 +39,8 @@ Modifiers
 `base64 -d` - the "d" being decode. removing the `-d` will just default to *encoding* into base 64
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## For ROT13 encoding
 
@@ -45,10 +53,16 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### using `echo` and pipe `|` to decode ROT13 or ROT47
 
 `echo` - in order to produce the string
 `|` - the "pipe" to send the string into the next function
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## For ROT47 encoding
 
@@ -59,6 +73,8 @@ Produces `%96 "F:4< qC@H? u@I yF>AD ~G6C %96 {2KJ s@8`
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Webapp searching
 
 Webapp searching using the developer tools for the browser and checking under `Inspector` for interesting urls
@@ -68,3 +84,5 @@ Webapp searching using the developer tools for the browser and checking under `I
 - For example, having an invite-only website that would not usually be accessbile however referring under console, just typing the detail such as `makeInviteCode();` will produce results and show possible links and additional information to potentially create your own invite code
 
 [Back to Top](#table-of-contents)
+
+---

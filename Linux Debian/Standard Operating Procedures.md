@@ -76,6 +76,8 @@
 `tar -xvf yourfile.tar` To untar a file to current directory
 `file` Will tell you the type of file and info related to the type of file
 
+---
+
 ### System updating, upgrading and maintenance
 
 sudo apt install # install package \
@@ -89,30 +91,42 @@ sudo apt update # update the package cache \
 sudo apt upgrade # upgrade packages \
 sudo apt dist-upgrade # upgrade distribution
 
+---
+
 ### Display and Change hostname
 
 `hostnamectl` - Display hostname details \
 `sudo hostnamectl set-hostname typehostnamehere` # display the hostname and will change the hostname
 
+---
+
 ### Launching programs not tied to terminal
 
 firefox & disown #not tied to terminal or (firefox &) or nohup firefox&
+
+---
 
 ### Unzipping a file
 
 unzip a zip file and using -d to indicate directory name \
 unzip file.zip -d newdirectory
 
+---
+
 ### Installing .deb file
 
 sudo apt install ~/directory/directory/filename.deb
 sudo dpkg -i filename.deb
+
+---
 
 ### Uninstall software and remove artifact dependencies
 
 sudo apt purge --auto-remove gimp
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Installing pip for VSCode & Python
 
@@ -123,11 +137,15 @@ pip install notebook --upgrade\
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Installing tmux
 
 sudo apt install tmux
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Configuring bluetooth
 
@@ -136,6 +154,8 @@ sudo apt install pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmwa
 reboot
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Configuring apt sources to include 'non-free'
 
@@ -153,11 +173,15 @@ add non-free to the end of each entry eg:\
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Setting up firacode font
 
 sudo apt install fonts-firacode
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Installing alacritty
 
@@ -165,24 +189,34 @@ Alacritty for the use and change of default terminal from konsole (debian)
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### Installing cargo
 
 sudo apt install cargo\
 cargo build --release
 
+---
+
 ### Installing curl
 
 sudo apt install curl
 
+---
+
 ### Installing kitty
 
 sudo apt install kitty
+
+---
 
 ### Installing rustup
 
 curl --proto '=https' --tlsv1.2 -sSf <https://sh.rustup.rs> | sh
 
 - need to remove rust so it doesn't mess with rustup
+
+---
 
 ### Link to alacritty github and instructions
 
@@ -199,11 +233,15 @@ git clone <https://github.com/alacritty/alacritty.git> (inside alacritty folder 
     %choose default terminal app
         update-alternatives --config x-terminal-emulator    
 
+---
+
 ## Installing VIM
 
 sudo apt install vim #Download VIM
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Modifying bashrc or bashrc_aliases for alias set up
 
@@ -213,11 +251,15 @@ source ~/.bashrc_aliases #Force to launch the bashrc instead of logging in/out
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Setting up latte-dock
 
 sudo apt install latte-dock
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Setting up Firefox
 
@@ -248,6 +290,8 @@ sudo mv /usr/lib/firefox-esr/firefox-esr_orig /usr/lib/firefox-esr/firefox-esr
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Setting up CherryTree
 
 Download from website \
@@ -255,6 +299,8 @@ Download dependencies as well gtk2 etc \
 install both to get it to work
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Setting up VS Code to support Python, Github, LaTeX and Markdown
 
@@ -265,6 +311,8 @@ download python extension \
 download github extension
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Setting up GIT
 
@@ -297,6 +345,8 @@ git push -u origin master
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## My preferred aliases/shortcuts
 
 alias sops='xdg-open /home/__username__/Dropbox/sops'
@@ -316,6 +366,8 @@ alias c='clear'
 alias notes="xdg-open /home/__username__/Dropbox/learningnotes.ctb"
 
 - quickly open my learningnotes file in cherrytree
+
+---
 
 ### Optional Aliases
 
@@ -369,8 +421,12 @@ alias sys-list-up='sudo apt list --upgradable'
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Helpful packages to install specific programs
 
 sudo apt install dirmngr # need this in order to install spotify
 
 [Back to Top](#table-of-contents)
+
+---
