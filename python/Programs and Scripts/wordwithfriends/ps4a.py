@@ -12,8 +12,6 @@ SCRABBLE_LETTER_VALUES = {
 }
 
 # -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -50,12 +48,7 @@ def getFrequencyDict(sequence):
     return freq
 	
 
-# (end of helper code)
-# -----------------------------------
-
-#
-# Problem #1: Scoring a word
-#
+# Scoring a word
 def getWordScore(word, n):
     """
     Returns the score for a word. Assumes the word is a valid word.
@@ -86,9 +79,6 @@ def getWordScore(word, n):
     return score
 
 
-#
-# Problem #2: Make sure you understand how this function works and what it does!
-#
 def displayHand(hand):
     """
     Displays the letters currently in the hand.
@@ -106,9 +96,7 @@ def displayHand(hand):
              print(letter,end=" ")       # print all on the same line
     print()                             # print an empty line
 
-#
-# Problem #2: Make sure you understand how this function works and what it does!
-#
+
 def dealHand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -134,9 +122,7 @@ def dealHand(n):
         
     return hand
 
-#
-# Problem #2: Update a hand by removing letters
-#
+
 def updateHand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
@@ -162,10 +148,6 @@ def updateHand(hand, word):
     return newHand
 
 
-
-#
-# Problem #3: Test word validity
-#
 def isValidWord(word, hand, wordList):
     """
     Returns True if word is in the wordList and is entirely
@@ -198,10 +180,6 @@ def isValidWord(word, hand, wordList):
     else:
         return False
 
-
-#
-# Problem #4: Playing a hand
-#
 
 def calculateHandlen(hand):
     """ 
@@ -276,7 +254,7 @@ def playHand(hand, wordList, n):
             displayHand(hand)
             print()
             # hand = updateHand(hand, word)
-# Problem #5: Playing a game
+#Playing a game
 
 
 def playGame(wordList):

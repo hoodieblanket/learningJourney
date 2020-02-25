@@ -57,9 +57,9 @@ My interests as they develop over time: progressing my self-learning. Slow and s
     - [Debugging](https://github.com/hoodieblanket/learningJourney/blob/master/python/edx%20mitx%206.00.1x/topics/python%20learning.md#debugging)
       - [Error Messages](https://github.com/hoodieblanket/learningJourney/blob/master/python/edx%20mitx%206.00.1x/topics/python%20learning.md#error-messages)
 
-## Python Programs
+## Python Programs and Scripts
 
-- [(Game) Hangman](https://github.com/hoodieblanket/learningJourney/tree/master/Programs/Python3/(Game)%20Hangman)
+- [Hangman](https://github.com/hoodieblanket/learningJourney/tree/master/Programs/Python3/(Game)%20Hangman)
 - [Bisection Search with Recursion](https://github.com/hoodieblanket/learningJourney/tree/master/Programs/Python3/(Game)%20Hangman)
 - [Counting Vowels](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Counting%20vowels.py)
 - [Debt Remaining after Fixed Payments](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Counting%20vowels.py)
@@ -70,13 +70,14 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 - [Longest Substring](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Longest%20substring.py)
 - [Number of Repeating Substrings](https://github.com/hoodieblanket/learningJourney/blob/master/Programs/Python3/Number%20of%20substrings.py)
 
-## Network Security
+## Network Security and What I am focusing on
 
+- [Networks and the Internet]()
 - Security+  - Keeping the certification neutral rather than MSP or Cisco certification then you are tied.
 - [OWASP - Open Web Application Security Project](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
 - [OSCP](https://www.offensive-security.com)
 
-## OSCP Preparation
+## OSCP Studying Resources
 
 - [OSCP Syllabus](https://www.offensive-security.com/pwk-syllabus/)
 - [HackTheBox](https://www.hackthebox.eu/)
@@ -86,5 +87,9 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 
 ## Linux // Debian
 
-- [Popular Terminal Uses]()
-- [Aliases That Help]()
+- [Standard Operating Procedures]()
+
+This document is just my own collection of typical processes, learnings and mapping my working structure
+
+- has helpful shortcuts, tools and general operations to make life easier
+- My learning journey through linux and using debian as my operating system

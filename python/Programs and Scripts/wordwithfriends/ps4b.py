@@ -97,7 +97,6 @@ def compPlayHand(hand, wordList, n):
 
     
 #
-# Problem #6: Playing a game
 #
 #
 def playGame(wordList):
