@@ -85,7 +85,7 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 
 ---
 
-## Network Security and What I am focusing on
+## Network Security and what I am focusing on
 
 - [Networks and the Internet](https://github.com/hoodieblanket/learningJourney/blob/master/Networking/Networks%20and%20the%20Internet.md)
 - [Learning Hack-The-Box](https://github.com/hoodieblanket/learningJourney/blob/master/Network%20Security/Learning%20Hack-The-Box.md)
@@ -114,10 +114,9 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 
 - [Standard Operating Procedures](https://github.com/hoodieblanket/learningJourney/blob/master/Linux%20Debian/Standard%20Operating%20Procedures.md)
 
-This document is just my own collection of typical processes, learnings and mapping my working structure
-
-- has helpful shortcuts, tools and general operations to make life easier
-- My learning journey through linux and using debian as my operating system
+This document is just my own collection of typical processes, learnings and mapping my working structure\
+It has helpful shortcuts, tools and general operations to make life easier\
+My learning journey through linux and using debian as my operating system
   
 - [Visual Studio Code shortcuts and setup](https://github.com/hoodieblanket/learningJourney/blob/master/Linux%20Debian/VS%20Code%20Setup.md)
 
