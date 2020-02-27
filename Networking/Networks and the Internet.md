@@ -44,7 +44,7 @@
 
 ## Key Concepts
 
-`ISO` - Internation Organisation for Standardisation
+`ISO` - International Organisation for Standardisation
 `OSI` - Open Systems Interconnection
 `HTTP` - HyperText Transfer Protocol
 `SMTP` -  Simple Mail Transfer Protocol

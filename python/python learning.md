@@ -44,7 +44,7 @@
       - [Dictionary Comprehension](#dictionary-comprehension)
   - [Global Variables](#global-variables)
     - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
-  - [Testing and Debugging](#testing-and-debugging)
+  - [Testing](#testing)
     - [Unit Testing](#unit-testing)
     - [Regression Testing](#regression-testing)
     - [Integration testing](#integration-testing)
@@ -52,20 +52,25 @@
       - [Summary (Black Box Testing)](#summary-black-box-testing)
     - [Glass Box Testing](#glass-box-testing)
       - [Summary (Glass Box Testing)](#summary-glass-box-testing)
-    - [Debugging](#debugging)
-      - [Error Messages](#error-messages)
+  - [Debugging](#debugging)
+    - [Error Messages](#error-messages)
     - [Print Statement Debugging](#print-statement-debugging)
+    - [Debugging using bisection search](#debugging-using-bisection-search)
+  - [Debugging: Utilizing Exceptions](#debugging-utilizing-exceptions)
+    - [Debugging clauses](#debugging-clauses)
+      - [`try` and `except` clause](#try-and-except-clause)
+      - [`else` clause](#else-clause)
+      - [`finally` clause](#finally-clause)
+    - [Assigning Exceptions to Variables](#assigning-exceptions-to-variables)
+    - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
+    - [Finally Clause](#finally-clause-1)
+    - [With Statement](#with-statement)
+    - [Raising Exceptions](#raising-exceptions)
+    - [Assertions](#assertions)
   - [Classes](#classes)
     - [Example of Classes](#example-of-classes)
     - [Magic Methods](#magic-methods)
     - [Custom containers](#custom-containers)
-  - [Exceptions](#exceptions)
-    - [Assigning Exceptions to Variables](#assigning-exceptions-to-variables)
-    - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
-    - [Finally Clause](#finally-clause)
-    - [With Statement](#with-statement)
-    - [Raising Exceptions](#raising-exceptions)
-    - [Assertions](#assertions)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
 
@@ -79,6 +84,8 @@ else If nothing Else then proceed to this code
 ```
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## AND, OR, NOT
 
@@ -99,6 +106,8 @@ The overall statement returns False
 `Precedence in order to evaluate: not>and>or`
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Strings
 
@@ -156,6 +165,8 @@ s[::-1]
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Python 'in' operator
 
 The operators **in** and **not in** test for *collection membership*
@@ -176,6 +187,8 @@ not (element in coll)
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Input/Output
 
 With print statements as well as input statements.
@@ -191,6 +204,8 @@ print(5 * number)
 ```
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## While Statements
 
@@ -249,6 +264,8 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## For Loop Statements
 
 ```python
@@ -288,6 +305,8 @@ print(total)
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Break Statement
 
 Using a statement to break out of some code at a certain point
@@ -305,6 +324,8 @@ print(mysum)
 ```
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Modulus division
 
@@ -326,6 +347,8 @@ Using this technique you can test for even numbers by using **mod** division and
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## abs() Function
 
 Syntax follows the `abs(number)` format.
@@ -346,6 +369,8 @@ print('absolute value or magnitude of complex is: ', abs(complex))
 ```
 
 [Back to Top](#table-of-contents)
+
+---
 
 ## Bisectional Searching
 
@@ -374,6 +399,10 @@ print('numGuesses = ' + str(numGuesses))
 print(str(ans) + ' is close to a square root of ' + str(x))
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## Call/Invoke a Function
 
 Functions take a set of parameters; the number can be 0 and the parameters are set inside the function.
@@ -393,6 +422,8 @@ is_even(3) # calling the function using its name and values for parameters.
 ```
 
 [Back to Top](#table-of-contents)
+
+---
 
 ### Returning a function
 
@@ -418,12 +449,20 @@ add(3,1)
 #so we can see we replaced our initial function with the returned function but then we ran the parameters using that new function
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### *Some rules for functions*
 
 - Only one **return** will be completed as the **return** order throws you outside of the function.
 - Any code inside of the function but **after** the **return** statement will be ignored.
 - If you dont have an explicit return given inside the function, then it will return the value **None**
 - Value is given to the function caller, so functions have a value associated with it
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Scopes inside scopes inside scopes, scopes all the way down
 
@@ -437,6 +476,10 @@ def scope_one():
     x = 3
     y = 'and so forth'
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Inheritance
 
@@ -458,11 +501,15 @@ z = g(x)
 
 [Back to Top](#table-of-contents)
 
+---
+
 ## Recursion
 
 Design solutions to problems by breaking it up into pieces that you can use.
 
 [Back to Top](#table-of-contents)
+
+---
 
 ### *Some rules*
 
@@ -509,6 +556,10 @@ def is_palindrome (s):
 print(is_palindrome('are weew era'))
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## Modules and Files
 
 Modules is a .py file containing a collection of Python definitions and statements.
@@ -544,6 +595,8 @@ This has the effect of creating bindings within our current shell or scope for a
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### File handle
 
 handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other.
@@ -564,9 +617,11 @@ name_handle.close()
 
 There are some additional modularity such as **r** for only reading the file and as such can print lines or details from a file.
 
-## Tuples, List, Mutability, Cloning
-
 [Back to Top](#table-of-contents)
+
+---
+
+## Tuples, List, Mutability, Cloning
 
 ### Tuples ()
 
@@ -589,6 +644,10 @@ x = (1) = Int
 x = (1, 2, 3) = Tuple
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### List []
 
 Big difference between **Tuples** and **Lists** is that the **Lists** are mutable; they can be changed.
@@ -606,6 +665,10 @@ The important distinction is that a List is mutable so we can perform the follow
 
 - List[1] == 5 # changing index 1 to the integer 5
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Operations on Lists
 
 Certain operations we can do with lists. As with lists, they are mutable so once you use operations on lists, it will change that variable or that list permanently.
@@ -621,6 +684,10 @@ List.remove(element) # a specific element by looking for the element and removes
 ListAB = ListA + ListB # We can concatenate two lists ListOne + ListTwo
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 #### Convert a List to Strings and back
 
 ```python
@@ -630,6 +697,10 @@ s.split('<') # Split at this character
 ''.join(list) # Will join all the characters i nthe list to produce a string
 '_'.join(list) # will do the same but place the special character '_' between each element of the list.
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Other Operations
 
@@ -643,6 +714,10 @@ List.insert(index, element) # inserting an element at the nth index. Returns non
 List.count(element) # counts number of occurences. returns number
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS
 
 range is a special procedure and actually returns something that behaves like a **Tuple**
@@ -650,6 +725,10 @@ range is a special procedure and actually returns something that behaves like a 
 For example  range(5) would bring a ***List*** [0, 1, 2, 3, 4].
 
 So this means you can think of it like a list similar to how you would slice or call on it. i.e range(5, 2, -1) using the step and going backwards and such.
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Mutation, Aliasing, Cloning
 
@@ -673,6 +752,8 @@ Cloning is useful when I want to do something to a list that involves mutation b
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### Mutation and Iteration
 
 When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.  
@@ -686,6 +767,10 @@ def removeDuplicate(List1, List2):
         if e in List2:
             List1.remove(e) # Thereby iterate over each element in Copy, if the value is in List 2, then we remove it from List 1 and mutate the original: remove the duplicates
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Functions as Objects
 
@@ -731,6 +816,8 @@ applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### HOPS Higher Order Procedure
 
 #### Map
@@ -760,6 +847,10 @@ for elt in map(min, list1, list2):
 #Returns the minimum of each index compared. so Index [0] for each list, the minimum is 1. For index [1] for each list, the minimum is 28 and for index [2] for each list, the minimum is 17
 #returns [1, 28, 17]
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 ## Dictionaries
 
@@ -794,9 +885,15 @@ grades.values()
 
 [Back to Top](#table-of-contents)
 
+---
+
 ### List Comprehension and Dictionary Comprehension
 
 List comprehension and by extention dictionary comprehension is a great way of making readable, compact way of creating lists or dictionaries. Merging several lines into a single line that indicates which elements should be added to the list.
+
+[Back to Top](#table-of-contents)
+
+---
 
 #### List Comprehension
 
@@ -837,6 +934,10 @@ lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 #### List comprehension with all()
 
 The all() method returns True boolean if all elements within an iterable is True otherwise it returns False
@@ -851,6 +952,10 @@ lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
     # single liner using list comprehension rules to produce a boolean returned.
     >>> True
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 #### List comprehension with set()
 
@@ -868,6 +973,10 @@ set(lettersGuessed) >= set(secretWord)
 set(c for c in lettersGuessed if c in secretWord)
 # returns {'a', 'd', 'i', 'n', 'r', 'u'} just need to compare the set to secretWord
 ```
+
+[Back to Top](#table-of-contents)
+
+---
 
 #### Dictionary Comprehension
 
@@ -897,6 +1006,10 @@ doubleGrades
 # returns {'Nora': 180, 'Gino': 120}
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ## Global Variables
 
 Convenient when we want to keep track of information inside of a function
@@ -909,6 +1022,8 @@ Dangerous because:
 **global** can be used by making the function or variables accessible **outside** of your define functions.
 
 [Back to Top](#table-of-contents)
+
+---
 
 ### Fibonacci numbers using if statements and recursion versus dictionary and recursion
 
@@ -952,29 +1067,51 @@ print('Number of times the function is called: ', numFibCalls)
 # Number of times the function is called:  23
 ```
 
-## Testing and Debugging
+[Back to Top](#table-of-contents)
+
+---
+
+## Testing
 
 Design code that can easily test and debugged by breaking up the code into simplified modules that allows you to test each module to the design of how you wanted it to function.
 
 [Back to Top](#table-of-contents)
+
+---
 
 ### Unit Testing
 
 - Take each piece of program and validate it
 - testing each function separately
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Regression Testing
 
 - Add test for bugs as you find them in a function
 - Catch reintroduced errors that were previously fixed
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Integration testing
 
 - Does overall program work?
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Black Box Testing
 
 Testing by going through the specifications to realise any potential bugs. This method is designed to be done without looking at the code
+
+[Back to Top](#table-of-contents)
+
+---
 
 #### Summary (Black Box Testing)
 
@@ -984,6 +1121,10 @@ Testing by going through the specifications to realise any potential bugs. This 
   - Empty list, list of 1 and list of many and so on
   - What if I have any extreme cases of really large numbers, or really small numbers
   - Testing floats and negatives if the specifications shows its designed for it
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Glass Box Testing
 
@@ -1003,6 +1144,10 @@ def abs(x):
 
 The above code shows that path-complete tests could *miss a bug*, using path-complete testing such as **abs(2)** or **abs(-2)** would test each path however if you failed to complete boundary case testing then you would miss that **abs(-1)** incorrectly returns **-1**
 
+[Back to Top](#table-of-contents)
+
+---
+
 #### Summary (Glass Box Testing)
 
 - Designed with looking at the code
@@ -1016,9 +1161,13 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
   - **for loops** - loop not entered; body of loop executed exactly once; body of loop executed more than once
   - **while loops** - same as **for loops**, cases that catch all ways to exit loop
 
-### Debugging
+[Back to Top](#table-of-contents)
 
-#### Error Messages
+---
+
+## Debugging
+
+### Error Messages
 
 - **IndexError**
   - trying to access beyond the limits of a list
@@ -1037,6 +1186,16 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
   - forgetting to close parenthesis, quotation etc
   - `a = len([1, 2, 3, 4]`
   - `print a`
+- **AttributeError**
+  - Attribute reference fails (i.e in classes)
+- **ValueError**
+  - operand type okay but value is illegal
+- **IOError**
+  - IO systme reports malfunction (i.e file not found)
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Print Statement Debugging
 
@@ -1048,80 +1207,31 @@ Print statements are great for debugging, use the following steps to break it do
 - Bisection method used to debugging - Place the print statement in the middle of the code\
 and work through and see if the bug is higher or lower
 
-## Classes
+[Back to Top](#table-of-contents)
 
-Classes are a template of behaviours and structure that you use for things that behave the same way or share meaning.
+---
 
-This template is used to make it easier to manage similar objects or classes of objects. For example: If you had
-a `dog` class then you would share similarities between all dogs such as they all have a `name, colour and breed` and
-they all have the same behaviour `barking, running and wagging tail`.
+### Debugging using bisection search
 
-the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of
-the class is created. It's own frame is created and then the magic method initialises the template setup.
+Using bisection search in order to find bugs within the code. Placing print statemenths halfway through and see which side of the code the error is occuring.
 
-So __init__ is used b/nicky programmers to initialise values when a given instance or frame is created.
+Repeating this step would lead eventually to a much smaller segment of the code and we can debug in that smaller segment allowing us to narrow down the issue.
 
-### Example of Classes
+- Look for the usual suspects such as aliasing etc
+- Eliminate segments or locations so that you can isolate the bug
+- Don't believe the documentation
 
-```python
-class Article(object):
-    def __init__(self, title):
-        self.title = title
-        self.published = False
-    def __unicode__(self):
-        return self.title
-    def publish(self):
-        self.published = True
+[Back to Top](#table-of-contents)
 
-nyt_article = Article("Christie Faces Scandal on Traffic Jam Aides Ordered")
-```
+---
 
-`self` refers to the instance or frame of a given class which in this case is a Article
-`nyt_article.title` This would return the title that was set for the self.title = "Christie faces scandal..."
-`nyt_article.published` This would return the value of self.published which is currently in the instance set to False.
-`unicode(nyt_article)` This would use the unicode method, which in this instance would *return self.title* "christie..."
-`publish(nyt_article)` This would set self.published to True and as a result the instance would now be True for Published
+## Debugging: Utilizing Exceptions
 
-### Magic Methods
+The important thing for handling exceptions is that **_your program doesn't crash_**. Instead of the program finishing at the error, this actually handles the error and proceeds with the rest of your code.
 
-Methods that have two underscores (__init__).\
-__init__ is not directly called by the user. its called by the python interpreter when we create an instance of the
-class.
+This could be exceptions for your own code running into issues or when you are calling on user input and it is **not within the parameters** of your code to execute **i.e expecting a integer but user enters a string.**
 
-__str__ called when we are trying to convert an object to a string. By default if we try to use the string method such
-as *_print(nyt_article)_* then it will print the __main__.Article object at xyz location in the memory.
-
-So if we define the str method to handle this request a little differently, then we can control what it prints.
-
-```python
-def __str__(self):
-return f"({self.x}, {self.y})"
-
-```
-
-This will define the str method so if we used `print(nyt_article)` it will return the values of (x, y).
-
-### Custom containers
-
-```python
-class TagCloud:
-
-#lets create an object
-cloud = tagCloud()
-len(cloud)
-cloud ["python"] = 10
-for tag in cloud:
-    print(cloud)
-
-```
-
-## Exceptions
-
-Exceptions are used in order to tackle any exceptions or error that your code would otherwise generate. This is
-valuable as it means that you are in control of what your code does when it encounters a specific error or otherwise.
-
-This could be exceptions for your own code running into issues or when you are calling on user input and it is not
-within the parameters of your code to execute i.e expecting a integer but user enters a string.
+***Example 1***
 
 ```python
 try:
@@ -1130,14 +1240,64 @@ except ValueError:
     print("You have not put a valid number for your age")
 ```
 
-This try clause will place the variable assignment and the user input inside a try clause to single out the potential
-of errors. If the user enters a integer then that number is assigned to the variable **age**.
+This try clause will place the variable assignment and the user input inside a try clause to single out the potential bug. If the user enters a **integer** then proceed as normal. If a **string** then it will encounter the ValueError.
 
-If the user enters a string then it will encounter the ValueError. As previous errors just spat out a bunch of junk related to the ValueError and where to find it etc; this method actually captures that ValueError and then just
-proceeds to execute the code below the *except*.
+***Example 2***
 
-The important thing for handling exceptions is that **_your program doesn't crash_**. Instead of the program finishing
-at the error, this actually handles the error and proceeds with the rest of your code.
+```python
+try:
+    a = int(input("Tell me one number:"))
+    b = int(input("tell me another number:"))
+    print(a/b)
+    print("okay")
+except:
+    print("bug in user input")
+print("Outside")
+```
+
+***Example: Controlling Input***
+
+```python
+while True:
+    try:
+        n = input("Please enter an integer")
+        n = int(n)
+        break
+    except ValueError:
+        print("Input not an integer; try again")
+print("Correct input of an integer!")
+```
+
+[Back to Top](#table-of-contents)
+
+---
+
+### Debugging clauses
+
+![alt text](https://github.com/hoodieblanket/learningJourney/blob/master/images/tryExceptElseFinally.jpg "Try Except Else Finally")
+
+[Back to Top](#table-of-contents)
+
+---
+
+#### `try` and `except` clause
+
+`try:`
+`except:`
+
+Special keywords: with this block of code **"try"** this block of code.If the **try** block of code runs well then the code continues
+
+If an exception is raised then it will stop what it is doing and jump to the **except** clause and execute those instructions but *then carry on outside that loop*.
+
+[Back to Top](#table-of-contents)
+
+---
+
+#### `else` clause
+
+Body of this is executed when execution of the try body **completes with no exceptions**
+
+***Example 3***
 
 ```python
 try:
@@ -1150,15 +1310,28 @@ print("The program continues to run")
 
 ```
 
-The above changes the dynamic a little by using a else clause that boils down to; if there is no exceptions then run
-the following code and then proceed with the rest of the program as normal.
+The above code states: if there is no exceptions then run the following code and then proceed as normal.
 
-So with no exception:  it will print "No exceptions were thrown" and "The program continues ot run:"\
-With ValueError exception: it will print "You have not put a valid number for your age" and "the program continues..."
+**With no exception raised**:  it will print "*No exceptions were thrown"* and then prints *"The program continues to run:"*\
+**With ValueError exception raised**: it will print *"You have not put a valid number for your age"* and then prints "*the program continues to run"*
 
-Furthermore you are able to identify errors as a variable and assigned to them.
+[Back to Top](#table-of-contents)
+
+---
+
+#### `finally` clause
+
+Body of this clause is always executed after `try`, `else` and `except` clauses even if they raised another erro or executed a `break`, `continue` or `return`
+
+- Useful for clean-up code that should be run **no matter what else happened** (i.e close a file so you don't leave it hanging open)
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Assigning Exceptions to Variables
+
+Furthermore you are able to raise errors and assign the errors to variables
 
 ```python
 try:
@@ -1185,6 +1358,10 @@ such as `except ZeroDivisionError: print("You have not put a valid number for yo
 out twice. It will only jump to the first except clause that the error hits then proceed to ignore the rest of the
 except clauses.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Capturing Multiple Exceptions
 
 ```python
@@ -1200,6 +1377,10 @@ print("The program continues to run")
 
 The `finally` clause is always executed whether you have an exception or not. This is used to usually release resources
 such as closing files, data os connections, network connections and so on.
+
+[Back to Top](#table-of-contents)
+
+---
 
 ### Finally Clause
 
@@ -1223,6 +1404,10 @@ kinds of objects.
 For example if you take the previous code and pay attention to the changes; we will use the With statement to
 accomplish the same thing.
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### With Statement
 
 ```python
@@ -1241,7 +1426,16 @@ else:
  #   file.close() # closing down/release the resources being used
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 ### Raising Exceptions
+
+An example of how you would raise an exception but it is not always recommended. Raising exceptions can be costly as it can
+affect other peoples codes. This takes the form of the time it takes to complete the code.
+
+***Example***
 
 ```python
 def calculate_xfactor(age):
@@ -1256,21 +1450,11 @@ except ValueError as error:
 
 ```
 
-This is how you would raise an exception but it is not always recommended. Raising exceptions can be costly as it can
-affect other peoples codes. This takes the form of the time it takes to complete the code.\
-For code that will only run once or so then it doesn't really effect the time that much however if you are programming for efficiency and scalability then a program that runs 10,000 times; previous code raising an exception actually takes 4x as long as the below code.
+For code that will only run once or so then it doesn't really effect the time that much however if you are programming for efficiency and scalability then a program that runs 10,000 times; previous code raising an exception actually takes 4x as long.
 
-```python
-def calculate_xfactor(age):
-    if age <= 0:
-        return None # none is an object that is absent of value
-    return 10/age
+[Back to Top](#table-of-contents)
 
-xfactor = calculate_xfactor(-1)
-if xfactor == None:
-    pass #
-
-```
+---
 
 ### Assertions
 
@@ -1290,3 +1474,90 @@ is thrown. Usually this would be to check if inputs are valid or outputs of a fu
 
 The goal with assertions are to spot bugs as soon as they are introduced and make clear what happened.
 We can use assertions as a supplement to your testing.
+
+[Back to Top](#table-of-contents)
+
+---
+
+## Classes
+
+Classes are a template of behaviours and structure that you use for things that behave the same way or share meaning.
+
+This template is used to make it easier to manage similar objects or classes of objects. For example: If you had
+a `dog` class then you would share similarities between all dogs such as they all have a `name, colour and breed` and
+they all have the same behaviour `barking, running and wagging tail`.
+
+the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of
+the class is created. It's own frame is created and then the magic method initialises the template setup.
+
+So __init__ is used b/nicky programmers to initialise values when a given instance or frame is created.
+
+[Back to Top](#table-of-contents)
+
+---
+
+### Example of Classes
+
+```python
+class Article(object):
+    def __init__(self, title):
+        self.title = title
+        self.published = False
+    def __unicode__(self):
+        return self.title
+    def publish(self):
+        self.published = True
+
+nyt_article = Article("Christie Faces Scandal on Traffic Jam Aides Ordered")
+```
+
+`self` refers to the instance or frame of a given class which in this case is a Article
+`nyt_article.title` This would return the title that was set for the self.title = "Christie faces scandal..."
+`nyt_article.published` This would return the value of self.published which is currently in the instance set to False.
+`unicode(nyt_article)` This would use the unicode method, which in this instance would *return self.title* "christie..."
+`publish(nyt_article)` This would set self.published to True and as a result the instance would now be True for Published
+
+[Back to Top](#table-of-contents)
+
+---
+
+### Magic Methods
+
+Methods that have two underscores (__init__).\
+__init__ is not directly called by the user. its called by the python interpreter when we create an instance of the
+class.
+
+__str__ called when we are trying to convert an object to a string. By default if we try to use the string method such
+as *_print(nyt_article)_* then it will print the __main__.Article object at xyz location in the memory.
+
+So if we define the str method to handle this request a little differently, then we can control what it prints.
+
+```python
+def __str__(self):
+return f"({self.x}, {self.y})"
+
+```
+
+This will define the str method so if we used `print(nyt_article)` it will return the values of (x, y).
+
+[Back to Top](#table-of-contents)
+
+---
+
+### Custom containers
+
+```python
+class TagCloud:
+
+#lets create an object
+cloud = tagCloud()
+len(cloud)
+cloud ["python"] = 10
+for tag in cloud:
+    print(cloud)
+
+```
+
+[Back to Top](#table-of-contents)
+
+---
