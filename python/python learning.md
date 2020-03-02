@@ -65,7 +65,7 @@
     - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
     - [Finally Clause](#finally-clause-1)
     - [With Statement](#with-statement)
-    - [Raising Exceptions](#raising-exceptions)
+    - [Raise Exceptions](#raise-exceptions)
     - [Assertions](#assertions)
   - [Classes](#classes)
     - [Example of Classes](#example-of-classes)
@@ -1430,7 +1430,7 @@ else:
 
 ---
 
-### Raising Exceptions
+### Raise Exceptions
 
 An example of how you would raise an exception but it is not always recommended. Raising exceptions can be costly as it can
 affect other peoples codes. This takes the form of the time it takes to complete the code.
@@ -1452,28 +1452,63 @@ except ValueError as error:
 
 For code that will only run once or so then it doesn't really effect the time that much however if you are programming for efficiency and scalability then a program that runs 10,000 times; previous code raising an exception actually takes 4x as long.
 
+```python
+def get_rations(L1, L2):
+    """ Assumes: L1 and L2 are lists of equal length of numbers
+    Returns: a list containing L1[i]/L2[i]"""
+    ratios = []
+    for index in range(len(L1)):
+        try:
+            ratios.append(L1[index]/float(L2[index]))
+        except ZeroDivisionError:
+            ratios.append(float('NaN')) #NaN = Not a number
+        except:
+            raise ValueError('get_ratios called with bad arg')
+    return ratios
+L1 = [1,2,3,4]
+L2 = [5,6,7,8]
+L4 = [4,5,6,0]
+get_ratios(L1, L2)
+get_ratios(L1, L4) # out: [02, 0.333, 0,428, NaN] which shows the exception handler kicking in
+
+```
+
 [Back to Top](#table-of-contents)
 
 ---
 
 ### Assertions
 
+Good way to deal with defensive programming
+
+- Using an assert statement to raise an AssertionError exception if assumptions not met
+- Ensure the execution halts whenever an expected condition is not met
+- Typically used to check inputs to functions procedures but can be used anywhere
+
+**Good places to use `assertions`**
+
+- check `types` of arguments or values
+- check that `invariants` on data structures are met
+- check `constraits` on return values
+- check for `violations` of constraints on procedure (i.e no duplicates in a list)
+
 ```python
 def avg(grades):  
-    assert not len(grades) = 0, 'no grades data'
+    assert not len(grades) = 0, 'no grades data' # expect that there is atleast some grades in that list
+    # assert that the statement will not be true. (not 0 data) but if it does, then it captures the assert error and stops immediately and prints the 'no grades 'data'
     return sum(grades)/len(grades)
 ```
 
-This would check if you made a mistake by giving an empty list. the assert statement will check if True/False if the
+This would check if you made a mistake by giving an empty list. the assert statement will check if True/`false` if the
 length of (grades) is 0. If it is not 0 then the `assert not` statement will be true and then it will skip past.
 
-However if it is False then it will proceed with the function
+However if it is `false` then it will proceed with the function
 
 The Assert statement is not to control unexpected exceptions. It is to ensure the program halts if an expected exception
 is thrown. Usually this would be to check if inputs are valid or outputs of a function before returning the values.
 
 The goal with assertions are to spot bugs as soon as they are introduced and make clear what happened.
-We can use assertions as a supplement to your testing.
+We can use assertions as a supplement to our testing.
 
 [Back to Top](#table-of-contents)
 

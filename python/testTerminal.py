@@ -1,22 +1,8 @@
-def isWordGuessed(secretWord, lettersGuessed):
-    '''
-    secretWord: string, the word the user is guessing
-    lettersGuessed: list, what letters have been guessed so far
-    returns: boolean, True if all the letters of secretWord are in lettersGuessed;
-      False otherwise
-    '''
-    empty = ''
-    for l in lettersGuessed:
-        if l in secretWord:
-            emptyVariable += l
-        else:
-            continue
+def fancy_divide(list_of_numbers, index):
+   denom = list_of_numbers[index]
+   return [simple_divide(item, denom) for item in list_of_numbers]
+
+
+def simple_divide(item, denom):
     
-    if len(emptyVariable) == len(secretWord):
-        return True
-    else:
-        return False
-
-
-
-
+   return item / denom
