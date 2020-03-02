@@ -1492,6 +1492,11 @@ Good way to deal with defensive programming
 - check `constraits` on return values
 - check for `violations` of constraints on procedure (i.e no duplicates in a list)
 
+Errors printed out will follow the format:
+
+- AssertionError: Cannot divide by 0  
+
+
 ```python
 def avg(grades):  
     assert not len(grades) = 0, 'no grades data' # expect that there is atleast some grades in that list

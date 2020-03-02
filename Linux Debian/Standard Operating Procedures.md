@@ -6,6 +6,7 @@
   - [Table of Contents](#table-of-contents)
   - [Common terminal commands](#common-terminal-commands)
     - [Commandline](#commandline)
+    - [GIT commandline](#git-commandline)
     - [System updating, upgrading and maintenance](#system-updating-upgrading-and-maintenance)
     - [Display and Change hostname](#display-and-change-hostname)
     - [Launching programs not tied to terminal](#launching-programs-not-tied-to-terminal)
@@ -67,14 +68,22 @@
 
     rm -r dirname1 dirname2 dirname3 - use the wildcard * to match multiple directories
 
-`cp filename location_` # to copy a file and place the copy in a location
-`pwd` # print working directory
-`sudo ./install.sh` # install a bash script using "./" pathway to specify current location path
-`file filename` will tell you the type of file and info related to the type of file
-`du fileordirectory` will tell you the estimated size of the file or directory recursively
-`unzip file.zip -d newdirectory` Unzip a zip file and using -d to indicate directory name
-`tar -xvf yourfile.tar` To untar a file to current directory
-`file` Will tell you the type of file and info related to the type of file
+`cp filename location_` # to copy a file and place the copy in a location\
+`pwd` # print working directory\
+`sudo ./install.sh` # install a bash script using "./" pathway to specify current location path\
+`file filename` will tell you the type of file and info related to the type of file\
+`du fileordirectory` will tell you the estimated size of the file or directory recursively\
+`unzip file.zip -d newdirectory` Unzip a zip file and using -d to indicate directory name\
+`tar -xvf yourfile.tar` To untar a file to current directory\
+`file` Will tell you the type of file and info related to the type of file\
+
+### GIT commandline
+
+`git add -A` Add all file changes to commit stage\
+`git commit -m ""` commit and leave your message for all stages\
+`git push origin branch` to push to the branch you are working on\
+`git rm filename` remove file from system & repo (remember to `git commit -m ""` after to add to staged commits)\
+`git rm --cached filename` remove file from **repo only** \
 
 ---
 
