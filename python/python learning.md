@@ -1,72 +1,72 @@
-# Python Learning
+# Python Learning <!-- omit in toc -->
 
-## Table of Contents
+## Table of Contents 
 
-- [Python Learning](#python-learning)
-  - [Table of Contents](#table-of-contents)
-  - [IF Statements](#if-statements)
-  - [AND, OR, NOT](#and-or-not)
-  - [Strings](#strings)
-  - [Python 'in' operator](#python-in-operator)
-  - [Input/Output](#inputoutput)
-  - [While Statements](#while-statements)
-  - [For Loop Statements](#for-loop-statements)
-  - [Break Statement](#break-statement)
-  - [Modulus division](#modulus-division)
-  - [abs() Function](#abs-function)
-  - [Bisectional Searching](#bisectional-searching)
-  - [Call/Invoke a Function](#callinvoke-a-function)
-    - [Returning a function](#returning-a-function)
-    - [*Some rules for functions*](#some-rules-for-functions)
-    - [Scopes inside scopes inside scopes, scopes all the way down](#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
-  - [Inheritance](#inheritance)
-  - [Recursion](#recursion)
-    - [*Some rules*](#some-rules)
-  - [Modules and Files](#modules-and-files)
-    - [File handle](#file-handle)
-  - [Tuples, List, Mutability, Cloning](#tuples-list-mutability-cloning)
-    - [Tuples ()](#tuples)
-    - [List []](#list)
-    - [Operations on Lists](#operations-on-lists)
-      - [Convert a List to Strings and back](#convert-a-list-to-strings-and-back)
-    - [Other Operations](#other-operations)
-    - [Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](#bringing-it-all-together-loops-functions-range-and-lists)
-  - [Mutation, Aliasing, Cloning](#mutation-aliasing-cloning)
-    - [Mutation and Iteration](#mutation-and-iteration)
-  - [Functions as Objects](#functions-as-objects)
-    - [HOPS Higher Order Procedure](#hops-higher-order-procedure)
-      - [Map](#map)
-  - [Dictionaries](#dictionaries)
-    - [List Comprehension and Dictionary Comprehension](#list-comprehension-and-dictionary-comprehension)
-      - [List Comprehension](#list-comprehension)
-      - [List comprehension with all()](#list-comprehension-with-all)
-      - [List comprehension with set()](#list-comprehension-with-set)
-      - [Dictionary Comprehension](#dictionary-comprehension)
-  - [Global Variables](#global-variables)
-    - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
-  - [Testing](#testing)
-    - [Unit Testing](#unit-testing)
-    - [Regression Testing](#regression-testing)
-    - [Integration testing](#integration-testing)
-    - [Black Box Testing](#black-box-testing)
-      - [Summary (Black Box Testing)](#summary-black-box-testing)
-    - [Glass Box Testing](#glass-box-testing)
-      - [Summary (Glass Box Testing)](#summary-glass-box-testing)
-  - [Debugging](#debugging)
-    - [Error Messages](#error-messages)
-    - [Print Statement Debugging](#print-statement-debugging)
-    - [Debugging using bisection search](#debugging-using-bisection-search)
-  - [Debugging: Utilizing Exceptions](#debugging-utilizing-exceptions)
-    - [Debugging clauses](#debugging-clauses)
-      - [`try` and `except` clause](#try-and-except-clause)
-      - [`else` clause](#else-clause)
-      - [`finally` clause](#finally-clause)
-    - [Assigning Exceptions to Variables](#assigning-exceptions-to-variables)
-    - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
-    - [Finally Clause](#finally-clause-1)
-    - [With Statement](#with-statement)
-    - [Raise Exceptions](#raise-exceptions)
-    - [Assertions](#assertions)
+- [Table of Contents](#table-of-contents)
+- [IF Statements](#if-statements)
+- [AND, OR, NOT](#and-or-not)
+- [Strings](#strings)
+- [Python 'in' operator](#python-in-operator)
+- [Input/Output](#inputoutput)
+- [While Statements](#while-statements)
+- [For Loop Statements](#for-loop-statements)
+- [Break Statement](#break-statement)
+- [Modulus division](#modulus-division)
+- [abs() Function](#abs-function)
+- [Bisectional Searching](#bisectional-searching)
+- [Call/Invoke a Function](#callinvoke-a-function)
+  - [Returning a function](#returning-a-function)
+  - [*Some rules for functions*](#some-rules-for-functions)
+  - [Scopes inside scopes inside scopes, scopes all the way down](#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
+- [Inheritance](#inheritance)
+- [Recursion](#recursion)
+  - [*Some rules*](#some-rules)
+- [Modules and Files](#modules-and-files)
+  - [File handle](#file-handle)
+- [Tuples, List, Mutability, Cloning](#tuples-list-mutability-cloning)
+  - [Tuples ()](#tuples-)
+  - [List []](#list-)
+  - [Operations on Lists](#operations-on-lists)
+    - [Convert a List to Strings and back](#convert-a-list-to-strings-and-back)
+  - [Other Operations](#other-operations)
+  - [Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](#bringing-it-all-together-loops-functions-range-and-lists)
+- [Mutation, Aliasing, Cloning](#mutation-aliasing-cloning)
+  - [Mutation and Iteration](#mutation-and-iteration)
+- [Functions as Objects](#functions-as-objects)
+  - [HOPS Higher Order Procedure](#hops-higher-order-procedure)
+    - [Map](#map)
+- [Dictionaries](#dictionaries)
+  - [List Comprehension and Dictionary Comprehension](#list-comprehension-and-dictionary-comprehension)
+    - [List Comprehension](#list-comprehension)
+    - [List comprehension with all()](#list-comprehension-with-all)
+    - [List comprehension with set()](#list-comprehension-with-set)
+    - [Dictionary Comprehension](#dictionary-comprehension)
+- [Global Variables](#global-variables)
+  - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
+- [Testing](#testing)
+  - [Unit Testing](#unit-testing)
+  - [Regression Testing](#regression-testing)
+  - [Integration testing](#integration-testing)
+  - [Black Box Testing](#black-box-testing)
+    - [Summary (Black Box Testing)](#summary-black-box-testing)
+  - [Glass Box Testing](#glass-box-testing)
+    - [Summary (Glass Box Testing)](#summary-glass-box-testing)
+- [Debugging](#debugging)
+  - [Error Messages](#error-messages)
+  - [Print Statement Debugging](#print-statement-debugging)
+  - [Debugging using bisection search](#debugging-using-bisection-search)
+- [Debugging: Utilizing Exceptions](#debugging-utilizing-exceptions)
+  - [Debugging clauses](#debugging-clauses)
+    - [`try` and `except` clause](#try-and-except-clause)
+    - [`else` clause](#else-clause)
+    - [`finally` clause](#finally-clause)
+  - [Assigning Exceptions to Variables](#assigning-exceptions-to-variables)
+  - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
+  - [Finally Clause](#finally-clause-1)
+  - [With Statement](#with-statement)
+  - [Raise Exceptions](#raise-exceptions)
+  - [Assertions](#assertions)
+- [Object Oriented Programming OOP](#object-oriented-programming-oop)
   - [Classes](#classes)
     - [Example of Classes](#example-of-classes)
     - [Magic Methods](#magic-methods)
@@ -1492,10 +1492,9 @@ Good way to deal with defensive programming
 - check `constraits` on return values
 - check for `violations` of constraints on procedure (i.e no duplicates in a list)
 
-Errors printed out will follow the format:
+**Errors printed out will follow the format:**
 
 - AssertionError: Cannot divide by 0  
-
 
 ```python
 def avg(grades):  
@@ -1504,8 +1503,7 @@ def avg(grades):
     return sum(grades)/len(grades)
 ```
 
-This would check if you made a mistake by giving an empty list. the assert statement will check if True/`false` if the
-length of (grades) is 0. If it is not 0 then the `assert not` statement will be true and then it will skip past.
+This would check if ## IF Statementsis 0. If it is not 0 then the `assert not` statement will be true and then it will skip past.
 
 However if it is `false` then it will proceed with the function
 
@@ -1519,7 +1517,9 @@ We can use assertions as a supplement to our testing.
 
 ---
 
-## Classes
+## Object Oriented Programming OOP
+
+### Classes
 
 Classes are a template of behaviours and structure that you use for things that behave the same way or share meaning.
 
@@ -1536,7 +1536,7 @@ So __init__ is used b/nicky programmers to initialise values when a given instan
 
 ---
 
-### Example of Classes
+#### Example of Classes
 
 ```python
 class Article(object):
@@ -1561,7 +1561,7 @@ nyt_article = Article("Christie Faces Scandal on Traffic Jam Aides Ordered")
 
 ---
 
-### Magic Methods
+#### Magic Methods
 
 Methods that have two underscores (__init__).\
 __init__ is not directly called by the user. its called by the python interpreter when we create an instance of the
@@ -1584,7 +1584,7 @@ This will define the str method so if we used `print(nyt_article)` it will retur
 
 ---
 
-### Custom containers
+#### Custom containers
 
 ```python
 class TagCloud:
