@@ -67,10 +67,8 @@
   - [Raise Exceptions](#raise-exceptions)
   - [Assertions](#assertions)
 - [Object Oriented Programming OOP](#object-oriented-programming-oop)
-  - [Advantages of OOP](#advantages-of-oop)
   - [Classes](#classes)
-    - [Examples of Classes](#examples-of-classes)
-    - [Key point to classes and OOP](#key-point-to-classes-and-oop)
+    - [Example of Classes](#example-of-classes)
     - [Magic Methods](#magic-methods)
     - [Custom containers](#custom-containers)
 
@@ -1521,137 +1519,43 @@ We can use assertions as a supplement to our testing.
 
 ## Object Oriented Programming OOP
 
-**Objects** all have 3 pieces; type, internal representation, set of procedures to allow you to interact with that instance of an object
-
-Everything in Python is an **object** and has a **type**
-
-Objects are **data abstraction** that capture:
-
-- internal **representation** through data attributes
-- **interface** for interacting with object through methods (procedures), defines behaviours but hides implementation
-
-We can **create new instances** of objects
-
-We can **destroy objects**:
-
-- explicitly using `del` or just "forget" about them
-- Python system will reclaim destroyed or inaccessible objects - referred as `garbage collection`
-
-```python
-[1,2,3,4] is of type `list`
-```
-
-[Back to Top](#table-of-contents)
-
----
-### Advantages of OOP
-
-**Bundle data into packages** together with procedures that work on them through well-defines interfaces
-
-**Divide-and-conquer** development whereby you implement and test behaviour of each class separately and as such increased modularity reduces complexity
-
-Classes make it easy to **reuse** code:
-
-- Many Python modules define new classes
-- each class has a separate environment (no collision on function names)
-- inheritance allows subclasses to redefine or extend a selected subset of a superclass' behaviour
-
-[Back to Top](#table-of-contents)
-
----
-
 ### Classes
 
-Classes are similar to blueprints to build something or a drawing of all the parts that will make your project come together. This would be similar to drawing a table in separate parts. The legs, the frame and the table top, the chairs, the cushions.
+Classes are a template of behaviours and structure that you use for things that behave the same way or share meaning.
 
-So you have the parts of the table listed, but then you need to also specify how to join them in order to create the table.
+This template is used to make it easier to manage similar objects or classes of objects. For example: If you had
+a `dog` class then you would share similarities between all dogs such as they all have a `name, colour and breed` and
+they all have the same behaviour `barking, running and wagging tail`.
 
-**classes** are an **abstract notion** of a thing or blueprint. It's all the planning. Whereas **instances** are the actual objects are being formed by that blueprint.
+the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of
+the class is created. It's own frame is created and then the magic method initialises the template setup.
 
-***Instances*** is what we refer to specific objects that is part of that blueprint. For example *my table* and then there's *your table* and your *neighbors table* and so forth. These are instances, **concrete examples** of that blueprint being used.
-
-***Creating and using your own objects with classes***
-
-**Creating** the class involves:
-
-- Defining the class name
-- defining the class attributs
-- for example, someone wrote code to implement a list class
-
-**Using** the class involves:
-
-- creating new instances of objects
-- doing operations on the instances
-- for example, L = [1,2] and len(L)
-
-#### Examples of Classes
-
-***Example #1:***
-
-A `dog` class would share similarities between all dogs such as they **all** have a `name, colour and breed` and they all have the same behaviour `barking, running and wagging tail`.
-
-the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of the class is created. It's own frame is created and then the magic method initialises the template setup.
-
-So __init__ is used programmers to initialise values when a given instance or frame is created.
-
-***Example #2:***
-
-```python
-class Table(object):
-#--- This section is called a magic method, __init_-()
-    def __init__(self, tabletop, legs, chair, cushion):
-    self.tabletop = tabletop
-    self.legs = legs
-    self.chair = chair
-    self.cushion = cushion
-    self.clean = True
-
-# --- This section is all methods
-    def cleanTable(self):
-        if not self.clean:
-            self.clean = True
-            print("This table is now clean")
-        else:
-            print("This table is already clean")
-    
-    def unCleanTable(self):
-        if self.clean:
-            self.clean = False
-            print("This table is now dirty")
-        else:
-            print("This table was dirty already")
-
-    def talk(self, phrase):
-        print(phrase)
-# --- This section was all methods
-table1 = Table(35, 15, 16) # This is the instance
-```
-
-This example shows that we use the variables added to the function scope `def __init(self, **tabletop**, **legs**, **chair**)` and set them as the values for the instances attributes(right hand side of '=' )
-
-```python
-self.tabletop = 35 # think of the above example and then read it out. 'For this instance, 'self', create an attribute named 'tabletop' and give it a value of '35'
-
-`__init__()` - think of it as creating a **blueprint** for creating **instances** of a class. `__init__()` is called the first time we create and instance
-```
-
-![alt text](../images/init.gif "using init and all the properties")
+So __init__ is used b/nicky programmers to initialise values when a given instance or frame is created.
 
 [Back to Top](#table-of-contents)
 
 ---
 
-#### Key point to classes and OOP
+#### Example of Classes
 
-You have to remember that while the blueprint is created and the objects have similar attribute categories or perform the same actions (methods)
+```python
+class Article(object):
+    def __init__(self, title):
+        self.title = title
+        self.published = False
+    def __unicode__(self):
+        return self.title
+    def publish(self):
+        self.published = True
 
-**Instances have their own individual values for each one of these attribute categories defined in the class**
+nyt_article = Article("Christie Faces Scandal on Traffic Jam Aides Ordered")
+```
 
-We humans are an example of Object Oriented Programming whereby we all share the attributes of **height, weight, haircolor, eye color** and we all perform the actions(methods) of **breath, think, feel**: However your attributes will have different values to my attributes and so forth.
-
-This is the point of OOP; it provides a blueprint to create individual instances that share the same structure but have their own set of characteristics. They can perform operatins on their attributes, change them and **other** instances **won't be affected**
-
-![alt text](../images/oop&#32;instances.gif "example of two blueprints but with different attribute values")
+`self` refers to the instance or frame of a given class which in this case is a Article
+`nyt_article.title` This would return the title that was set for the self.title = "Christie faces scandal..."
+`nyt_article.published` This would return the value of self.published which is currently in the instance set to False.
+`unicode(nyt_article)` This would use the unicode method, which in this instance would *return self.title* "christie..."
+`publish(nyt_article)` This would set self.published to True and as a result the instance would now be True for Published
 
 [Back to Top](#table-of-contents)
 

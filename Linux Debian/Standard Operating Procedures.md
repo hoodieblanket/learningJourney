@@ -25,7 +25,7 @@
     - [Installing rustup](#installing-rustup)
     - [Link to alacritty github and instructions](#link-to-alacritty-github-and-instructions)
   - [Installing VIM](#installing-vim)
-  - [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrcaliases-for-alias-set-up)
+  - [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrc_aliases-for-alias-set-up)
   - [Setting up latte-dock](#setting-up-latte-dock)
   - [Setting up Firefox](#setting-up-firefox)
   - [Setting up CherryTree](#setting-up-cherrytree)
