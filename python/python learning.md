@@ -1544,6 +1544,7 @@ We can **destroy objects**:
 [Back to Top](#table-of-contents)
 
 ---
+
 ### Advantages of OOP
 
 **Bundle data into packages** together with procedures that work on them through well-defines interfaces
@@ -1613,7 +1614,7 @@ class Table(object):
             print("This table is now clean")
         else:
             print("This table is already clean")
-    
+
     def unCleanTable(self):
         if self.clean:
             self.clean = False
@@ -1645,7 +1646,7 @@ self.tabletop = 35 # think of the above example and then read it out. 'For this 
 
 You have to remember that while the blueprint is created and the objects have similar attribute categories or perform the same actions (methods)
 
-**Instances have their own individual values for each one of these attribute categories defined in the class**
+***Instances have their own individual values for each one of these attribute categories defined in the class***
 
 We humans are an example of Object Oriented Programming whereby we all share the attributes of **height, weight, haircolor, eye color** and we all perform the actions(methods) of **breath, think, feel**: However your attributes will have different values to my attributes and so forth.
 
