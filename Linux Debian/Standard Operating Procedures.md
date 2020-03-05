@@ -79,7 +79,11 @@
 
 ### GIT commandline
 
-`git add -A` Add all file changes to commit stage\
+![alt text](../images/gitaddcommands.jpg "general adding and updating commands")
+
+`git add -A or --all` Add all file changes to commit stage (and does both -u and .)\
+`git add -u or --update` stages new file modifications and deletions, **without new files** Looks at files if they are different or **removed** (this stages any 'rm' changes) \
+`git add .` stages new files and modifications **without deletions** Looks at working tree and adds all those paths to staged changes if they are either changes or are new and not ignored (does not stage any 'rm' changes) \
 `git commit -m ""` commit and leave your message for all stages\
 `git push origin branch` to push to the branch you are working on\
 `git rm filename` remove file from system & repo (remember to `git commit -m ""` after to add to staged commits)\
