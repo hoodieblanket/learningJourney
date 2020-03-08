@@ -71,7 +71,7 @@
   - [Classes](#classes)
     - [Examples of Classes](#examples-of-classes)
     - [Key point to classes and OOP](#key-point-to-classes-and-oop)
-    - [Magic Methods](#magic-methods)
+    - [Methods](#methods)
     - [Custom containers](#custom-containers)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
@@ -1593,7 +1593,7 @@ A `dog` class would share similarities between all dogs such as they **all** hav
 
 the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of the class is created. It's own frame is created and then the magic method initialises the template setup.
 
-So __init__ is used programmers to initialise values when a given instance or frame is created.
+So `__init__` is used programmers to initialise the blueprint when a given instance or frame is created.
 
 ***Example #2:***
 
@@ -1658,21 +1658,34 @@ This is the point of OOP; it provides a blueprint to create individual instances
 
 ---
 
-#### Magic Methods
+#### Methods
 
-Methods that have two underscores (__init__).\
-__init__ is not directly called by the user. its called by the python interpreter when we create an instance of the
-class.
+Methods are a procedural attribute, designed for that class and only works with that class.
 
-__str__ called when we are trying to convert an object to a string. By default if we try to use the string method such
-as *_print(nyt_article)_* then it will print the __main__.Article object at xyz location in the memory.
+**First argument will always be `self` as we use it to refer to any instance**
+
+Methods that have two underscores (`__init__`).`__init__` is not directly called by the user. its called by the python interpreter when we create an instance of the class.
+
+- First parameter will refer to an instance of the class, `self`
+- Next parameters are the data initialised
+- Within to the instance that `self` refers, we are binding `x,y` within that instance to those values we invoke.
+
+```python
+class Coordinates(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    # This means everything Coordinates(x, y) is called, it will create a frame and within that unique frame, assign the internal values to what was initialised
+    # Whenever you call on that same **frame** the values used will be specific to that frame.
+```
+
+`__str__` called when we are trying to convert an object to a string. By default if we try to use the string method such.
 
 So if we define the str method to handle this request a little differently, then we can control what it prints.
 
 ```python
 def __str__(self):
 return f"({self.x}, {self.y})"
-
 ```
 
 This will define the str method so if we used `print(nyt_article)` it will return the values of (x, y).
