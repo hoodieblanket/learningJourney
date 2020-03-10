@@ -77,6 +77,7 @@
       - [Example #1:](#example-1-1)
     - [Class Methods and Static Methods](#class-methods-and-static-methods)
     - [Creating Subclasses](#creating-subclasses)
+    - [`isinstance()` and `issubclass`](#isinstance-and-issubclass)
     - [Methods](#methods)
     - [Custom containers](#custom-containers)
 
@@ -1829,6 +1830,88 @@ print(Employee.is_workday(my_date))
 Creating subclasses is useful when you are creating another entity or class blueprint you want to keep separate but the main class information is still relevant.
 
 Following the same example of Employee, you would have key roles such as **Manager** and **Developer** who are **employees** but they will have slight differences in their blueprints
+
+Changing variables in the **subclass** does not leak into the main class or other class and this means the changes won't have **unexpected consequences** as you apply unique changes to each blueprint.
+
+Subclasses allow us to re-use code for free without needing to write it out again and allows us to adjust that unique subclass or blueprint with its own special arguments specific to that blueprint.
+
+Using **super()** to call on a higher order of class to inherit the arguments or code from there and re-use that code in your new subclass. In the below example, it shows that we use super().__init() to let the **parent class** handle the initialisation of *first, last, pay* and then we have the **subclass** handle the initialisation of **programming language**
+
+```python
+class Employee:
+
+    raise_amt = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.amt)
+
+class Developer(Employee):
+    raise_amt = 1.10
+    # Some key takeways, if you used "print(help(Developer)) then it would show the inheritance or order that the class would search for a `__init__` method. As we don't have a __init__ method in the class for Developer, then there is a hierachy that the class will look through to find the __init__.
+    #This will show it will look in this order: Developer, Employee, builtins.object (every class in python inherits from this base object)
+    def __init__(self, first, last, pay, prog_lang):
+        super().__init__(first, last, pay)
+        self.prog_lang = prog_lang
+        # letting the inheriting class use the parent class to handle certain arguments and then defining a new argument relevant for just developers; listing their programming language.
+
+dev_1 = Developer('Test', 'User', 50000, 'python')
+dev_2 = Developer('Test2', 'User2', 60000, 'java')
+
+print(dev_1.pay)
+dev_1.apply_raise()
+print(dev_1.pay)
+
+print(dev_1.email)
+print(dev_1.prog_lang)
+
+#Example 2 subclass
+class Manager(Employee):
+    def __init__(self, first, last, pay, employees = None): 
+        # good practice not to pass in an empty list as a default argument. You never want to pass in mutable data types like a list or dictionary as arguments.
+        super().__init(first, last, pay)
+        if employees is None:
+            self.employees = []
+            #create empty list
+        else:
+            self.employees = employees
+
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
+
+    def remove_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.remove(emp)
+
+    def print_emps(self):
+        for emp in self.employees:
+            print('-->', emp.fullname())
+
+mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
+print(mgr_1.email)
+mgr_1.add_emp(dev_2)
+
+mgr_1.print_emps()
+# prints out both employees full name
+
+mgr_1.remove_emp(dev_2)
+#removes Developer 2
+```
+
+#### `isinstance()` and `issubclass`
+
+`isinstance(arg1, arg2)` will tell us if an object is an instance of a class i.e print(isinstance(mgr_1, Manager)) -> True and print(isinstance(mgr_1, Employee)) -> True, finally print(isinstance(mgr_1, Developer)) -> False
+
+`issubclass(arg1, arg2)` will tell us if an object is a subclass of a class. Passing in the class test as argument 1 and then the comparison class to see if its a subclass as argument 2.
 
 #### Methods
 
