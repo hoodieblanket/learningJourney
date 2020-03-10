@@ -70,7 +70,13 @@
   - [Advantages of OOP](#advantages-of-oop)
   - [Classes](#classes)
     - [Examples of Classes](#examples-of-classes)
+      - [Example #1:](#example-1)
+      - [Example #2:](#example-2)
     - [Key point to classes and OOP](#key-point-to-classes-and-oop)
+    - [Class Variables](#class-variables)
+      - [Example #1:](#example-1-1)
+    - [Class Methods and Static Methods](#class-methods-and-static-methods)
+    - [Creating Subclasses](#creating-subclasses)
     - [Methods](#methods)
     - [Custom containers](#custom-containers)
 
@@ -1587,7 +1593,7 @@ So you have the parts of the table listed, but then you need to also specify how
 
 #### Examples of Classes
 
-***Example #1:***
+##### Example #1:
 
 A `dog` class would share similarities between all dogs such as they **all** have a `name, colour and breed` and they all have the same behaviour `barking, running and wagging tail`.
 
@@ -1595,7 +1601,7 @@ the `__init__` method is a constructor often referred to as a *magic method*. Th
 
 So `__init__` is used programmers to initialise the blueprint when a given instance or frame is created.
 
-***Example #2:***
+##### Example #2:
 
 ```python
 class Table(object):
@@ -1657,6 +1663,172 @@ This is the point of OOP; it provides a blueprint to create individual instances
 [Back to Top](#table-of-contents)
 
 ---
+
+#### Class Variables
+
+Class variables is assigning a variable within the class and not within a method and instance. This would allow you to use a class variable that **affects all instances** and then the variable can be adjusted within the **instance variable** to be unique to that instance
+
+
+
+##### Example #1:
+
+```python
+class Employee:
+    #Class variables
+    num_of_emps = 0
+    raise_amount = 1.04
+
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    Employee.num_of_emps += 1
+    # As we assign and create more employee files, this will keep track if each initialised instance. Then we can use print(Employee.num_of_emps) to produce a number of setup employees with their profiles.
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+        #as mentioned with methods inside the class, the first argument will always be the instance, `self` and we only need `self` in order to get the full name
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+        # accessing the raise_amount variable within the class
+        # Unable to just call on raise_amount as the variable would be undefined inside the method. So you need to call on the class variable.
+        # using self.raise_amount then we inherit the raise_amount and then if we need to, we can change each instances' raise_amount separate if needed
+
+emp_1 = Employee('Johann', 'Van Niekerk', 50000)
+emp_2 = Employee('Test', 'User', 60000)
+
+print(emp_1.fullname)
+# This will only print and confirm that `fullname` is indeed a method.
+# So as we do with methods we need to have parenthesis to call the method
+print(emp_1.fullname())
+print(emp_2.fullname())
+print(Employee.num_of_emps)
+```
+
+#### Class Methods and Static Methods
+
+Using a decorator called `@classmethod`. Altering the functionality of our method whereby we receive the classmethod first before we receive our instance.
+
+Regular methods always pass in the instance, `self` as the first argument
+
+Class methods always pass in the class, `cls` as the first argument
+
+Static methods don't pass in anything automatically: The instance or the class
+
+***Using a `@classmethod` to control the raise employees receive***
+
+```python
+class Employee:
+
+    raise_amount = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amt = amount
+    #setting the amount equal to the amount we passed in
+    # Cannot use class as a variable so we use `cls
+Employee.set_raise_amt(1.05)
+# to follow on with the above example. this would be how we adjust the classmethod inside the class and affect the variable on the class-level`
+```
+
+***Using a `@classmethod` to parse strings and retrieve details for the class***
+
+```python
+class Employee:
+
+    raise_amount = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amt = amount
+
+# For example, imagine having a database or collection of details that come out with hyphens (-) separating the data and you need to feed the correct details into the class and create each employee instance:
+emp_str_1 = `john-doe-70000`
+emp_str_2 = `steve-smith-30000`
+emp_str_3 = `jane-doe-90000`
+# parsing the string to separate the string and then passing the individual values to our Employee class to create the instances
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+```
+
+***Using `@staticmethods`***
+
+Example of a `staticmethod` being used where we don't require the instance or the class, as such our first arguments does not automatically pass in the class or the instance.
+
+```python
+class Employee:
+
+    raise_amount = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amt = amount
+
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+
+    @staticmethod
+    def is_workday(day)
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+#Static method, we would use a static method when we don't use the class or instance at all
+import datetime
+#importing datetime module for this example
+my_date = datetime.date(2020, 3, 14)
+print(Employee.is_workday(my_date))
+#returns true if weekday or false if weekend
+```
+
+#### Creating Subclasses
+
+Creating subclasses is useful when you are creating another entity or class blueprint you want to keep separate but the main class information is still relevant.
+
+Following the same example of Employee, you would have key roles such as **Manager** and **Developer** who are **employees** but they will have slight differences in their blueprints
 
 #### Methods
 

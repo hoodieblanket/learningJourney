@@ -153,8 +153,6 @@
 
 ## Go to Definition
 
-    Select a symbol then type F12. Alternatively, you can use the context menu or Ctrl+click (Cmd+click on macOS).
-
     go to definition
 
     You can go back to your previous location with the Go > Back command or Ctrl+Alt+-.
@@ -165,7 +163,7 @@
 
 ## Rename Symbol
 
-    Select a symbol then type F2. Alternatively, you can use the context menu.
+    elect a symbol then type F12. Alternatively, you can use the context menu or Ctrl+click (Cmd+click on macOS).
 
 [Back to Top](#table-of-contents)
 
