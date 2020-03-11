@@ -24,8 +24,8 @@
 - [Modules and Files](#modules-and-files)
   - [File handle](#file-handle)
 - [Tuples, List, Mutability, Cloning](#tuples-list-mutability-cloning)
-  - [Tuples ()](#tuples-)
-  - [List []](#list-)
+  - [Tuples ()](#tuples)
+  - [List []](#list)
   - [Operations on Lists](#operations-on-lists)
     - [Convert a List to Strings and back](#convert-a-list-to-strings-and-back)
   - [Other Operations](#other-operations)
@@ -79,6 +79,7 @@
     - [Creating Subclasses](#creating-subclasses)
     - [`isinstance()` and `issubclass`](#isinstance-and-issubclass)
     - [Methods](#methods)
+    - [Magic Methods](#magic-methods)
     - [Custom containers](#custom-containers)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
@@ -1907,11 +1908,19 @@ mgr_1.remove_emp(dev_2)
 #removes Developer 2
 ```
 
+[Back to Top](#table-of-contents)
+
+---
+
 #### `isinstance()` and `issubclass`
 
 `isinstance(arg1, arg2)` will tell us if an object is an instance of a class i.e print(isinstance(mgr_1, Manager)) -> True and print(isinstance(mgr_1, Employee)) -> True, finally print(isinstance(mgr_1, Developer)) -> False
 
 `issubclass(arg1, arg2)` will tell us if an object is a subclass of a class. Passing in the class test as argument 1 and then the comparison class to see if its a subclass as argument 2.
+
+[Back to Top](#table-of-contents)
+
+---
 
 #### Methods
 
@@ -1944,6 +1953,79 @@ return f"({self.x}, {self.y})"
 ```
 
 This will define the str method so if we used `print(nyt_article)` it will return the values of (x, y).
+
+[Back to Top](#table-of-contents)
+
+---
+
+#### Magic Methods
+
+Special methods to change how our objects are printed and displayed.
+
+For example
+
+`__repr__()` - Good to have as a minimum, if we try to call on the string then the class will fallback on the __repr__ method by default\
+`__str__()` - More readable for a **end user**.\
+`__init__()`
+
+```python
+class Employee:
+
+    raise_amt = 1.04
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.amt)
+
+emp_1 = Employee('Test', 'User', 50000)
+emp_2 = Employee('Test2', 'User', 60000)
+
+print(emp_1)
+```
+
+From the above print statement, when calling on trying to `print(emp_1)` the terminal will output some location in memory `<__main__.Employee object at 0x101b2b0f0>` or similar. This isn't what we want; so we use the magic methods such as `__repr__()` and `__str__()` in order to change how we display these objects.
+
+```python
+def __repr__(self):
+    return "Employee("{}", "{}", "{}")".format(self.first, self.last, self.pay)
+
+print(emp_1)
+```
+
+Now when you `print(emp_1)` then it will produce the following `Employee('Test', 'User', 50000)` instead of the details with the memory location.
+
+```python
+def __str__(self):
+    return '{} - {}'.format(self.fullname(), self.email)
+
+print(emp_1)
+```
+
+With more readability for the **end user**, the `__str__()` method can be used. The above method will return `Test User - Test.User@email.com`
+
+```python
+def __add__(self, other):
+    # method takes in self, that will be on the left side of the addition, and other, that will be on the right side of the addition
+    return self.pay + other.pay
+
+print(emp_1 + emp_2)
+```
+
+The above `__add__()` method would be used to add the two employees' incomes together. `self` will refer to left side of the addition and `other` will refer to the right side of the addition.
+
+```python
+def __len__(self):
+    return len(self.fullname())
+    # such realworld application might be testing the string length of an employees name in order to fit within parameters such as email creation restrictions etc.
+```
 
 [Back to Top](#table-of-contents)
 
