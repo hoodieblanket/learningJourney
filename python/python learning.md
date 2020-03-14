@@ -70,16 +70,19 @@
   - [Advantages of OOP](#advantages-of-oop)
   - [Classes](#classes)
     - [Examples of Classes](#examples-of-classes)
-      - [Example #1:](#example-1)
-      - [Example #2:](#example-2)
+      - [Example #1](#example-1)
+      - [Example #2](#example-2)
     - [Key point to classes and OOP](#key-point-to-classes-and-oop)
     - [Class Variables](#class-variables)
-      - [Example #1:](#example-1-1)
+      - [Example of Class Variable](#example-of-class-variable)
     - [Class Methods and Static Methods](#class-methods-and-static-methods)
     - [Creating Subclasses](#creating-subclasses)
     - [`isinstance()` and `issubclass`](#isinstance-and-issubclass)
     - [Methods](#methods)
     - [Magic Methods](#magic-methods)
+    - [Property Decorators - Getters, Setters and Deleters](#property-decorators---getters-setters-and-deleters)
+      - [Setters](#setters)
+      - [Deleters](#deleters)
     - [Custom containers](#custom-containers)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
@@ -1595,7 +1598,7 @@ So you have the parts of the table listed, but then you need to also specify how
 
 #### Examples of Classes
 
-##### Example #1:
+##### Example #1
 
 A `dog` class would share similarities between all dogs such as they **all** have a `name, colour and breed` and they all have the same behaviour `barking, running and wagging tail`.
 
@@ -1603,7 +1606,7 @@ the `__init__` method is a constructor often referred to as a *magic method*. Th
 
 So `__init__` is used programmers to initialise the blueprint when a given instance or frame is created.
 
-##### Example #2:
+##### Example #2
 
 ```python
 class Table(object):
@@ -1670,9 +1673,7 @@ This is the point of OOP; it provides a blueprint to create individual instances
 
 Class variables is assigning a variable within the class and not within a method and instance. This would allow you to use a class variable that **affects all instances** and then the variable can be adjusted within the **instance variable** to be unique to that instance
 
-
-
-##### Example #1:
+##### Example of Class Variable
 
 ```python
 class Employee:
@@ -1876,7 +1877,7 @@ print(dev_1.prog_lang)
 
 #Example 2 subclass
 class Manager(Employee):
-    def __init__(self, first, last, pay, employees = None): 
+    def __init__(self, first, last, pay, employees = None):
         # good practice not to pass in an empty list as a default argument. You never want to pass in mutable data types like a list or dictionary as arguments.
         super().__init(first, last, pay)
         if employees is None:
@@ -2025,6 +2026,159 @@ The above `__add__()` method would be used to add the two employees' incomes tog
 def __len__(self):
     return len(self.fullname())
     # such realworld application might be testing the string length of an employees name in order to fit within parameters such as email creation restrictions etc.
+```
+
+[Back to Top](#table-of-contents)
+
+---
+
+#### Property Decorators - Getters, Setters and Deleters
+
+Allows us to define a method and then we can access it like an atrribute.
+
+For example with the continuation of our code, the below is trying to print the first name, email and then the fullname.
+
+For the `first name` it will access the variables that were set when initialised. Same with email, it will already be initialised. `fullname` is a method within the class that needs to be **called** in order to return the **value of fullname**.
+
+```python
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+emp_1 = Employee('John', 'Smith')
+
+print(emp_1.first)
+print(emp_1.email)
+print(emp_1.fullname())
+```
+
+If we made a slight change to our code and tried to **change the name** of our employee
+
+```python
+emp_1.first = 'jim'
+```
+
+Then we would run into the issue that the `emp_1.first = Jim` and then `emp_1.email = John.Smith@company.com`. As you can see if we tried to change the employees name then we will affect all our code that calls on those specific variables however it wouldn't update across the board.
+
+The `emp_1.fullname()` method does not have this problem because it is only returned an updated value when its called.
+
+A fix for this would be using a `@property decorator` where we can define methods and access them similar to the attributes under `__init__`
+
+By **moving the email attribute** from `__init__` and defining a method for it similar to `fullname()` then we can use the `@Property decorator` to allow us to access it **without** the need for our code to be changed to **calling methods with parenthesis, i.e email()**
+
+```python
+    @property
+    def email(self):
+        return '{}.{}@email.com'.format(self.first, self.last)  
+```
+
+[Back to Top](#table-of-contents)
+
+---
+
+##### Setters
+
+```python
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    @property
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    @property
+    def email(self):
+        return '{}.{}@email.com'.format(self.first, self.last)  
+
+emp_1 = Employee('John', 'Smith')
+
+print(emp_1.first)
+print(emp_1.email)
+print(emp_1.fullname())
+```
+
+With the same code, if we tried to make changes to methods that we have assigned as `@property decorator`, now accessed as an attribute; then we will run into issues with the following kind of changes.
+
+```python
+emp_1.fullname = 'Michael Jordan'
+```
+
+Because the code is trying to assign it to a attribute, we will get a python error advising us that we cannot do it. So this is where we use a `Setter`. This setter takes in the first argument as the method() that was defined.
+
+```python
+@fullname.setter
+def fullname(self, name):
+ #name would be the name you would be trying to set
+    first, last = name.split (' ')
+    self.first = first
+    self.last = last
+
+emp_1.fullname = 'Michael Jordan'
+# now this will proceed to access the name we have input, using the splitter function, at the space we will split the variable sent as first name, last name
+# since the setter now assigned *self.first & last* then it means all other methods with the @property decorators would use the updated names for the email and fullname creations.
+```
+
+[Back to Top](#table-of-contents)
+
+---
+
+##### Deleters
+
+```python
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+    @property
+    def fullname(self):
+        return "{} {}".format(self.first, self.last)
+
+    @property
+    def email(self):
+        return '{}.{}@email.com'.format(self.first, self.last)  
+
+    @fullname.setter
+    def fullname(self, name):
+    #name would be the name you would be trying to set
+        first, last = name.split (' ')
+        self.first = first
+        self.last = last
+
+emp_1 = Employee('John', 'Smith') #initial employee
+
+emp_1.fullname = 'Michael Jordan' # renaming the fullname variable
+
+print(emp_1.first)
+print(emp_1.email)
+print(emp_1.fullname())
+```
+
+Now say we want to delete and run some cleanup code for an employee.
+
+```python
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name!') # just to show this works
+        self.first = None
+        self.last = None
+
+del emp_1.fullname
 ```
 
 [Back to Top](#table-of-contents)
