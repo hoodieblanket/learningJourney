@@ -81,6 +81,9 @@
     - [Methods](#methods)
     - [Magic Methods](#magic-methods)
     - [Property Decorators - Getters, Setters and Deleters](#property-decorators---getters-setters-and-deleters)
+      - [Getters](#getters)
+        - [Example - Using Getters to perform additional functions](#example---using-getters-to-perform-additional-functions)
+        - [Example - Creating a Integer Set](#example---creating-a-integer-set)
       - [Setters](#setters)
       - [Deleters](#deleters)
     - [Custom containers](#custom-containers)
@@ -2082,6 +2085,122 @@ By **moving the email attribute** from `__init__` and defining a method for it s
 [Back to Top](#table-of-contents)
 
 ---
+
+##### Getters
+
+Example of getters being used to separate the specific data we would like to call on in order to use additional features or functions separate. For example, calling on the individual numerator and denominator in order to perform **addition** or **subtraction** and **conversion to floats**
+
+###### Example - Using Getters to perform additional functions
+
+```python
+class fraction(object):
+    def __init__(self, numer, denom):
+        self.numer = numer
+        self.denom = denom
+    def __str__(self):
+        return str(self.numer) + ' / ' + str(self.denom)
+    def getNumer(self): #Getter
+        return self.numer
+    def getDenom(self): # Getter
+        return self.denom
+    def __add__(self, other):
+        numerNew = other.getDenom() * self.getNumer() \
+                 + other.getNumer() * self.getDenom()
+        denomNew = other.getDenom() * self.getDenom()
+        return fraction(numerNew, denomNew)
+    def __sub__(self, other):
+        numerNew = other.getDenom() * self.getNumer() \
+                 - other.getNumer() * self.getDenom()
+        denomNew = other.getDenom() * self.getDenom()
+        return fraction(numerNew, denomNew)
+    def convert(self):
+        return self.getNumer() / self.getDenom()
+        # prints out the floating point representation of the Numerator and Denominator
+
+print(fraction(3, 4))
+oneHalf = fraction(1,2)
+twoThirds = fraction(2,3)
+new = oneHalf + twoThirds
+print(new)
+new.convert()
+
+>>> print(fraction(3, 4))
+3 / 4
+>>> oneHalf = fraction(1,2)
+>>> twoThirds = fraction(2,3)
+>>> new = oneHalf + twoThirds
+>>> print(new)
+7 / 6
+>>> new.convert()
+1.1666666666666667
+```
+
+###### Example - Creating a Integer Set
+
+```python
+class intSet:
+    """ An intSet is a set of integers
+    The value is represented by a list of ints, self.vals
+    Each int in the set occurs in self.vals exactly once"""
+
+    def __init__(self):
+        """create an empty set of integers"""
+        self.vals = []
+    def insert(self, e):
+        """Assumes e is an integer and inserts e into self"""
+        if not e in self.vals:
+            self.vals.append(e)
+    def member(self, e):
+        """Asumes e is an integer
+        Returns true if e is in self, and false otherwise"""
+        return e in self.vals
+    def remove(self, e):
+        """Assumes e is an integer and removes e from self
+        Raises ValueError if e is not in self"""
+        try:
+            self.vals.remove(e)
+        except:
+            raise ValueError(str(e) + " not found")
+    def __str__(self):
+        """returns a string representation of self"""
+        self.vals.sort()
+        result = ""
+        for e in self.vals:
+            result = result + str(e) + ","
+        return "{" + result[:-1] + "}"
+
+s = intSet()
+print(s)
+s.insert(3)
+s.insert(4)
+s.insert(3)
+print(s)
+s.member(3)
+s.member(6)
+s.remove(3)
+s.insert(6)
+print(s)
+s.remove(3)
+
+>>> s = intSet()
+>>> print(s)
+{}
+>>> s.insert(3)
+>>> s.insert(4)
+>>> s.insert(3)
+>>> print(s)
+{3,4}
+>>> s.member(3)
+True
+>>> s.member(6)
+False
+>>> s.remove(3)
+>>> s.insert(6)
+>>> print(s)
+{4,6}
+>>> s.remove(3)
+ValueError: 3 not found
+```
 
 ##### Setters
 
