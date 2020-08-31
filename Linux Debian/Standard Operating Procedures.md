@@ -25,7 +25,7 @@
     - [Installing rustup](#installing-rustup)
     - [Link to alacritty github and instructions](#link-to-alacritty-github-and-instructions)
   - [Installing VIM](#installing-vim)
-  - [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrc_aliases-for-alias-set-up)
+  - [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrcaliases-for-alias-set-up)
   - [Setting up latte-dock](#setting-up-latte-dock)
   - [Setting up Firefox](#setting-up-firefox)
   - [Setting up CherryTree](#setting-up-cherrytree)
@@ -364,7 +364,7 @@ git push -u origin master
 
 alias sops='xdg-open /home/__username__/Dropbox/sops'
 
-- quick access to my stadard operating procedures file
+- quick access to my standard operating commands file
 
 alias ls="ls -a --color=auto --group-directories-first"
 

@@ -82,7 +82,7 @@
     - [Magic Methods](#magic-methods)
     - [Property Decorators - Getters, Setters and Deleters](#property-decorators---getters-setters-and-deleters)
       - [Getters](#getters)
-        - [Example - Using Getters to perform additional functions](#example---using-getters-to-perform-additional-functions)
+        - [Example - Getters to perform functions](#example---getters-to-perform-functions)
         - [Example - Creating a Integer Set](#example---creating-a-integer-set)
       - [Setters](#setters)
       - [Deleters](#deleters)
@@ -2090,7 +2090,7 @@ By **moving the email attribute** from `__init__` and defining a method for it s
 
 Example of getters being used to separate the specific data we would like to call on in order to use additional features or functions separate. For example, calling on the individual numerator and denominator in order to perform **addition** or **subtraction** and **conversion to floats**
 
-###### Example - Using Getters to perform additional functions
+###### Example - Getters to perform functions
 
 ```python
 class fraction(object):
