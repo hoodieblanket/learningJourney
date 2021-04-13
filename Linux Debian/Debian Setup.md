@@ -7,6 +7,7 @@
   - [Common terminal commands](#common-terminal-commands)
     - [Command line Quick Reference](#command-line-quick-reference)
     - [GIT commandline](#git-commandline)
+  - [Setting up GIT](#setting-up-git)
     - [System updating, upgrading and maintenance](#system-updating-upgrading-and-maintenance)
     - [Display and Change hostname](#display-and-change-hostname)
     - [Unzipping a file](#unzipping-a-file)
@@ -24,7 +25,6 @@
   - [Optionals](#optionals)
   - [Setting up latte-dock](#setting-up-latte-dock)
   - [Setting up VS Code to support Python, Github, LaTeX and Markdown](#setting-up-vs-code-to-support-python-github-latex-and-markdown)
-  - [Setting up GIT](#setting-up-git)
   - [Helpful packages to install specific programs](#helpful-packages-to-install-specific-programs)
 
 ## Common terminal commands
@@ -65,6 +65,21 @@
     `git push origin branch`      to push to the branch you are working on 
     `git rm filename`             remove file from system & repo (remember to `git commit -m ""` after to add to staged commits) 
     `git rm --cached filename`    remove file from **repo only** 
+---
+
+## Setting up GIT
+
+    `sudo apt install git`  
+    `git config --global user.name __username__`                          sets global settings for this machine
+    `git config --global user.name`                                       to check that its set properly, repeat for email check as well
+    `git config --global user.email __email address__`                    go to folder location and use git init to initialise that folder for repo
+    `git config --global credential.helper cache`                         Set git to use the credential memory cache
+    `git config --global credential.helper 'cache --timeout=7200'`        Set the cache to timeout after 2 hour (setting is in seconds)
+    `git remote add origin <https://github.com/repoowner/reponame.git>`   setting up the origin git repo
+    `git push -u origin master`
+
+[Back to Top](#table-of-contents)
+
 ---
 
 ### System updating, upgrading and maintenance
@@ -259,22 +274,6 @@
 [Back to Top](#table-of-contents)
 
 ---
-
-## Setting up GIT
-
-    `sudo apt install git`  
-    `git config --global user.name __username__`                          sets global settings for this machine
-    `git config --global user.name`                                       to check that its set properly, repeat for email check as well
-    `git config --global user.email __email address__`                    go to folder location and use git init to initialise that folder for repo
-    `git config --global credential.helper cache`                         Set git to use the credential memory cache
-    `git config --global credential.helper 'cache --timeout=7200'`        Set the cache to timeout after 2 hour (setting is in seconds)
-    `git remote add origin <https://github.com/repoowner/reponame.git>`   setting up the origin git repo
-    `git push -u origin master`
-
-[Back to Top](#table-of-contents)
-
----
-
 
 ## Helpful packages to install specific programs
 
