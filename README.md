@@ -4,83 +4,15 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 
 ## Python Learning
 
-- [Table of Contents](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#table-of-contents)
-- [IF Statements](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#if-statements)
-- [AND, OR, NOT](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#and-or-not)
-- [Strings](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#strings)
-- [Python 'in' operator](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#python-in-operator)
-- [Input/Output](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#inputoutput)
-- [While Statements](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#while-statements)
-- [For Loop Statements](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#for-loop-statements)
-- [Break Statement](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#break-statement)
-- [Modulus division](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#modulus-division)
-- [abs() Function](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#abs-function)
-- [Bisectional Searching](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#bisectional-searching)
-- [Call/Invoke a Function](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#callinvoke-a-function)
-  - [Returning a function](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#returning-a-function)
-  - [*Some rules for functions*](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#some-rules-for-functions)
-  - [Scopes inside scopes inside scopes, scopes all the way down](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
-- [Inheritance](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#inheritance)
-- [Recursion](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#recursion)
-  - [*Some rules*](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#some-rules)
-- [Modules and Files](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#modules-and-files)
-  - [File handle](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#file-handle)
-- [Tuples, List, Mutability, Cloning](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#tuples-list-mutability-cloning)
-  - [Tuples ()](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#tuples-)
-  - [List []](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#list-)
-  - [Operations on Lists](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#operations-on-lists)
-    - [Convert a List to Strings and back](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#convert-a-list-to-strings-and-back)
-  - [Other Operations](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#other-operations)
-  - [Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#bringing-it-all-together-loops-functions-range-and-lists)
-- [Mutation, Aliasing, Cloning](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#mutation-aliasing-cloning)
-  - [Mutation and Iteration](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#mutation-and-iteration)
-- [Functions as Objects](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#functions-as-objects)
-  - [HOPS Higher Order Procedure](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#hops-higher-order-procedure)
-    - [Map](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#map)
-- [Dictionaries](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#dictionaries)
-  - [List Comprehension and Dictionary Comprehension](#list-comprehension-and-dictionary-comprehension)
-    - [List Comprehension](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#list-comprehension)
-    - [List comprehension with all()](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#list-comprehension-with-all)
-    - [List comprehension with set()](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#list-comprehension-with-set)
-    - [Dictionary Comprehension](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#dictionary-comprehension)
-- [Global Variables](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#global-variables)
-  - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
-- [Testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#testing)
-  - [Unit Testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#unit-testing)
-  - [Regression Testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#regression-testing)
-  - [Integration testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#integration-testing)
-  - [Black Box Testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#black-box-testing)
-    - [Summary (Black Box Testing)](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#summary-black-box-testing)
-  - [Glass Box Testing](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#glass-box-testing)
-    - [Summary (Glass Box Testing)](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#summary-glass-box-testing)
-- [Debugging](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#debugging)
-  - [Error Messages](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#error-messages)
-  - [Print Statement Debugging](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#print-statement-debugging)
-  - [Debugging using bisection search](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#debugging-using-bisection-search)
-- [Debugging: Utilizing Exceptions](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#debugging-utilizing-exceptions)
-  - [Debugging clauses](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#debugging-clauses)
-    - [`try` and `except` clause](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#try-and-except-clause)
-    - [`else` clause](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#else-clause)
-    - [`finally` clause](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#finally-clause)
-  - [Assigning Exceptions to Variables](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#assigning-exceptions-to-variables)
-  - [Capturing Multiple Exceptions](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#capturing-multiple-exceptions)
-  - [Finally Clause](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#finally-clause-1)
-  - [With Statement](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#with-statement)
-  - [Raise Exceptions](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#raise-exceptions)
-  - [Assertions](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#assertions)
-- [Object Oriented Programming OOP](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#object-oriented-programming-oop)
-  - [Advantages of OOP](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#advantages-of-oop)
-  - [Classes](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#classes)
-    - [Examples of Classes](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#examples-of-classes)
-    - [Key point to classes and OOP](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#key-point-to-classes-and-oop)
-    - [Magic Methods](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#magic-methods)
-    - [Custom containers](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#custom-containers)
+- [To Table of Contents](https://github.com/hoodieblanket/learningJourney/blob/master/python/python%20learning.md#table-of-contents)
+
+Link to my notes and general improvement for the Python language
 
 [Back to Top](#learning-journey)
 
 ---
 
-## Python Programs and Scripts
+#### Python Programs and Scripts
 
 - [Hangman](https://github.com/hoodieblanket/learningJourney/tree/master/python/Programs%20and%20Scripts/hangman)
 - [Words with Friends](https://github.com/hoodieblanket/learningJourney/tree/master/python/Programs%20and%20Scripts/wordwithfriends)
@@ -101,7 +33,7 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 - [Towers of Hanoi](https://github.com/hoodieblanket/learningJourney/tree/master/python/Programs%20and%20Scripts/Towers%20of%20Hanoi.py)
 
 [Back to Top](#learning-journey)
-
+\
 ---
 
 ## Network Security and what I am focusing on
@@ -131,7 +63,7 @@ My interests as they develop over time: progressing my self-learning. Slow and s
 
 ## Linux // Debian
 
-- [Standard Operating Procedures](https://github.com/hoodieblanket/learningJourney/tree/master/Linux%20Debian/Standard%20Operating%20Procedures.md)
+- [My Debian Setup](https://github.com/hoodieblanket/learningJourney/tree/master/Linux%20Debian/Standard%20Operating%20Procedures.md)
 
 This document is just my own collection of typical processes, learnings and mapping my working structure\
 It has helpful shortcuts, tools and general operations to make life easier\

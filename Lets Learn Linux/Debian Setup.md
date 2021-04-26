@@ -36,14 +36,14 @@
     `xdg-open`                      to open files or folders in dolphin 
     `mkdir`                         mkdir directoryname #make new directory in current instance 
     `rm`                            to remove a file or folder. (may need to root if you require permissions using "su")
-        * `rm`        ~/directory/to/file.exe 
-        * `rm -rf`    "Recursive/Forced" recursively deletes anything inside and any directories going down. 
-        * `-f`        forces to delete    without prompting you first.
+        * `rm`                      ~/directory/to/file.exe 
+        * `rm -rf`                  "Recursive/Forced" recursively deletes anything inside and any directories going down. 
+        * `-f`                      forces to delete    without prompting you first.
 
     `rmdir`                         rmdir directoryname #remove directory 
     `mv`                            mv /home/user/oldname /home/user/newname 
     `* Wildcard`                    rm *.pdf
-        * `rm -r`     dirname1 dirname2 dirname3 - use the wildcard * to match multiple directories
+        * `rm -r`                   dirname1 dirname2 dirname3 - use the wildcard * to match multiple directories
 
     `cp filename location_`         to copy a file and place the copy in a location 
     `pwd` #                         print working directory 
@@ -99,15 +99,15 @@
 
 ### Display and Change hostname
 
-    `hostnamectl`                                       Display hostname details  
-    `sudo hostnamectl set-hostname typehostnamehere`    Display the hostname and will change the hostname
+    `hostnamectl`                                           Display hostname details  
+    `sudo hostnamectl set-hostname typehostnamehere`        Display the hostname and will change the hostname
 
 ---
 
 ### Unzipping a file
 
     
-    `unzip file.zip -d newdirectory`          unzip a zip file and using -d to indicate directory name \
+    `unzip file.zip -d newdirectory`                        unzip a zip file and using -d to indicate directory name \
 
 ---
 
@@ -120,7 +120,7 @@
 
 ### Uninstall software and remove artifact dependencies
 
-    `sudo apt purge --auto-remove appname`  Uninstall software
+    `sudo apt purge --auto-remove appname`                  Uninstall software
 
 [Back to Top](#table-of-contents)
 
@@ -128,7 +128,7 @@
 
 ## Installing pip for VSCode & Python
 
-    `pip3 -V`                            check version 
+    `pip3 -V`                                               check version 
     `sudo apt install python3-pip` 
     `pip3 install ipykernel` 
     `pip3 install notebook --upgrade` 
@@ -252,7 +252,7 @@
 
 ## Setting up latte-dock
 
-    `sudo apt install latte-dock`
+`sudo apt install latte-dock`
 
 [Back to Top](#table-of-contents)
 
