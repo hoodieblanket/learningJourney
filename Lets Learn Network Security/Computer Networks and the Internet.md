@@ -44,28 +44,28 @@
 
 ## Key Concepts
 
-`ISO` - International Organisation for Standardisation/
-`OSI` - Open Systems Interconnection/
-`HTTP` - HyperText Transfer Protocol/
-`SMTP` -  Simple Mail Transfer Protocol/
-`DNS` - Domain Name System/
-`FTP` - File Transfer Protocol/
-`API` - Application Programming Interface/
-`TCP` - Transmission Control Protocol/
-`UDP` - User Datagram Protocol/
-`DOCSIS` - Data over cable service interface specification/
-`SSL` - Secure Sockets Layer/
-`SSH` - Secure Shell/
-`CDN` - Content Distribution Networks/
-`POP3` - Post Office Protocol - Version 3/
-`IMAP` - Internet Mail Access Protocol/
-`BIND` - Berkeley Internet Name Domain/
-`DDoS` - Distributed Denial of Service/
-`DoS` - Denial of Service/
-`IP` - Internet Protocol Address/
-`Output Buffer` Buffer is similar to a store or queue for the bits or packets as its being sent. The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent \
-`Forwarding Table` maps destination addresses to that router's outbound links. When the packet arrives at the router the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link.
-`Circuit Switching` is a little different the `Packet Switching` in that Circuit-switched networks are similar to reservations at a restaurant. In order for the data to travel, it needs to be in an ordered sequence. Whereas `Packet-switched` networks are on a no-reservations idea that the data arrives and if theres a queue, then it needs to join the buffer.
+`ISO` - International Organisation for Standardisation\
+`OSI` - Open Systems Interconnection\
+`HTTP` - HyperText Transfer Protocol\
+`SMTP` -  Simple Mail Transfer Protocol\
+`DNS` - Domain Name System\
+`FTP` - File Transfer Protocol\
+`API` - Application Programming Interface\
+`TCP` - Transmission Control Protocol\
+`UDP` - User Datagram Protocol\
+`DOCSIS` - Data over cable service interface specification\
+`SSL` - Secure Sockets Layer\
+`SSH` - Secure Shell\
+`CDN` - Content Distribution Networks\
+`POP3` - Post Office Protocol - Version 3\
+`IMAP` - Internet Mail Access Protocol\
+`BIND` - Berkeley Internet Name Domain\
+`DDoS` - Distributed Denial of Service\
+`DoS` - Denial of Service\
+`IP` - Internet Protocol Address\
+`Output Buffer` Buffer is similar to a store or queue for the bits or packets as its being sent. The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent\
+`Forwarding Table` maps destination addresses to that router's outbound links. When the packet arrives at the router the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link.\
+`Circuit Switching` is a little different the `Packet Switching` in that Circuit-switched networks are similar to reservations at a restaurant. In order for the data to travel, it needs to be in an ordered sequence. Whereas `Packet-switched` networks are on a no-reservations idea that the data arrives and if theres a queue, then it needs to join the buffer.\
 
 [Back to Top](#table-of-contents)
 
