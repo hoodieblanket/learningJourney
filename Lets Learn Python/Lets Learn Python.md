@@ -141,7 +141,7 @@ We can make changes to concatination
 
 ```python
 len('eric')
-# ask for the length of a string will also count any blank spaces
+#       ask for the length of a string will also count any blank spaces
 ```
 
 **Ask for a Slice**
@@ -151,8 +151,8 @@ len('eric')
 ```python
 name = 'eric'
 name[0]
-#Will print the 0th digit in the variable/string, for example it will produce 'e'
-#In python, the count begins from 0
+#       Will print the 0th digit in the variable/string, for example it will produce 'e'
+#       In python, the count begins from 0
 ```
 
 Another example of different ways you can *slice*
@@ -160,31 +160,31 @@ Another example of different ways you can *slice*
 ```python
 s = 'Python is Fun!'
 s[1:5]
-#returns: 'ytho'
+#       returns: 'ytho'
 s[:5]
-#returns: 'Pytho'
+#       returns: 'Pytho'
 s[1:]
-#returns: 'ython is Fun!'
+#       returns: 'ython is Fun!'
 s[:]
-#returns: 'Python is Fun!'
+#       returns: 'Python is Fun!'
 ```
 
 You can also *add* a third parameter to your slicing, **k** that represents the **Step Size** that you want to increment by:
 
 ```python
 s[i:j:k]
-#This gives a slice of the string from index i to index j-1, with a step size k
-#Step size being the size of each iterative jump
+#       This gives a slice of the string from index i to index j-1, with a step size k
+#       Step size being the size of each iterative jump
 
 s = 'Python is Fun!'
 s[1:12:2]
-#returns 'yhni u'
+#       returns 'yhni u'
 s[1:12:3]
-#returns: 'yoiF'
+#       returns: 'yoiF'
 s[::2]
-#returns: 'Pto sFn'
+#       returns: 'Pto sFn'
 s[::-1]
-#returns: '!nuF si nohtyP'
+#       eturns: '!nuF si nohtyP'
 ```
 
 [Back to Top](#table-of-contents)
@@ -200,11 +200,11 @@ Say we had a collection 'coll' with a list, or tuple, or dictionary
 
 ```python
 element in coll
-#tests if 'element' is absent or within the variable 'coll'
-#Evaluations to True or False otherwise
+#       tests if 'element' is absent or within the variable 'coll'
+#       Evaluations to True or False otherwise
 
 element not in coll
-#Same evaluation to see if element is a member of 'coll' but evaluates to False or True otherwise
+#       Same evaluation to see if element is a member of 'coll' but evaluates to False or True otherwise
 
 equivalant expression to
 not (element in coll)
@@ -226,7 +226,7 @@ We would need to remember that if we want to use it as an integer then we would 
 ```python
 number = int(input('type something here: '))
 print(5 * number)
-# This converts the input provided and casts it into a **integer** type for our purposes or uses later.
+#       This converts the input provided and casts it into a **integer** type for our purposes or uses later.
 ```
 
 [Back to Top](#table-of-contents)
@@ -246,7 +246,7 @@ while (x<8):
     print('hello')
     else:
         print('goodbye')
-#it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
+#       it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
 ```
 
 Another example of using a while loop to add numbers together from a starting point and the end being a variable that can easily be changed
@@ -259,7 +259,7 @@ while n <= end:
     total += n
     n += 1
 print(total)
-#This will produce the combination of adding each value from 1 through to 6 iteratively.
+#       This will produce the combination of adding each value from 1 through to 6 iteratively.
 ```
 
 Or decreasing in values as you go down from a starting point
@@ -279,7 +279,7 @@ The following also shows the process of assigning variables outside of the **whi
 ```python
 x = 3
 answer = 0
-iterationsleft = x #we are assigning the iterations we want to run through as a separate variable so that we can make changes in the loop to this variable without affecting **x**
+iterationsleft = x #        we are assigning the iterations we want to run through as a separate variable so that we can make changes in the loop to this variable without affecting **x**
 
 while (interationsleft != 0):
     answer = answer + x
@@ -298,14 +298,14 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 
 ```python
 for n in range(5)
-# range will give us back the integers 0 though to and up till 5 but not including 5.
+#       range will give us back the integers 0 though to and up till 5 but not including 5.
 ```
 
 You can also use *slices* and *indices* within the for loop
 
 ```python
 for n in range(5:11:2)
-# will complete the range starting at 5 and increment by 2 until we reach 11 but not including 11.
+#       will complete the range starting at 5 and increment by 2 until we reach 11 but not including 11.
 ```
 
 Similarly you can use the For loop in the following manner:
@@ -313,11 +313,11 @@ Similarly you can use the For loop in the following manner:
 ```python
 for i in range(0,10,2):
     print(i)
-# which will print 0, 2, 4, 6, 8 but not 10
+#       which will print 0, 2, 4, 6, 8 but not 10
 
 for i in range(10,0,-2):
     print(i)
-#prints 10, 8, 6, 4, 2 but not 0
+#       prints 10, 8, 6, 4, 2 but not 0
 ```
 
 If you are given some variable that you need to combine or use and the variable is scalable and without your code breaking and you want to include the end-value **somenumber**
@@ -328,7 +328,7 @@ total = 0
 for i in range(1,somenumber+1):
     total += i
 print(total)
-#this will run through the numbers and add each number to the **total** and this will also be inclusive of the end index **somenumber**
+#       this will run through the numbers and add each number to the **total** and this will also be inclusive of the end index **somenumber**
 ```
 
 [Back to Top](#table-of-contents)
@@ -349,7 +349,7 @@ for i in range(5:11:2):
         break
 
 print(mysum)
-# This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
+#       This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
 
 [Back to Top](#table-of-contents)
@@ -364,13 +364,13 @@ The mod sign % used in a test has the following general english explanation:
 
 ```python
 0 % 2
-# The number 2 (on the right) goes into the number 0 (on the left) exactly 0 times (x amount of times). Afterwards there is 0 remaining.
+#       The number 2 (on the right) goes into the number 0 (on the left) exactly 0 times (x amount of times). Afterwards there is 0 remaining.
 2 % 2
-# 2 goes into the number 2 exactly one time and there is 0 remaining.
+#       2 goes into the number 2 exactly one time and there is 0 remaining.
 3 % 2
-# 2 goes into the number 3 exactly one time and there is 1 remaining.
+#       2 goes into the number 3 exactly one time and there is 1 remaining.
 23 % 5
-# 5 goes into the number 23 example four times and there is 3 remaining.
+#       5 goes into the number 23 example four times and there is 3 remaining.
 ```
 
 Using this technique you can test for even numbers by using **mod** division and it will determine if the number is able to be evenly split, thereby being **even**.
@@ -390,13 +390,13 @@ Syntax follows the `abs(number)` format.
 ```python
 float = -54.22
 print('absolute value of this float is: ', abs(float))
-# prints 54.22
+#       prints 54.22
 integer = -88
 print('absolute value of this intege is: ', abs(integer))
-#prints 88
+#       prints 88
 complex = 3-4j
 print('absolute value or magnitude of complex is: ', abs(complex))
-#prints 5.0
+#       prints 5.0
 ```
 
 [Back to Top](#table-of-contents)
@@ -416,7 +416,7 @@ epsilon = 0.01
 numGuesses = 0
 low = 1.0
 high = x
-# high is initialised as our guess x = 25
+#       high is initialised as our guess x = 25
 ans = (high + low)/2.0
 
 while abs(ans**2 - x) >= epsilon:
@@ -441,7 +441,7 @@ print(str(ans) + ' is close to a square root of ' + str(x))
 Functions take a set of parameters; the number can be 0 and the parameters are set inside the function.
 
 ```python
-def is_even (i): #keyword || name || parameters or arguments
+def is_even (i):        #keyword || name || parameters or arguments
     """
     Input: i, a positive int
     Returns True if i is even, otherwise false
@@ -449,9 +449,9 @@ def is_even (i): #keyword || name || parameters or arguments
     print('hi')
     return i % 2 == 0
 
-is_even(3) # calling the function using its name and values for parameters.
+is_even(3)          # calling the function using its name and values for parameters.
 
-# as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
+        # as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
 ```
 
 [Back to Top](#table-of-contents)
@@ -472,16 +472,16 @@ def times(x,y):
     return x*y
 def add_or_times (a):
     if a > 5:
-        return add #returning a function but not calling on the function with parameters
+        return add #        returning a function but not calling on the function with parameters
     else:
         return times
-# for example:
+#       for example:
 add_or_times(6)(3,1)
-#great than 5
-#return add
+#       great than 5
+#       return add
 add(3,1)
 >>>4
-#so we can see we replaced our initial function with the returned function but then we ran the parameters using that new function
+#       so we can see we replaced our initial function with the returned function but then we ran the parameters using that new function
 ```
 
 [Back to Top](#table-of-contents)
@@ -527,10 +527,10 @@ Taking on the variables and set parameters from previous (higher) scopes that si
 def g(x):
     def h():
         x = 'abc'
-        #note there is no return statement so this variable is not returned to x
+        #       note there is no return statement so this variable is not returned to x
     x = x + 1
     print('in g(x): x =', x)
-    h() #calling that h() function now and creating that new scope
+    h() #       calling that h() function now and creating that new scope
     return x
 
 x = 3
@@ -570,10 +570,11 @@ def mult(a,b):
 We can also recursively solve characters or strings instead of only numbers. For example solving for a **palindrom** whereby the string reads left the same as it reads right (backwards).
 
 ```python
-#step 1 write function to convert string into useable characters
-#step 2 recursive solution for checking first  and last
-#step 3 call on palindrom function then call function for converting string.
-#bundle this up into a single function or template is_palindrome (s)
+#       step 1 write function to convert string into useable characters
+#       step 2 recursive solution for checking first  and last
+#       step 3 call on palindrom function then call function for converting string.
+#       bundle this up into a single function or template is_palindrome (s)
+
 def is_palindrome (s):
     def to_chars(s):
         s = s.lower()
@@ -581,7 +582,7 @@ def is_palindrome (s):
         for c in s:
             if c in 'abcdefghijklmnopqrstuvwxyz':
                 ans = ans + c
-                # purpose here is to convert a string or sentence into just its character form, thereby removing any spaces, special characters and numbers and converting it all the lower case.
+                #       purpose here is to convert a string or sentence into just its character form, thereby removing any spaces, special characters and numbers and converting it all the lower case.
         return ans
 
     def is_pal(s):
@@ -589,9 +590,9 @@ def is_palindrome (s):
             return True
         else:
             return s[0] == s[-1] and is_pal(s[1:-1])
-            #purpose here is to test if the first letter and the last letter are equal and then to call on the function again recursively doing so on the remaining letters until we get a length of 1 or 0 letters (which is 100% a palindrome.
+            #       purpose here is to test if the first letter and the last letter are equal and then to call on the function again recursively doing so on the remaining letters until we get a length of 1 or 0 letters (which is 100% a palindrome.
 
-    return is_pal(to_chars(s)) # calling on the is_pal recursion and instead of doing it directly on the string; we call it on our function that converts the string into something useable.
+    return is_pal(to_chars(s)) #        calling on the is_pal recursion and instead of doing it directly on the string; we call it on our function that converts the string into something useable.
 
 print(is_palindrome('are weew era'))
 ```
@@ -649,12 +650,12 @@ With the internal file handling, it doesn't require the operating system and can
 name_handle = open('kids', 'w')
 
 
-#open is going to open up a file - access into a file.
-#the 'w' is for writing *directly* into it.
+#       open is going to open up a file - access into a file.
+#       the 'w' is for writing *directly* into it.
 
 name_handle.close()
-# The closed parenthesis shows we are *invoking* the close of the file.
-#When done I can close the file. shut up shop
+#       The closed parenthesis shows we are *invoking* the close of the file.
+#       When done I can close the file. shut up shop
 ```
 
 There are some additional modularity such as **r** for only reading the file and as such can print lines or details from a file.
