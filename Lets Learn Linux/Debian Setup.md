@@ -61,8 +61,8 @@
 ---
 ![alt text](../images/gitaddcommands.jpg "general adding and updating commands")
 
-    `git add -A or --all`         Add all file changes to commit stage (and does both -u and .) 
-    `git add -u or --update`      stages new file modifications and deletions, **without new files** Looks at files if they are different or **removed** (this stages any 'rm' changes) 
+    `git add -A or --all`         Add all file changes to commit stage (This also does both -u and . options as per below) 
+    `git add -u or --update`      Updates or changes, **without adding new files** Looks at files if they are different or **removed** (this stages any 'rm' changes aswell) 
     `git add .`                   stages new files and modifications **without deletions** Looks at working tree and adds all those paths to staged changes if they are either changes or are new and not ignored (does not stage any 'rm' changes) 
     `git commit -m ""`            commit and leave your message for all stages 
     `git push origin branch`      to push to the branch you are working on 
