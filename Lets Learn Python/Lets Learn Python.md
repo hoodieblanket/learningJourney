@@ -6,8 +6,8 @@
 ---
 
 - [## Table of Contents](#-table-of-contents)
-- [## IF Statements](#-if-statements)
-- [## AND, OR, NOT](#-and-or-not)
+- [## `If` Statements](#-if-statements)
+- [## `And` - `Or` - `Not` Statements](#-and---or---not-statements)
 - [## Strings](#-strings)
 - [## Python 'in' operator](#-python-in-operator)
 - [## Input/Output](#-inputoutput)
@@ -95,21 +95,21 @@ This is not an indepth look into each topic but rather just reminders or bits of
 
 ---
 
-## IF Statements
+## `If` Statements
 ---
 
 ```python
-if true then proceed to this code
-elif Else this code
-elif Else this code
-else If nothing Else then proceed to this code
+if This line equals true then Continue With this code
+elif Else run this code
+elif Else run this code
+else If nothing before works then proceed to this final code
 ```
 
 [Back to Top](#table-of-contents)
 
 ---
 
-## AND, OR, NOT
+## `And` - `Or` - `Not` Statements
 ---
 
 ```python
@@ -137,14 +137,14 @@ The overall statement returns False
 
 We can make changes to concatination
 
-Ask for the **Length**
+**Ask for the Length**
 
 ```python
 len('eric')
-#asking for the length of a string will also count any blank spaces
+# ask for the length of a string will also count any blank spaces
 ```
 
-Ask for a **Slice**
+**Ask for a Slice**
 
 ***Note***: As with python beginning with index **i** and ends with **j**, the *roof* of this slice is **j** and is not included in the slice i.e s[i:j-1]. So we can say python is ***inclusive exlusive*** as we include the first index element and exclude the last index element
 
@@ -461,8 +461,9 @@ is_even(3) # calling the function using its name and values for parameters.
 ### Returning a function
 ---
 
-Instead of invoking and calling a function. You can have another function *return* a function.
-You can imagine it follows as such: when *returning* a function by **not** providing parameters at all (parenthesis), then we are not asking for **that function we are returning** to return any *result*. Instead the function call will return a function and this new function returned is going to take the place of the entire intial function call
+Instead of invoking and calling a function. You can have another function *return* a function.  
+You can imagine it follows as such: when *returning* a function by **not** providing parameters at all (parenthesis), then we are not asking for **that function we are returning** to return any *result*.  
+Instead the function call will return a function and this new function returned is going to take the place of the entire intial function call
 
 ```python
 def add (x,y):
