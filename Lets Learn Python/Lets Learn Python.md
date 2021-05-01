@@ -684,7 +684,7 @@ Tuples are also **Iterable** so it means you can walk down the tuple and use eac
 for Tuples with only **1** element then you will make use of the comma in order to form a correct Tuple.
 x = (1,) = Tuple
 x = (1) = Int
-# However if the Tuple has multiple elements then you dont need to use the comma at the end to form a Tuple
+#       However if the Tuple has multiple elements then you dont need to use the comma at the end to form a Tuple
 x = (1, 2, 3) = Tuple
 ```
 
@@ -722,12 +722,12 @@ Certain operations we can do with lists. As with lists, they are mutable so once
 - The dot tells python to *get out some **method***
 
 ```python
-List.append(n) # we can append or add another element to the list.
-List.extend[0,2] # Take a list and add to the end of it. Does not return anything until you call on the list
-del(List[1]) # to remove the element at index 1.
-pop(List)# Remove from the **end** of the list and returns the removed element
-List.remove(element) # a specific element by looking for the element and removes it, if multiple occurances then it will remove the first. If element not in the list then it will give an error.
-ListAB = ListA + ListB # We can concatenate two lists ListOne + ListTwo
+List.append(n) #            we can append or add another element to the list.
+List.extend[0,2] #          Take a list and add to the end of it. Does not return anything until you call on the list
+del(List[1]) #              to remove the element at index 1.
+pop(List)#                  Remove from the **end** of the list and returns the removed element
+List.remove(element) #      a specific element by looking for the element and removes it, if multiple occurances then it will remove the first. If element not in the list then it will give an error.
+ListAB = ListA + ListB #    We can concatenate two lists ListOne + ListTwo
 ```
 
 [Back to Top](#table-of-contents)
@@ -738,11 +738,11 @@ ListAB = ListA + ListB # We can concatenate two lists ListOne + ListTwo
 ---
 
 ```python
-list(s) # returns a list with every character from s an element in the list\
-s.split() # Split the string on a character
-s.split('<') # Split at this character
-''.join(list) # Will join all the characters i nthe list to produce a string
-'_'.join(list) # will do the same but place the special character '_' between each element of the list.
+list(s) #               returns a list with every character from s an element in the list\
+s.split() #             Split the string on a character
+s.split('<') #          Split at this character
+''.join(list) #         Will join all the characters i nthe list to produce a string
+'_'.join(list) #        will do the same but place the special character '_' between each element of the list.
 ```
 
 [Back to Top](#table-of-contents)
@@ -755,11 +755,11 @@ s.split('<') # Split at this character
 sorted() does not mutate the list while the **method** sort() mutates the list
 
 ```python
-sorted(List) # returns a sorted version of List. Provides a sorted version of List but does not mutate it
-List.sort() # empty parenthesis to say invoke the function And this will mutate the List to be ordered
-List.reverse() # empty parenthesis to invoke the call. and this will mutate the list.
-List.insert(index, element) # inserting an element at the nth index. Returns none as it doesnt return anything
-List.count(element) # counts number of occurences. returns number
+sorted(List) #                      returns a sorted version of List. Provides a sorted version of List but does not mutate it
+List.sort() #                       empty parenthesis to say invoke the function And this will mutate the List to be ordered
+List.reverse() #                    empty parenthesis to invoke the call. and this will mutate the list.
+List.insert(index, element) #       inserting an element at the nth index. Returns none as it doesnt return anything
+List.count(element) #               counts number of occurences. returns number
 ```
 
 [Back to Top](#table-of-contents)
@@ -787,7 +787,7 @@ We need to be careful with variables with lists that we assign: assigning them t
 ```python
 variable = ['sunny', 'windy', 'rainy']
 weather = variable
-# This points to the same list in the internal computer memory we have allocated. So if we change the list, it affects both variables and this may have unexpected consequences
+#       This points to the same list in the internal computer memory we have allocated. So if we change the list, it affects both variables and this may have unexpected consequences
 ```
 
 Making a clone of this variable is easier in order to set up separate lists inside the memory allocation
@@ -795,7 +795,7 @@ Making a clone of this variable is easier in order to set up separate lists insi
 ```python
 variable = ['sunny', 'windy', 'rainy']
 weather = variable[:]
-# this difference is that we are cloning and greater a second list for the variable *weather* so that each variable points to its own list.
+#       this difference is that we are cloning and greater a second list for the variable *weather* so that each variable points to its own list.
 ```
 
 Cloning is useful when I want to do something to a list that involves mutation but doesnt affect the original list.
@@ -813,10 +813,10 @@ Cloning lists is the best way to iterate correctly and keep python on track with
 
 ```python
 def removeDuplicate(List1, List2):
-    List1_Copy = List1[:] # create a clone of List1
+    List1_Copy = List1[:] #         create a clone of List1
     for e in List1_Copy:
         if e in List2:
-            List1.remove(e) # Thereby iterate over each element in Copy, if the value is in List 2, then we remove it from List 1 and mutate the original: remove the duplicates
+            List1.remove(e) #       Thereby iterate over each element in Copy, if the value is in List 2, then we remove it from List 1 and mutate the original: remove the duplicates
 ```
 
 [Back to Top](#table-of-contents)
@@ -837,18 +837,18 @@ Functions are particularly usefules as arguments when coupled with lists known a
 ```python
 def applyToEach(List,Function):
     for i in range(len(List)):
-        L[i] = function(List[i]) # for each index I get out of the list, apply the function to it; then put it back into the list and replace that original [i]
-# This will cycle through the list and at each index, apply the function and return it back to the list.
-# The list is amended and replaced with the function-applied index.
+        L[i] = function(List[i]) #      for each index I get out of the list, apply the function to it; then put it back into the list and replace that original [i]
+#       This will cycle through the list and at each index, apply the function and return it back to the list.
+#       The list is amended and replaced with the function-applied index.
 List = [1, -2, 3.4]
 applyToEach(List,abs)
-# returns [1, 2, 3.4]
+#       returns [1, 2, 3.4]
 applyToEach(List,int)
-# return [1, 2, 3]
-applyToEach (List, fact) #factorial function that we defined earlier on
-# returns [1, 2, 6]
-applyToEach(List, fib) #fibonacci function that we defined earlier on
-# returns [1, 2, 13]
+#       return [1, 2, 3]
+applyToEach (List, fact) #      factorial function that we defined earlier on
+#       returns [1, 2, 6]
+applyToEach(List, fib) #        fibonacci function that we defined earlier on
+#       returns [1, 2, 13]
 ```
 
 In the reverse as well
@@ -858,12 +858,12 @@ def applyFunctions(List, x):
     for function in List:
         print(function(x))
 
-applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we can to invoke in place of *List* and then apply those functions to the number 4 that we pass in
-#returns
-#4
-#4
-#24
-#5
+applyFunctions([abs int, fact, fib], 4) #       we provide a list of functions that we can to invoke in place of *List* and then apply those functions to the number 4 that we pass in
+#       returns
+#       4
+#       4
+#       24
+#       5
 ```
 
 [Back to Top](#table-of-contents)
@@ -878,11 +878,11 @@ applyFunctions([abs int, fact, fib], 4) # we provide a list of functions that we
 
 ```python
 map(abs, [1, -2, 3, -4])
-# map will walk down the list provided in the argument and apply the function to each element. and allow us to print the outcome
+#       map will walk down the list provided in the argument and apply the function to each element. and allow us to print the outcome
 for elt in map(abs, [1, -2, 3, -4]):
     print(elt)
 
-#returns [1, 2, 3, 4]
+#       returns [1, 2, 3, 4]
 ```
 
 There is a difference here between what we did before; applying the functions to the index elements that we pull out and then we put the mutated elements back to that list
@@ -898,8 +898,8 @@ list1 = [1, 28, 54]
 list2 = [2, 34, 17]
 for elt in map(min, list1, list2):
     print(elt)
-#Returns the minimum of each index compared. so Index [0] for each list, the minimum is 1. For index [1] for each list, the minimum is 28 and for index [2] for each list, the minimum is 17
-#returns [1, 28, 17]
+#       Returns the minimum of each index compared. so Index [0] for each list, the minimum is 1. For index [1] for each list, the minimum is 28 and for index [2] for each list, the minimum is 17
+#       returns [1, 28, 17]
 ```
 
 [Back to Top](#table-of-contents)
@@ -917,20 +917,20 @@ I can look up a **key** and retrieve all information associated with that **key*
 
 ```python
 my_dictionary = {}
-#creating empty dictionary
+#       creating empty dictionary
 grades = {'Ana':'B', 'John':'A+', 'Casey':'C-'}
 grades['John']
-# Will return 'A+'
+#       Will return 'A+'
 grades ['Sylvan'] = 'A'
-# Will add a new entry into that dictionary
+#       Will add a new entry into that dictionary
 'John' in grades
-# will return True or False if the key is in the dictionary
+#       will return True or False if the key is in the dictionary
 del[grades['Ana']]
-# Deletes an entry
+#       Deletes an entry
 grades.keys() #because its a method, open&close parenthesis calls the method
-# Returns an iterable of all keys, I can walk down all the collection of values and do something to them
+#       Returns an iterable of all keys, I can walk down all the collection of values and do something to them
 grades.values()
-# Returns an iterable of all values, I can walk down all the collection of values and do something to them
+#       Returns an iterable of all values, I can walk down all the collection of values and do something to them
 ```
 
 - Values = They can be anything, lists or even other dictionaries
@@ -966,8 +966,8 @@ and then using **list comprehension**
 ```python
 
 list = [i for i in range(15) if i % 2 == 0]
-# syntax being [value we return to list] for [element] in [sequence] if [condition]
-# so we iterate every each value from 0 to 14 but not including 15 and if the [condition] is met, the integer meets the criteria, then include the [value we return to the list] in the final list
+#       syntax being [value we return to list] for [element] in [sequence] if [condition]
+#       so we iterate every each value from 0 to 14 but not including 15 and if the [condition] is met, the integer meets the criteria, then include the [value we return to the list] in the final list
 ```
 
 For the above code:
@@ -977,13 +977,13 @@ For the above code:
 
 ```python
 list = [i*3 for i in range(15) if i%2 == 0]
-# iterates over 0 - 14 and selects all *even* but we mutate the index value at each iteration.
-# if called, returns [0, 6, 12, 18, 24, 30, 36, 42]
+#       iterates over 0 - 14 and selects all *even* but we mutate the index value at each iteration.
+#       if called, returns [0, 6, 12, 18, 24, 30, 36, 42]
 
 list = [value for value in namesDict.values() if value % 2 != 0]
-# depending on what is in the dictionary, we can iterate over each **value** in the dictionary and use the values to test the if [condition] then select those and assign them to the *list*
+#       depending on what is in the dictionary, we can iterate over each **value** in the dictionary and use the values to test the if [condition] then select those and assign them to the *list*
 
-#another example
+#       another example
 secretWord = 'durian'
 lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
@@ -1007,7 +1007,7 @@ secretWord = 'durian'
 lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
     all(c in lettersGuessed for c in secretWord)
-    # single liner using list comprehension rules to produce a boolean returned.
+    #       single liner using list comprehension rules to produce a boolean returned.
     >>> True
 ```
 
@@ -1028,9 +1028,9 @@ secretWord = 'durian'
 lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
 set(lettersGuessed) >= set(secretWord)
-#or
+#       or
 set(c for c in lettersGuessed if c in secretWord)
-# returns {'a', 'd', 'i', 'n', 'r', 'u'} just need to compare the set to secretWord
+#       returns {'a', 'd', 'i', 'n', 'r', 'u'} just need to compare the set to secretWord
 ```
 
 [Back to Top](#table-of-contents)
@@ -1044,7 +1044,7 @@ Python allows you to create new dictionaries from existing ones but assigning **
 
 ```python
 dictionary = {key:new_vlaue for (key, value) in dictionary.items()}
-# iterates over the keys and values in a dictionary and adds the corresponding key and new value that is the result of an expression
+#       iterates over the keys and values in a dictionary and adds the corresponding key and new value that is the result of an expression
 ```
 
 For example for the following dictionary:
@@ -1053,7 +1053,7 @@ For example for the following dictionary:
 grades = {"Nora": 90, "Lulu": 15, "Gino": 60}
 doubleGrades = {key: value*2 for (key, value) in grades.items()}
 doubleGrades
-# returns {'Nora': 180, 'Lulu': 30, 'Gino': 120}
+#       returns {'Nora': 180, 'Lulu': 30, 'Gino': 120}
 ```
 
 You can also use **conditions** in dictionary comprehension
@@ -1061,9 +1061,9 @@ You can also use **conditions** in dictionary comprehension
 ```python
 grades = {"Nora": 90, "Lulu": 15, "Gino": 60}
 doubleGrades = {key: value*2 for (key, value) in grades.items() if value % 2 == 0}
-# selects only *even* if the **original** value was even
+#       selects only *even* if the **original** value was even
 doubleGrades
-# returns {'Nora': 180, 'Gino': 120}
+#       returns {'Nora': 180, 'Gino': 120}
 ```
 
 [Back to Top](#table-of-contents)
@@ -1090,21 +1090,21 @@ Dangerous because:
 ---
 
 ```python
-numFibCalls = 0 # initialise our counter
+numFibCalls = 0 #       initialise our counter
 def fib(n):
     global numFibCalls
     numFibCalls += 1
     if n == 0 or n == 1:
         return n
-    #both base cases checked!
+    #       both base cases checked!
     else:
         return fib(n-1) + fib(n-2)
 
 print(fib(12))
 print('Number of times the function is called: ', numFibCalls)
 
-# 144
-# Number of times the function is called:  465
+#       144
+#       Number of times the function is called:  465
 ```
 
 and dictionary
@@ -1125,8 +1125,8 @@ d = {0:0, 1:1}
 print(fibefficient(12,d))
 print('Number of times the function is called: ', numFibCalls)
 
-# 144
-# Number of times the function is called:  23
+#       144
+#       Number of times the function is called:  23
 ```
 
 [Back to Top](#table-of-contents)
@@ -1418,8 +1418,8 @@ try:
 except ValueError as ex:
     age = int(input("Age: "))
     print("You have not put a valid number for your age")
-    print(ex) # this will print the variable which has been assigned some memory of the ValueError produced
-    print(type(ex)) # This will print the type of the exception that was thrown
+    print(ex) #         this will print the variable which has been assigned some memory of the ValueError produced
+    print(type(ex)) #       This will print the type of the exception that was thrown
 else:
     print("No exceptions were thrown")
 print("The program continues to run")
@@ -1448,8 +1448,8 @@ except clauses.
 ```python
 try:
     age = int(input("Age: "))
-    xfactor = 10 / age # what if age is 0? This would no longer produce a ValueError
-except (ValueError, ZeroDivisionError): # errors added in parenthesis and separated by comma
+    xfactor = 10 / age #        what if age is 0? This would no longer produce a ValueError
+except (ValueError, ZeroDivisionError): #       errors added in parenthesis and separated by comma
     print("You have not put a valid number for your age")
 else:
     print("No exceptions were thrown")
@@ -1468,15 +1468,15 @@ such as closing files, data os connections, network connections and so on.
 
 ```python
 try:
-    file = open("app.py") # opening a file
+    file = open("app.py") #         opening a file
     age = int(input("Age: "))
-    xfactor = 10 / age # what if age is 0? This would no longer produce a ValueError
-except (ValueError, ZeroDivisionError): # errors added in parenthesis and separated by comma
+    xfactor = 10 / age #        what if age is 0? This would no longer produce a ValueError
+except (ValueError, ZeroDivisionError): #       errors added in parenthesis and separated by comma
     print("You have not put a valid number for your age")
 else:
     print("No exceptions were thrown")
 finally:
-    file.close() # closing down/release the resources being used
+    file.close() #      closing down/release the resources being used
 
 ```
 
@@ -1495,18 +1495,18 @@ accomplish the same thing.
 
 ```python
 try:
-    with open("app.py") as file: # using the with statement, the file object that the open function returns
-        print("file opened") # whenever we open a file using with statement, python will automatically close\
-        # the file without the need for a finally clause. with statement will auto free the resources
+    with open("app.py") as file: #      using the with statement, the file object that the open function returns
+        print("file opened") #      whenever we open a file using with statement, python will automatically close\
+        #       the file without the need for a finally clause. with statement will auto free the resources
 
     age = int(input("Age: "))
-    xfactor = 10 / age # what if age is 0? This would no longer produce a ValueError
-except (ValueError, ZeroDivisionError): # errors added in parenthesis and separated by comma
+    xfactor = 10 / age #        what if age is 0? This would no longer produce a ValueError
+except (ValueError, ZeroDivisionError): #       errors added in parenthesis and separated by comma
     print("You have not put a valid number for your age")
 else:
     print("No exceptions were thrown")
-#finally:
- #   file.close() # closing down/release the resources being used
+#       Finally:
+ #          file.close() # closing down/release the resources being used
 ```
 
 [Back to Top](#table-of-contents)
@@ -1524,10 +1524,10 @@ affect other peoples codes. This takes the form of the time it takes to complete
 ```python
 def calculate_xfactor(age):
     if age <= 0:
-        raise ValueError("Age cannot be 0 or less") # raises the exception ValueError and prints out a statement
+        raise ValueError("Age cannot be 0 or less") #       raises the exception ValueError and prints out a statement
     return 10/age
 
-try: #Instead of the program crashing with the error details, you can place the call inside a try block to control it
+try: #      Instead of the program crashing with the error details, you can place the call inside a try block to control it
     calculate_xfactor(-1)
 except ValueError as error:
     print(error)
@@ -1553,7 +1553,7 @@ L1 = [1,2,3,4]
 L2 = [5,6,7,8]
 L4 = [4,5,6,0]
 get_ratios(L1, L2)
-get_ratios(L1, L4) # out: [02, 0.333, 0,428, NaN] which shows the exception handler kicking in
+get_ratios(L1, L4) #        out: [02, 0.333, 0,428, NaN] which shows the exception handler kicking in
 
 ```
 
@@ -1583,8 +1583,8 @@ Good way to deal with defensive programming
 
 ```python
 def avg(grades):  
-    assert not len(grades) = 0, 'no grades data' # expect that there is atleast some grades in that list
-    # assert that the statement will not be true. (not 0 data) but if it does, then it captures the assert error and stops immediately and prints the 'no grades 'data'
+    assert not len(grades) = 0, 'no grades data' #      expect that there is atleast some grades in that list  
+    #       assert that the statement will not be true. (not 0 data) but if it does, then it captures the assert error and stops immediately and prints the 'no grades 'data'
     return sum(grades)/len(grades)
 ```
 
@@ -1716,13 +1716,13 @@ class Table(object):
     def talk(self, phrase):
         print(phrase)
 # --- This section was all methods
-table1 = Table(35, 15, 16) # This is the instance
+table1 = Table(35, 15, 16) #        This is the instance
 ```
 
 This example shows that we use the variables added to the function scope `def __init(self, **tabletop**, **legs**, **chair**)` and set them as the values for the instances attributes(right hand side of '=' )
 
 ```python
-self.tabletop = 35 # think of the above example and then read it out. 'For this instance, 'self', create an attribute named 'tabletop' and give it a value of '35'
+self.tabletop = 35 #        think of the above example and then read it out. 'For this instance, 'self', create an attribute named 'tabletop' and give it a value of '35'
 
 `__init__()` - think of it as creating a **blueprint** for creating **instances** of a class. `__init__()` is called the first time we create and instance
 ```
@@ -1762,7 +1762,7 @@ Class variables is assigning a variable within the class and not within a method
 
 ```python
 class Employee:
-    #Class variables
+    #       Class variables
     num_of_emps = 0
     raise_amount = 1.04
 
@@ -1774,24 +1774,24 @@ class Employee:
         self.email = first + "." + last + "@company.com"
 
     Employee.num_of_emps += 1
-    # As we assign and create more employee files, this will keep track if each initialised instance. Then we can use print(Employee.num_of_emps) to produce a number of setup employees with their profiles.
+    #       As we assign and create more employee files, this will keep track if each initialised instance. Then we can use print(Employee.num_of_emps) to produce a number of setup employees with their profiles.
 
     def fullname(self):
         return "{} {}".format(self.first, self.last)
-        #as mentioned with methods inside the class, the first argument will always be the instance, `self` and we only need `self` in order to get the full name
+        #       as mentioned with methods inside the class, the first argument will always be the instance, `self` and we only need `self` in order to get the full name
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
-        # accessing the raise_amount variable within the class
-        # Unable to just call on raise_amount as the variable would be undefined inside the method. So you need to call on the class variable.
-        # using self.raise_amount then we inherit the raise_amount and then if we need to, we can change each instances' raise_amount separate if needed
+        #       accessing the raise_amount variable within the class
+        #       Unable to just call on raise_amount as the variable would be undefined inside the method. So you need to call on the class variable.
+        #       using self.raise_amount then we inherit the raise_amount and then if we need to, we can change each instances' raise_amount separate if needed
 
 emp_1 = Employee('Johann', 'Van Niekerk', 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
 print(emp_1.fullname)
-# This will only print and confirm that `fullname` is indeed a method.
-# So as we do with methods we need to have parenthesis to call the method
+#       This will only print and confirm that `fullname` is indeed a method.
+#       So as we do with methods we need to have parenthesis to call the method
 print(emp_1.fullname())
 print(emp_2.fullname())
 print(Employee.num_of_emps)
@@ -1831,10 +1831,10 @@ class Employee:
     @classmethod
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
-    #setting the amount equal to the amount we passed in
-    # Cannot use class as a variable so we use `cls
+    #       setting the amount equal to the amount we passed in
+    #       Cannot use class as a variable so we use `cls
 Employee.set_raise_amt(1.05)
-# to follow on with the above example. this would be how we adjust the classmethod inside the class and affect the variable on the class-level`
+#       to follow on with the above example. this would be how we adjust the classmethod inside the class and affect the variable on the class-level`
 ```
 
 ***Using a `@classmethod` to parse strings and retrieve details for the class***
@@ -1860,11 +1860,11 @@ class Employee:
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
 
-# For example, imagine having a database or collection of details that come out with hyphens (-) separating the data and you need to feed the correct details into the class and create each employee instance:
+#       For example, imagine having a database or collection of details that come out with hyphens (-) separating the data and you need to feed the correct details into the class and create each employee instance:
 emp_str_1 = `john-doe-70000`
 emp_str_2 = `steve-smith-30000`
 emp_str_3 = `jane-doe-90000`
-# parsing the string to separate the string and then passing the individual values to our Employee class to create the instances
+#       parsing the string to separate the string and then passing the individual values to our Employee class to create the instances
     @classmethod
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
@@ -1906,12 +1906,12 @@ class Employee:
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
-#Static method, we would use a static method when we don't use the class or instance at all
+#       Static method, we would use a static method when we don't use the class or instance at all
 import datetime
-#importing datetime module for this example
+#       importing datetime module for this example
 my_date = datetime.date(2020, 3, 14)
 print(Employee.is_workday(my_date))
-#returns true if weekday or false if weekend
+#       returns true if weekday or false if weekend
 ```
 
 ---
@@ -1948,12 +1948,12 @@ class Employee:
 
 class Developer(Employee):
     raise_amt = 1.10
-    # Some key takeways, if you used "print(help(Developer)) then it would show the inheritance or order that the class would search for a `__init__` method. As we don't have a __init__ method in the class for Developer, then there is a hierachy that the class will look through to find the __init__.
-    #This will show it will look in this order: Developer, Employee, builtins.object (every class in python inherits from this base object)
+    #       Some key takeways, if you used "print(help(Developer)) then it would show the inheritance or order that the class would search for a `__init__` method. As we don't have a __init__ method in the class for Developer, then there is a hierachy that the class will look through to find the __init__.
+    #       This will show it will look in this order: Developer, Employee, builtins.object (every class in python inherits from this base object)
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)
         self.prog_lang = prog_lang
-        # letting the inheriting class use the parent class to handle certain arguments and then defining a new argument relevant for just developers; listing their programming language.
+        #       letting the inheriting class use the parent class to handle certain arguments and then defining a new argument relevant for just developers; listing their programming language.
 
 dev_1 = Developer('Test', 'User', 50000, 'python')
 dev_2 = Developer('Test2', 'User2', 60000, 'java')
@@ -1965,14 +1965,14 @@ print(dev_1.pay)
 print(dev_1.email)
 print(dev_1.prog_lang)
 
-#Example 2 subclass
+#       Example 2 subclass
 class Manager(Employee):
     def __init__(self, first, last, pay, employees = None):
-        # good practice not to pass in an empty list as a default argument. You never want to pass in mutable data types like a list or dictionary as arguments.
+        #       good practice not to pass in an empty list as a default argument. You never want to pass in mutable data types like a list or dictionary as arguments.
         super().__init(first, last, pay)
         if employees is None:
             self.employees = []
-            #create empty list
+            #       create empty list
         else:
             self.employees = employees
 
@@ -1993,10 +1993,10 @@ print(mgr_1.email)
 mgr_1.add_emp(dev_2)
 
 mgr_1.print_emps()
-# prints out both employees full name
+#       prints out both employees full name
 
 mgr_1.remove_emp(dev_2)
-#removes Developer 2
+#       removes Developer 2
 ```
 
 [Back to Top](#table-of-contents)
@@ -2032,8 +2032,8 @@ class Coordinates(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    # This means everything Coordinates(x, y) is called, it will create a frame and within that unique frame, assign the internal values to what was initialised
-    # Whenever you call on that same **frame** the values used will be specific to that frame.
+    #       This means everything Coordinates(x, y) is called, it will create a frame and within that unique frame, assign the internal values to what was initialised
+    #       Whenever you call on that same **frame** the values used will be specific to that frame.
 ```
 
 `__str__` called when we are trying to convert an object to a string. By default if we try to use the string method such.
@@ -2107,7 +2107,7 @@ With more readability for the **end user**, the `__str__()` method can be used. 
 
 ```python
 def __add__(self, other):
-    # method takes in self, that will be on the left side of the addition, and other, that will be on the right side of the addition
+    #       method takes in self, that will be on the left side of the addition, and other, that will be on the right side of the addition
     return self.pay + other.pay
 
 print(emp_1 + emp_2)
@@ -2118,7 +2118,7 @@ The above `__add__()` method would be used to add the two employees' incomes tog
 ```python
 def __len__(self):
     return len(self.fullname())
-    # such realworld application might be testing the string length of an employees name in order to fit within parameters such as email creation restrictions etc.
+    #       such realworld application might be testing the string length of an employees name in order to fit within parameters such as email creation restrictions etc.
 ```
 
 [Back to Top](#table-of-contents)
@@ -2194,9 +2194,9 @@ class fraction(object):
         self.denom = denom
     def __str__(self):
         return str(self.numer) + ' / ' + str(self.denom)
-    def getNumer(self): #Getter
+    def getNumer(self): #       Getter
         return self.numer
-    def getDenom(self): # Getter
+    def getDenom(self): #       Getter
         return self.denom
     def __add__(self, other):
         numerNew = other.getDenom() * self.getNumer() \
@@ -2210,7 +2210,7 @@ class fraction(object):
         return fraction(numerNew, denomNew)
     def convert(self):
         return self.getNumer() / self.getDenom()
-        # prints out the floating point representation of the Numerator and Denominator
+        #       prints out the floating point representation of the Numerator and Denominator
 
 print(fraction(3, 4))
 oneHalf = fraction(1,2)
@@ -2340,14 +2340,14 @@ Because the code is trying to assign it to a attribute, we will get a python err
 ```python
 @fullname.setter
 def fullname(self, name):
- #name would be the name you would be trying to set
+ #      name would be the name you would be trying to set
     first, last = name.split (' ')
     self.first = first
     self.last = last
 
 emp_1.fullname = 'Michael Jordan'
-# now this will proceed to access the name we have input, using the splitter function, at the space we will split the variable sent as first name, last name
-# since the setter now assigned *self.first & last* then it means all other methods with the @property decorators would use the updated names for the email and fullname creations.
+#       now this will proceed to access the name we have input, using the splitter function, at the space we will split the variable sent as first name, last name
+#       since the setter now assigned *self.first & last* then it means all other methods with the @property decorators would use the updated names for the email and fullname creations.
 ```
 
 [Back to Top](#table-of-contents)
@@ -2376,14 +2376,14 @@ class Employee:
 
     @fullname.setter
     def fullname(self, name):
-    #name would be the name you would be trying to set
+    #       name would be the name you would be trying to set
         first, last = name.split (' ')
         self.first = first
         self.last = last
 
-emp_1 = Employee('John', 'Smith') #initial employee
+emp_1 = Employee('John', 'Smith') #     initial employee
 
-emp_1.fullname = 'Michael Jordan' # renaming the fullname variable
+emp_1.fullname = 'Michael Jordan' #         renaming the fullname variable
 
 print(emp_1.first)
 print(emp_1.email)
@@ -2395,7 +2395,7 @@ Now say we want to delete and run some cleanup code for an employee.
 ```python
     @fullname.deleter
     def fullname(self):
-        print('Delete Name!') # just to show this works
+        print('Delete Name!') #         just to show this works
         self.first = None
         self.last = None
 
@@ -2412,7 +2412,7 @@ del emp_1.fullname
 ```python
 class TagCloud:
 
-#lets create an object
+#       lets create an object
 cloud = tagCloud()
 len(cloud)
 cloud ["python"] = 10
