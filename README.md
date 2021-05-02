@@ -1,11 +1,15 @@
 # Learning and Development
 
+---
+
 My interests and progression as they develop over time
 
 ---
 
 ### Python Learning
+
 ---
+
 
 Link to my notes and general improvement for the Python language
 
@@ -14,7 +18,9 @@ Link to my notes and general improvement for the Python language
 ---
 
 ### Python Programs and Scripts
+
 ---
+
 
 [Link to Programs and Scripts](https://github.com/hoodieblanket/learningJourney/tree/master/Lets%20Learn%20Python/Programs%20and%20Scripts)
 
@@ -45,7 +51,9 @@ List of programs
 ---
 
 ### Network Security and what I am focusing on
+
 ---
+
 
 - [Computer Networks and the Internet](https://github.com/hoodieblanket/learningJourney/blob/master/Lets%20Learn%20Network%20Security/Computer%20Networks%20and%20the%20Internet.md)
 - [Learning Hack-The-Box](https://github.com/hoodieblanket/learningJourney/blob/master/Lets%20Learn%20Network%20Security/Learning%20Hack-The-Box.md)
@@ -59,7 +67,9 @@ List of programs
 ---
 
 ### OSCP Studying Resources
+
 ---
+
 
 - [OSCP Syllabus](https://www.offensive-security.com/pwk-syllabus/)
 - [HackTheBox](https://www.hackthebox.eu/)
@@ -72,7 +82,9 @@ List of programs
 ---
 
 ### Linux // Debian
+
 ---
+
 
 - [My Debian Setup](https://github.com/hoodieblanket/learningJourney/blob/master/Lets%20Learn%20Linux/Debian%20Setup.md)
 

@@ -2,18 +2,22 @@
 ---
 
 ## Table of Contents
+
 ---
+
 - [# VS Code shortcuts and settings](#-vs-code-shortcuts-and-settings)
-- [## Table of Contents](#-table-of-contents)
-- [## Custom Shortcuts](#-custom-shortcuts)
-- [## VSCode Shortcuts](#-vscode-shortcuts)
-- [## Markdown Shortcuts](#-markdown-shortcuts)
-- [## VSCode Extensions](#-vscode-extensions)
+- [Table of Contents](#table-of-contents)
+- [Custom Shortcuts](#custom-shortcuts)
+- [VSCode Shortcuts](#vscode-shortcuts)
+- [Markdown Shortcuts](#markdown-shortcuts)
+- [VSCode Extensions](#vscode-extensions)
   
 ---
 
 ## Custom Shortcuts
+
 ---
+
 
     New File (explorer.newfile) in Explorer window:                         alt + o
     New folder (explorer.newfolder) in explorer window:                     alt + k
@@ -26,7 +30,9 @@
 ---
 
 ## VSCode Shortcuts
+
 ---
+
 
     Toggle sidebar:                 Ctrl + B
     Side by side editing            Ctrl + \
@@ -43,7 +49,9 @@
 ---
 
 ## Markdown Shortcuts
+
 ---
+
 
     Open Markdown Preview           Ctrl + Shift + V
     Toggle bold:                    Ctrl + B
@@ -59,7 +67,9 @@
 ---
 
 ## VSCode Extensions
+
 ---
+
 
 * Bracket Pair Colorizer 2
 * Jupyter

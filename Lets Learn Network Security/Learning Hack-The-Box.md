@@ -1,6 +1,10 @@
 # Learning Vulnerabilities
 
+---
+
 ## Table of Contents
+
+---
 
 - [Learning Vulnerabilities](#learning-vulnerabilities)
   - [Table of Contents](#table-of-contents)
@@ -12,7 +16,11 @@
   - [For ROT47 encoding](#for-rot47-encoding)
   - [Webapp searching](#webapp-searching)
 
+---
+
 ## Using `curl` to post and receive response from webserver
+
+---
 
 `curl -XPOST URLHERE` - Sending POST REQUEST with and getting a response
 
@@ -21,6 +29,8 @@
 ---
 
 ## For Base64 encoding
+
+---
 
 Modifiers
 
@@ -33,6 +43,8 @@ Modifiers
 
 ### Using `echo` and pipe `|` to decode `base64` encoding
 
+---
+
 `echo` - in order to produce the string
 `|` - the "pipe" to send the string into the next function
 `echo T1JZRk0tVUZFRFItRVJHSU4tVlJER0ItV1hMTFo= | base64 -d` - using `echo` and `|` to send a cypher to decode\
@@ -43,6 +55,8 @@ Modifiers
 ---
 
 ## For ROT13 encoding
+
+---
 
 ROT13 is a bit of a running joke due to the simplicity of the encoding and resulting algorithm required to decode it. Thus anything protected by ROT13 is not really protected at all
 
@@ -57,6 +71,8 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 
 ### using `echo` and pipe `|` to decode ROT13 or ROT47
 
+---
+
 `echo` - in order to produce the string
 `|` - the "pipe" to send the string into the next function
 
@@ -65,6 +81,8 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 ---
 
 ## For ROT47 encoding
+
+---
 
 ROT47 includes special character as well now which means the length of the characters available is large but still similar level of security
 
@@ -76,6 +94,8 @@ Produces `%96 "F:4< qC@H? u@I yF>AD ~G6C %96 {2KJ s@8`
 ---
 
 ## Webapp searching
+
+---
 
 Webapp searching using the developer tools for the browser and checking under `Inspector` for interesting urls
 

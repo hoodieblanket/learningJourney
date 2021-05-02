@@ -2,37 +2,41 @@
 ---
 
 ## Table of Contents
+
 ---
 - [# Debian Setup](#-debian-setup)
-- [## Table of Contents](#-table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [- ## Helpful packages to install specific programs](#---helpful-packages-to-install-specific-programs)
-- [## Common terminal commands](#-common-terminal-commands)
-- [### Command line Quick Reference](#-command-line-quick-reference)
-- [### GIT commandline](#-git-commandline)
-- [## Setting up GIT](#-setting-up-git)
-- [## System updating, upgrading and maintenance](#-system-updating-upgrading-and-maintenance)
-- [## Display and Change hostname](#-display-and-change-hostname)
-- [## Unzipping a file](#-unzipping-a-file)
-- [## Installing .deb file](#-installing-deb-file)
-- [## Uninstall software and remove artifact dependencies](#-uninstall-software-and-remove-artifact-dependencies)
-- [## Installing pip for VSCode & Python](#-installing-pip-for-vscode--python)
-- [## Installing tmux](#-installing-tmux)
-- [## Configuring bluetooth](#-configuring-bluetooth)
-- [## Configuring apt sources to include 'non-free'](#-configuring-apt-sources-to-include-non-free)
-- [## Setting up firacode font](#-setting-up-firacode-font)
-- [## Installing alacritty](#-installing-alacritty)
-- [## Installing VIM](#-installing-vim)
-- [## Modifying bashrc or bashrc_aliases for alias set up](#-modifying-bashrc-or-bashrc_aliases-for-alias-set-up)
-- [## My preferred aliases/shortcuts](#-my-preferred-aliasesshortcuts)
-- [## Optional Shortcuts if you find useful](#-optional-shortcuts-if-you-find-useful)
-- [## Setting up latte-dock](#-setting-up-latte-dock)
-- [## Setting up VS Code to support Python, Github, LaTeX and Markdown](#-setting-up-vs-code-to-support-python-github-latex-and-markdown)
-- [## Helpful packages to install specific programs](#-helpful-packages-to-install-specific-programs)
+- [Common terminal commands](#common-terminal-commands)
+  - [Command line Quick Reference](#command-line-quick-reference)
+  - [GIT commandline](#git-commandline)
+- [Setting up GIT](#setting-up-git)
+- [System updating, upgrading and maintenance](#system-updating-upgrading-and-maintenance)
+- [Display and Change hostname](#display-and-change-hostname)
+- [Unzipping a file](#unzipping-a-file)
+- [Installing .deb file](#installing-deb-file)
+- [Uninstall software and remove artifact dependencies](#uninstall-software-and-remove-artifact-dependencies)
+- [Installing pip for VSCode & Python](#installing-pip-for-vscode--python)
+- [Installing tmux](#installing-tmux)
+- [Configuring bluetooth](#configuring-bluetooth)
+- [Configuring apt sources to include 'non-free'](#configuring-apt-sources-to-include-non-free)
+- [Setting up firacode font](#setting-up-firacode-font)
+- [Installing alacritty](#installing-alacritty)
+- [Installing VIM](#installing-vim)
+- [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrc_aliases-for-alias-set-up)
+- [My preferred aliases/shortcuts](#my-preferred-aliasesshortcuts)
+- [Optional Shortcuts if you find useful](#optional-shortcuts-if-you-find-useful)
+- [Setting up latte-dock](#setting-up-latte-dock)
+- [Setting up VS Code to support Python, Github, LaTeX and Markdown](#setting-up-vs-code-to-support-python-github-latex-and-markdown)
+- [Helpful packages to install specific programs](#helpful-packages-to-install-specific-programs)
 ---
 
 ## Common terminal commands
+
 ---
+
 ### Command line Quick Reference
+
 ---
     `ls la`                         additional modifiers - the *-a* will also force to show hidden files or folders.  
     `cd`                            to open a location within bash
@@ -58,6 +62,7 @@
 ---
 
 ### GIT commandline
+
 ---
 ![alt text](../images/gitaddcommands.jpg "general adding and updating commands")
 
@@ -71,6 +76,7 @@
 ---
 
 ## Setting up GIT
+
 ---
     `sudo apt install git`  
     `git config --global user.name __username__`                          sets global settings for this machine
@@ -86,6 +92,7 @@
 ---
 
 ## System updating, upgrading and maintenance
+
 ---
 
     `sudo apt install `             install package  
@@ -102,6 +109,7 @@
 ---
 
 ## Display and Change hostname
+
 ---
 
 Just incase you want to change your hostname to something else
@@ -112,6 +120,7 @@ Just incase you want to change your hostname to something else
 ---
 
 ## Unzipping a file
+
 ---
     
     `unzip file.zip -d newdirectory`                        unzip a zip file and using -d to indicate directory name \
@@ -119,6 +128,7 @@ Just incase you want to change your hostname to something else
 ---
 
 ## Installing .deb file
+
 ---
 
     `sudo apt install ~/directory/directory/filename.deb`   installing a .deb file from specific directory
@@ -127,6 +137,7 @@ Just incase you want to change your hostname to something else
 ---
 
 ## Uninstall software and remove artifact dependencies
+
 ---
 
     `sudo apt purge --auto-remove appname`                  Uninstall software
@@ -136,6 +147,7 @@ Just incase you want to change your hostname to something else
 ---
 
 ## Installing pip for VSCode & Python
+
 ---
 
 Installing pip3 for Python so you can use the Jupyter notebook for running code practice or examples
@@ -150,6 +162,7 @@ Installing pip3 for Python so you can use the Jupyter notebook for running code 
 ---
 
 ## Installing tmux
+
 ---
 Needed as an addon for konsole or command line
 
@@ -160,6 +173,7 @@ Needed as an addon for konsole or command line
 ---
 
 ## Configuring bluetooth
+
 ----
 First you will need to add non-free ***sources*** for apt
 
@@ -171,6 +185,7 @@ Reboot pc afterwards
 ---
 
 ## Configuring apt sources to include 'non-free'
+
 ---
 
   Use the following command to quickly open up the sources.list `xdg-open /etc/apt/sources.list`  
@@ -191,6 +206,7 @@ Reboot pc afterwards
 ---
 
 ## Setting up firacode font
+
 ---
 Nice font when used with konsole or commandline
 
@@ -201,6 +217,7 @@ Nice font when used with konsole or commandline
 ---
 
 ## Installing alacritty
+
 ---
 
 Addon for spicing up the konsole or commandline. Makes it a lot more visually appealing.  
@@ -236,6 +253,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 
 
 ## Installing VIM
+
 ---
 
     `sudo apt install vim`                Download VIM
@@ -245,6 +263,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## Modifying bashrc or bashrc_aliases for alias set up
+
 ---
 
     `xdg-open ~/.bashrc_aliases`         creates new bashrc_aliases file  
@@ -253,6 +272,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## My preferred aliases/shortcuts
+
 ---
     `alias sops='xdg-open /home/__username__/Dropbox/sops'`               quick access to my standard operating commands file
     `alias ls="ls -a --color=auto --group-directories-first"`
@@ -263,6 +283,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## Optional Shortcuts if you find useful
+
 ---
 
     `alias pkg-in='sudo apt install'`                                                       Install package
@@ -283,6 +304,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## Setting up latte-dock
+
 ---
 
     `sudo apt install latte-dock`
@@ -292,6 +314,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## Setting up VS Code to support Python, Github, LaTeX and Markdown
+
 ---
 
     `sudo apt install texlive-full`  
@@ -310,6 +333,7 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 ---
 
 ## Helpful packages to install specific programs
+
 ---
 
     `sudo apt install dirmngr`    need this in order to install spotify

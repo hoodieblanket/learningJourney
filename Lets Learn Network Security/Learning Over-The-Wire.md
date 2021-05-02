@@ -1,6 +1,10 @@
 # Learning Over-The-Wire
 
+---
+
 ## Table of Contents
+
+---
 
 - [Learning Over-The-Wire](#learning-over-the-wire)
   - [Table of Contents](#table-of-contents)
@@ -13,7 +17,11 @@
   - [2>/dev/null and its difficulties](#2devnull-and-its-difficulties)
   - [Nmap Network Mapper](#nmap-network-mapper)
 
+---
+
 ## Common Commandline Expressions
+
+---
 
 `ls`, or `ls -a` will show the current documents within the directory that your terminal is in. the *-a* will also force to show hidden files or folders. Remember using `cd` to move to a different directory if you want to search for what files and docs are elsewhere  
 `ls -l` will provide you with just the number of folders/documents in that directory including hidden.
@@ -31,6 +39,8 @@
 ---
 
 ## SSH
+
+---
 
 `ssh something.labs.org -p 80 -l username` is an example of the use of *-p* to set the port and *-l* to set the username  
 `-p` Set the port  
@@ -53,6 +63,8 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 
 ## `Find` and its difficulties
 
+---
+
 Modifiers
 
 - `-readable \! -executable` find readable but not executable file  
@@ -73,6 +85,8 @@ Additionally adding in `-type f # to specify that we are looking for a FILE` wil
 
 ## `grep` and its difficulties
 
+---
+
 Modifiers
 
 - `-i` ignore upper or lower case
@@ -90,6 +104,8 @@ using options such as `-i` will ignore upper or lowercase. `-w` will use whole w
 
 ## Current Directory and Parent Directory navigation
 
+---
+
 Commands
 
 - `cd .` Single dot represents current directory, as such your navigation won't change
@@ -103,6 +119,8 @@ a *single dot* represents the current working directory, and *two dots* denote t
 ---
 
 ## Using '-' as a filename and its difficulties
+
+---
 
 Commands
 
@@ -120,6 +138,8 @@ Same way if the filename clashes with the command line such as naming a file `-e
 
 ## 2>/dev/null and its difficulties
 
+---
+
 This redirects errors into /dev/null, which is sort-of 'file' that ignores and deletes everything it receives. This is how you remove the errors such as permission errors from your output and left with the result that you want. `>` redirects the output of a command to wherever you want; by default it will redirect what's called `stdout` (*which is what standard console output is called*) but if you were to do that in this case yoeu'd end up not seeing ANY results as all of the output of your command would end up being directed to /dev/null and wiped out. So what you do is put a `2` infront so that its `2>` which is a parameter that specifics that just the *error messages* should be redirected.
 
 [Back to Top](#table-of-contents)
@@ -127,6 +147,8 @@ This redirects errors into /dev/null, which is sort-of 'file' that ignores and d
 ---
 
 ## Nmap Network Mapper
+
+---
 
 Network discovery and security auditing.
 Useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime
