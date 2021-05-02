@@ -3,99 +3,101 @@
 ---
 
 ## Table of Contents
+
 ---
 
-- [## Table of Contents](#-table-of-contents)
-- [## `If` Statements](#-if-statements)
-- [## `And` - `Or` - `Not` Statements](#-and---or---not-statements)
-- [## Strings](#-strings)
-- [## Python 'in' operator](#-python-in-operator)
-- [## Input/Output](#-inputoutput)
-- [## While Statements](#-while-statements)
-- [## For Loop Statements](#-for-loop-statements)
-- [## Break Statement](#-break-statement)
-- [## Modulus division](#-modulus-division)
-- [## abs() Function](#-abs-function)
-- [## Bisectional Searching](#-bisectional-searching)
-- [## Call/Invoke a Function](#-callinvoke-a-function)
-- [### Returning a function](#-returning-a-function)
-- [### *Some rules for functions*](#-some-rules-for-functions)
-- [### Scopes inside scopes inside scopes, scopes all the way down](#-scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
-- [## Inheritance](#-inheritance)
-- [## Recursion](#-recursion)
-- [### *Some rules*](#-some-rules)
-- [## Modules and Files](#-modules-and-files)
-- [### File handle](#-file-handle)
-- [## Tuples, List, Mutability, Cloning](#-tuples-list-mutability-cloning)
-- [### Tuples ()](#-tuples-)
-- [### List []](#-list-)
-- [### Operations on Lists](#-operations-on-lists)
-- [#### Convert a List to Strings and back](#-convert-a-list-to-strings-and-back)
-- [### Other Operations](#-other-operations)
-- [### Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](#-bringing-it-all-together-loops-functions-range-and-lists)
-- [## Mutation, Aliasing, Cloning](#-mutation-aliasing-cloning)
-- [### Mutation and Iteration](#-mutation-and-iteration)
-- [## Functions as Objects](#-functions-as-objects)
-- [### HOPS Higher Order Procedure](#-hops-higher-order-procedure)
-- [#### Map](#-map)
-- [## Dictionaries](#-dictionaries)
-- [### List Comprehension and Dictionary Comprehension](#-list-comprehension-and-dictionary-comprehension)
-- [#### List Comprehension](#-list-comprehension)
-- [#### List comprehension with all()](#-list-comprehension-with-all)
-- [#### List comprehension with set()](#-list-comprehension-with-set)
-- [#### Dictionary Comprehension](#-dictionary-comprehension)
-- [## Global Variables](#-global-variables)
-- [### Fibonacci numbers using if statements and recursion versus dictionary and recursion](#-fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
-- [## Testing](#-testing)
-- [### Unit Testing](#-unit-testing)
-- [### Regression Testing](#-regression-testing)
-- [### Integration testing](#-integration-testing)
-- [### Black Box Testing](#-black-box-testing)
-- [#### Summary (Black Box Testing)](#-summary-black-box-testing)
-- [### Glass Box Testing](#-glass-box-testing)
-- [#### Summary (Glass Box Testing)](#-summary-glass-box-testing)
-- [## Debugging](#-debugging)
-- [### Error Messages](#-error-messages)
-- [### Print Statement Debugging](#-print-statement-debugging)
-- [### Debugging using bisection search](#-debugging-using-bisection-search)
-- [## Debugging: Utilizing Exceptions](#-debugging-utilizing-exceptions)
-- [### Debugging clauses](#-debugging-clauses)
-- [#### `try` and `except` clause](#-try-and-except-clause)
-- [#### `else` clause](#-else-clause)
-- [#### `finally` clause](#-finally-clause)
-- [### Assigning Exceptions to Variables](#-assigning-exceptions-to-variables)
-- [### Capturing Multiple Exceptions](#-capturing-multiple-exceptions)
-- [### Finally Clause](#-finally-clause-1)
-- [### With Statement](#-with-statement)
-- [### Raise Exceptions](#-raise-exceptions)
-- [### Assertions](#-assertions)
-- [## Object Oriented Programming OOP](#-object-oriented-programming-oop)
-- [### Advantages of OOP](#-advantages-of-oop)
-- [### Classes](#-classes)
-- [#### Examples of Classes](#-examples-of-classes)
-- [##### Example #1](#-example-1)
-- [##### Example #2](#-example-2)
-- [#### Key point to classes and OOP](#-key-point-to-classes-and-oop)
-- [#### Class Variables](#-class-variables)
-- [##### Example of Class Variable](#-example-of-class-variable)
-- [#### Class Methods and Static Methods](#-class-methods-and-static-methods)
-- [#### Creating Subclasses](#-creating-subclasses)
-- [#### `isinstance()` and `issubclass`](#-isinstance-and-issubclass)
-- [#### Methods](#-methods)
-- [#### Magic Methods](#-magic-methods)
-- [#### Property Decorators - Getters, Setters and Deleters](#-property-decorators---getters-setters-and-deleters)
-- [##### Getters](#-getters)
-- [###### Example - Getters to perform functions](#-example---getters-to-perform-functions)
-- [###### Example - Creating a Integer Set](#-example---creating-a-integer-set)
-- [##### Setters](#-setters)
-- [##### Deleters](#-deleters)
-- [#### Custom containers](#-custom-containers)
+- [Table of Contents](#table-of-contents)
+- [`If` Statements](#if-statements)
+- [`And`, `Or`, `Not` Statements](#and-or-not-statements)
+- [Strings](#strings)
+- [`In` operator](#in-operator)
+- [Input/Output](#inputoutput)
+- [`While` Statements](#while-statements)
+- [`For` Loop Statements](#for-loop-statements)
+- [`Break` Statement](#break-statement)
+- [Modulus division](#modulus-division)
+- [`abs()` Function](#abs-function)
+- [Bisectional Searching](#bisectional-searching)
+- [Call/Invoke a Function](#callinvoke-a-function)
+  - [Returning a function](#returning-a-function)
+  - [*Some rules for functions*](#some-rules-for-functions)
+  - [Scopes inside scopes inside scopes, scopes all the way down](#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
+- [Inheritance](#inheritance)
+- [Recursion](#recursion)
+  - [*Some rules*](#some-rules)
+- [Modules and Files](#modules-and-files)
+  - [File handle](#file-handle)
+- [`Tuples`, `List`, `Mutability`, `Cloning`](#tuples-list-mutability-cloning)
+  - [`Tuples ()`](#tuples-)
+  - [`List []`](#list-)
+  - [Operations on Lists](#operations-on-lists)
+    - [Convert a List to Strings and back](#convert-a-list-to-strings-and-back)
+  - [Other Operations](#other-operations)
+  - [Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS](#bringing-it-all-together-loops-functions-range-and-lists)
+- [Mutation, Aliasing, Cloning](#mutation-aliasing-cloning)
+  - [Mutation and Iteration](#mutation-and-iteration)
+- [Functions as Objects](#functions-as-objects)
+  - [HOPS Higher Order Procedure](#hops-higher-order-procedure)
+    - [Map](#map)
+- [Dictionaries](#dictionaries)
+  - [List Comprehension and Dictionary Comprehension](#list-comprehension-and-dictionary-comprehension)
+    - [List Comprehension](#list-comprehension)
+    - [List comprehension with all()](#list-comprehension-with-all)
+    - [List comprehension with `set()`](#list-comprehension-with-set)
+    - [Dictionary Comprehension](#dictionary-comprehension)
+- [Global Variables](#global-variables)
+  - [Fibonacci numbers using if statements and recursion versus dictionary and recursion](#fibonacci-numbers-using-if-statements-and-recursion-versus-dictionary-and-recursion)
+- [Testing](#testing)
+  - [Unit Testing](#unit-testing)
+  - [Regression Testing](#regression-testing)
+  - [Integration testing](#integration-testing)
+  - [Black Box Testing](#black-box-testing)
+    - [Summary (Black Box Testing)](#summary-black-box-testing)
+  - [Glass Box Testing](#glass-box-testing)
+    - [Summary (Glass Box Testing)](#summary-glass-box-testing)
+- [Debugging](#debugging)
+  - [Error Messages](#error-messages)
+  - [Print Statement Debugging](#print-statement-debugging)
+  - [Debugging using bisection search](#debugging-using-bisection-search)
+- [Debugging: Utilizing Exceptions](#debugging-utilizing-exceptions)
+  - [Debugging clauses](#debugging-clauses)
+    - [`try` and `except` clause](#try-and-except-clause)
+    - [`else` clause](#else-clause)
+    - [`finally` clause](#finally-clause)
+  - [Assigning Exceptions to Variables](#assigning-exceptions-to-variables)
+  - [Capturing Multiple Exceptions](#capturing-multiple-exceptions)
+  - [`Finally` Clause](#finally-clause-1)
+  - [`With` Statement](#with-statement)
+  - [`Raise` Exceptions](#raise-exceptions)
+  - [Assertions](#assertions)
+- [Object Oriented Programming OOP](#object-oriented-programming-oop)
+  - [Advantages of OOP](#advantages-of-oop)
+  - [Classes](#classes)
+    - [Examples of Classes](#examples-of-classes)
+      - [Example #1](#example-1)
+      - [Example #2](#example-2)
+    - [Key point to classes and OOP](#key-point-to-classes-and-oop)
+    - [Class Variables](#class-variables)
+      - [Example of Class Variable](#example-of-class-variable)
+    - [Class Methods and Static Methods](#class-methods-and-static-methods)
+    - [Creating Subclasses](#creating-subclasses)
+    - [`isinstance()` and `issubclass`](#isinstance-and-issubclass)
+    - [Methods](#methods)
+    - [Magic Methods](#magic-methods)
+    - [Property Decorators - Getters, Setters and Deleters](#property-decorators---getters-setters-and-deleters)
+      - [Getters](#getters)
+        - [Example - Getters to perform functions](#example---getters-to-perform-functions)
+        - [Example - Creating a Integer Set](#example---creating-a-integer-set)
+      - [Setters](#setters)
+      - [Deleters](#deleters)
+    - [Custom containers](#custom-containers)
 
 This is not an indepth look into each topic but rather just reminders or bits of info to cover my gaps in knowledge
 
 ---
 
 ## `If` Statements
+
 ---
 
 ```python
@@ -109,7 +111,8 @@ else If nothing before works then proceed to this final code
 
 ---
 
-## `And` - `Or` - `Not` Statements
+## `And`, `Or`, `Not` Statements
+
 ---
 
 ```python
@@ -133,6 +136,7 @@ The overall statement returns False
 ---
 
 ## Strings
+
 ---
 
 We can make changes to concatination
@@ -191,7 +195,8 @@ s[::-1]
 
 ---
 
-## Python 'in' operator
+## `In` operator
+
 ---
 
 The operators **in** and **not in** test for *collection membership*
@@ -215,6 +220,7 @@ not (element in coll)
 ---
 
 ## Input/Output
+
 ---
 
 With print statements as well as input statements.
@@ -233,7 +239,8 @@ print(5 * number)
 
 ---
 
-## While Statements
+## `While` Statements
+
 ---
 
 if the condition is true, then execute the code and go back to check the condition. Continue to do the condition until that condition is false.
@@ -293,7 +300,8 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 
 ---
 
-## For Loop Statements
+## `For` Loop Statements
+
 ---
 
 ```python
@@ -335,7 +343,8 @@ print(total)
 
 ---
 
-## Break Statement
+## `Break` Statement
+
 ---
 
 Using a statement to break out of some code at a certain point
@@ -357,6 +366,7 @@ print(mysum)
 ---
 
 ## Modulus division
+
 ---
 
 Modulus division is an easy way to test for even or odd numbers.
@@ -379,7 +389,8 @@ Using this technique you can test for even numbers by using **mod** division and
 
 ---
 
-## abs() Function
+## `abs()` Function
+
 ---
 
 Syntax follows the `abs(number)` format.
@@ -404,6 +415,7 @@ print('absolute value or magnitude of complex is: ', abs(complex))
 ---
 
 ## Bisectional Searching
+
 ---
 
 if you are trying to find a specific number and you know the beginning and end parameters then bisectional search is a great way to efficiently and effectively reach the outcome. Each step you are halving the available data and then you continue to repeat the step until you have found your answer.
@@ -436,6 +448,7 @@ print(str(ans) + ' is close to a square root of ' + str(x))
 ---
 
 ## Call/Invoke a Function
+
 ---
 
 Functions take a set of parameters; the number can be 0 and the parameters are set inside the function.
@@ -459,6 +472,7 @@ is_even(3)          # calling the function using its name and values for paramet
 ---
 
 ### Returning a function
+
 ---
 
 Instead of invoking and calling a function. You can have another function *return* a function.  
@@ -489,6 +503,7 @@ add(3,1)
 ---
 
 ### *Some rules for functions*
+
 ---
 
 - Only one **return** will be completed as the **return** order throws you outside of the function.
@@ -501,6 +516,7 @@ add(3,1)
 ---
 
 ### Scopes inside scopes inside scopes, scopes all the way down
+
 ---
 
 Sometimes called an internal or helper function. It only belongs inside and to the function that we called. It's protected.
@@ -519,6 +535,7 @@ def scope_one():
 ---
 
 ## Inheritance
+
 ---
 
 Taking on the variables and set parameters from previous (higher) scopes that sit in a hierachy. As we progress down the rabbit hole with new scopes, the inheritance of the previous scopes follow through.
@@ -542,6 +559,7 @@ z = g(x)
 ---
 
 ## Recursion
+
 ---
 
 Design solutions to problems by breaking it up into pieces that you can use.
@@ -551,6 +569,7 @@ Design solutions to problems by breaking it up into pieces that you can use.
 ---
 
 ### *Some rules*
+
 ---
 
 - Each recursive call to a function creates its own scope/environment
@@ -602,6 +621,7 @@ print(is_palindrome('are weew era'))
 ---
 
 ## Modules and Files
+
 ---
 
 Modules is a .py file containing a collection of Python definitions and statements.
@@ -640,6 +660,7 @@ This has the effect of creating bindings within our current shell or scope for a
 ---
 
 ### File handle
+
 ---
 
 handling of files or many files.py is important if you are going to sync across them or have different features/products inside each file but you want to draw of each other.
@@ -664,10 +685,12 @@ There are some additional modularity such as **r** for only reading the file and
 
 ---
 
-## Tuples, List, Mutability, Cloning
+## `Tuples`, `List`, `Mutability`, `Cloning`
+
 ---
 
-### Tuples ()
+### `Tuples ()`
+
 ---
 Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
 
@@ -692,7 +715,8 @@ x = (1, 2, 3) = Tuple
 
 ---
 
-### List []
+### `List []`
+
 ---
 
 Big difference between **Tuples** and **Lists** is that the **Lists** are mutable; they can be changed.
@@ -715,6 +739,7 @@ The important distinction is that a List is mutable so we can perform the follow
 ---
 
 ### Operations on Lists
+
 ---
 
 Certain operations we can do with lists. As with lists, they are mutable so once you use operations on lists, it will change that variable or that list permanently.
@@ -735,6 +760,7 @@ ListAB = ListA + ListB #    We can concatenate two lists ListOne + ListTwo
 ---
 
 #### Convert a List to Strings and back
+
 ---
 
 ```python
@@ -750,6 +776,7 @@ s.split('<') #          Split at this character
 ---
 
 ### Other Operations
+
 ---
 
 sorted() does not mutate the list while the **method** sort() mutates the list
@@ -767,6 +794,7 @@ List.count(element) #               counts number of occurences. returns number
 ---
 
 ### Bringing it all together: LOOPS, FUNCTIONS, range, and LISTS
+
 ---
 
 range is a special procedure and actually returns something that behaves like a **Tuple**
@@ -780,6 +808,7 @@ So this means you can think of it like a list similar to how you would slice or 
 ---
 
 ## Mutation, Aliasing, Cloning
+
 ---
 
 We need to be careful with variables with lists that we assign: assigning them to directly to each others list means if its mutated, it will affect both variables.
@@ -805,6 +834,7 @@ Cloning is useful when I want to do something to a list that involves mutation b
 ---
 
 ### Mutation and Iteration
+
 ---
 
 When iterating over a list, python will adjust and mutate the list as it proceeds with each variable. So if you give it instructions to remove a value at nth index. Then python may not behave like you think because as it removes an *element*; the list becomes smaller -1 on the next iteration and the next step that was supposed to be at index [2], the element [3] has now moved down to [2] and the original [2] has moved down to [1] thereby the code **skipping** 1 element.  
@@ -824,6 +854,7 @@ def removeDuplicate(List1, List2):
 ---
 
 ## Functions as Objects
+
 ---
 
 Functions are **first class objects** in saying that they :
@@ -871,9 +902,11 @@ applyFunctions([abs int, fact, fib], 4) #       we provide a list of functions t
 ---
 
 ### HOPS Higher Order Procedure
+
 ---
 
 #### Map
+
 ---
 
 ```python
@@ -907,6 +940,7 @@ for elt in map(min, list1, list2):
 ---
 
 ## Dictionaries
+
 ---
 
 With lists, you operate on a index starting at 0, and you have a element assigned to that index. as you walk through the list, the index and the element correspond to the place it is currently in the list
@@ -943,6 +977,7 @@ grades.values()
 ---
 
 ### List Comprehension and Dictionary Comprehension
+
 ---
 
 List comprehension and by extention dictionary comprehension is a great way of making readable, compact way of creating lists or dictionaries. Merging several lines into a single line that indicates which elements should be added to the list.
@@ -952,6 +987,7 @@ List comprehension and by extention dictionary comprehension is a great way of m
 ---
 
 #### List Comprehension
+
 ---
 
 ```python
@@ -996,6 +1032,7 @@ lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 ---
 
 #### List comprehension with all()
+
 ---
 
 The all() method returns True boolean if all elements within an iterable is True otherwise it returns False
@@ -1015,7 +1052,8 @@ lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']
 
 ---
 
-#### List comprehension with set()
+#### List comprehension with `set()`
+
 ---
 
 Basic uses of set() includes membership testing and eliminating duplicate entries
@@ -1038,6 +1076,7 @@ set(c for c in lettersGuessed if c in secretWord)
 ---
 
 #### Dictionary Comprehension
+
 ---
 
 Python allows you to create new dictionaries from existing ones but assigning **different** ***values***
@@ -1071,6 +1110,7 @@ doubleGrades
 ---
 
 ## Global Variables
+
 ---
 
 Convenient when we want to keep track of information inside of a function
@@ -1087,6 +1127,7 @@ Dangerous because:
 ---
 
 ### Fibonacci numbers using if statements and recursion versus dictionary and recursion
+
 ---
 
 ```python
@@ -1134,6 +1175,7 @@ print('Number of times the function is called: ', numFibCalls)
 ---
 
 ## Testing
+
 ---
 
 Design code that can easily test and debugged by breaking up the code into simplified modules that allows you to test each module to the design of how you wanted it to function.
@@ -1143,6 +1185,7 @@ Design code that can easily test and debugged by breaking up the code into simpl
 ---
 
 ### Unit Testing
+
 ---
 
 - Take each piece of program and validate it
@@ -1153,6 +1196,7 @@ Design code that can easily test and debugged by breaking up the code into simpl
 ---
 
 ### Regression Testing
+
 ---
 
 - Add test for bugs as you find them in a function
@@ -1163,6 +1207,7 @@ Design code that can easily test and debugged by breaking up the code into simpl
 ---
 
 ### Integration testing
+
 ---
 
 - Does overall program work?
@@ -1172,6 +1217,7 @@ Design code that can easily test and debugged by breaking up the code into simpl
 ---
 
 ### Black Box Testing
+
 ---
 
 Testing by going through the specifications to realise any potential bugs. This method is designed to be done without looking at the code
@@ -1181,6 +1227,7 @@ Testing by going through the specifications to realise any potential bugs. This 
 ---
 
 #### Summary (Black Box Testing)
+
 ---
 
 - designed without looking at the code
@@ -1195,6 +1242,7 @@ Testing by going through the specifications to realise any potential bugs. This 
 ---
 
 ### Glass Box Testing
+
 ---
 
 Testing by going through the **code** and following the available paths to reach potential bugs. This method is designed to just complete the grunt work.
@@ -1218,6 +1266,7 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
 ---
 
 #### Summary (Glass Box Testing)
+
 ---
 
 - Designed with looking at the code
@@ -1236,9 +1285,11 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
 ---
 
 ## Debugging
+
 ---
 
 ### Error Messages
+
 ---
 
 - **IndexError**
@@ -1270,6 +1321,7 @@ The above code shows that path-complete tests could *miss a bug*, using path-com
 ---
 
 ### Print Statement Debugging
+
 ---
 
 Print statements are great for debugging, use the following steps to break it down:
@@ -1285,6 +1337,7 @@ and work through and see if the bug is higher or lower
 ---
 
 ### Debugging using bisection search
+
 ---
 
 Using bisection search in order to find bugs within the code. Placing print statemenths halfway through and see which side of the code the error is occuring.
@@ -1300,6 +1353,7 @@ Repeating this step would lead eventually to a much smaller segment of the code 
 ---
 
 ## Debugging: Utilizing Exceptions
+
 ---
 
 The important thing for handling exceptions is that **_your program doesn't crash_**. Instead of the program finishing at the error, this actually handles the error and proceeds with the rest of your code.
@@ -1348,6 +1402,7 @@ print("Correct input of an integer!")
 ---
 
 ### Debugging clauses
+
 ---
 
 ![alt text](https://github.com/hoodieblanket/learningJourney/blob/master/images/tryExceptElseFinally.jpg "Try Except Else Finally")
@@ -1357,6 +1412,7 @@ print("Correct input of an integer!")
 ---
 
 #### `try` and `except` clause
+
 ---
 
 `try:`  
@@ -1371,6 +1427,7 @@ If an exception is raised then it will stop what it is doing and jump to the **e
 ---
 
 #### `else` clause
+
 ---
 
 Body of this is executed when execution of the try body **completes with no exceptions**
@@ -1398,6 +1455,7 @@ The above code states: if there is no exceptions then run the following code and
 ---
 
 #### `finally` clause
+
 ---
 
 Body of this clause is always executed after `try`, `else` and `except` clauses even if they raised another erro or executed a `break`, `continue` or `return`
@@ -1409,6 +1467,7 @@ Body of this clause is always executed after `try`, `else` and `except` clauses 
 ---
 
 ### Assigning Exceptions to Variables
+
 ---
 
 Furthermore you are able to raise errors and assign the errors to variables
@@ -1443,6 +1502,7 @@ except clauses.
 ---
 
 ### Capturing Multiple Exceptions
+
 ---
 
 ```python
@@ -1463,7 +1523,8 @@ such as closing files, data os connections, network connections and so on.
 
 ---
 
-### Finally Clause
+### `Finally` Clause
+
 ---
 
 ```python
@@ -1490,7 +1551,8 @@ accomplish the same thing.
 
 ---
 
-### With Statement
+### `With` Statement
+
 ---
 
 ```python
@@ -1513,7 +1575,8 @@ else:
 
 ---
 
-### Raise Exceptions
+### `Raise` Exceptions
+
 ---
 
 An example of how you would raise an exception but it is not always recommended. Raising exceptions can be costly as it can
@@ -1562,6 +1625,7 @@ get_ratios(L1, L4) #        out: [02, 0.333, 0,428, NaN] which shows the excepti
 ---
 
 ### Assertions
+
 ---
 
 Good way to deal with defensive programming
@@ -1603,6 +1667,7 @@ We can use assertions as a supplement to our testing.
 ---
 
 ## Object Oriented Programming OOP
+
 ---
 
 **Objects** all have 3 pieces; type, internal representation, set of procedures to allow you to interact with that instance of an object
@@ -1630,6 +1695,7 @@ We can **destroy objects**:
 ---
 
 ### Advantages of OOP
+
 ---
 
 **Bundle data into packages** together with procedures that work on them through well-defines interfaces
@@ -1647,6 +1713,7 @@ Classes make it easy to **reuse** code:
 ---
 
 ### Classes
+
 ---
 
 Classes are similar to blueprints to build something or a drawing of all the parts that will make your project come together. This would be similar to drawing a table in separate parts. The legs, the frame and the table top, the chairs, the cushions.
@@ -1674,8 +1741,11 @@ So you have the parts of the table listed, but then you need to also specify how
 ---
 
 #### Examples of Classes
+
 ---
+
 ##### Example #1
+
 ---
 A `dog` class would share similarities between all dogs such as they **all** have a `name, colour and breed` and they all have the same behaviour `barking, running and wagging tail`.
 
@@ -1686,6 +1756,7 @@ So `__init__` is used programmers to initialise the blueprint when a given insta
 ---
 
 ##### Example #2
+
 ---
 
 ```python
@@ -1734,6 +1805,7 @@ self.tabletop = 35 #        think of the above example and then read it out. 'Fo
 ---
 
 #### Key point to classes and OOP
+
 ---
 
 You have to remember that while the blueprint is created and the objects have similar attribute categories or perform the same actions (methods)
@@ -1751,6 +1823,7 @@ This is the point of OOP; it provides a blueprint to create individual instances
 ---
 
 #### Class Variables
+
 ---
 
 Class variables is assigning a variable within the class and not within a method and instance. This would allow you to use a class variable that **affects all instances** and then the variable can be adjusted within the **instance variable** to be unique to that instance
@@ -1758,6 +1831,7 @@ Class variables is assigning a variable within the class and not within a method
 ---
 
 ##### Example of Class Variable
+
 ---
 
 ```python
@@ -1800,6 +1874,7 @@ print(Employee.num_of_emps)
 ---
 
 #### Class Methods and Static Methods
+
 ---
 Using a decorator called `@classmethod`. Altering the functionality of our method whereby we receive the classmethod first before we receive our instance.
 
@@ -1917,6 +1992,7 @@ print(Employee.is_workday(my_date))
 ---
 
 #### Creating Subclasses
+
 ---
 
 Creating subclasses is useful when you are creating another entity or class blueprint you want to keep separate but the main class information is still relevant.
@@ -2004,6 +2080,7 @@ mgr_1.remove_emp(dev_2)
 ---
 
 #### `isinstance()` and `issubclass`
+
 ---
 
 `isinstance(arg1, arg2)` will tell us if an object is an instance of a class i.e print(isinstance(mgr_1, Manager)) -> True and print(isinstance(mgr_1, Employee)) -> True, finally print(isinstance(mgr_1, Developer)) -> False
@@ -2015,6 +2092,7 @@ mgr_1.remove_emp(dev_2)
 ---
 
 #### Methods
+
 ---
 
 Methods are a procedural attribute, designed for that class and only works with that class.
@@ -2052,6 +2130,7 @@ This will define the str method so if we used `print(nyt_article)` it will retur
 ---
 
 #### Magic Methods
+
 ---
 
 Special methods to change how our objects are printed and displayed.
@@ -2126,6 +2205,7 @@ def __len__(self):
 ---
 
 #### Property Decorators - Getters, Setters and Deleters
+
 ---
 
 Allows us to define a method and then we can access it like an atrribute.
@@ -2178,6 +2258,7 @@ By **moving the email attribute** from `__init__` and defining a method for it s
 ---
 
 ##### Getters
+
 ---
 
 Example of getters being used to separate the specific data we would like to call on in order to use additional features or functions separate. For example, calling on the individual numerator and denominator in order to perform **addition** or **subtraction** and **conversion to floats**
@@ -2185,6 +2266,7 @@ Example of getters being used to separate the specific data we would like to cal
 ---
 
 ###### Example - Getters to perform functions
+
 ---
 
 ```python
@@ -2233,6 +2315,7 @@ new.convert()
 ---
 
 ###### Example - Creating a Integer Set
+
 ---
 
 ```python
@@ -2303,6 +2386,7 @@ ValueError: 3 not found
 ---
 
 ##### Setters
+
 ---
 
 ```python
@@ -2355,6 +2439,7 @@ emp_1.fullname = 'Michael Jordan'
 ---
 
 ##### Deleters
+
 ---
 
 ```python
@@ -2407,6 +2492,7 @@ del emp_1.fullname
 ---
 
 #### Custom containers
+
 ---
 
 ```python
