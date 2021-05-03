@@ -692,24 +692,29 @@ There are some additional modularity such as **r** for only reading the file and
 ### `Tuples ()`
 
 ---
-Tuple is an ordered sequence of elements. They are **immutable**; they cannot be change inside the Tuple.
+Tuples are an ordered sequence of objects to make a list of objects with the goal that you don't want the objects to be changeable once they are in the tuple.
+**immutable**, which means that the objects inside the tuple cannot be changed or amended.
 
-Tuples require the extra comma to indicate they are tuples if it is **just one** element. For example having just one tuple `t = ('one',)`: this will produce `('one',)`. **More than one** element does not require the comma
+When creating a tuple you would setup a variable with `object`, `object2`, `object3` and so on... however this doesn't mean a tuple can only be a variable with multiple objects.  When creating a tuple but you *currently* only have one item then you can still create a tuple to start off. You would do this with a **comma** after the *object* such as "`object`,"
 
-```python
-Tuples make use of *parenthesis* () for values inside tuples
+Key Characteristics:
+* Immutable
+* Iterable
+* Requires the **Comma**
+  
+```py
+programmingLanguage = "Python", "Java", "C++", "C#"
+#       This tuple can be written using the () parenthesis or without
+tupleWithOneObject = "Item", 
+#       This variable would be a tuple with one item, the comma is what makes this a tuple instead of just assigning an item to a variable.
+exampleOfMistake= "Item"
+#       This variable would just be considered to hold a string "Item". You would need the comma in order to change the type to a Tuple
 ```
 
-We cannot change the inner pieces of a Tuple, similar to how strings are immutable. We can add to it, we can splice it, but we cannot change the values.
-Tuples are also **Iterable** so it means you can walk down the tuple and use each value how you would like.
-
-```python
-for Tuples with only **1** element then you will make use of the comma in order to form a correct Tuple.
-x = (1,) = Tuple
-x = (1) = Int
-#       However if the Tuple has multiple elements then you dont need to use the comma at the end to form a Tuple
-x = (1, 2, 3) = Tuple
-```
+**Immutable**: We can add to it, we can splice it, but we cannot change the values or amend the items in the Tuple.  
+**Iterable**: You can iterate through the list or rather you can walk down the tuple and use each value how you would like.  
+**Comma**: Creating a Tuple requires a comma after **the first** and then each object *except the last*. This includes when creating Tuples, or beginning a Tuple, with only *one object for now*.  
+You would do this with a **comma** after the first *object* such as "`object`," but you would not put a comma after the last object if there is more than one: `object`, `object2`, `object3`
 
 [Back to Top](#table-of-contents)
 
