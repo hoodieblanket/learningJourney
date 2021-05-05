@@ -6,7 +6,7 @@
 ---
 - [# Debian Setup](#-debian-setup)
 - [Table of Contents](#table-of-contents)
-- [- ## Helpful packages to install specific programs](#---helpful-packages-to-install-specific-programs)
+- [- Helpful packages to install specific programs](#--helpful-packages-to-install-specific-programs)
 - [Common terminal commands](#common-terminal-commands)
   - [Command line Quick Reference](#command-line-quick-reference)
   - [GIT commandline](#git-commandline)
@@ -123,7 +123,7 @@ Just incase you want to change your hostname to something else
 
 ---
     
-    `unzip file.zip -d newdirectory`                        unzip a zip file and using -d to indicate directory name \
+    `unzip file.zip -d newdirectory`                        unzip a zip file and using -d to indicate directory name 
 
 ---
 

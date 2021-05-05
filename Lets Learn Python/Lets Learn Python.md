@@ -100,11 +100,13 @@ This is not an indepth look into each topic but rather just reminders or bits of
 
 ---
 
-```python
-if This line equals true then Continue With this code
-elif Else run this code
-elif Else run this code
-else If nothing before works then proceed to this final code
+If statements are used to check for True or False flags. Using these flags we can determine what code we want to run for different scenarios.
+
+```py
+if This line equals True then proceed doing this code then end
+    elif Else run this code instead
+    elif Else run this code instead
+        else If nothing works then proceed to this final code
 ```
 
 [Back to Top](#table-of-contents)
