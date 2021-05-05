@@ -9,7 +9,7 @@
 - [Table of Contents](#table-of-contents)
 - [`If` Statements](#if-statements)
 - [`And`, `Or`, `Not` Statements](#and-or-not-statements)
-- [Strings](#strings)
+- [Strings and some modifications](#strings-and-some-modifications)
 - [`In` operator](#in-operator)
 - [Input/Output](#inputoutput)
 - [`While` Statements](#while-statements)
@@ -137,60 +137,48 @@ The overall statement returns False
 
 ---
 
-## Strings
+## Strings and some modifications
 
 ---
 
-We can make changes to concatination
-
-**Ask for the Length**
-
-```python
-len('eric')
-#       ask for the length of a string will also count any blank spaces
+A string would be a word that we may assign to a variable such as a name
+```py
+course = "Programming Language"
 ```
+Within the content of these variables, such as strings, there is a few modifications or functions you can use to influence or target specific index elements within the string.
 
-**Ask for a Slice**
+**Key Characteristics**
+- variable[ i : j : k ]
+- uses brackets []
+- **i** = starting index, can be blank
+- **j** = ending index, can be blank
+- **k** = change the pace or step in increments/decrements +/-
+- **Inclusive/Exlusive**: meaning we **include** the first index[i] but we **exclude** the last index[j]
 
-***Note***: As with python beginning with index **i** and ends with **j**, the *roof* of this slice is **j** and is not included in the slice i.e s[i:j-1]. So we can say python is ***inclusive exlusive*** as we include the first index element and exclude the last index element
 
-```python
-name = 'eric'
-name[0]
-#       Will print the 0th digit in the variable/string, for example it will produce 'e'
-#       In python, the count begins from 0
-```
+With this variable `course`; we can slice, remove, add or adjust however we would like. We can also output specific parts of the object inside the variable.  
+This is also not limited to just strings and  allows you to work backwards through indices or specifically target in increments or decrements as you will see below
 
-Another example of different ways you can *slice*
-
-```python
-s = 'Python is Fun!'
-s[1:5]
-#       returns: 'ytho'
-s[:5]
-#       returns: 'Pytho'
-s[1:]
-#       returns: 'ython is Fun!'
-s[:]
-#       returns: 'Python is Fun!'
-```
-
-You can also *add* a third parameter to your slicing, **k** that represents the **Step Size** that you want to increment by:
-
-```python
-s[i:j:k]
-#       This gives a slice of the string from index i to index j-1, with a step size k
-#       Step size being the size of each iterative jump
-
-s = 'Python is Fun!'
-s[1:12:2]
-#       returns 'yhni u'
-s[1:12:3]
-#       returns: 'yoiF'
-s[::2]
-#       returns: 'Pto sFn'
-s[::-1]
-#       eturns: '!nuF si nohtyP'
+```py
+course = "Python Programming"
+print(len(course))
+>>> 18      #Output the length or total elements in the variable, including blank spaces
+print(course[0])
+>>> P       #Output the 0th element in the string
+print(course[-1])
+>>> g       #Output the last element in the string
+print(course[0:3])
+>>> pyt     #Output between 0th : 3rd elements in the string
+print(course[0:])
+>>> Python Programming      #Output between 0th : last elements in string
+print(course[1:5])
+>>> ytho    #Output between 1 : 5 elements in the string
+print(course[0:18:2])
+>>> Pto rgamn       #Output between 0 : 18 elements going in increments of 2
+print(course[::2])
+>>> Pto rgamn       #Output all elements going in increments of 2
+print(course[::-1])
+>>> gnimmargorP nohtyP      #Output all elements going in decrements of 1 (backwards)
 ```
 
 [Back to Top](#table-of-contents)
@@ -305,6 +293,8 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 ## `For` Loop Statements
 
 ---
+
+Using a loop to run a command multiple times
 
 ```python
 for n in range(5)
