@@ -27,7 +27,7 @@
   - [**Returning a function**](#returning-a-function)
   - [**Some rules for functions**](#some-rules-for-functions)
   - [**Scopes inside scopes inside scopes, scopes all the way down**](#scopes-inside-scopes-inside-scopes-scopes-all-the-way-down)
-- [Inheritance](#inheritance)
+- [**Inheritance**](#inheritance)
 - [**Recursion**](#recursion)
 - [**Modules and Files**](#modules-and-files)
   - [**File handle**](#file-handle)
@@ -682,7 +682,7 @@ def scope_one():
 
 ---
 
-## Inheritance
+## **Inheritance**
 
 ---
 
