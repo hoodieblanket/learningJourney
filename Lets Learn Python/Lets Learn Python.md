@@ -7,21 +7,25 @@
 ---
 
 - [**Table of Contents**](#table-of-contents)
-- [**`If` Statements**](#if-statements)
-- [**`And`, `Or`, `Not` Statements**](#and-or-not-statements)
+- [**Conditional Statements**](#conditional-statements)
+  - [**`If` Statements**](#if-statements)
+  - [**Logical `And`, `Or`, `Not` operators**](#logical-and-or-not-operators)
 - [**Strings and some modifications**](#strings-and-some-modifications)
   - [**String Concatenation and formatted string `f"{}{}"`**](#string-concatenation-and-formatted-string-f)
   - [**String Methods or Functions**](#string-methods-or-functions)
 - [**`In` operator**](#in-operator)
-- [**Input/Output**](#inputoutput)
-- [**`While` Statements**](#while-statements)
-- [**`For` Loop Statements**](#for-loop-statements)
+- [**Ternary operator**](#ternary-operator)
+- [**User Input**](#user-input)
+- [**Loops**](#loops)
+  - [**`While` Loop**](#while-loop)
+  - [**`For` Loop**](#for-loop)
 - [**`Break` Statement**](#break-statement)
 - [**Numbers**](#numbers)
   - [**Using an augmentor**](#using-an-augmentor)
   - [**Functions with Numbers**](#functions-with-numbers)
   - [**Modulus division**](#modulus-division)
-- [**`abs()` Function**](#abs-function)
+  - [**`abs()` Function**](#abs-function)
+- [**Type Conversion**](#type-conversion)
 - [**Bisectional Searching**](#bisectional-searching)
 - [**Call/Invoke a Function**](#callinvoke-a-function)
   - [**Returning a function**](#returning-a-function)
@@ -92,11 +96,20 @@ This is not an indepth look into each topic but rather just reminders or bits of
 
 ---
 
-## **`If` Statements**
+## **Conditional Statements**
 
 ---
 
-If statements are used to check for True or False flags. Using these flags we can determine what code we want to run for different scenarios.
+### **`If` Statements**
+
+---
+
+If statements are used to check for True or False flags. Using these flags we can determine what code we want to run for different scenarios. 
+
+**Key Characteristics:**
+- Evaluates to True or False values
+- `if` and `elif` used to decide what block of code to run
+- `else` runs if none of the boolean tests before are passable.
 
 ```py
 if This line equals True then proceed doing this code then end
@@ -104,30 +117,95 @@ if This line equals True then proceed doing this code then end
     elif Else run this code instead
         else If nothing works then proceed to this final code
 ```
+```py
+temperature = 15
+
+if temperature > 30:
+    print("It's warm")
+    print("Drink water")
+print("Done")
+>>> Done #Outputs only Done due to the if statement returning with false; it won't run the indented code
+
+elif temperature >20:
+    print("It's nice")
+else:
+    print("Its cold")
+print("Done")
+>>> Its cold
+>>> Done
+```
 
 [Back to Top](#table-of-contents)
 
 ---
 
-## **`And`, `Or`, `Not` Statements**
+### **Logical `And`, `Or`, `Not` operators**
 
 ---
 
-```python
-and: used for boolean tests where you have two outcomes and determining if they are True or False statements to reach an 'overall' True or False
-or: testing between two Truth statements and if EITHER of them are True then the overall test is that atleast one is True
-not: testing boolean truth statements where you have an outcome but you wanted the opposite result. not(False) would be True if the statement being tested came out as True.
+Operators that check for boolean values to determine what indented code will be run. Conditional expressions but allows you to evaluate several variables to determine an output.
+
+**Key Characteristics:**
+- **and**: Checks to see if both or all variables are True and then overall evaluation is True   
+- **or**:  Checks to see if atleast one of the variables are True and then the overall evaluation is True
+- **not**: inverts the value of a boolean to check for things that you don't want or desire when evaluating
+- There is a precedence of which is evaluated first in the order of: not -- and -- or
+
+```py
+#-----
+#checking if both variables are True to be eligible
+#-----
+high_income = True
+good_credit = True
+
+if high_income and good_credit:
+    print("Eligible")
+else:
+    print("Not eligible")
+>>> Eligible
+#you do not need to write: high_income == True because the high_income variable is already True or False so this would be redundant code written and looks messy
 ```
+```py
+#-----
+#checking if atleast 1 is True to be eligible
+#-----
+high_income = False
+good_credit = True
 
-*Precedence* is set as below of which is evaluated first. For example with nested parenthesis and evaluating the *innermost* parenthesis first
-
-```python
-not (not (46>25) and (5>6 or 6<3)) and (5<3 or not (3<5))
+if high_income or good_credit:
+    print("Eligible")
+else:
+    print("Not eligible")
+>>> Eligible
 ```
+```py
+#-----
+#using not operator to invert the value of a boolean to ensure not a student
+#-----
+high_income = False
+good_credit = True
+student = True
 
-The overall statement returns False
+if not student:
+    print("Eligible")
+else:
+    print("Not eligible")
+>>> Not eligible
+```
+```py
+#-----
+#checking if either high income or good credit but ensuring not a student
+#-----
+high_income = False
+good_credit = True
+student = True
 
-`Precedence in order to evaluate: not>and>or`
+if (high_income or good_credit) and not student:
+    print("Eligible")
+else:
+    print("Not eligible")
+>>> Not eligible
+```
 
 [Back to Top](#table-of-contents)
 
@@ -159,6 +237,7 @@ This is also not limited to just strings and  allows you to work backwards throu
 
 ```py
 course = "Python Programming"
+
 print(len(course))
 >>> 18      #Output the length or total elements in the variable, including blank spaces
 print(course[0])
@@ -193,6 +272,7 @@ String concatenation is when we want to add or link string together and make one
 first = "John"
 last = "Doe"
 full = f"{first} {last}" 
+
 #Using the format method to run an expression that would be evaluated at run time
 #Can put any evaluated expression inbetween the curly braces {}
 print(full)
@@ -228,28 +308,35 @@ More accurately the term to use are 'methods' instead of functions.
 
 ```py
 course = "Python Programming"
+
+#-----
 #Does not effect the original variable or change it
+#-----
 print(course.upper())       #Outputs uppercase
 >>> PYTHON PROGRAMMING
 print(course.lower())       #Outputs lower case
-#Assign a variable with the course variable amended with the UPPER method
 >>> python programming
 course_upper = course.upper()
 print(course_upper)         #Outputs the new variable
 >>> PYTHON PROGRAMMING
 print(course)               #Shows the original variable is not effected
 >>> Python Programming
+
+#-----
+#this is valuable for any variables which requires user input so you can remove any white space
+#-----
 print(course.title())       #Outputs in Title, first letter uppercase
 print(course.strip())       # Outputs variable and strips the while space at the front and back of a string
 print(course.rstrip())      # Strips white space on right of variable/end of a string
 print(course.lstrip())      # Strips white space on left
-# this is valuable for any variables which requires user input so you can remove any white space
+#-----
 print(course.find("Pro"))   # Finds the index or a character or series of characters
 >>> 7
 print(course.find("pro"))   # Python is case sensitive, so this would show string is not found
 >>> -1 #will return -1 if the string or sequence of strings is not found
 print(course.replace("P", "j")) #replace and evaluates without effecting the original variable we are calling on
 >>> jython jrogramming
+#-----
 print("pro" in course)
 >>> False
 print("Pro" in course)      #The 'In' operator is an expression that returns a boolean
@@ -274,6 +361,7 @@ The operators `in` and `not in` test for *collective membership* or rather if so
 
 ```py
 course = "Python Programming"
+
 print("gramm" in course) #Tests is string sequence is in variable
 >>> True
 print("Python" not in course)
@@ -284,27 +372,82 @@ print("Python" not in course)
 
 ---
 
-## **Input/Output**
+## **Ternary operator**
 
 ---
 
-With print statements as well as input statements.
+Ternary operator is simply conditional expressions where it is evaluated in a single line or used for cleaner code.  
+It is useable whenever you are essentially assigning a *value* to a *variable*.
 
-**input** expects the value entered by the user to be a string.
+Key Characteristics:
+- conditional expressions
+- single line, cleaner code
+- useable whenever you likely just assigning a value to a variable
 
-We would need to remember that if we want to use it as an integer then we would need to convert after receiving the input.
+```py
+weight = 77
 
-```python
-number = int(input('type something here: '))
-print(5 * number)
-#       This converts the input provided and casts it into a **integer** type for our purposes or uses later.
+if weight >= 72:
+    print("check the scales")
+else:
+    print("No need to check the scales")
+>>> check the scales
+#-----
+# This above block can essentially be assigned to a variable to produce the same outcome; see below
+#-----
+
+if weight >= 72:
+    message = ("check the scales")
+else:
+    message = ("No need to check the scales")
+print(message) #Achieves the same as the above and assigns the values to a variable.
+
+#-----
+#This means you can use a ternary operator as below
+#-----
+
+message = "check the scales" if weight >= 72 else "No need to check the scales"
+print(message)
+>>> check the scales
+```
+
+---
+
+## **User Input**
+
+---
+
+**User Input**  
+When we need user input as part of the program. This will opt for the user to enter in a value to proceed with the code being launched.
+
+***Care: User input always returns as a type: STRING***
+
+We would need to remember that if we want to use it as an integer then we would need to convert the string returned to an integer.
+
+```py
+input_variable = input("user input registered: ")       # user input '3'
+input_integer = int(input_variable)
+some_function_needed = input_integer + 1
+>>> 4
+
+#-----
+#can also combine into a single statement
+#-----
+
+output_integer = int(input('type something here: '))    #user input '3'
+print(5 * out_integer)
+>>> 15
 ```
 
 [Back to Top](#table-of-contents)
 
 ---
 
-## **`While` Statements**
+## **Loops**
+
+---
+
+### **`While` Loop**
 
 ---
 
@@ -365,45 +508,103 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 
 ---
 
-## **`For` Loop Statements**
+### **`For` Loop**
 
 ---
 
-Using a loop to run a command multiple times
+Use a for loop to run code multiple times when wanting to iterate through attempts, variables, lists, or other elements.
 
-```python
-for n in range(5)
-#       range will give us back the integers 0 though to and up till 5 but not including 5.
+**Key Characteristics**
+- uses `for some_variable in range(x):`
+- range(x) is for returning integers
+- range(x) is inclusive of starting point but exclusive of ending point i.e range(i, j-1)
+- Iterable: Can replace range(x) with another variable or list or object to iterate through
+
+```py
+#-----
+#range will work through integers 0 though to and up till 3 but not including 3.in other words, range will produce 0, 1, 2 (but not 3)
+#-----
+for number in range(3):
+    print("Attempt", number + 1) #instead of number starting at 0, you can have it user friendly and have it start at 1
+>>> Attempt 1
+>>> Attempt 2
+>>> Attempt 3
+
+    print("Attempt", number + 1, (number +1) * ",")
+>>> Attempt 1.
+>>> Attempt 2..
+>>> Attempt 3...
+
+#-----
+#desired start, end and step increment (or decrement)
+#-----
+for number in range(1, 10, 2):
+    print("Attempt", number, number * ",") #cleaner code as we are starting at 1
+>>> Attempt 1.
+>>> Attempt 3...
+>>> Attempt 5.....
+>>> Attempt 7.......
+>>> Attempt 9.........
+#but not including 10
 ```
 
-You can also use *slices* and *indices* within the for loop
+If you are given some variable that you need to combine, or use, and you want the variable to increment all the way **through to the last element**
 
-```python
-for n in range(5:11:2)
-#       will complete the range starting at 5 and increment by 2 until we reach 11 but not including 11.
+```py
+#-----
+#scaling or keeping a total of the iterations you are doing
+#-----
+
+number_dogs = 10
+total_puppies_needed = 0
+
+for puppies in range(1, number_dogs + 1):   #starting at index 1 and ending at index 10 (9 + 1)
+    total_puppies_needed += puppies         #adding 1 to the total with each iteration then updates the global frame count
+print(total_puppies_needed)
+>>> 55
 ```
 
-Similarly you can use the For loop in the following manner:
+---
 
-```python
-for i in range(0,10,2):
-    print(i)
-#       which will print 0, 2, 4, 6, 8 but not 10
+**For..Else**
 
-for i in range(10,0,-2):
-    print(i)
-#       prints 10, 8, 6, 4, 2 but not 0
-```
+---
 
-If you are given some variable that you need to combine or use and the variable is scalable and without your code breaking and you want to include the end-value **somenumber**
+Say you want to interupt or stop the *for loop* once you have successfully got your desired outcome. Then you can use some conditional expressions to check
 
-```python
-somenumber = 10
-total = 0
-for i in range(1,somenumber+1):
-    total += i
-print(total)
-#       this will run through the numbers and add each number to the **total** and this will also be inclusive of the end index **somenumber**
+```py
+successful = True
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break #using the break statement to leave the for loop upon successful = True and completing the indented code
+>>> Attempt
+>>> Successful
+#-----
+#For..Else loop
+#-----
+successful = False
+
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break 
+else:
+    print("Attempted 3 times but failed")
+>>> Attempt
+>>> Attempt
+>>> Attempt
+>>> Attempted 3 times but failed
+#-----
+#when break is used on a for..else loop
+#-----
+successful = True
+...
+>>> Attempt
+>>> Successful
+#if the code hits the break statement then even if the else clause is indented outside of the for loop, it will still not evaluate the else code.
 ```
 
 [Back to Top](#table-of-contents)
@@ -502,8 +703,11 @@ print(abs(-2.9))  #Print absolute number (positive)
 ```
 You can also import modules into python programs to assist when Python does not have certain expressions or functions you would like to use. For example importing the Math module will allow a lot of math-related functions becoming available
 ```py
-import math #Math module that has a lot of mathmatical methods
-# math is also an object so you can call on methods related to the Math module
+import math 
+#-----
+#Math module that has a lot of mathmatical methods
+#Math is also an object so you can call on methods related to the Math module
+#-----
 
 print(math.ceil(2.2))
 >>> 3
@@ -537,26 +741,90 @@ Using this technique you can test for even numbers by using **mod** division and
 
 ---
 
-## **`abs()` Function**
+### **`abs()` Function**
 
 ---
 
-Syntax follows the `abs(number)` format.
+When called on, the function returns the **absolute** integer or float. Ensuring it is a positive number as well.  
 
-- Used to return the absolute value of a number
+**Key Characteristics**
+- Used to return the absolute (positive) value of a number
 - It can be integer, a floating point number or complex number
 
 ```python
-float = -54.22
-print('absolute value of this float is: ', abs(float))
-#       prints 54.22
-integer = -88
-print('absolute value of this intege is: ', abs(integer))
-#       prints 88
-complex = 3-4j
-print('absolute value or magnitude of complex is: ', abs(complex))
-#       prints 5.0
+float_variable = -54.22
+integer_variable = -88
+complex_variable = 3 - 4j
+
+print(abs(float_variable))
+>>> 54.22                       #returns the float as the positive value
+print(abs(integer_variable))
+>>> 88
+print(abs(complex_variable))    #Also evaluates the complete number equation and returns its absolute value
+>>> 5.0
 ```
+
+[Back to Top](#table-of-contents)
+
+---
+
+## **Type Conversion**
+
+---
+
+Sometimes your evaluated code requires some type conversion to get it to the point of being processable or manageable for your goals. This looks at a few instances whereby you may require some type conversion otherwise you will run into unexpected issues.
+
+**Key Characteristics**
+- Two objects can be concatenated if they are of the **same type**
+- conversion of Type will allow you to concatenate objects for your desired purpose
+- **int(x)** - conversion to integer
+- **float(x)** - conversion to float
+- **bool(x)** - conversion to bool
+- **str(x)** - conversion to string
+
+
+**User Input**  
+When we need user input as part of the program. This will opt for the user to enter in a value to proceed with the code being launched.
+
+***Care: User input always returns as a type: STRING***
+```py
+x = input("x = ")
+y = x + 1
+>>> Type Error  #This may be the first instance of errors you will encounter with user input.
+                # This attempts to evaluate the above code as y = "1" + 1: which returns the error.
+
+print(type(x))
+>>> <Class 'Str'> #shows that the user input is a 'string'
+
+#user input '3'
+
+y = int(x) + 1 #converting the x variable to a integer
+print(f"the variable x: {x}, and y: {y}") #using formatted string to advise an outcome for the user
+>>> the variable x: 3, and y: 4
+```
+
+Out of the listed conversion methods; the only one with difficulty may be the **bool(x)** and in Python there is some aspect of **Truethy** and **Falsy** values which is better explained with examples. 
+
+**Falsy values**
+```py
+- ""            #Completely empty string returns False
+- 0             #The number 0 returns False
+- None          #Absence of a value returns False
+
+bool(0)
+>>> False
+bool(1)
+>>> True
+bool (-1)
+>>> True
+bool (5)
+>>> True
+bool("")
+>>> False
+bool("False String")
+>>> True
+```
+
 
 [Back to Top](#table-of-contents)
 
@@ -851,11 +1119,12 @@ Key Characteristics:
 * Requires the **Comma**
   
 ```py
-programmingLanguage = "Python", "Java", "C++", "C#"
+programming_language = "Python", "Java", "C++", "C#"
+
 #       This tuple can be written using the () parenthesis or without
-tupleWithOneObject = "Item", 
+tuple_with_one_object = "Item", 
 #       This variable would be a tuple with one item, the comma is what makes this a tuple instead of just assigning an item to a variable.
-exampleOfMistake= "Item"
+example_of_mistake= "Item"
 #       This variable would just be considered to hold a string "Item". You would need the comma in order to change the type to a Tuple
 ```
 
