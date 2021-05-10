@@ -19,7 +19,7 @@
 - [**Loops**](#loops)
   - [**`While` Loop**](#while-loop)
   - [**`For` Loop**](#for-loop)
-- [**`Break` Statement**](#break-statement)
+- [**`break` Statement**](#break-statement)
 - [**Numbers**](#numbers)
   - [**Using an augmentor**](#using-an-augmentor)
   - [**Functions with Numbers**](#functions-with-numbers)
@@ -611,7 +611,7 @@ successful = True
 
 ---
 
-## **`Break` Statement**
+## **`break` Statement**
 
 ---
 
