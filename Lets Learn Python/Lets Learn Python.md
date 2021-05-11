@@ -1,4 +1,4 @@
-# Python Learning <!-- omit in toc -->
+    # Python Learning <!-- omit in toc -->
 
 ---
 
@@ -77,8 +77,8 @@
   - [**`Raise` Exceptions**](#raise-exceptions)
   - [**Assertions**](#assertions)
 - [**Object Oriented Programming OOP**](#object-oriented-programming-oop)
-  - [**Advantages of OOP**](#advantages-of-oop)
-  - [**Classes**](#classes)
+  - [**Classes and Instances**](#classes-and-instances)
+- [- This just shows you what is actually happening in the background when you are calling on the instance.](#--this-just-shows-you-what-is-actually-happening-in-the-background-when-you-are-calling-on-the-instance)
     - [**Examples of Classes**](#examples-of-classes)
     - [**Class Variables**](#class-variables)
     - [**Class Methods and Static Methods**](#class-methods-and-static-methods)
@@ -2092,7 +2092,95 @@ We can use assertions as a supplement to our testing.
 
 ---
 
-**Objects** all have 3 pieces; type, internal representation, set of procedures to allow you to interact with that instance of an object
+When you are doing your coding; it would be nice to have some kind of **blueprint** that you can re-use instead of creating new code or objects and such from scratch again manually. This is where Object Oriented Programming come in to play.
+
+**Key Characteristics**
+- **Instance** variables contain data that is unique to each instance
+- **Self** refers to the instance automatically
+- Each method inside a class will auto take the instance `self` as an argument
+- Using **Methods** requires you to call on them with **()** parenthesis
+- Uses **__init __** magic method to **initialize** the instance or framework when we call on the class
+
+**Objects** all have 3 pieces; 
+- Type
+- Internal Representation
+- Set of Procedures 
+ 
+
+### **Classes and Instances**
+
+---
+
+Classes can be considered similar to **Blueprints** you might create to take over or control bundles of information.  An example of this would be like a bundle of equipment such as Swords, Spears, Armor or Boots.  
+These can all be classes and then you have multiple **instances** of these classes created and they each have their own attributes.  
+
+the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of the class is created. It's own frame is created and then the magic method initialises the template setup.
+
+So `__init__` is used programmers to initialise the blueprint when a given instance or frame is created.
+
+
+**Creating an empty class**
+
+---
+```py
+class Employee:
+    pass #if left empty, you will get an error - use pass to let python know to move on
+```
+**Creating a Class**
+
+---
+```py
+class Employee:
+    def __init__(self, first, last, pay):
+        self.first = first      #these are all attributes of our class
+        self.last = last
+        self.pay = pay
+        self.email = first + "." + last + "@company.com"
+
+employee_1 = Employee("Super", "Star", 50000)     
+employee_2 = Employee("Bundy", "Coke", 60000)
+
+# employee_1 being passed in, automatically creates the instance and then assigns all 'self' to equal employee_1. employee_1.first or employee_1.email etc.. 
+
+print(employee_1.email)
+>>> Super.Star@company.com
+print(employee_2.pay)
+>>> 60000
+```
+**Creating a Method inside a Class**
+
+---
+```py
+# -----
+# Creating Method inside Class
+# - Each method inside a class will auto take the instance as an argument
+# - We always call that 'self'
+# -----
+
+def fullname(self):
+        return f"{self.first} {self.last}"
+    # The instance is the only argument we'll need in order to get the full name
+
+print(employee_1.fullname()) # we are calling on our own created .method which requires the () parenthesis
+>>> Super Star
+print(Employee.fullname(employee_1))
+>>> Super Star
+```
+---
+**What is employee_1.fullname() doing?**
+- **employee_1:** ...looking at the instance for employee_1 or _2 or _3 or _4
+- **.fullname:** ...calling the method we have defined
+- **():** ...automatically passing the `self` argument.
+- As a result; it brings back the **self.first** and **self.last** argument (employee_1.first and employee_1.last)
+
+**Is this the same as Employee.fullname(employee_1)**
+- Employee: calling the Class this time
+- .fullname: calling the method we have defined
+- (employee_1): The key difference, because we are calling on the **class** and not the **instance** then `self` cannot automatically pass as there is no instance. 
+- This just shows you what is actually happening in the background when you are calling on the instance.
+---
+
+in order to allow you to interact with that instance of an object
 
 Everything in Python is an **object** and has a **type**
 
@@ -2116,64 +2204,7 @@ We can **destroy objects**:
 
 ---
 
-### **Advantages of OOP**
-
----
-
-**Bundle data into packages** together with procedures that work on them through well-defines interfaces
-
-**Divide-and-conquer** development whereby you implement and test behaviour of each class separately and as such increased modularity reduces complexity
-
-Classes make it easy to **reuse** code:
-
-- Many Python modules define new classes
-- each class has a separate environment (no collision on function names)
-- inheritance allows subclasses to redefine or extend a selected subset of a superclass' behaviour
-
-[Back to Top](#table-of-contents)
-
----
-
-### **Classes**
-
----
-
-Classes are similar to blueprints to build something or a drawing of all the parts that will make your project come together. This would be similar to drawing a table in separate parts. The legs, the frame and the table top, the chairs, the cushions.
-
-So you have the parts of the table listed, but then you need to also specify how to join them in order to create the table.
-
-**classes** are an **abstract notion** of a thing or blueprint. It's all the planning. Whereas **instances** are the actual objects are being formed by that blueprint.
-
-***Instances*** is what we refer to specific objects that is part of that blueprint. For example *my table* and then there's *your table* and your *neighbors table* and so forth. These are instances, **concrete examples** of that blueprint being used.
-
-***Creating and using your own objects with classes***
-
-**Creating** the class involves:
-
-- Defining the class name
-- defining the class attributs
-- for example, someone wrote code to implement a list class
-
-**Using** the class involves:
-
-- creating new instances of objects
-- doing operations on the instances
-- for example, L = [1,2] and len(L)
-
----
-
 #### **Examples of Classes**
-
----
-
-**Example #1**
-
----
-A `dog` class would share similarities between all dogs such as they **all** have a `name, colour and breed` and they all have the same behaviour `barking, running and wagging tail`.
-
-the `__init__` method is a constructor often referred to as a *magic method*. This method is called when the instance of the class is created. It's own frame is created and then the magic method initialises the template setup.
-
-So `__init__` is used programmers to initialise the blueprint when a given instance or frame is created.
 
 ---
 
@@ -2183,7 +2214,7 @@ So `__init__` is used programmers to initialise the blueprint when a given insta
 
 ```python
 class Table(object):
-#--- This section is called a magic method, __init_-()
+#--- This section is called a magic method, __init__()
     def __init__(self, tabletop, legs, chair, cushion):
     self.tabletop = tabletop
     self.legs = legs
@@ -2192,14 +2223,14 @@ class Table(object):
     self.clean = True
 
 # --- This section is all methods
-    def cleanTable(self):
+    def clean_table(self):
         if not self.clean:
             self.clean = True
             print("This table is now clean")
         else:
             print("This table is already clean")
 
-    def unCleanTable(self):
+    def unclean_table(self):
         if self.clean:
             self.clean = False
             print("This table is now dirty")
@@ -2208,7 +2239,8 @@ class Table(object):
 
     def talk(self, phrase):
         print(phrase)
-# --- This section was all methods
+
+
 table1 = Table(35, 15, 16) #        This is the instance
 ```
 
@@ -2219,9 +2251,11 @@ self.tabletop = 35 #        think of the above example and then read it out. 'Fo
 
 `__init__()` - think of it as creating a **blueprint** for creating **instances** of a class. `__init__()` is called the first time we create and instance
 ```
+---
 
 ![alt text](../images/init.gif "using init and all the properties")
 
+---
 [Back to Top](#table-of-contents)
 
 ---
@@ -2230,15 +2264,15 @@ self.tabletop = 35 #        think of the above example and then read it out. 'Fo
 
 ---
 
-You have to remember that while the blueprint is created and the objects have similar attribute categories or perform the same actions (methods)
-
-***Instances have their own individual values for each one of these attribute categories defined in the class***
-
 We humans are an example of Object Oriented Programming whereby we all share the attributes of **height, weight, haircolor, eye color** and we all perform the actions(methods) of **breath, think, feel**: However your attributes will have different values to my attributes and so forth.
 
 This is the point of OOP; it provides a blueprint to create individual instances that share the same structure but have their own set of characteristics. They can perform operatins on their attributes, change them and **other** instances **won't be affected**
 
+---
+
 ![alt text](../images/oop&#32;instances.gif "example of two blueprints but with different attribute values")
+
+---
 
 [Back to Top](#table-of-contents)
 
