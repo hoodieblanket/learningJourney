@@ -78,13 +78,12 @@
   - [**Assertions**](#assertions)
 - [**Object Oriented Programming OOP**](#object-oriented-programming-oop)
   - [**Classes and Instances**](#classes-and-instances)
-- [- This just shows you what is actually happening in the background when you are calling on the instance.](#--this-just-shows-you-what-is-actually-happening-in-the-background-when-you-are-calling-on-the-instance)
     - [**Examples of Classes**](#examples-of-classes)
     - [**Class Variables**](#class-variables)
     - [**Class Methods and Static Methods**](#class-methods-and-static-methods)
     - [**Creating Subclasses**](#creating-subclasses)
     - [**`isinstance()` and `issubclass`**](#isinstance-and-issubclass)
-    - [**Methods**](#methods)
+  - [**Methods**](#methods)
     - [**Magic Methods**](#magic-methods)
     - [**Property Decorators - Getters, Setters and Deleters**](#property-decorators---getters-setters-and-deleters)
       - [**Getters**](#getters)
@@ -2178,16 +2177,8 @@ print(Employee.fullname(employee_1))
 - .fullname: calling the method we have defined
 - (employee_1): The key difference, because we are calling on the **class** and not the **instance** then `self` cannot automatically pass as there is no instance. 
 - This just shows you what is actually happening in the background when you are calling on the instance.
+
 ---
-
-in order to allow you to interact with that instance of an object
-
-Everything in Python is an **object** and has a **type**
-
-Objects are **data abstraction** that capture:
-
-- internal **representation** through data attributes
-- **interface** for interacting with object through methods (procedures), defines behaviours but hides implementation
 
 We can **create new instances** of objects
 
@@ -2196,9 +2187,6 @@ We can **destroy objects**:
 - explicitly using `del` or just "forget" about them
 - Python system will reclaim destroyed or inaccessible objects - referred as `garbage collection`
 
-```python
-[1,2,3,4] is of type `list`
-```
 
 [Back to Top](#table-of-contents)
 
@@ -2208,7 +2196,7 @@ We can **destroy objects**:
 
 ---
 
-**Example #2**
+**Another example**
 
 ---
 
@@ -2256,6 +2244,7 @@ self.tabletop = 35 #        think of the above example and then read it out. 'Fo
 ![alt text](../images/init.gif "using init and all the properties")
 
 ---
+
 [Back to Top](#table-of-contents)
 
 ---
@@ -2547,7 +2536,7 @@ mgr_1.remove_emp(dev_2)
 
 ---
 
-#### **Methods**
+### **Methods**
 
 ---
 
