@@ -79,7 +79,7 @@
 - [**Object Oriented Programming OOP**](#object-oriented-programming-oop)
   - [**Classes and Instances**](#classes-and-instances)
     - [**Examples of Classes**](#examples-of-classes)
-    - [**Class Variables**](#class-variables)
+  - [**Class Variables**](#class-variables)
     - [**Class Methods and Static Methods**](#class-methods-and-static-methods)
     - [**Creating Subclasses**](#creating-subclasses)
     - [**`isinstance()` and `issubclass`**](#isinstance-and-issubclass)
@@ -2172,7 +2172,7 @@ print(Employee.fullname(employee_1))
 - **():** ...automatically passing the `self` argument.
 - As a result; it brings back the **self.first** and **self.last** argument (employee_1.first and employee_1.last)
 
-**Is this the same as Employee.fullname(employee_1)**
+**Is this the same as Employee.fullname(employee_1)?**
 - Employee: calling the Class this time
 - .fullname: calling the method we have defined
 - (employee_1): The key difference, because we are calling on the **class** and not the **instance** then `self` cannot automatically pass as there is no instance. 
@@ -2267,24 +2267,21 @@ This is the point of OOP; it provides a blueprint to create individual instances
 
 ---
 
-#### **Class Variables**
+### **Class Variables**
 
 ---
 
-Class variables is assigning a variable within the class and not within a method and instance. This would allow you to use a class variable that **affects all instances** and then the variable can be adjusted within the **instance variable** to be unique to that instance
+A class variables is assigning a variable within the class *structure* and not within a method inside the class. This allows you to use a class variable that **effects all instances** when created and then the specific variable can also be adjusted within the instance so that its unique to that instance.  
 
----
-
-**Example of Class Variable**
-
----
+**Key Characteristics**
+- Class variables effect the class and applies to each new instance
+- Allows flexibility of assigning unique variables to specific instances
+- Can rely on the inheritance from class to form variables within each instance
+- Conversely allows control over the variable so an instance doesn't alter the class variable.
 
 ```python
 class Employee:
-    #       Class variables
-    num_of_emps = 0
-    raise_amount = 1.04
-
+    raise_amount = 1.04 #       4% pay increase
 
     def __init__(self, first, last, pay):
         self.first = first
@@ -2292,28 +2289,69 @@ class Employee:
         self.pay = pay
         self.email = first + "." + last + "@company.com"
 
-    Employee.num_of_emps += 1
-    #       As we assign and create more employee files, this will keep track if each initialised instance. Then we can use print(Employee.num_of_emps) to produce a number of setup employees with their profiles.
-
     def fullname(self):
-        return "{} {}".format(self.first, self.last)
-        #       as mentioned with methods inside the class, the first argument will always be the instance, `self` and we only need `self` in order to get the full name
+        return f"{self.first} {self.last}"
 
     def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)
-        #       accessing the raise_amount variable within the class
-        #       Unable to just call on raise_amount as the variable would be undefined inside the method. So you need to call on the class variable.
-        #       using self.raise_amount then we inherit the raise_amount and then if we need to, we can change each instances' raise_amount separate if needed
+        self.pay = int(self.pay * self.raise_amount) #          Set int() so we have a whole number and not a float
+        
+        # Using self.raise_amount allows to inherit the raise_amount from the class 
+        # and if we need to, we can change each instance raise_amount separately as needed
 
-emp_1 = Employee('Johann', 'Van Niekerk', 50000)
+emp_1 = Employee("John", "Bob", 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
-print(emp_1.fullname)
-#       This will only print and confirm that `fullname` is indeed a method.
-#       So as we do with methods we need to have parenthesis to call the method
-print(emp_1.fullname())
-print(emp_2.fullname())
-print(Employee.num_of_emps)
+print(emp_1.pay)
+#>>> 50000
+emp_1.apply_raise()
+print(emp_1.pay)
+#>>> 52000
+```
+---
+Inheritance from class
+
+---
+```py
+print(emp_1.__dict__) #         shows that emp_1 does not have any variable raise_amount within
+#>>> {'first': 'John', 'last': 'Bob', 'pay': 52000, 'email': 'John.Bob@company.com'}
+print(emp_1.raise_amount)
+#>>> 1.04
+print(Employee.raise_amount)
+#>>> 1.04
+print(emp_2.raise_amount)
+#>>> 1.04
+```
+---
+Assigning unique variable to instance
+
+---
+```py
+emp_1.raise_amount = 1.05 #     creating the raise_amount variable inside emp_1; will no longer inherit from class
+print(emp_1.__dict__) #         Now has raise_amount within instance
+#>>> {'first': 'John', 'last': 'Bob', 'pay': 52000, 'email': 'John.Bob@company.com', 'raise_amount': 1.05}
+print(emp_2.__dict__) #         Other instances arent affected
+#>>> {'first': 'Test', 'last': 'User', 'pay': 60000, 'email': 'Test.User@company.com'}
+```
+---
+Showing inheritance and unique variables
+
+---
+```py
+print(emp_1.raise_amount) #     You can see here that we have amended the emp_1 instance
+#>>> 1.05
+print(Employee.raise_amount) #  inherited from class
+#>>> 1.04
+print(emp_2.raise_amount) #     inherited from class
+#>>> 1.04
+
+Employee.raise_amount = 1.06
+
+print(emp_1.raise_amount) #     Our instance remains the same even when the class variable has changed
+#>>> 1.05
+print(Employee.raise_amount) #  inherited from class
+#>>> 1.06
+print(emp_2.raise_amount) #     inherited from class
+#>>> 1.06
 ```
 
 ---
@@ -2323,17 +2361,15 @@ print(Employee.num_of_emps)
 ---
 Using a decorator called `@classmethod`. Altering the functionality of our method whereby we receive the classmethod first before we receive our instance.
 
-Regular methods always pass in the instance, `self` as the first argument
+**Key Characteristics**
+- **Regular** **methods** in our class always take in the `self` as the first argument
+- **Class** **methods** always pass in the class, `cls` as the first argument
+- **Static** **methods** don't pass in anything automatically: The instance or the class
 
-Class methods always pass in the class, `cls` as the first argument
-
-Static methods don't pass in anything automatically: The instance or the class
-
-***Using a `@classmethod` to control the raise employees receive***
-
-```python
+***Using a `@classmethod` to control the raise employees receive***  
+**If you recall our previous example**  
+```py
 class Employee:
-
     raise_amount = 1.04
 
     def __init__(self, first, last, pay):
@@ -2343,19 +2379,12 @@ class Employee:
         self.email = first + "." + last + "@company.com"
 
     def fullname(self):
-        return "{} {}".format(self.first, self.last)
-
+        return f"{self.first} {self.last}"
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amount)
-
-    @classmethod
-    def set_raise_amt(cls, amount):
-        cls.raise_amt = amount
-    #       setting the amount equal to the amount we passed in
-    #       Cannot use class as a variable so we use `cls
-Employee.set_raise_amt(1.05)
-#       to follow on with the above example. this would be how we adjust the classmethod inside the class and affect the variable on the class-level`
 ```
+
+
 
 ***Using a `@classmethod` to parse strings and retrieve details for the class***
 
