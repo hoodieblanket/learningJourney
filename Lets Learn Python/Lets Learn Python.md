@@ -14,7 +14,7 @@
   - [**String Concatenation and formatted string `f"{}{}"`**](#string-concatenation-and-formatted-string-f)
   - [**String Methods or Functions**](#string-methods-or-functions)
 - [**`In` operator**](#in-operator)
-- [**Ternary operator**](#ternary-operator)
+- [**Ternary operator - Single line code**](#ternary-operator---single-line-code)
 - [**User Input**](#user-input)
 - [**Loops**](#loops)
   - [**`While` Loop**](#while-loop)
@@ -105,7 +105,7 @@ This is not an indepth look into each topic but rather just reminders or bits of
 
 If statements are used to check for True or False flags. Using these flags we can determine what code we want to run for different scenarios. 
 
-**Key Characteristics:**
+**Key Notes:**
 - Evaluates to True or False values
 - `if` and `elif` used to decide what block of code to run
 - `else` runs if none of the boolean tests before are passable.
@@ -123,7 +123,7 @@ if temperature > 30:
     print("It's warm")
     print("Drink water")
 print("Done")
->>> Done #Outputs only Done due to the if statement returning with false; it won't run the indented code
+>>> Done #  Outputs only Done due to the if statement returning with false; it won't run the indented code
 
 elif temperature >20:
     print("It's nice")
@@ -144,16 +144,16 @@ print("Done")
 
 Operators that check for boolean values to determine what indented code will be run. Conditional expressions but allows you to evaluate several variables to determine an output.
 
-**Key Characteristics:**
+**Key Notes:**
 - **and**: Checks to see if both or all variables are True and then overall evaluation is True   
 - **or**:  Checks to see if atleast one of the variables are True and then the overall evaluation is True
 - **not**: inverts the value of a boolean to check for things that you don't want or desire when evaluating
 - There is a precedence of which is evaluated first in the order of: not -- and -- or
 
 ```py
-#-----
-#checking if both variables are True to be eligible
-#-----
+#---
+#   checking if both variables are True to be eligible
+#---
 high_income = True
 good_credit = True
 
@@ -162,12 +162,12 @@ if high_income and good_credit:
 else:
     print("Not eligible")
 >>> Eligible
-#you do not need to write: high_income == True because the high_income variable is already True or False so this would be redundant code written and looks messy
+#   you do not need to write: high_income == True because the high_income variable is already True or False so this would be redundant code written and looks messy
 ```
 ```py
-#-----
-#checking if atleast 1 is True to be eligible
-#-----
+#---
+#   checking if atleast 1 is True to be eligible
+#---
 high_income = False
 good_credit = True
 
@@ -178,9 +178,9 @@ else:
 >>> Eligible
 ```
 ```py
-#-----
-#using not operator to invert the value of a boolean to ensure not a student
-#-----
+#---
+#   using not operator to invert the value of a boolean to ensure not a student
+#---
 high_income = False
 good_credit = True
 student = True
@@ -192,9 +192,9 @@ else:
 >>> Not eligible
 ```
 ```py
-#-----
-#checking if either high income or good credit but ensuring not a student
-#-----
+#---
+#   checking if either high income or good credit but ensuring not a student
+#---
 high_income = False
 good_credit = True
 student = True
@@ -220,7 +220,7 @@ course = "Programming Language"
 ```
 Within the content of these variables, such as strings, there is a few modifications or functions you can use to influence or target specific index elements within the string.
 
-**Key Characteristics**
+**Key Notes**
 - variable[ i : j : k ]
 - uses brackets []
 - **i** = starting index, can be blank
@@ -238,23 +238,23 @@ This is also not limited to just strings and  allows you to work backwards throu
 course = "Python Programming"
 
 print(len(course))
->>> 18      #Output the length or total elements in the variable, including blank spaces
+>>> 18          #   Output the length or total elements in the variable, including blank spaces
 print(course[0])
->>> P       #Output the 0th element in the string
+>>> P           #   Output the 0th element in the string
 print(course[-1])
->>> g       #Output the last element in the string
+>>> g           #   Output the last element in the string
 print(course[0:3])
->>> pyt     #Output between 0th : 3rd elements in the string
+>>> pyt         #   Output between 0th : 3rd elements in the string
 print(course[0:])
->>> Python Programming      #Output between 0th : last elements in string
+>>> Python Programming      #   Output between 0th : last elements in string
 print(course[1:5])
->>> ytho    #Output between 1 : 5 elements in the string
+>>> ytho        #   Output between 1 : 5 elements in the string
 print(course[0:18:2])
->>> Pto rgamn       #Output between 0 : 18 elements going in increments of 2
+>>> Pto rgamn               #   Output between 0 : 18 elements going in increments of 2
 print(course[::2])
->>> Pto rgamn       #Output all elements going in increments of 2
+>>> Pto rgamn               #   Output all elements going in increments of 2
 print(course[::-1])
->>> gnimmargorP nohtyP      #Output all elements going in decrements of 1 (backwards)
+>>> gnimmargorP nohtyP      #   Output all elements going in decrements of 1 (backwards)
 ```
 
 [Back to Top](#table-of-contents)
@@ -272,7 +272,7 @@ first = "John"
 last = "Doe"
 full = f"{first} {last}" 
 
-#Using the format method to run an expression that would be evaluated at run time
+#   Using the format method to run an expression that would be evaluated at run time
 #Can put any evaluated expression inbetween the curly braces {}
 print(full)
 >>> John Doe
@@ -298,7 +298,7 @@ A few methods or functions you can access to work with strings. Everything in py
 
 More accurately the term to use are 'methods' instead of functions.
 
-**Key Characteristics**
+**Key Notes**
 - Everything in Python is an object
 - All objects have methods
 - Using .(dot) to call upon each method
@@ -308,39 +308,39 @@ More accurately the term to use are 'methods' instead of functions.
 ```py
 course = "Python Programming"
 
-#-----
-#Does not effect the original variable or change it
-#-----
-print(course.upper())       #Outputs uppercase
+#---
+#   Does not effect the original variable or change it
+#---
+print(course.upper())       #   Outputs uppercase
 >>> PYTHON PROGRAMMING
-print(course.lower())       #Outputs lower case
+print(course.lower())       #   Outputs lower case
 >>> python programming
 course_upper = course.upper()
-print(course_upper)         #Outputs the new variable
+print(course_upper)         #   Outputs the new variable
 >>> PYTHON PROGRAMMING
-print(course)               #Shows the original variable is not effected
+print(course)               #   Shows the original variable is not effected
 >>> Python Programming
 
-#-----
-#this is valuable for any variables which requires user input so you can remove any white space
-#-----
-print(course.title())       #Outputs in Title, first letter uppercase
-print(course.strip())       # Outputs variable and strips the while space at the front and back of a string
-print(course.rstrip())      # Strips white space on right of variable/end of a string
-print(course.lstrip())      # Strips white space on left
-#-----
-print(course.find("Pro"))   # Finds the index or a character or series of characters
+#---
+#   this is valuable for any variables which requires user input so you can remove any white space
+#---
+print(course.title())       #   Outputs in Title, first letter uppercase
+print(course.strip())       #   Outputs variable and strips the while space at the front and back of a string
+print(course.rstrip())      #   Strips white space on right of variable/end of a string
+print(course.lstrip())      #   Strips white space on left
+#----------------------------
+print(course.find("Pro"))   #   Finds the index or a character or series of characters
 >>> 7
-print(course.find("pro"))   # Python is case sensitive, so this would show string is not found
->>> -1 #will return -1 if the string or sequence of strings is not found
-print(course.replace("P", "j")) #replace and evaluates without effecting the original variable we are calling on
+print(course.find("pro"))   #   Python is case sensitive, so this would show string is not found
+>>> -1                      #   will return -1 if the string or sequence of strings is not found
+print(course.replace("P", "j")) #   replace and evaluates without effecting the original variable we are calling on
 >>> jython jrogramming
-#-----
+#----------------------------
 print("pro" in course)
 >>> False
-print("Pro" in course)      #The 'In' operator is an expression that returns a boolean
+print("Pro" in course)      #   The 'In' operator is an expression that returns a boolean
 >>> True
-print("swift" not in course)  #The 'Not In' operator is an expression that returns a boolean
+print("swift" not in course)    #   The 'Not In' operator is an expression that returns a boolean
 >>> True
 ```
 
@@ -354,14 +354,14 @@ print("swift" not in course)  #The 'Not In' operator is an expression that retur
 
 The operators `in` and `not in` test for *collective membership* or rather if some element is a member within a variable. This expression will return with a boolean value of True or False so it will be important to understand that Python is a case-sensitive language.
 
-**Key Characteristics**
+**Key Notes**
 - Tests and returns a boolean value
 - This allows further expressions to easily test if some element is a member of a collection or variable and then direct the desired True or False flags onto different paths
 
 ```py
 course = "Python Programming"
 
-print("gramm" in course) #Tests is string sequence is in variable
+print("gramm" in course) #  Tests is string sequence is in variable
 >>> True
 print("Python" not in course)
 >>> False
@@ -371,7 +371,7 @@ print("Python" not in course)
 
 ---
 
-## **Ternary operator**
+## **Ternary operator - Single line code**
 
 ---
 
@@ -391,19 +391,19 @@ if weight >= 72:
 else:
     print("No need to check the scales")
 >>> check the scales
-#-----
-# This above block can essentially be assigned to a variable to produce the same outcome; see below
-#-----
+#---
+#   This above block can essentially be assigned to a variable to produce the same outcome; see below
+#---
 
 if weight >= 72:
     message = ("check the scales")
 else:
     message = ("No need to check the scales")
-print(message) #Achieves the same as the above and assigns the values to a variable.
+print(message) #    Achieves the same as the above and assigns the values to a variable.
 
-#-----
-#This means you can use a ternary operator as below
-#-----
+#---
+#   This means you can use a ternary operator as below
+#---
 
 message = "check the scales" if weight >= 72 else "No need to check the scales"
 print(message)
@@ -424,16 +424,16 @@ When we need user input as part of the program. This will opt for the user to en
 We would need to remember that if we want to use it as an integer then we would need to convert the string returned to an integer.
 
 ```py
-input_variable = input("user input registered: ")       # user input '3'
+input_variable = input("user input registered: ")       #   user input '3'
 input_integer = int(input_variable)
 some_function_needed = input_integer + 1
 >>> 4
 
-#-----
-#can also combine into a single statement
-#-----
+#---
+#   can also combine into a single statement
+#---
 
-output_integer = int(input('type something here: '))    #user input '3'
+output_integer = int(input('type something here: '))    #   user input '3'
 print(5 * out_integer)
 >>> 15
 ```
@@ -460,7 +460,7 @@ while (x<8):
     print('hello')
     else:
         print('goodbye')
-#       it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
+#   it will continue to complete the while loop print function until x is equal or greater then 8. At that point it will no longer be a True statement so it will skip and go to the else statement to complete the False pathway
 ```
 
 Another example of using a while loop to add numbers together from a starting point and the end being a variable that can easily be changed
@@ -473,7 +473,7 @@ while n <= end:
     total += n
     n += 1
 print(total)
-#       This will produce the combination of adding each value from 1 through to 6 iteratively.
+#   This will produce the combination of adding each value from 1 through to 6 iteratively.
 ```
 
 Or decreasing in values as you go down from a starting point
@@ -493,7 +493,7 @@ The following also shows the process of assigning variables outside of the **whi
 ```python
 x = 3
 answer = 0
-iterationsleft = x #        we are assigning the iterations we want to run through as a separate variable so that we can make changes in the loop to this variable without affecting **x**
+iterationsleft = x #    we are assigning the iterations we want to run through as a separate variable so that we can make changes in the loop to this variable without affecting **x**
 
 while (interationsleft != 0):
     answer = answer + x
@@ -513,18 +513,18 @@ This code will step into the while loop, check if iterations is **0**. If not, t
 
 Use a for loop to run code multiple times when wanting to iterate through attempts, variables, lists, or other elements.
 
-**Key Characteristics**
+**Key Notes**
 - uses `for some_variable in range(x):`
 - range(x) is for returning integers
 - range(x) is inclusive of starting point but exclusive of ending point i.e range(i, j-1)
 - Iterable: Can replace range(x) with another variable or list or object to iterate through
 
 ```py
-#-----
-#range will work through integers 0 though to and up till 3 but not including 3.in other words, range will produce 0, 1, 2 (but not 3)
-#-----
+#---
+#   range will work through integers 0 though to and up till 3 but not including 3.in other words, range will produce 0, 1, 2 (but not 3)
+#---
 for number in range(3):
-    print("Attempt", number + 1) #instead of number starting at 0, you can have it user friendly and have it start at 1
+    print("Attempt", number + 1) #  instead of number starting at 0, you can have it user friendly and have it start at 1
 >>> Attempt 1
 >>> Attempt 2
 >>> Attempt 3
@@ -534,31 +534,31 @@ for number in range(3):
 >>> Attempt 2..
 >>> Attempt 3...
 
-#-----
-#desired start, end and step increment (or decrement)
-#-----
+#---
+#   desired start, end and step increment (or decrement)
+#---
 for number in range(1, 10, 2):
-    print("Attempt", number, number * ",") #cleaner code as we are starting at 1
+    print("Attempt", number, number * ",") #    cleaner code as we are starting at 1
 >>> Attempt 1.
 >>> Attempt 3...
 >>> Attempt 5.....
 >>> Attempt 7.......
 >>> Attempt 9.........
-#but not including 10
+#   but not including 10
 ```
 
 If you are given some variable that you need to combine, or use, and you want the variable to increment all the way **through to the last element**
 
 ```py
-#-----
-#scaling or keeping a total of the iterations you are doing
-#-----
+#---
+#   scaling or keeping a total of the iterations you are doing
+#---
 
 number_dogs = 10
 total_puppies_needed = 0
 
-for puppies in range(1, number_dogs + 1):   #starting at index 1 and ending at index 10 (9 + 1)
-    total_puppies_needed += puppies         #adding 1 to the total with each iteration then updates the global frame count
+for puppies in range(1, number_dogs + 1):   #   starting at index 1 and ending at index 10 (9 + 1)
+    total_puppies_needed += puppies         #   adding 1 to the total with each iteration then updates the global frame count
 print(total_puppies_needed)
 >>> 55
 ```
@@ -577,12 +577,12 @@ for number in range(3):
     print("Attempt")
     if successful:
         print("Successful")
-        break #using the break statement to leave the for loop upon successful = True and completing the indented code
+        break # using the break statement to leave the for loop upon successful = True and completing the indented code
 >>> Attempt
 >>> Successful
-#-----
-#For..Else loop
-#-----
+#---
+#   For..Else loop
+#---
 successful = False
 
 for number in range(3):
@@ -596,14 +596,14 @@ else:
 >>> Attempt
 >>> Attempt
 >>> Attempted 3 times but failed
-#-----
-#when break is used on a for..else loop
-#-----
+#---
+#   when break is used on a for..else loop
+#---
 successful = True
 ...
 >>> Attempt
 >>> Successful
-#if the code hits the break statement then even if the else clause is indented outside of the for loop, it will still not evaluate the else code.
+#   if the code hits the break statement then even if the else clause is indented outside of the for loop, it will still not evaluate the else code.
 ```
 
 [Back to Top](#table-of-contents)
@@ -625,7 +625,7 @@ for i in range(5:11:2):
         break
 
 print(mysum)
-#       This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
+#   This code says, if mysum == 5 then we want to stop the loop. As this range starts with the number 5, mysum is increased by i(5) and then the if statement evaluates to True; so we break
 ```
 
 [Back to Top](#table-of-contents)
@@ -639,9 +639,9 @@ print(mysum)
 Python uses 3 different types of numbers within its programs. These types are **integers**, **floats** and **complex numbers**
 
 ```py
-x = 1 #int
-x = 1.1 #float
-x = 1 + 2j # a + bi (complex numbers)
+x = 1       #   int
+x = 1.1     #   float
+x = 1 + 2j  #   a + bi (complex numbers)
 ```
 
 Additionally we have the regular arithmatic operators:
@@ -654,15 +654,15 @@ Additionally we have the regular arithmatic operators:
 - Exponent **
 
 ```py
-print(10 / 3)   #straight division will produce a float
+print(10 / 3)   #   straight division will produce a float
 >>> 3.3333333333333335
-print(10 / 2)   #as above, even if evenly divided, still a float
+print(10 / 2)   #   as above, even if evenly divided, still a float
 >>> 5.0
-print(10 // 3)  #Floored division will evaluate to a floored integer; does not round up
+print(10 // 3)  #   Floored division will evaluate to a floored integer; does not round up
 >>> 3
-print(10 % 3)   #Remainder of a division
+print(10 % 3)   #   Remainder of a division
 >>> 1
-print(10 ** 3)  #Exponent being left to the power of right
+print(10 ** 3)  #   Exponent being left to the power of right
 >>> 1000
 ```
 
@@ -677,11 +677,13 @@ print(10 ** 3)  #Exponent being left to the power of right
 
 ```py
 x = 10
-x = x + 3 #incrementing the variable by 3
-x += 3 #same as above
+x = x + 3   #   incrementing the variable by 3
+x += 3      #   same as above
 
-# any of the arithmatic operators can be used in the same way.
-# The above 2 states are exactly the same. The augmented way being slightly easier to understand far as getting the idea across and easier to write as 
+#---
+#   any of the arithmatic operators can be used in the same way.
+#   The above 2 states are exactly the same. The augmented way being slightly easier to understand far as getting the idea across and easier to write as 
+#---
 ```
 
 [Back to Top](#table-of-contents)
@@ -695,18 +697,18 @@ x += 3 #same as above
 Useful functions when dealing with numbers
 
 ```py
-print(round(2.9)) #round to nearest
+print(round(2.9)) # round to nearest
 >>> 3
-print(abs(-2.9))  #Print absolute number (positive)
+print(abs(-2.9))  # Print absolute number (positive)
 >>> 2.9
 ```
 You can also import modules into python programs to assist when Python does not have certain expressions or functions you would like to use. For example importing the Math module will allow a lot of math-related functions becoming available
 ```py
 import math 
-#-----
-#Math module that has a lot of mathmatical methods
-#Math is also an object so you can call on methods related to the Math module
-#-----
+#---
+#   Math module that has a lot of mathmatical methods
+#   Math is also an object so you can call on methods related to the Math module
+#---
 
 print(math.ceil(2.2))
 >>> 3
@@ -725,13 +727,13 @@ The mod sign % used in a test has the following general english explanation:
 
 ```python
 0 % 2
-#       The number 2 (on the right) goes into the number 0 (on the left) exactly 0 times (x amount of times). Afterwards there is 0 remaining.
+#   The number 2 (on the right) goes into the number 0 (on the left) exactly 0 times (x amount of times). Afterwards there is 0 remaining.
 2 % 2
-#       2 goes into the number 2 exactly one time and there is 0 remaining.
+#   2 goes into the number 2 exactly one time and there is 0 remaining.
 3 % 2
-#       2 goes into the number 3 exactly one time and there is 1 remaining.
+#   2 goes into the number 3 exactly one time and there is 1 remaining.
 23 % 5
-#       5 goes into the number 23 example four times and there is 3 remaining.
+#   5 goes into the number 23 example four times and there is 3 remaining.
 ```
 
 Using this technique you can test for even numbers by using **mod** division and it will determine if the number is able to be evenly split, thereby being **even**.
@@ -746,7 +748,7 @@ Using this technique you can test for even numbers by using **mod** division and
 
 When called on, the function returns the **absolute** integer or float. Ensuring it is a positive number as well.  
 
-**Key Characteristics**
+**Key Notes**
 - Used to return the absolute (positive) value of a number
 - It can be integer, a floating point number or complex number
 
@@ -756,10 +758,10 @@ integer_variable = -88
 complex_variable = 3 - 4j
 
 print(abs(float_variable))
->>> 54.22                       #returns the float as the positive value
+>>> 54.22                       #   returns the float as the positive value
 print(abs(integer_variable))
 >>> 88
-print(abs(complex_variable))    #Also evaluates the complete number equation and returns its absolute value
+print(abs(complex_variable))    #   Also evaluates the complete number equation and returns its absolute value
 >>> 5.0
 ```
 
@@ -773,7 +775,7 @@ print(abs(complex_variable))    #Also evaluates the complete number equation and
 
 Sometimes your evaluated code requires some type conversion to get it to the point of being processable or manageable for your goals. This looks at a few instances whereby you may require some type conversion otherwise you will run into unexpected issues.
 
-**Key Characteristics**
+**Key Notes**
 - Two objects can be concatenated if they are of the **same type**
 - conversion of Type will allow you to concatenate objects for your desired purpose
 - **int(x)** - conversion to integer
@@ -789,16 +791,16 @@ When we need user input as part of the program. This will opt for the user to en
 ```py
 x = input("x = ")
 y = x + 1
->>> Type Error  #This may be the first instance of errors you will encounter with user input.
-                # This attempts to evaluate the above code as y = "1" + 1: which returns the error.
+>>> Type Error  #   This may be the first instance of errors you will encounter with user input.
+                #   This attempts to evaluate the above code as y = "1" + 1: which returns the error.
 
 print(type(x))
->>> <Class 'Str'> #shows that the user input is a 'string'
+>>> <Class 'Str'> # shows that the user input is a 'string'
 
-#user input '3'
+#   user input '3'
 
-y = int(x) + 1 #converting the x variable to a integer
-print(f"the variable x: {x}, and y: {y}") #using formatted string to advise an outcome for the user
+y = int(x) + 1 #    converting the x variable to a integer
+print(f"the variable x: {x}, and y: {y}") # using formatted string to advise an outcome for the user
 >>> the variable x: 3, and y: 4
 ```
 
@@ -806,9 +808,9 @@ Out of the listed conversion methods; the only one with difficulty may be the **
 
 **Falsy values**
 ```py
-- ""            #Completely empty string returns False
-- 0             #The number 0 returns False
-- None          #Absence of a value returns False
+- ""            #   Completely empty string returns False
+- 0             #   The number 0 returns False
+- None          #   Absence of a value returns False
 
 bool(0)
 >>> False
@@ -843,7 +845,7 @@ epsilon = 0.01
 numGuesses = 0
 low = 1.0
 high = x
-#       high is initialised as our guess x = 25
+#   high is initialised as our guess x = 25
 ans = (high + low)/2.0
 
 while abs(ans**2 - x) >= epsilon:
@@ -869,7 +871,7 @@ print(str(ans) + ' is close to a square root of ' + str(x))
 Functions take a set of parameters; the number can be 0 and the parameters are set inside the function.
 
 ```python
-def is_even (i):        #keyword || name || parameters or arguments
+def is_even (i):        #   keyword || name || parameters or arguments
     """
     Input: i, a positive int
     Returns True if i is even, otherwise false
@@ -877,9 +879,9 @@ def is_even (i):        #keyword || name || parameters or arguments
     print('hi')
     return i % 2 == 0
 
-is_even(3)          # calling the function using its name and values for parameters.
+is_even(3)          #   calling the function using its name and values for parameters.
 
-        # as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
+        #   as per the function if we assign i = 3 as per the call, then we replace all i's with 3.
 ```
 
 [Back to Top](#table-of-contents)
@@ -1112,7 +1114,7 @@ Tuples are an ordered sequence of objects to make a list of objects with the goa
 
 When creating a tuple you would setup a variable with `object`, `object2`, `object3` and so on... however this doesn't mean a tuple can only be a variable with multiple objects.  When creating a tuple but you *currently* only have one item then you can still create a tuple to start off. You would do this with a **comma** after the *object* such as "`object`,"
 
-Key Characteristics:
+**Key Notes:**
 * Immutable
 * Iterable
 * Requires the **Comma**
@@ -2093,7 +2095,7 @@ We can use assertions as a supplement to our testing.
 
 When you are doing your coding; it would be nice to have some kind of **blueprint** that you can re-use instead of creating new code or objects and such from scratch again manually. This is where Object Oriented Programming come in to play.
 
-**Key Characteristics**
+**Key Notes**
 - **Instance** variables contain data that is unique to each instance
 - **Self** refers to the instance automatically
 - Each method inside a class will auto take the instance `self` as an argument
@@ -2273,7 +2275,7 @@ This is the point of OOP; it provides a blueprint to create individual instances
 
 A class variables is assigning a variable within the class *structure* and not within a method inside the class. This allows you to use a class variable that **effects all instances** when created and then the specific variable can also be adjusted within the instance so that its unique to that instance.  
 
-**Key Characteristics**
+**Key Notes**
 - Class variables effect the class and applies to each new instance
 - Allows flexibility of assigning unique variables to specific instances
 - Can rely on the inheritance from class to form variables within each instance
@@ -2356,12 +2358,16 @@ print(emp_2.raise_amount) #     inherited from class
 
 ---
 
+[Back to Top](#table-of-contents)
+
+---
+
 #### **Class Methods and Static Methods**
 
 ---
 Using a decorator called `@classmethod`. Altering the functionality of our method whereby we receive the classmethod first before we receive our instance.
 
-**Key Characteristics**
+**Key Notes**
 - **Regular** **methods** in our class always take in the `self` as the first argument
 - **Class** **methods** always pass in the class, `cls` as the first argument
 - **Static** **methods** don't pass in anything automatically: The instance or the class
