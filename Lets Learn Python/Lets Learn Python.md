@@ -2371,6 +2371,7 @@ Using a decorator called `@classmethod`. Altering the functionality of our metho
 - **Regular** **methods** in our class always take in the `self` as the first argument
 - **Class** **methods** always pass in the class, `cls` as the first argument
 - **Static** **methods** don't pass in anything automatically: The instance or the class
+- The giveaway for static method: if you don't the instance or the class anywhere within the function then it should be a static method.
 
 ***Using a `@classmethod` to control the raise employees receive***  
 **If you recall our previous example**  
@@ -2392,7 +2393,7 @@ class Employee:
 
 
 
-***Using a `@classmethod` to parse strings and retrieve details for the class***
+***Using a `@classmethod` to parse a string and retrieve desired details for the class and remove excess details***
 
 ```python
 class Employee:
@@ -2414,8 +2415,10 @@ class Employee:
     @classmethod
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
-
-#       For example, imagine having a database or collection of details that come out with hyphens (-) separating the data and you need to feed the correct details into the class and create each employee instance:
+#---
+#   Using a Class Method as an alternative constructor:
+#   For example, imagine having a database or collection of details that come out with hyphens (-) separating the data and you need to feed the correct details into the class and create each employee instance:
+#---
 emp_str_1 = `john-doe-70000`
 emp_str_2 = `steve-smith-30000`
 emp_str_3 = `jane-doe-90000`
@@ -2423,51 +2426,29 @@ emp_str_3 = `jane-doe-90000`
     @classmethod
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+        return cls(first, last, pay) #  creates that new employee and then returns that employee object
 ```
 
 ***Using `@staticmethods`***
 
 Example of a `staticmethod` being used where we don't require the instance or the class, as such our first arguments does not automatically pass in the class or the instance.
 
-```python
+```py
 class Employee:
-
-    raise_amount = 1.04
-
-    def __init__(self, first, last, pay):
-        self.first = first
-        self.last = last
-        self.pay = pay
-        self.email = first + "." + last + "@company.com"
-
-    def fullname(self):
-        return "{} {}".format(self.first, self.last)
-
-    def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)
-
-    @classmethod
-    def set_raise_amt(cls, amount):
-        cls.raise_amt = amount
-
-    @classmethod
-    def from_string(cls, emp_str):
-        first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
-
     @staticmethod
-    def is_workday(day)
+    def is_workday(day) 
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
-#       Static method, we would use a static method when we don't use the class or instance at all
-import datetime
-#       importing datetime module for this example
+# Not accessing the instance or the class within the function - this would be an example where a staticmethod is suitable and a class/normal method is not suitable.
+
+import datetime#    importing datetime module for this example
 my_date = datetime.date(2020, 3, 14)
 print(Employee.is_workday(my_date))
-#       returns true if weekday or false if weekend
+>>> True #  returns true if weekday or false if weekend
 ```
+
+[Back to Top](#table-of-contents)
 
 ---
 
@@ -2475,16 +2456,18 @@ print(Employee.is_workday(my_date))
 
 ---
 
-Creating subclasses is useful when you are creating another entity or class blueprint you want to keep separate but the main class information is still relevant.
+**Key Notes**
+- Take advantage of free code by utilising inheritance to grab code if required by going up the chain of command
+- Changing variables in a subclass does not impact the main or other classes.
+- Using super() to inherit code from a parent class and then have the subclass initiate new code in combination for that unique subclass object
+- print(help(specific_class)) will show the method inheritance order.
 
-Following the same example of Employee, you would have key roles such as **Manager** and **Developer** who are **employees** but they will have slight differences in their blueprints
-
-Changing variables in the **subclass** does not leak into the main class or other class and this means the changes won't have **unexpected consequences** as you apply unique changes to each blueprint.
 
 Subclasses allow us to re-use code for free without needing to write it out again and allows us to adjust that unique subclass or blueprint with its own special arguments specific to that blueprint.
 
 Using **super()** to call on a higher order of class to inherit the arguments or code from there and re-use that code in your new subclass. In the below example, it shows that we use super().__init() to let the **parent class** handle the initialisation of *first, last, pay* and then we have the **subclass** handle the initialisation of **programming language**
 
+**Example subclass #1**
 ```python
 class Employee:
 
@@ -2497,38 +2480,44 @@ class Employee:
         self.email = first + "." + last + "@company.com"
 
     def fullname(self):
-        return "{} {}".format(self.first, self.last)
+        return f"{self.first} {self.last}"
 
     def apply_raise(self):
         self.pay = int(self.pay * self.amt)
 
 class Developer(Employee):
+
     raise_amt = 1.10
-    #       Some key takeways, if you used "print(help(Developer)) then it would show the inheritance or order that the class would search for a `__init__` method. As we don't have a __init__ method in the class for Developer, then there is a hierachy that the class will look through to find the __init__.
-    #       This will show it will look in this order: Developer, Employee, builtins.object (every class in python inherits from this base object)
+
     def __init__(self, first, last, pay, prog_lang):
-        super().__init__(first, last, pay)
-        self.prog_lang = prog_lang
-        #       letting the inheriting class use the parent class to handle certain arguments and then defining a new argument relevant for just developers; listing their programming language.
+        super().__init__(first, last, pay) #    use the parent class initialisation with super()
+        self.prog_lang = prog_lang #    new assignment unique to developer subclass
 
-dev_1 = Developer('Test', 'User', 50000, 'python')
-dev_2 = Developer('Test2', 'User2', 60000, 'java')
+dev_1 = Developer('Jody', 'Staples', 50000, 'python')
+dev_2 = Developer('Ellen', 'Argo', 60000, 'java')
 
 print(dev_1.pay)
-dev_1.apply_raise()
+#>>> 50000
+dev_1.apply_raise() #   developer raise_amt = 10% and not using employee raise_amt = 4%
 print(dev_1.pay)
+#>>> 55000
+#   this shows that we haven't broken anything for our employee class as this change will only impact the objects with the developer subclass
 
 print(dev_1.email)
+#>>> Jody.Staples@company.com
 print(dev_1.prog_lang)
-
-#       Example 2 subclass
+#>>> python
+#   You can see the subclass is inheriting from the Employee initialisation
+```
+**Example subclass #2**
+```py
 class Manager(Employee):
     def __init__(self, first, last, pay, employees = None):
         #       good practice not to pass in an empty list as a default argument. You never want to pass in mutable data types like a list or dictionary as arguments.
         super().__init(first, last, pay)
         if employees is None:
             self.employees = []
-            #       create empty list
+            #       create empty list if there isn't an argument
         else:
             self.employees = employees
 
@@ -2537,7 +2526,7 @@ class Manager(Employee):
             self.employees.append(emp)
 
     def remove_emp(self, emp):
-        if emp not in self.employees:
+        if emp in self.employees:
             self.employees.remove(emp)
 
     def print_emps(self):
