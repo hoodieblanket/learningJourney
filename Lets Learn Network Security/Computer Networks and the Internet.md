@@ -70,8 +70,10 @@
 `BIND` - Berkeley Internet Name Domain\
 `DDoS` - Distributed Denial of Service\
 `DoS` - Denial of Service\
-`IP` - Internet Protocol Address\
-`Output Buffer` Buffer is similar to a store or queue for the bits or packets as its being sent. The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent\
+`IP` - Internet Protocol Address
+
+`Output Buffer` Buffer is similar to a store or queue for the bits or packets as its being sent.\
+The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent\
 `Forwarding Table` maps destination addresses to that router's outbound links. When the packet arrives at the router the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link.\
 `Circuit Switching` is a little different the `Packet Switching` in that Circuit-switched networks are similar to reservations at a restaurant. In order for the data to travel, it needs to be in an ordered sequence. Whereas `Packet-switched` networks are on a no-reservations idea that the data arrives and if theres a queue, then it needs to join the buffer.\
 

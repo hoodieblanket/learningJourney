@@ -73,7 +73,7 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 
 ---
 
-`echo` - in order to produce the string
+`echo` - in order to produce the string\
 `|` - the "pipe" to send the string into the next function
 
 [Back to Top](#table-of-contents)
