@@ -2,10 +2,11 @@
 
 ---
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 
 ---
 
+- [Table of Contents](#table-of-contents)
 - [## Key Concepts](#-key-concepts)
 - [## Common Port Numbers](#-common-port-numbers)
 - [Introduction](#introduction)

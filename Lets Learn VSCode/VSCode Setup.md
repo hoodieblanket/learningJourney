@@ -1,10 +1,11 @@
 # VS Code shortcuts and settings <!-- omit in toc -->
 ---
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 
 ---
 
+- [Table of Contents](#table-of-contents)
 - [Custom Shortcuts](#custom-shortcuts)
 - [VSCode Shortcuts](#vscode-shortcuts)
 - [Markdown Shortcuts](#markdown-shortcuts)

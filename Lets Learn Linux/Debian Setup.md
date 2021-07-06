@@ -1,9 +1,10 @@
 # Debian Setup <!-- omit in toc -->
 ---
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 
 ---
+- [Table of Contents](#table-of-contents)
 - [- Helpful packages to install specific programs](#--helpful-packages-to-install-specific-programs)
 - [Common terminal commands](#common-terminal-commands)
   - [Command line Quick Reference](#command-line-quick-reference)

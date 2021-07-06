@@ -2,10 +2,11 @@
 
 ---
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 
 ---
 
+- [Table of Contents](#table-of-contents)
 - [## Common Commandline Expressions](#-common-commandline-expressions)
 - [## SSH](#-ssh)
 - [## `Find` and its difficulties](#-find-and-its-difficulties)

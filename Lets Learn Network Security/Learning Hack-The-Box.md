@@ -1,8 +1,9 @@
 # Learning Vulnerabilities <!-- omit in toc -->
 ---
-## Table of Contents <!-- omit in toc -->
+## Table of Contents
 ---
 
+- [## Table of Contents](#-table-of-contents)
 - [## Using `curl` to post and receive response from webserver](#-using-curl-to-post-and-receive-response-from-webserver)
 - [## For Base64 encoding](#-for-base64-encoding)
 - [### Using `echo` and pipe `|` to decode `base64` encoding](#-using-echo-and-pipe--to-decode-base64-encoding)
