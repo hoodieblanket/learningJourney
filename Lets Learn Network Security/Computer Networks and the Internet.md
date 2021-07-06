@@ -6,86 +6,86 @@
 
 ---
 
-- [Key Concepts](#key-concepts)
-- [Common Port Numbers](#common-port-numbers)
+- [## Key Concepts](#-key-concepts)
+- [## Common Port Numbers](#-common-port-numbers)
 - [Introduction](#introduction)
   - [The Internet Protocol Layers](#the-internet-protocol-layers)
-  - [Transmission Rates for Dial-up, HFC, DSL and FTTH (Shared or not?)](#transmission-rates-for-dial-up-hfc-dsl-and-ftth-shared-or-not)
-  - [Physical media for the Access technologies](#physical-media-for-the-access-technologies)
-  - [Six access technologies (Home, Enterprise or wide-area wireless)](#six-access-technologies-home-enterprise-or-wide-area-wireless)
-  - [Is HFC transmission rate dedicated or shared among users](#is-hfc-transmission-rate-dedicated-or-shared-among-users)
-  - [Transmission rate of Ethernet LAN's](#transmission-rate-of-ethernet-lans)
-  - [Difference between a host and an end system](#difference-between-a-host-and-an-end-system)
-  - [Describe how end system A creates packets from the file](#describe-how-end-system-a-creates-packets-from-the-file)
-  - [What advantage does a circuit-switched network have over a packet-switched network. Advantages of TDM over FDM in circuit-switched](#what-advantage-does-a-circuit-switched-network-have-over-a-packet-switched-network-advantages-of-tdm-over-fdm-in-circuit-switched)
-  - [Types of Delay](#types-of-delay)
-    - [Processing Delay](#processing-delay)
-    - [Queuing Delay](#queuing-delay)
-    - [Transmission Delay](#transmission-delay)
-    - [Propagation Delay](#propagation-delay)
-    - [Packet Loss](#packet-loss)
-- [Protocol Layering](#protocol-layering)
-  - [Application Layer](#application-layer)
-  - [Transport Layer](#transport-layer)
-    - [Network Layer](#network-layer)
-    - [Link Layer](#link-layer)
-  - [The Physical Layer](#the-physical-layer)
-  - [The OSI Model](#the-osi-model)
-    - [Presentation Layer](#presentation-layer)
-    - [Session Layer](#session-layer)
-    - [Which is preferred Five-layer or Seven-layer](#which-is-preferred-five-layer-or-seven-layer)
-- [Networks Under attack](#networks-under-attack)
+- [### Transmission Rates for Dial-up, HFC, DSL and FTTH (Shared or not?)](#-transmission-rates-for-dial-up-hfc-dsl-and-ftth-shared-or-not)
+- [### Physical media for the Access technologies](#-physical-media-for-the-access-technologies)
+- [### Six access technologies (Home, Enterprise or wide-area wireless)](#-six-access-technologies-home-enterprise-or-wide-area-wireless)
+- [### Is HFC transmission rate dedicated or shared among users](#-is-hfc-transmission-rate-dedicated-or-shared-among-users)
+- [### Transmission rate of Ethernet LAN's](#-transmission-rate-of-ethernet-lans)
+- [### Difference between a host and an end system](#-difference-between-a-host-and-an-end-system)
+- [### Describe how end system A creates packets from the file](#-describe-how-end-system-a-creates-packets-from-the-file)
+- [### What advantage does a circuit-switched network have over a packet-switched network. Advantages of TDM over FDM in circuit-switched](#-what-advantage-does-a-circuit-switched-network-have-over-a-packet-switched-network-advantages-of-tdm-over-fdm-in-circuit-switched)
+- [### Types of Delay](#-types-of-delay)
+- [#### Processing Delay](#-processing-delay)
+- [#### Queuing Delay](#-queuing-delay)
+- [#### Transmission Delay](#-transmission-delay)
+- [#### Propagation Delay](#-propagation-delay)
+- [#### Packet Loss](#-packet-loss)
+- [## Protocol Layering](#-protocol-layering)
+- [### Application Layer](#-application-layer)
+- [### Transport Layer](#-transport-layer)
+- [#### Network Layer](#-network-layer)
+- [#### Link Layer](#-link-layer)
+- [### The Physical Layer](#-the-physical-layer)
+- [### The OSI Model](#-the-osi-model)
+- [#### Presentation Layer](#-presentation-layer)
+- [#### Session Layer](#-session-layer)
+- [#### Which is preferred Five-layer or Seven-layer](#-which-is-preferred-five-layer-or-seven-layer)
+- [## Networks Under attack](#-networks-under-attack)
   - [The bad guys can put malware into your host via the internet](#the-bad-guys-can-put-malware-into-your-host-via-the-internet)
     - [What is the difference between a virus and a worm](#what-is-the-difference-between-a-virus-and-a-worm)
   - [The bad guys can attack servers and network infrastructure](#the-bad-guys-can-attack-servers-and-network-infrastructure)
-    - [Denial-of-Service (DoS)](#denial-of-service-dos)
-    - [Bandwidth flooding](#bandwidth-flooding)
-    - [Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
-    - [The bad guys can sniff packets](#the-bad-guys-can-sniff-packets)
-    - [The bad guys can masquerade as someone you trust](#the-bad-guys-can-masquerade-as-someone-you-trust)
+- [#### Denial-of-Service (DoS)](#-denial-of-service-dos)
+- [#### Bandwidth flooding](#-bandwidth-flooding)
+- [#### Distributed Denial of Service (DDoS)](#-distributed-denial-of-service-ddos)
+- [#### The bad guys can sniff packets](#-the-bad-guys-can-sniff-packets)
+- [#### The bad guys can masquerade as someone you trust](#-the-bad-guys-can-masquerade-as-someone-you-trust)
 
 ---
-
 ## Key Concepts
-
 ---
+|          |                                                 |
+| :------- | :---------------------------------------------- |
+| `ISO`    | International Organisation for Standardisation  |
+| `OSI`    | Open Systems Interconnection                    |
+| `HTTP`   | HyperText Transfer Protocol                     |
+| `SMTP`   | Simple Mail Transfer Protocol                   |
+| `DNS`    | Domain Name System                              |
+| `FTP`    | File Transfer Protocol                          |
+| `API`    | Application Programming Interface               |
+| `TCP`    | Transmission Control Protocol                   |
+| `UDP`    | User Datagram Protocol                          |
+| `DOCSIS` | Data over cable service interface specification |
+| `SSL`    | Secure Sockets Layer                            |
+| `SSH`    | Secure Shell                                    |
+| `CDN`    | Content Distribution Networks                   |
+| `POP3`   | Post Office Protocol - Version 3                |
+| `IMAP`   | Internet Mail Access Protocol                   |
+| `BIND`   | Berkeley Internet Name Domain                   |
+| `DDoS`   | Distributed Denial of Service                   |
+| `DoS`    | Denial of Service                               |
+| `IP`     | Internet Protocol Address                       |
 
-`ISO` - International Organisation for Standardisation\
-`OSI` - Open Systems Interconnection\
-`HTTP` - HyperText Transfer Protocol\
-`SMTP` -  Simple Mail Transfer Protocol\
-`DNS` - Domain Name System\
-`FTP` - File Transfer Protocol\
-`API` - Application Programming Interface\
-`TCP` - Transmission Control Protocol\
-`UDP` - User Datagram Protocol\
-`DOCSIS` - Data over cable service interface specification\
-`SSL` - Secure Sockets Layer\
-`SSH` - Secure Shell\
-`CDN` - Content Distribution Networks\
-`POP3` - Post Office Protocol - Version 3\
-`IMAP` - Internet Mail Access Protocol\
-`BIND` - Berkeley Internet Name Domain\
-`DDoS` - Distributed Denial of Service\
-`DoS` - Denial of Service\
-`IP` - Internet Protocol Address
 
-`Output Buffer` Buffer is similar to a store or queue for the bits or packets as its being sent.\
-The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent\
-`Forwarding Table` maps destination addresses to that router's outbound links. When the packet arrives at the router the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link.\
-`Circuit Switching` is a little different the `Packet Switching` in that Circuit-switched networks are similar to reservations at a restaurant. In order for the data to travel, it needs to be in an ordered sequence. Whereas `Packet-switched` networks are on a no-reservations idea that the data arrives and if theres a queue, then it needs to join the buffer.\
+|                     |                                                                                                                                                                                                                                                                                                                                                      |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Output Buffer`     | Buffer is similar to a store or queue for the bits or packets as its being sent.The `Output Buffer` can be overloaded when packets are sent simultaneously from several sources and causes a overflow or queue of work that needs to be sent\                                                                                                        |
+| `Forwarding Table`  | maps destination addresses to that router's outbound links. When the packet arrives at the router the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link.\                                                                                                         |
+| `Circuit Switching` | is a little different the `Packet Switching` in that Circuit-switched networks are similar to reservations at a restaurant. In order for the data to travel, it needs to be in an ordered sequence. Whereas `Packet-switched` networks are on a no-reservations idea that the data arrives and if theres a queue, then it needs to join the buffer.\ |
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Common Port Numbers
-
 ---
-
-- Web server: 80
-- Mail server: 25
-- Port 53 - All DNS query and reply messages are sent within UDP datagrams to port 53
+| Port | Description                                                               |
+| :--- | :------------------------------------------------------------------------ |
+| `80` | Web server                                                                |
+| `25` | Mail server                                                               |
+| `53` | All DNS query and reply messages are sent within UDP datagrams to port 53 |
 
 [Back to Top](#table-of-contents)
 
@@ -99,42 +99,39 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 
 ---
 
-- **Application**:
+- **`Application`**:
       - HTTP provides web doc request & transfer (HyperText Transfer Protocol)
       - SMTP email transfer (Simple Mail Transfer Protocol)
       - FTP File transfer (File Transfer Protocol)
-- **Transport**:
+- **`Transport`**:
   - TCP provides connection-oriented service with guaranteed delivery of application-layer messages. Sender/receiver speed matching also known as *Flow Control*. Break long messages into short segments and provides congestion-control mechanism so that a source throttles its transmission rate when the network is congested. (Transmission Control Protocol)
   - UDP provides connectionless service to its apps. A no frills services that provides no reliability, no flow control and no congestion control.(User Datagram Protocol)
-- **Network**:
+- **`Network`**:
   - IP Protocol:
     - Defines the fields in the datagram as well as how the end systems and routers act on these fields. Routes the datagram through a series of routers between the source and destination
-- **Link**:
+- **`Link`**:
   - To move a packet from one node to the next, the network layer relies on the services of the link layer. The network layer passes down the datagram to the link layer and at each node or router, the link layer passes up the datagram to the network again and repeat.
-  - __differing from TCP benefits__ some link layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node. TCP provide reliability from one end-system to another.
+  - **differing from TCP benefits** some link layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node. TCP provide reliability from one end-system to another.
   - Examples of protocols in the link layer include Ethernet, WiFi and cable access network's DOCSIS protocol (Data over cable service interface specification)
-- __Physical__:
-  - Link layer moves entire *frames* from one network element to another network element. The Physical layer is to move the __individual bits__ within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on.
+- **`Physical`**:
+  - Link layer moves entire *frames* from one network element to another network element. The Physical layer is to move the **individual bits** within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on.
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Transmission Rates for Dial-up, HFC, DSL and FTTH (Shared or not?)
-
 ---
-
-- Dial-up - 56kbps (Dedicated)
-- DSL - 24 Mbps Down / 2.5 Mbps Up (Dedicated)
-- HFC - 42.8 Mbps Down / 30.7 Mbps Up (Shared)
-- FTTH - potentially gigabits per second range. (Dedicated)
+| Port    | Description                                        |
+| :------ | :------------------------------------------------- |
+| Dial-up | 56kbps (Dedicated)                                 |
+| DSL     | 24 Mbps Down / 2.5 Mbps Up (Dedicated)             |
+| HFC     | 42.8 Mbps Down / 30.7 Mbps Up (Shared)             |
+| FTTH    | potentially gigabits per second range. (Dedicated) |
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Physical media for the Access technologies
-
 ---
 
 - HFC - Hybrid Fiber Coax cable or a combo of fiber and coaxial.
@@ -146,9 +143,7 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Six access technologies (Home, Enterprise or wide-area wireless)
-
 ---
 
 - (Home) DSL, Cable, FTTH, Dial-up
@@ -158,9 +153,7 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Is HFC transmission rate dedicated or shared among users
-
 ---
 
 - Cable or HFC is a shared broadcast medium. Shared as it moves upstream and downstream and is the reason why if the line is congested, speeds will be significantly lesser than the aggregate downstream rate. The data on the downstream originates from the head-end and as such has no risk of collision.
@@ -169,9 +162,7 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Transmission rate of Ethernet LAN's
-
 ---
 
 - 10Mbps, 100Mbps, 1Gbps, 10Gbps using twisted pair copper. Depends on the thickness of the wire and the distance between transmitter and receiver. Cat 6a cable is twisted pair and can achieve rates of 10Gbps for distances up to a hundred meters.
@@ -179,9 +170,7 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Difference between a host and an end system
-
 ---
 
 - End systems(end stations) sit on the edge of the network. the end user always interacts with the end systems. systems that connect to the internet are also called internet hosts. They host(run) internet applications (web browser or email retrieval program). Mail servers or web servers are end systems that the user does not interact with.
@@ -190,9 +179,7 @@ The `Output Buffer` can be overloaded when packets are sent simultaneously from 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Describe how end system A creates packets from the file
-
 ---
 
 When one of these packets arrive to a packet switch, what info in the packet does the switch use to determine the link onto which the packet is forwarded?
@@ -203,9 +190,7 @@ When one of these packets arrive to a packet switch, what info in the packet doe
 [Back to Top](#table-of-contents)
 
 ---
-
 ### What advantage does a circuit-switched network have over a packet-switched network. Advantages of TDM over FDM in circuit-switched
-
 ---
 
 - Circuit-switched reserves the resources needed along a path to provide for communication between end-systems. Packet-switched does not reserve the resources as it is on-demand and may have delays if there is queues as a first-in first-served ideal.
@@ -214,9 +199,7 @@ When one of these packets arrive to a packet switch, what info in the packet doe
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Types of Delay
-
 ---
 
 Total Nodal Delay (made up of nodal processing delay, queuing delay, transmission delay and propagation delay)
@@ -224,9 +207,7 @@ Total Nodal Delay (made up of nodal processing delay, queuing delay, transmissio
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Processing Delay
-
 ---
 
 Time to examine the packets header and determine where to direct the packet is part of the processing delay. The packet header is referring to the address that the packet has for where its destination is. This delay can also include other factors such as the time needed to check for bit-level errors that may have happened while it was being sent through the upstream link.
@@ -234,9 +215,7 @@ Time to examine the packets header and determine where to direct the packet is p
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Queuing Delay
-
 ---
 
 Self explanatory. Packet is waiting in queue to be transmitted, if there is a queue.
@@ -244,9 +223,7 @@ Self explanatory. Packet is waiting in queue to be transmitted, if there is a qu
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Transmission Delay
-
 ---
 
 Time required to transmit or push all of the packet's bits into the link. Denoted by *L* bits and divided by *R* bits/sec which is the speed of your connection. (10 Mbps, R = 10)
@@ -254,9 +231,7 @@ Time required to transmit or push all of the packet's bits into the link. Denote
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Propagation Delay
-
 ---
 
 The time required to propagate from the beginning of the link (when the packet has been pushed/transmitted into the link) and the time it arrives at the destination. It is limited by the technology of the physical medium such as twisted pair, fiber optic and so on.
@@ -264,9 +239,7 @@ The time required to propagate from the beginning of the link (when the packet h
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Packet Loss
-
 ---
 
 A packet can arrive at the queue and because queue capacity is finite, it would have no place to store the packet so the router will *drop* the packet. This overflow at the queue shows how packet loss can occur. The fraction of lost packets increases as the traffic intensity increases. Therefor the performance at the node is measured in delay as well as the probability of packet loss.
@@ -279,9 +252,7 @@ Sending over a fixed route: What delays are there and which delays are constant 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Protocol Layering
-
 ---
 
 Application-layer protocols such as HTTP and SMTP is almost always implemented in the software in the end systems; so are *transport-layer protocols*.\
@@ -312,9 +283,7 @@ Difficult to say as the internet's answer is always the same: it's up to the dev
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Application Layer
-
 ---
 
 Network apps and their protocols reside in this layer.
@@ -349,9 +318,7 @@ What is an application-layer message? A transport-layer segment? a network-layer
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Transport Layer
-
 ---
 
 The transport layer transports application-layer messages between app endpoints.\
@@ -372,9 +339,7 @@ What are the responsibilities of each layer\
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Network Layer
-
 ---
 
 The network layer is responsible for moving network-layer packets known as datagrams from one host to another.
@@ -396,9 +361,7 @@ What are the responsibilities of each layer\
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Link Layer
-
 ---
 
 We can refer to link-layer packets as frames. At each node within the chain from host to destination node, the network layer routes the datagram to the link layer, which delivers the datagram to the next node along the route. Some link-layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node.
@@ -417,9 +380,7 @@ What are the responsibilities of each layer\
 [Back to Top](#table-of-contents)
 
 ---
-
 ### The Physical Layer
-
 ---
 
 Link layer moves entire frames from one network element to another network element. The Physical layer is to move the individual bits within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on.
@@ -432,9 +393,7 @@ What are the responsibilities of each layer\
 [Back to Top](#table-of-contents)
 
 ---
-
 ### The OSI Model
-
 ---
 
 The __International Organisation for Standardisation (ISO)__ proposed that computer networks be organised around seven layers referred to as __Open Systems Interconnection (OSI)__ model. These 5 layers are similar to the 5 layers internet protocol stack. The key differences is the 2 additional layers for the OSI model: Presentation Layer and Session Layer.
@@ -442,9 +401,7 @@ The __International Organisation for Standardisation (ISO)__ proposed that compu
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Presentation Layer
-
 ---
 
 To provide services that allow communicating applications to interpret the meaning of data exchanged. These services include data compression and data encryption as well as data description.
@@ -452,9 +409,7 @@ To provide services that allow communicating applications to interpret the meani
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Session Layer
-
 ---
 
 Provides for delimiting and synchronisation of data exchange, including the means to build a checkpointing and recovery scheme.
@@ -462,9 +417,7 @@ Provides for delimiting and synchronisation of data exchange, including the mean
 [Back to Top](#table-of-contents)
 
 ---
-
 #### Which is preferred Five-layer or Seven-layer
-
 ---
 
 Difficult to say as the internet's answer is always the same: it's up to the developer. Whether the developer requires the services from the seven-layer osi model or just from the five-layer internet protocol stack; it is up to the application developer to build that functionality into the application.
@@ -472,14 +425,10 @@ Difficult to say as the internet's answer is always the same: it's up to the dev
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Networks Under attack
-
 ---
 
 ### The bad guys can put malware into your host via the internet
-
----
 
 Malware can:
 
@@ -494,25 +443,15 @@ Malware can:
 
 [Back to Top](#table-of-contents)
 
----
-
 #### What is the difference between a virus and a worm
-
----
 
 - A Virus is malicious software that involves user interaction. For example opening a link or application that infects the host. It can then seek to spread itself (self-replicating).
 - A Worm is malware that is not through user interaction. This could be a vulnerable host that has been attacked or sometimes the user themselves have not interacted however the end-system has interacted with it without user input.
 
 [Back to Top](#table-of-contents)
 
----
-
 ### The bad guys can attack servers and network infrastructure
-
----
-
 #### Denial-of-Service (DoS)
-
 ---
 
 renders a network, host or other infrastructure unusable by legitimate users. Most __DoS__ attacks fall under three categories:
@@ -526,10 +465,7 @@ renders a network, host or other infrastructure unusable by legitimate users. Mo
 
 [Back to Top](#table-of-contents)
 
----
-
 #### Bandwidth flooding
-
 ---
 
 If the server has a access rate of *R* bps, then the attacker would need to send traffic at a rate approximately *R* bps to cause damage. If *R* is very large then a single attack source may not be able to generate enough traffic to harm the server. Additionally if the attack comes from a single source than an upstream router will usually be able to detect the attack and block all traffic from that source.
@@ -539,20 +475,14 @@ If the server has a access rate of *R* bps, then the attacker would need to send
 
 [Back to Top](#table-of-contents)
 
----
-
 #### Distributed Denial of Service (DDoS)
-
 ---
 
 attack, the attacker controls multiple sources and has each source blast traffic at the target. With this approach then the aggregate *R* needs to be approximately the same *R* as the host to cripple their services and with multiples attackers, achieving the *R* becomes easier.
 
 [Back to Top](#table-of-contents)
 
----
-
 #### The bad guys can sniff packets
-
 ---
 
 Majority of households these days access the internet via wireless devices. While convenient, these create a major vulnerability.
@@ -563,10 +493,7 @@ Due to __packet sniffers__ being passive, that is not injecting any packets, it 
 
 [Back to Top](#table-of-contents)
 
----
-
 #### The bad guys can masquerade as someone you trust
-
 ---
 
 __IP spoofing__ is one of the many ways that a user can masquerade as another or such that it injects packets into the internet with a false __source__ address. The user creates a arbitrary source address, packet content and destination address and then transmit this packet into the internet. The internet will forward the packet to its destination. Imagine the *unsuspecting receiver such as a internet router* who receives the packet, takes the source address as being truthful then performs some command __embedded in the packet's contents__ (say modifies the forwarding table). This is __IP spoofing__.

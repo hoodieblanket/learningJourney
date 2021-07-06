@@ -6,43 +6,41 @@
 
 ---
 
-- [Common Commandline Expressions](#common-commandline-expressions)
-- [SSH](#ssh)
-- [`Find` and its difficulties](#find-and-its-difficulties)
-- [`grep` and its difficulties](#grep-and-its-difficulties)
-- [Current Directory and Parent Directory navigation](#current-directory-and-parent-directory-navigation)
-- [Using '-' as a filename and its difficulties](#using---as-a-filename-and-its-difficulties)
-- [2>/dev/null and its difficulties](#2devnull-and-its-difficulties)
-- [Nmap Network Mapper](#nmap-network-mapper)
+- [## Common Commandline Expressions](#-common-commandline-expressions)
+- [## SSH](#-ssh)
+- [## `Find` and its difficulties](#-find-and-its-difficulties)
+- [## `grep` and its difficulties](#-grep-and-its-difficulties)
+- [## Current Directory and Parent Directory navigation](#-current-directory-and-parent-directory-navigation)
+- [## Using '-' as a filename and its difficulties](#-using---as-a-filename-and-its-difficulties)
+- [## 2>/dev/null and its difficulties](#-2devnull-and-its-difficulties)
+- [## Nmap Network Mapper](#-nmap-network-mapper)
 
 ---
-
 ## Common Commandline Expressions
-
 ---
-
-`ls`, or `ls -a` will show the current documents within the directory that your terminal is in. the *-a* will also force to show hidden files or folders. Remember using `cd` to move to a different directory if you want to search for what files and docs are elsewhere  
-`ls -l` will provide you with just the number of folders/documents in that directory including hidden.
-`cd Directory` will move you to a folder in the current directory otherwise use `cd /path/to/directory` to travel.  
-`file filename` will tell you the type of file and info related to the type of file.  
-`du fileordirectory` will tell you the estimated size of the file or directory recursively.  
-`find whatever` is used to find a particular file or directory. use the man pages for explanation `man find`  
-`cat filename` cat is used to concatenate files and print on the standard output for example if a standard text file is used then it will print the file into the terminal. Use `-n` to print the line numbers next to the text  
-`grep` is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.  
-`sort` is useful dealing with large data sets and you want to organise the data in a certain way. `-R`   random shuffle but group identical keys. `-f` to fold lowercase to upper case. `-i` consider only printable characters  
-`base64` to encode data that you feed or a file that you want to encode. using `base 64 -d` will decode the data back to what you had previously.  
+| Option                 | Description                                                                                                                                                                                                                                               |
+| :--------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ls` or `ls -a`        | will show the current documents within the directory that your terminal is in. the *-a* will also force to show hidden files or folders. Remember using `cd` to move to a different directory if you want to search for what files and docs are elsewhere |
+| `ls -l`                | will provide you with just the number of folders/documents in that directory including hidden.                                                                                                                                                            |
+| `cd directory`         | will move you to a folder in the current directory otherwise use `cd /path/to/directory` to travel.                                                                                                                                                       |
+| `file file_name`       | will tell you the type of file and info related to the type of file.                                                                                                                                                                                      |
+| `du file_or_directory` | will tell you the estimated size of the file or directory recursively.                                                                                                                                                                                    |
+| `find whatever`        | is used to find a particular file or directory. use the man pages for explanation `man find`                                                                                                                                                              |
+| `cat file_name`        | cat is used to concatenate files and print on the standard output for example if a standard text file is used then it will print the file into the terminal. Use `-n` to print the line numbers next to the text                                          |
+| `grep`                 | is useful for searching documents for patterns. In combination of the options `-w # when searching for WHOLE words with no variations` or `-i # when searching regardless of case sensitivity`.                                                           |
+| `sort`                 | is useful dealing with large data sets and you want to organise the data in a certain way. `-R`   random shuffle but group identical keys. `-f` to fold lowercase to upper case. `-i` consider only printable characters                                  |
+| `base64`               | to encode data that you feed or a file that you want to encode. using `base 64 -d` will decode the data back to what you had previously.                                                                                                                  |
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## SSH
-
 ---
-
-`ssh something.labs.org -p 80 -l username` is an example of the use of *-p* to set the port and *-l* to set the username  
-`-p` Set the port  
-`-l` Set username  
+| Option                                     | Description                                                                   |
+| :----------------------------------------- | :---------------------------------------------------------------------------- |
+| `ssh something.labs.org -p 80 -l username` | is an example of the use of *-p* to set the port and *-l* to set the username |
+| `-p`                                       | Set the port                                                                  |
+| `-l`                                       | Set username                                                                  |
 
 Secure Shell protocol for operating network services over an unsecured network. Typical applications would to remotely connect through command-line and remote command execution.  
 
@@ -58,9 +56,7 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 [Back to Top](#table-of-contents)
 
 ---
-
 ## `Find` and its difficulties
-
 ---
 
 Modifiers
@@ -80,17 +76,14 @@ Additionally adding in `-type f # to specify that we are looking for a FILE` wil
 [Back to Top](#table-of-contents)
 
 ---
-
 ## `grep` and its difficulties
-
 ---
-
-Modifiers
-
-- `-i` ignore upper or lower case
-- `-w` whole word searching only and reject variance
-- `-n` provide line number that the searched word exists
-- `-r` recursive search in current and child directories, all the way down
+| Modifiers | Description                                                         |
+| :-------- | :------------------------------------------------------------------ |
+| `-i`      | ignore upper or lower case                                          |
+| `-w`      | whole word searching only and reject variance                       |
+| `-n`      | provide line number that the searched word exists                   |
+| `-r`      | recursive search in current and child directories, all the way down |
 
 Searching for patterns or repeats within a file. Additionally you can print also print the above/below and surrounding entries to provide context within the file. For example having many entries of the same name and lastname however by using grep to provide context, you find that it has separate contact details/email address listed above or below it etc so you can clue in that they are not double ups but in fact legitimate entries.
 
@@ -99,15 +92,12 @@ using options such as `-i` will ignore upper or lowercase. `-w` will use whole w
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Current Directory and Parent Directory navigation
-
 ---
-
-Commands
-
-- `cd .` Single dot represents current directory, as such your navigation won't change
-- `cd ..` Double dot represents parent directory, sometimes if SSH into a server, this will allow you to travel to parent folders even when you don't normally have access.
+| Commands | Description                                                                                                                                                       |
+| :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cd .`   | Single dot represents current directory, as such your navigation won't change                                                                                     |
+| `cd ..`  | Double dot represents parent directory, sometimes if SSH into a server, this will allow you to travel to parent folders even when you don't normally have access. |
 
 **_Single and Double dots (. or ..) when found with `ls -a` in directory_**\
 a *single dot* represents the current working directory, and *two dots* denote the parent (higher) directory. So using `cd .` will not perform anything as you are currently in that directory but `cd ..` will proceed to the parent directory even when you don't normally have access. For example `cd . (/home/hdy/documents)` and `cd .. (/home/hdy)`
@@ -115,14 +105,12 @@ a *single dot* represents the current working directory, and *two dots* denote t
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Using '-' as a filename and its difficulties
-
 ---
-
 Commands
-
-- `cat` concatenate or otherwise in terminal, it will print the text from a document
+| Commands | Description                                                                  |
+| :------- | :--------------------------------------------------------------------------- |
+| `cat`    | concatenate or otherwise in terminal, it will print the text from a document |
 
 "-" filename is a convention for a lot of programs to mean `stdin/stdout` and is not a special property of the filename. the kernel doesn't recognise `- (dash)` as special so the system calls referring to `-` as a filename will use `-` literally as a filename.
 
@@ -133,9 +121,7 @@ Same way if the filename clashes with the command line such as naming a file `-e
 [Back to Top](#table-of-contents)
 
 ---
-
 ## 2>/dev/null and its difficulties
-
 ---
 
 This redirects errors into /dev/null, which is sort-of 'file' that ignores and deletes everything it receives. This is how you remove the errors such as permission errors from your output and left with the result that you want. `>` redirects the output of a command to wherever you want; by default it will redirect what's called `stdout` (*which is what standard console output is called*) but if you were to do that in this case yoeu'd end up not seeing ANY results as all of the output of your command would end up being directed to /dev/null and wiped out. So what you do is put a `2` infront so that its `2>` which is a parameter that specifics that just the *error messages* should be redirected.
@@ -143,9 +129,7 @@ This redirects errors into /dev/null, which is sort-of 'file' that ignores and d
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Nmap Network Mapper
-
 ---
 
 Network discovery and security auditing.

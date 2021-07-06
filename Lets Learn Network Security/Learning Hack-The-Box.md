@@ -1,59 +1,54 @@
 # Learning Vulnerabilities <!-- omit in toc -->
-
 ---
-
 ## Table of Contents <!-- omit in toc -->
-
 ---
 
-- [Using `curl` to post and receive response from webserver](#using-curl-to-post-and-receive-response-from-webserver)
-- [For Base64 encoding](#for-base64-encoding)
-  - [Using `echo` and pipe `|` to decode `base64` encoding](#using-echo-and-pipe--to-decode-base64-encoding)
-- [For ROT13 encoding](#for-rot13-encoding)
-  - [using `echo` and pipe `|` to decode ROT13 or ROT47](#using-echo-and-pipe--to-decode-rot13-or-rot47)
-- [For ROT47 encoding](#for-rot47-encoding)
-- [Webapp searching](#webapp-searching)
+- [## Using `curl` to post and receive response from webserver](#-using-curl-to-post-and-receive-response-from-webserver)
+- [## For Base64 encoding](#-for-base64-encoding)
+- [### Using `echo` and pipe `|` to decode `base64` encoding](#-using-echo-and-pipe--to-decode-base64-encoding)
+- [## For ROT13 encoding](#-for-rot13-encoding)
+- [### using `echo` and pipe `|` to decode ROT13 or ROT47](#-using-echo-and-pipe--to-decode-rot13-or-rot47)
+- [## For ROT47 encoding](#-for-rot47-encoding)
+- [## Webapp searching](#-webapp-searching)
 
 ---
-
 ## Using `curl` to post and receive response from webserver
-
 ---
 
-`curl -XPOST URLHERE` - Sending POST REQUEST with and getting a response
+| Option                | Description                                      |
+| :-------------------- | :----------------------------------------------- |
+| `curl -XPOST URLHERE` | Sending POST REQUEST with and getting a response |
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## For Base64 encoding
-
 ---
-
 Modifiers
 
-`-d` decode rather than encode the data
-`-i` ignore non-alphabetical characters and thereby remove garbage
+| Option | Description                                                   |
+| :----- | :------------------------------------------------------------ |
+| `-d`   | decode rather than encode the data                            |
+| `-i`   | ignore non-alphabetical characters and thereby remove garbage |
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ### Using `echo` and pipe `|` to decode `base64` encoding
-
 ---
 
-`echo` - in order to produce the string
-`|` - the "pipe" to send the string into the next function
-`echo T1JZRk0tVUZFRFItRVJHSU4tVlJER0ItV1hMTFo= | base64 -d` - using `echo` and `|` to send a cypher to decode\
-`base64 -d` - the "d" being decode. removing the `-d` will just default to *encoding* into base 64
+| Option      | Description                                                                          |
+| :---------- | :----------------------------------------------------------------------------------- |
+| `echo`      | in order to produce the string\                                                      |
+| `base64 -d` | the "d" being decode. removing the `-d` will just default to *encoding* into base 64 |
+| &#124;      | the "pipe" to send the string into the next function                                 |
+
+`echo T1JZRk0tVUZFRFItRVJHSU4tVlJER0ItV1hMTFo= | base64 -d` - using `echo` and `|` to send a cypher to decode
 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## For ROT13 encoding
-
 ---
 
 ROT13 is a bit of a running joke due to the simplicity of the encoding and resulting algorithm required to decode it. Thus anything protected by ROT13 is not really protected at all
@@ -66,9 +61,7 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 [Back to Top](#table-of-contents)
 
 ---
-
 ### using `echo` and pipe `|` to decode ROT13 or ROT47
-
 ---
 
 `echo` - in order to produce the string\
@@ -77,9 +70,7 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 [Back to Top](#table-of-contents)
 
 ---
-
 ## For ROT47 encoding
-
 ---
 
 ROT47 includes special character as well now which means the length of the characters available is large but still similar level of security
@@ -90,9 +81,7 @@ Produces `%96 "F:4< qC@H? u@I yF>AD ~G6C %96 {2KJ s@8`
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Webapp searching
-
 ---
 
 Webapp searching using the developer tools for the browser and checking under `Inspector` for interesting urls

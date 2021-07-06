@@ -2,11 +2,10 @@
 
 ---
 
-## **Table of Contents**
+## **Table of Contents** <!-- omit in toc -->
 
 ---
 
-- [**Table of Contents**](#table-of-contents)
 - [**Conditional Statements**](#conditional-statements)
   - [**`If` Statements**](#if-statements)
   - [**Logical `And`, `Or`, `Not` operators**](#logical-and-or-not-operators)
