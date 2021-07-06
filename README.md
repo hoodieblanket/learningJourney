@@ -3,12 +3,6 @@
 
 My interests and progression as they develop over time, plus some placeholders or references to material to help in the future.
 
-**Table of contents**
-- [Python Learning](#python-learning)
-- [Network Security](#network-security)
-- [Linux Setup](#linux-setup)
-- [OSCP Studying Resources](#oscp-studying-resources)
-
 ---
 
 ### Python Learning
