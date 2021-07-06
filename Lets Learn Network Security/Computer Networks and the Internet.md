@@ -1,50 +1,48 @@
-# Computer Networks and the Internet
+# Computer Networks and the Internet <!-- omit in toc -->
 
 ---
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 ---
 
-- [Computer Networks and the Internet](#computer-networks-and-the-internet)
-  - [Table of Contents](#table-of-contents)
-  - [Key Concepts](#key-concepts)
-  - [Common Port Numbers](#common-port-numbers)
-  - [Introduction](#introduction)
-    - [The Internet Protocol Layers](#the-internet-protocol-layers)
-    - [Transmission Rates for Dial-up, HFC, DSL and FTTH (Shared or not?)](#transmission-rates-for-dial-up-hfc-dsl-and-ftth-shared-or-not)
-    - [Physical media for the Access technologies](#physical-media-for-the-access-technologies)
-    - [Six access technologies (Home, Enterprise or wide-area wireless)](#six-access-technologies-home-enterprise-or-wide-area-wireless)
-    - [Is HFC transmission rate dedicated or shared among users](#is-hfc-transmission-rate-dedicated-or-shared-among-users)
-    - [Transmission rate of Ethernet LAN's](#transmission-rate-of-ethernet-lans)
-    - [Difference between a host and an end system](#difference-between-a-host-and-an-end-system)
-    - [Describe how end system A creates packets from the file](#describe-how-end-system-a-creates-packets-from-the-file)
-    - [What advantage does a circuit-switched network have over a packet-switched network. Advantages of TDM over FDM in circuit-switched](#what-advantage-does-a-circuit-switched-network-have-over-a-packet-switched-network-advantages-of-tdm-over-fdm-in-circuit-switched)
-    - [Types of Delay](#types-of-delay)
-      - [Processing Delay](#processing-delay)
-      - [Queuing Delay](#queuing-delay)
-      - [Transmission Delay](#transmission-delay)
-      - [Propagation Delay](#propagation-delay)
-      - [Packet Loss](#packet-loss)
-  - [Protocol Layering](#protocol-layering)
-    - [Application Layer](#application-layer)
-    - [Transport Layer](#transport-layer)
-      - [Network Layer](#network-layer)
-      - [Link Layer](#link-layer)
-    - [The Physical Layer](#the-physical-layer)
-    - [The OSI Model](#the-osi-model)
-      - [Presentation Layer](#presentation-layer)
-      - [Session Layer](#session-layer)
-      - [Which is preferred Five-layer or Seven-layer](#which-is-preferred-five-layer-or-seven-layer)
-  - [Networks Under attack](#networks-under-attack)
-    - [The bad guys can put malware into your host via the internet](#the-bad-guys-can-put-malware-into-your-host-via-the-internet)
-      - [What is the difference between a virus and a worm](#what-is-the-difference-between-a-virus-and-a-worm)
-    - [The bad guys can attack servers and network infrastructure](#the-bad-guys-can-attack-servers-and-network-infrastructure)
-      - [Denial-of-Service (DoS)](#denial-of-service-dos)
-      - [Bandwidth flooding](#bandwidth-flooding)
-      - [Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
-      - [The bad guys can sniff packets](#the-bad-guys-can-sniff-packets)
-      - [The bad guys can masquerade as someone you trust](#the-bad-guys-can-masquerade-as-someone-you-trust)
+- [Key Concepts](#key-concepts)
+- [Common Port Numbers](#common-port-numbers)
+- [Introduction](#introduction)
+  - [The Internet Protocol Layers](#the-internet-protocol-layers)
+  - [Transmission Rates for Dial-up, HFC, DSL and FTTH (Shared or not?)](#transmission-rates-for-dial-up-hfc-dsl-and-ftth-shared-or-not)
+  - [Physical media for the Access technologies](#physical-media-for-the-access-technologies)
+  - [Six access technologies (Home, Enterprise or wide-area wireless)](#six-access-technologies-home-enterprise-or-wide-area-wireless)
+  - [Is HFC transmission rate dedicated or shared among users](#is-hfc-transmission-rate-dedicated-or-shared-among-users)
+  - [Transmission rate of Ethernet LAN's](#transmission-rate-of-ethernet-lans)
+  - [Difference between a host and an end system](#difference-between-a-host-and-an-end-system)
+  - [Describe how end system A creates packets from the file](#describe-how-end-system-a-creates-packets-from-the-file)
+  - [What advantage does a circuit-switched network have over a packet-switched network. Advantages of TDM over FDM in circuit-switched](#what-advantage-does-a-circuit-switched-network-have-over-a-packet-switched-network-advantages-of-tdm-over-fdm-in-circuit-switched)
+  - [Types of Delay](#types-of-delay)
+    - [Processing Delay](#processing-delay)
+    - [Queuing Delay](#queuing-delay)
+    - [Transmission Delay](#transmission-delay)
+    - [Propagation Delay](#propagation-delay)
+    - [Packet Loss](#packet-loss)
+- [Protocol Layering](#protocol-layering)
+  - [Application Layer](#application-layer)
+  - [Transport Layer](#transport-layer)
+    - [Network Layer](#network-layer)
+    - [Link Layer](#link-layer)
+  - [The Physical Layer](#the-physical-layer)
+  - [The OSI Model](#the-osi-model)
+    - [Presentation Layer](#presentation-layer)
+    - [Session Layer](#session-layer)
+    - [Which is preferred Five-layer or Seven-layer](#which-is-preferred-five-layer-or-seven-layer)
+- [Networks Under attack](#networks-under-attack)
+  - [The bad guys can put malware into your host via the internet](#the-bad-guys-can-put-malware-into-your-host-via-the-internet)
+    - [What is the difference between a virus and a worm](#what-is-the-difference-between-a-virus-and-a-worm)
+  - [The bad guys can attack servers and network infrastructure](#the-bad-guys-can-attack-servers-and-network-infrastructure)
+    - [Denial-of-Service (DoS)](#denial-of-service-dos)
+    - [Bandwidth flooding](#bandwidth-flooding)
+    - [Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
+    - [The bad guys can sniff packets](#the-bad-guys-can-sniff-packets)
+    - [The bad guys can masquerade as someone you trust](#the-bad-guys-can-masquerade-as-someone-you-trust)
 
 ---
 
@@ -299,15 +297,15 @@ Which layers in the Internet protocol stack does a router process? Which layers 
 Which is preferred Five-layer or Seven-layer \
 Difficult to say as the internet's answer is always the same: it's up to the developer. Whether the developer requires the services from the seven-layer osi model or just from the five-layer internet protocol stack; it is up to the application developer to build that functionality into the application.
 
-|Five-Layer Internet Protocol Stack|Seven-Layer ISO OSI Reference|
-|:---:      |:---:          |
-|Application|Application    |
-|           |Presentation   |
-|           |Sessions       |
-|Transport  |Transport      |
-|Network    |Network        |
-|Link       |Link           |
-|Physical   |Physical       |
+| Five-Layer Internet Protocol Stack | Seven-Layer ISO OSI Reference |
+| :--------------------------------: | :---------------------------: |
+|            Application             |          Application          |
+|                                    |         Presentation          |
+|                                    |           Sessions            |
+|             Transport              |           Transport           |
+|              Network               |            Network            |
+|                Link                |             Link              |
+|              Physical              |           Physical            |
 
 ![alt text](https://github.com/hoodieblanket/learningJourney/blob/master/images/protocolLayering.png "Layers upon layers like an onion")
 

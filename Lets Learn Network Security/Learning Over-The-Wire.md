@@ -1,21 +1,19 @@
-# Learning Over-The-Wire
+# Learning Over-The-Wire <!-- omit in toc -->
 
 ---
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 ---
 
-- [Learning Over-The-Wire](#learning-over-the-wire)
-  - [Table of Contents](#table-of-contents)
-  - [Common Commandline Expressions](#common-commandline-expressions)
-  - [SSH](#ssh)
-  - [`Find` and its difficulties](#find-and-its-difficulties)
-  - [`grep` and its difficulties](#grep-and-its-difficulties)
-  - [Current Directory and Parent Directory navigation](#current-directory-and-parent-directory-navigation)
-  - [Using '-' as a filename and its difficulties](#using---as-a-filename-and-its-difficulties)
-  - [2>/dev/null and its difficulties](#2devnull-and-its-difficulties)
-  - [Nmap Network Mapper](#nmap-network-mapper)
+- [Common Commandline Expressions](#common-commandline-expressions)
+- [SSH](#ssh)
+- [`Find` and its difficulties](#find-and-its-difficulties)
+- [`grep` and its difficulties](#grep-and-its-difficulties)
+- [Current Directory and Parent Directory navigation](#current-directory-and-parent-directory-navigation)
+- [Using '-' as a filename and its difficulties](#using---as-a-filename-and-its-difficulties)
+- [2>/dev/null and its difficulties](#2devnull-and-its-difficulties)
+- [Nmap Network Mapper](#nmap-network-mapper)
 
 ---
 

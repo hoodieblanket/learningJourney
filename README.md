@@ -1,7 +1,13 @@
-# Learning and Development
+# Learning and Development <!-- omit in toc -->
 
 
 My interests and progression as they develop over time, plus some placeholders or references to material to help in the future.
+
+**Table of contents**
+- [Python Learning](#python-learning)
+- [Network Security](#network-security)
+- [Linux Setup](#linux-setup)
+- [OSCP Studying Resources](#oscp-studying-resources)
 
 ---
 
@@ -37,7 +43,7 @@ Some simple programs written in python doing various things.
 
 ---
 
-### Linux // Debian
+### Linux Setup
 
 ---
 

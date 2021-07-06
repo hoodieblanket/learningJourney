@@ -1,4 +1,4 @@
-    # Python Learning <!-- omit in toc -->
+# Python Learning <!-- omit in toc -->
 
 ---
 
