@@ -1,19 +1,22 @@
 # Learning Vulnerabilities <!-- omit in toc -->
+
 ---
 ## Table of Contents
+
 ---
 
-- [## Table of Contents](#-table-of-contents)
-- [## Using `curl` to post and receive response from webserver](#-using-curl-to-post-and-receive-response-from-webserver)
-- [## For Base64 encoding](#-for-base64-encoding)
-- [### Using `echo` and pipe `|` to decode `base64` encoding](#-using-echo-and-pipe--to-decode-base64-encoding)
-- [## For ROT13 encoding](#-for-rot13-encoding)
-- [### using `echo` and pipe `|` to decode ROT13 or ROT47](#-using-echo-and-pipe--to-decode-rot13-or-rot47)
-- [## For ROT47 encoding](#-for-rot47-encoding)
-- [## Webapp searching](#-webapp-searching)
+- [Table of Contents](#table-of-contents)
+- [Using `curl` to post and receive response from webserver](#using-curl-to-post-and-receive-response-from-webserver)
+- [For Base64 encoding](#for-base64-encoding)
+  - [Using `echo` and pipe `|` to decode `base64` encoding](#using-echo-and-pipe--to-decode-base64-encoding)
+- [For ROT13 encoding](#for-rot13-encoding)
+  - [using `echo` and pipe `|` to decode ROT13 or ROT47](#using-echo-and-pipe--to-decode-rot13-or-rot47)
+- [For ROT47 encoding](#for-rot47-encoding)
+- [Webapp searching](#webapp-searching)
 
 ---
 ## Using `curl` to post and receive response from webserver
+
 ---
 
 | Option                | Description                                      |
@@ -24,6 +27,7 @@
 
 ---
 ## For Base64 encoding
+
 ---
 Modifiers
 
@@ -36,6 +40,7 @@ Modifiers
 
 ---
 ### Using `echo` and pipe `|` to decode `base64` encoding
+
 ---
 
 | Option      | Description                                                                          |
@@ -50,6 +55,7 @@ Modifiers
 
 ---
 ## For ROT13 encoding
+
 ---
 
 ROT13 is a bit of a running joke due to the simplicity of the encoding and resulting algorithm required to decode it. Thus anything protected by ROT13 is not really protected at all
@@ -63,6 +69,7 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 
 ---
 ### using `echo` and pipe `|` to decode ROT13 or ROT47
+
 ---
 
 `echo` - in order to produce the string\
@@ -72,6 +79,7 @@ Produces for `Gur Dhvpx Oebja Sbk Whzcf Bire Gur Ynml Qbt`  and vice-versa would
 
 ---
 ## For ROT47 encoding
+
 ---
 
 ROT47 includes special character as well now which means the length of the characters available is large but still similar level of security
@@ -83,6 +91,7 @@ Produces `%96 "F:4< qC@H? u@I yF>AD ~G6C %96 {2KJ s@8`
 
 ---
 ## Webapp searching
+
 ---
 
 Webapp searching using the developer tools for the browser and checking under `Inspector` for interesting urls

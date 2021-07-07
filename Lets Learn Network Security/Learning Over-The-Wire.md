@@ -1,23 +1,23 @@
 # Learning Over-The-Wire <!-- omit in toc -->
 
 ---
-
 ## Table of Contents
 
 ---
 
 - [Table of Contents](#table-of-contents)
-- [## Common Commandline Expressions](#-common-commandline-expressions)
-- [## SSH](#-ssh)
-- [## `Find` and its difficulties](#-find-and-its-difficulties)
-- [## `grep` and its difficulties](#-grep-and-its-difficulties)
-- [## Current Directory and Parent Directory navigation](#-current-directory-and-parent-directory-navigation)
-- [## Using '-' as a filename and its difficulties](#-using---as-a-filename-and-its-difficulties)
-- [## 2>/dev/null and its difficulties](#-2devnull-and-its-difficulties)
-- [## Nmap Network Mapper](#-nmap-network-mapper)
+- [Common Commandline Expressions](#common-commandline-expressions)
+- [SSH](#ssh)
+- [`Find` and its difficulties](#find-and-its-difficulties)
+- [`grep` and its difficulties](#grep-and-its-difficulties)
+- [Current Directory and Parent Directory navigation](#current-directory-and-parent-directory-navigation)
+- [Using '-' as a filename and its difficulties](#using---as-a-filename-and-its-difficulties)
+- [2>/dev/null and its difficulties](#2devnull-and-its-difficulties)
+- [Nmap Network Mapper](#nmap-network-mapper)
 
 ---
 ## Common Commandline Expressions
+
 ---
 | Option                 | Description                                                                                                                                                                                                                                               |
 | :--------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,6 +36,7 @@
 
 ---
 ## SSH
+
 ---
 | Option                                     | Description                                                                   |
 | :----------------------------------------- | :---------------------------------------------------------------------------- |
@@ -58,6 +59,7 @@ SSH is important in *cloud computing* to solve connectivity issues, avoiding the
 
 ---
 ## `Find` and its difficulties
+
 ---
 
 Modifiers
@@ -78,6 +80,7 @@ Additionally adding in `-type f # to specify that we are looking for a FILE` wil
 
 ---
 ## `grep` and its difficulties
+
 ---
 | Modifiers | Description                                                         |
 | :-------- | :------------------------------------------------------------------ |
@@ -94,6 +97,7 @@ using options such as `-i` will ignore upper or lowercase. `-w` will use whole w
 
 ---
 ## Current Directory and Parent Directory navigation
+
 ---
 | Commands | Description                                                                                                                                                       |
 | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -107,6 +111,7 @@ a *single dot* represents the current working directory, and *two dots* denote t
 
 ---
 ## Using '-' as a filename and its difficulties
+
 ---
 Commands
 | Commands | Description                                                                  |
@@ -123,6 +128,7 @@ Same way if the filename clashes with the command line such as naming a file `-e
 
 ---
 ## 2>/dev/null and its difficulties
+
 ---
 
 This redirects errors into /dev/null, which is sort-of 'file' that ignores and deletes everything it receives. This is how you remove the errors such as permission errors from your output and left with the result that you want. `>` redirects the output of a command to wherever you want; by default it will redirect what's called `stdout` (*which is what standard console output is called*) but if you were to do that in this case yoeu'd end up not seeing ANY results as all of the output of your command would end up being directed to /dev/null and wiped out. So what you do is put a `2` infront so that its `2>` which is a parameter that specifics that just the *error messages* should be redirected.
@@ -131,6 +137,7 @@ This redirects errors into /dev/null, which is sort-of 'file' that ignores and d
 
 ---
 ## Nmap Network Mapper
+
 ---
 
 Network discovery and security auditing.

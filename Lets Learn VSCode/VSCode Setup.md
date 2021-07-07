@@ -1,6 +1,6 @@
 # VS Code shortcuts and settings <!-- omit in toc -->
----
 
+---
 ## Table of Contents
 
 ---
@@ -12,7 +12,6 @@
 - [VSCode Extensions](#vscode-extensions)
   
 ---
-
 ## Custom Shortcuts
 
 ---
@@ -27,7 +26,6 @@
 [Back to Top](#table-of-contents)
 
 ---
-
 ## VSCode Shortcuts
 
 ---
@@ -46,7 +44,6 @@
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Markdown Shortcuts
 
 ---
@@ -64,7 +61,6 @@
 [Back to Top](#table-of-contents)
 
 ---
-
 ## VSCode Extensions
 
 ---

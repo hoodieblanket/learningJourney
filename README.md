@@ -4,7 +4,6 @@
 My interests and progression as they develop over time, plus some placeholders or references to material to help in the future.
 
 ---
-
 ### Python Learning
 
 ---
@@ -22,7 +21,6 @@ Some simple programs written in python doing various things.
 
 
 ---
-
 ### Network Security 
 
 ---
@@ -36,7 +34,6 @@ Some simple programs written in python doing various things.
 - [OSCP](https://www.offensive-security.com)
 
 ---
-
 ### Linux Setup
 
 ---
@@ -48,7 +45,6 @@ Documents to list and reference to in the future for mirrors or when creating ne
 - [My VSCode Setup](https://github.com/hoodieblanket/learningJourney/blob/master/Lets%20Learn%20VSCode/VSCode%20Setup.md)
 
 ---
-
 ### OSCP Studying Resources
 
 ---
@@ -62,11 +58,6 @@ Links to further reading and resources for progression
 - [abatchy's blog Prep Guide](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob.html)
 
 ---
-
-
-
----
-
 [Back to Top](#learning-and-development)
 
 ---

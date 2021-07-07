@@ -1,6 +1,6 @@
 # Debian Setup <!-- omit in toc -->
----
 
+---
 ## Table of Contents
 
 ---
@@ -29,11 +29,9 @@
 - [Setting up VS Code to support Python, Github, LaTeX and Markdown](#setting-up-vs-code-to-support-python-github-latex-and-markdown)
 - [Helpful packages to install specific programs](#helpful-packages-to-install-specific-programs)
 ---
-
 ## Common terminal commands
 
 ---
-
 ### Command line Quick Reference
 
 ---
@@ -58,7 +56,6 @@
 | `tar -xvf yourtargetfile.tar` | To untar a file to current directory                                                                                                   |
 
 ---
-
 ### GIT commandline
 
 ---
@@ -76,7 +73,6 @@
 | `echo file.name >> .gitignore` | create .gitignore file in the current location and add file.name to the ignore list. Combined with `git rm --cached file.name` will remove the file from the repo (if already there) and then have it ignored for future pushes to branch |
 
 ---
-
 ## Setting up GIT
 
 ---
@@ -94,7 +90,6 @@
 [Back to Top](#table-of-contents)
 
 ---
-
 ## System updating, upgrading and maintenance
 
 ---
@@ -112,7 +107,6 @@
 | `sudo apt dist-upgrade` | upgrade distribution                      |
 
 ---
-
 ## Display and Change hostname
 
 ---
@@ -124,7 +118,6 @@ Just incase you want to change your hostname to something else
 | `sudo hostnamectl set-hostname typehostnamehere` | Display the hostname and will change the hostname |
 
 ---
-
 ## Unzipping a file
 
 ---
@@ -133,7 +126,6 @@ Just incase you want to change your hostname to something else
 | `unzip file.zip -d newdirectory` | unzip a zip file and using -d to indicate directory name |
 
 ---
-
 ## Installing .deb file
 
 ---
@@ -143,7 +135,6 @@ Just incase you want to change your hostname to something else
 | `sudo dpkg -i filename.deb`                           | alternative method for the above               |
 
 ---
-
 ## Uninstall software and remove artifact dependencies
 
 ---
@@ -154,7 +145,6 @@ Just incase you want to change your hostname to something else
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Installing pip for VSCode & Python
 
 ---
@@ -170,7 +160,6 @@ Installing pip3 for Python so you can use the Jupyter notebook for running code 
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Installing tmux
 
 ---
@@ -182,7 +171,6 @@ Needed as an addon for konsole or command line
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Configuring bluetooth
 
 ----
@@ -194,7 +182,6 @@ First you will need to add non-free ***sources*** for apt
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Configuring apt sources to include 'non-free'
 
 ---
@@ -218,7 +205,6 @@ First you will need to add non-free ***sources*** for apt
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Setting up firacode font
 
 ---
@@ -230,7 +216,6 @@ Nice font when used with konsole or commandline
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Installing alacritty
 
 ---
@@ -273,8 +258,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 [Back to Top](#table-of-contents)
 
 ---
-
-
 ## Installing VIM
 
 ---
@@ -286,7 +269,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Modifying bashrc or bashrc_aliases for alias set up
 
 ---
@@ -298,7 +280,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 | `source ~/.bashrc_aliases`   | Force to launch the bashrc instead of logging in/out |
 
 ---
-
 ### My preferred aliases/shortcuts
 
 ---
@@ -313,7 +294,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 | `alias notes="xdg-open /home/__username__/Dropbox/learningnotes.ctb"` | quickly open my learningnotes file in cherrytree                                                        |
 
 ---
-
 ### Optional Shortcuts if you find useful
 
 ---
@@ -336,7 +316,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Setting up latte-dock
 
 ---
@@ -347,7 +326,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Setting up VS Code to support Python, Github, LaTeX and Markdown
 
 ---
@@ -367,7 +345,6 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 [Back to Top](#table-of-contents)
 
 ---
-
 ## Helpful packages to install specific programs
 
 ---
