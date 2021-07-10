@@ -276,15 +276,15 @@ Who might harm us, what might their objectives be and what systems would their g
 
 ---
 7 step method going from the top to the bottom that works very linear as you work your way down
-- reconnaissance: passive information gathering transitioning to active scanning allowing you to come out with great information regarding potentials, vulnerabilities and such based on what network or technologies is evident
-- Weaponization: coding or creating the malware that you want to run based on the previous information. Not run yet but the blueprint is up
-- Delivery: delivery of the payload and figuring about how we get it to the location we want
-- Exploitation: happens when the code is deployed, not when delivered which could sit dormant until triggered.
-- Installation: Phase two of the code chaos which will allow us to access the system through remote access and achieve **persistance** on that system to continue with access
-- Command & Control (C2): the code has an outbound link to external server. At this point you have full control of the system. You have persistent access, can run commands and remote into the system
-- Actions on Objectives: now after the 6 steps, they can actually reach their original going or whatever that may be as they now have full access.
+- reconnaissance
+- Weaponization
+- Delivery
+- Exploitation
+- Installation
+- Command & Control (C2)
+- Actions on Objectives
 
-**Reconnaissance** - Goal: Find a weakness
+**1. Reconnaissance** - Goal: Find a weakness
 - Information gathering that is either passive gathering or active scanning
 - Passive
   - whois
@@ -314,7 +314,7 @@ Protection (Active)
 - IPS
 - TOR & 3rd party VPN inbound blocking
 
-**Weaponization** - Goal: select weapon appropriate based on reconnaissance
+**2. Weaponization** - Goal: select weapon appropriate based on reconnaissance
 - Attacks will adapt based on reconnaissance
   - metasploit
   - exploit-db
@@ -325,7 +325,7 @@ Protection (Active)
   - disable: office macros, javascript and browser plugins
   - security basics, antivirus, IPS, email security, Multifactor authentication, audit logging etc..
 
-**Delivery** - Goal: select avenue of delivery the payload or intrusion
+**3. Delivery** - Goal: select avenue of delivery the payload or intrusion
 - Target chosen or decided how to deliver
   - Websites: what website is frequently used by the users and if there is a vulnerability there
   - Social Media
@@ -340,7 +340,7 @@ Protection (Active)
   - Email: DKIM uses digital signatures to verify authenticity and SPF checks for coming from authorised IP of a domain - Both to guard against spoofing of emails.
   - USB: disabling USB or no "admin" rights
 
-**Exploitation** - Goal: Gain access but its not a finishing line for the attack
+**4. Exploitation** - Goal: Gain access but its not a finishing line for the attack
 
 - Attack succeed and the weapon has been delivered
   - SQL injection
@@ -354,7 +354,7 @@ Protective methods
 - Reality is that if the attacker has gotten to this point, you are relying on preventative tools for post-execution such as a sandbox
   - Potentially capturing patient zero when an unknown file is downloaded, the protections jump in to stop the file from reaching the rest of the network
 
-**Installation** - Goal: Get persistant access
+**5. Installation** - Goal: Get persistant access
 
 Offensive tools
 - DLL hijacking
@@ -367,17 +367,38 @@ Protective tools
 - Linux:chroot jail to isolate processes from rest of the system so the file has limited access to other data
 - windows: disable powershell
 
-Detect tools (post infection)
-- UBA/EDR will flag any unauthorised program thats been installed as well as flag any changes in process or system options
-
+Detection tools (post infection)
+- UBA/EDR will flag any unauthorised program thats been installed as well as flag any changes in process or system processes or registry and this should set off an alert or log
 
 Respond
-- Follow the incident response SOPs 
+- Follow the incident response SOPs such as I.D if the device is critical, remove the device from the network or wiping and restarting from a good state
 
-A kill chain analysis can allow us to map out how system can gain access, run code, create outbound connections or take control. With this information we can try to defend against each of these stops and jump in somewhere to break that progress
+Recover
+- You can then begin to restore or reimage the system to a known good state
+
+**6. Command & Control**
+
+At this stage, the access to the system is persistent and the attacker has immediate access to the target or system. This access is remote and at this stage; patching the vulnerability and such does not get rid of this persistent access.\
+The defensive options here will be regarding limiting what they can control and detecting unusual activity.
+
+**7. Action on Objective**
+
+With the attacker in full control, the attacker is motivated by various goals and external influences so it is important to know what the attacker might be targeting
+- financial motivation
+- political
+- espionage
+- malicious insider
+- lateral movement to another system or another target
+
+Protections:
+- data leakage prevention (DLP)
+- user behaviour analysis (UPA)
+- Network segmentation (combating lateral movement)
+
 
 ### MITRE ATT&CK Framework
 
+---
 This is a knowledge base maintained by an external company. Open source information that contains the information on various attacks\
 This database is great to look at potential common intrusions or events that link to certain types of attacks. By ticking certain events that has happened, you can narrow down likelyhoods or common intrusions that lead to a specific attack that you can start looking signs for and prepare for.
 
