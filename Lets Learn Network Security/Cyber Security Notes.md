@@ -1,9 +1,9 @@
-# Learning Security Plus from Comptia <!-- omit in toc -->
+# Cybersecurity Concepts <!-- omit in toc -->
 
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- NIST Cybersecurity Framework](#--nist-cybersecurity-framework)
+- [- ISO 27001](#--iso-27001)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -28,6 +28,7 @@
   - [Diamond Model of Intrusion Analysis](#diamond-model-of-intrusion-analysis)
 - [OSINT - What is Open Source Intelligence](#osint---what-is-open-source-intelligence)
 - [NIST Cybersecurity Framework](#nist-cybersecurity-framework)
+- [ISO 27001](#iso-27001)
 ---
 ## Key Definitions
 
@@ -494,6 +495,62 @@ The OSINT process starts from what you know on the target
      - Powerful list of links that will be useful for your investigation
      - This visualisation also allows you to navigate easily to target specific information
 4. Analyse the data
-   - use the data or pivot to another perspective
+   - use the data or pivot to another perspective or target of data/person
 
 ## NIST Cybersecurity Framework
+
+A voluntary risk-based framework that allows businesses to adopt and comply with a blueprint of risk-prevention strategies. The framework was conceptualised in the early 2000's as the US saw an uptick in cyber threats and they proposed a need for standard of security to be implemented. \
+Within this framework, significant contributions came from diverse groups including small and medium sized businesses as well as from the international business community
+
+NIST, National Institute of Standards and Technology, met with industry partners to create this risk-based framework
+
+| CSF Components          | Description                                                                                                     |
+| :---------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| Core                    | Activites, outcomes and industry standards, guidelines, and practices that communicate cybersecurity activities |
+| Tiers                   | Levels of implementation that assist in conducting assessment and planning of cybersecurity activities          |
+| Profiles                | The alignment of standards, guidelines, and practices to the framework core                                     |
+| Implementation guidance | Suggested methodology to adopting the NIST CSF in an iterative fashion                                          |
+
+**The 5 functions of the Cybersecurity framework**
+
+High level strategic overview of of the lifecycle of an organisations management of their cybersecurity risk.
+
+The following is the 5 **core** functions and each of the categories within those functions. There is a multitude of *subcategories* that follow that but the framework spans across over 900 controls. It is not about memorisation but rather about knowing what you are looking for.
+
+You can access the framework from the following [link to cybersecurity framework](https://www.nist.gov/cyberframework/framework)\
+This will lead you to the website and you can access the Excel sheet for the latest version of the framework.
+
+Within the framework, you can break it down from the 5 core functions, following each category and each subcategories and, **to great benefit**, this leads to the *informative references* and maps each reference for each of the sub categories. This will link it all back to every framework you may utilise in the organisation.
+
+1. `Identify` - *Manage cyber security risk to systems, assets, data and capabilities*
+      - Asset Management
+      - Business Environment
+      - Governance
+      - Risk Assessment
+      - Risk Management Strategy
+      - Supply Chain Risk Management
+2. `Protect`   - *Safeguards to ensure delivery of critical infrastructure services*
+      - Identity Management & Access Control
+      - Awareness and Training
+      - Data Security
+      - Information Protection Processes and Procedures
+      - Maintenance
+      - Protective Technology
+3. `Detect`   - *Identify the occurence of events*
+      - Anomalies and Events
+      - Security Continuous Monitoring
+      - Detection Processes
+4. `Respond`   - *Take action regarding a detected cybersecurity event*
+      - Response Planning
+      - Communications
+      - Analysis
+      - Mitigation
+      - Improvements
+5. `Recover` - *Maintain or restore services*
+      - Recovery Planning
+      - Improvements
+      - Communications
+
+## ISO 27001
+
+
