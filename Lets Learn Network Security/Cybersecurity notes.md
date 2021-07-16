@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- ISO 27001](#--iso-27001)
+- [- Cryptography & VPNS](#--cryptography--vpns)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -28,7 +28,7 @@
   - [Diamond Model of Intrusion Analysis](#diamond-model-of-intrusion-analysis)
 - [OSINT - What is Open Source Intelligence](#osint---what-is-open-source-intelligence)
 - [NIST Cybersecurity Framework](#nist-cybersecurity-framework)
-- [ISO 27001](#iso-27001)
+- [Cryptography & VPNS](#cryptography--vpns)
 ---
 ## Key Definitions
 
@@ -551,6 +551,6 @@ Within the framework, you can break it down from the 5 core functions, following
       - Improvements
       - Communications
 
-## ISO 27001
+## Cryptography & VPNS
 
 
