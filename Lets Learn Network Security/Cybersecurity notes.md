@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- Cryptography & VPNS](#--cryptography--vpns)
+- [- Wireshark](#--wireshark)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -28,7 +28,9 @@
   - [Diamond Model of Intrusion Analysis](#diamond-model-of-intrusion-analysis)
 - [OSINT - What is Open Source Intelligence](#osint---what-is-open-source-intelligence)
 - [NIST Cybersecurity Framework](#nist-cybersecurity-framework)
-- [Cryptography & VPNS](#cryptography--vpns)
+- [Cryptography & VPNs](#cryptography--vpns)
+  - [Virtual Proxy Networks VPNs](#virtual-proxy-networks-vpns)
+- [Wireshark](#wireshark)
 ---
 ## Key Definitions
 
@@ -551,6 +553,27 @@ Within the framework, you can break it down from the 5 core functions, following
       - Improvements
       - Communications
 
-## Cryptography & VPNS
+## Cryptography & VPNs
 
+| Terminology                 | Description                                                                                                                                                                               |
+| :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Clear-text protocols**    | transmit data without any additional security or encryption/transformations which allows an attacker to be able to use **man in the middle** attacks or **eavesdrop** on the data packets |
+| **Cryptographic protocols** | transform the data (encrypt) and protect the communication. This makes it difficult for any attacker to **eavesdrop** and gain useful information on the data packets                     |
+| **Tunneling protocols**     | wrap a clear-text protocol into a cryptographic one (**VPN**)                                                                                                                             |
+
+There is no alternative to the clear-text protocols so it should only be used on **trusted networks**
+
+### Virtual Proxy Networks VPNs
+
+VPN's act as a tunnel from the client to the private network while going through a public one such as the internet. While acting through a VPN you are also assuming the same protocols of the private network so you are **the same as being directly connected** to a private network.
+
+This tunnel is the "wrap" where you are creating a cryptographic shield or tunnel for your data access to and from the host server. This allows you to use low level packet sniffers such as Wireshark
+
+## Wireshark
+
+**Wireshark** is a network sniffer tool that lets you see data sent back and forth over the network. This monitoring of traffic is power as it allows you gain information regarding the connection packets sent when you interact with a destination server.
+
+This is especially important when dealing with HTTP and HTTPS servers and the security features. If a **man in the middle** attacker is able to sniff the traffic on our network and we were to enter a HTTP website with our credentials; the network sniffer would be able to see the successful login and actually capture your username and password directly. This is one of the examples why you don't want to send sensitive information through clear-text protocols.
+
+Alternatively when going through HTTPS you will be able to see that the data packets and the contents are jumbled. The encrypted data is not readeable to someone who has intercepted the data.
 
