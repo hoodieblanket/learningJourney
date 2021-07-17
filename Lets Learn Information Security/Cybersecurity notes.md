@@ -8,10 +8,10 @@
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
 - [Security Threats](#security-threats)
-  - [Malware](#malware)
-  - [Unauthorized Access](#unauthorized-access)
-  - [System Failure](#system-failure)
-  - [Social Engineering](#social-engineering)
+  - [Malware pending](#malware-pending)
+  - [Unauthorized Access pending](#unauthorized-access-pending)
+  - [System Failure pending](#system-failure-pending)
+  - [Social Engineering pending](#social-engineering-pending)
 - [Mitigating Threats](#mitigating-threats)
 - [Hackers](#hackers)
 - [Threat Actors](#threat-actors)
@@ -40,6 +40,8 @@
 | `Information Security`        | The protection of data, or the information **on** the systems but not the system\ |
 | `Information System Security` | The protection of the systems                                                     |
 
+[Back to Top](#table-of-contents)
+
 ## CIA Triad
 
 ---
@@ -54,6 +56,8 @@
   * Without availability, then the system becomes useless as a consumer cannot access the required data. Similar with confidentiality; without that encryption or protection, what user will trust you with the information.
 
 ![alt text](https://i.imgur.com/T8ydhaK.png)
+
+[Back to Top](#table-of-contents)
 
 ## AAA of Security
 
@@ -80,16 +84,18 @@ Non-repudiation occurs when you have **proof** that someone has taken an action 
 - **Somewhere you are**
   - GPS locations
 
+[Back to Top](#table-of-contents)
+
 ## Security Threats
 
 ---
-### Malware
+### Malware pending
 
-### Unauthorized Access
+### Unauthorized Access pending
 
-### System Failure
+### System Failure pending
 
-### Social Engineering
+### Social Engineering pending
 
 
 **Phishing** 
@@ -110,6 +116,8 @@ Similar to phishing but this would be more targeted; hence the 'spear'.
 
 This could be done by tailoring the email to have the right names, signatures, contact details and somethings even spoofing the email address so that it appears *almost* correct to the people who don't take the time to see who its from. The email could also appear extremely indepth or realistic in order to control your focus so you miss looking for the telltale signs
 
+[Back to Top](#table-of-contents)
+
 ## Mitigating Threats
 
 ---
@@ -125,6 +133,8 @@ This could be done by tailoring the email to have the right names, signatures, c
     - What the organisation chooses to do on its own
   - Regulatory Controls
     - What the law dictates that you must follow how to protect data or private information
+
+[Back to Top](#table-of-contents)
 
 ## Hackers
 
@@ -143,6 +153,8 @@ This could be done by tailoring the email to have the right names, signatures, c
   - Affiliated with the company through getting permissions such as bounty programs or getting permission to test their systems however they are not employed or on the payroll
 
 
+[Back to Top](#table-of-contents)
+
 ## Threat Actors
 
 ---
@@ -155,6 +167,8 @@ This could be done by tailoring the email to have the right names, signatures, c
 - Advanced Persistent Threats (APTs)
   - Highly trained and funded groups of hackers such as nation states who have access to open-source intelligence at their disposal
 
+
+[Back to Top](#table-of-contents)
 
 ## Threat Intelligence and Sources
 
@@ -178,6 +192,8 @@ This could be done by tailoring the email to have the right names, signatures, c
 
   - Property of Intelligence Source: ensures it produces qualified statement about reliability.
 
+
+[Back to Top](#table-of-contents)
 
 ### Types of intelligence
 
@@ -206,6 +222,8 @@ This could be done by tailoring the email to have the right names, signatures, c
   - Methods of getting information from public records, websites and social media. Gathering data from widely public information to source that information on an individual. 
 
   - Any information you can gather about a person through facebook, linkd in and so forth: this is all considered OSINT
+
+[Back to Top](#table-of-contents)
 
 ## Threat Hunting
 
@@ -241,6 +259,8 @@ Who might harm us, what might their objectives be and what systems would their g
 - **reduce attack surface**: While threat hunting you have identified the entire area that the threat has progressed through and allows you to plan for the future and reduce the total attack surfuce for the future
 - **block attack vectors**: block those different ports or interfaces that allowed the threat to breach
 - **identify critical assets**: identifying what the breach was targeting so you can assess if how often this asset is being attacked and plan accordingly with further protections for critical assets
+
+[Back to Top](#table-of-contents)
 
 ## Attack Frameworks
 
@@ -368,6 +388,7 @@ Defense:
 - user behaviour analysis (UPA)
 - Network segmentation (combating lateral movement)
 
+[Back to Top](#table-of-contents)
 
 ### MITRE ATT&CK Framework
 
@@ -419,6 +440,8 @@ The main point and advantage with the attack framework is that you are able to o
    - Need to have real understanding of the different attack techniques and what they actually mean to your network
    - You always need a human element to make a decision on the legitimacy of a potential threat but also noticing a false positive.
 
+[Back to Top](#table-of-contents)
+
 ### Diamond Model of Intrusion Analysis
 
 ---
@@ -466,6 +489,8 @@ Sometimes a target victim is not involved as the malicious software is looking t
 
 **Horizontal linking** - linking like events by common infrastructure, capability, victim or target or TTP (tactics, techniques and procedures)
 
+[Back to Top](#table-of-contents)
+
 ## OSINT - What is Open Source Intelligence
 
 ---
@@ -500,6 +525,8 @@ The OSINT process starts from what you know on the target
      - This visualisation also allows you to navigate easily to target specific information
 4. Analyse the data
    - use the data or pivot to another perspective or target of data/person
+
+[Back to Top](#table-of-contents)
 
 ## NIST Cybersecurity Framework
 
@@ -556,6 +583,8 @@ Within the framework, you can break it down from the 5 core functions, following
       - Improvements
       - Communications
 
+[Back to Top](#table-of-contents)
+
 ## Cryptography & VPNs
 
 ---
@@ -597,3 +626,4 @@ Alternatively when going through HTTPS you will be able to see that the data pac
 
 As you can see, the results are unreadable due to the encryption through using HTTPS.
 
+[Back to Top](#table-of-contents)
