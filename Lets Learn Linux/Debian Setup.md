@@ -24,7 +24,7 @@
 - [Installing VIM](#installing-vim)
 - [Modifying bashrc or bashrc_aliases for alias set up](#modifying-bashrc-or-bashrc_aliases-for-alias-set-up)
   - [My preferred aliases/shortcuts](#my-preferred-aliasesshortcuts)
-- [| `cl() { builtin cd "$@" && ls; }`                         | # quickly navigating through unknown folders: will 'cd' into folder and run 'ls' if successful |](#-cl--builtin-cd---ls----------------------------quickly-navigating-through-unknown-folders-will-cd-into-folder-and-run-ls-if-successful-)
+- [| `cdd() { builtin cd "$@" && ls; }`                         | # quickly navigating through unknown folders: will 'cd' into folder and run 'ls' if successful; assigns to `cdd` as you do not want to override the builtin function |](#-cdd--builtin-cd---ls----------------------------quickly-navigating-through-unknown-folders-will-cd-into-folder-and-run-ls-if-successful-assigns-to-cdd-as-you-do-not-want-to-override-the-builtin-function-)
   - [Optional Shortcuts if you find useful](#optional-shortcuts-if-you-find-useful)
 - [Setting up latte-dock](#setting-up-latte-dock)
 - [Setting up VS Code to support Python, Github, LaTeX and Markdown](#setting-up-vs-code-to-support-python-github-latex-and-markdown)
@@ -293,16 +293,19 @@ If you want to have aliases start up with each shell, add the aliases directly t
 
 ---
 
-| Aliases                                                   | Description                                                                                    |
-| :-------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| Aliases          | Description |
+| :--------------- | :---------- |
+| alias la='ls -A' |
+| alias l='ls -CF' |
+
 | `alias ls="ls -a --color=auto --group-directories-first"` |
 | `alias o="xdg-open 2>/dev/null"`                          | # shortcut to open file and send errors to /dev/null                                           |
 | `alias ll="ls -alF -hals --color=auto"`                   | # shortcut running 'ls' but for indepth folder information                                     |
 | `alias h="history"`                                       | # history in shell                                                                             |
 | `alias ports="ss -tulanp"`                                | # quick run ss with -tulanp                                                                    |
 | `alias ..="cd .."`                                        | # shortcut to jump up to parent directory                                                      |
-| `alias grep="grep -i"`                                    | # running grep and remove case sensitivity requirements as it is almost never useful           |
-| `cl() { builtin cd "$@" && ls; }`                         | # quickly navigating through unknown folders: will 'cd' into folder and run 'ls' if successful |
+| `alias grep="grep -i --color=auto"`                                    | # running grep and remove case sensitivity requirements as it is almost never useful           |
+| `cdd() { builtin cd "$@" && ls; }`                         | # quickly navigating through unknown folders: will 'cd' into folder and run 'ls' if successful; assigns to `cdd` as you do not want to override the builtin function |
 ---
 ### Optional Shortcuts if you find useful
 

@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- Wireshark](#--wireshark)
+- [- HTTP vs HTTPS](#--http-vs-https)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -31,6 +31,7 @@
 - [Cryptography & VPNs](#cryptography--vpns)
   - [Virtual Proxy Networks VPNs](#virtual-proxy-networks-vpns)
 - [Wireshark](#wireshark)
+  - [HTTP vs HTTPS](#http-vs-https)
 ---
 ## Key Definitions
 
@@ -467,6 +468,7 @@ Sometimes a target victim is not involved as the malicious software is looking t
 
 ## OSINT - What is Open Source Intelligence
 
+---
 OSINT is the practice of using publicly available information from a variety of different sources. If you pay attention and think about the kill chain; within the killchain the **reconnaissance** step is arguably the most important step as this is the level where the target starts painting the picture of where the vulnerabilities may lie and starts guiding the attack that is later used.
 
 - Information on network equipment
@@ -501,6 +503,7 @@ The OSINT process starts from what you know on the target
 
 ## NIST Cybersecurity Framework
 
+---
 A voluntary risk-based framework that allows businesses to adopt and comply with a blueprint of risk-prevention strategies. The framework was conceptualised in the early 2000's as the US saw an uptick in cyber threats and they proposed a need for standard of security to be implemented. \
 Within this framework, significant contributions came from diverse groups including small and medium sized businesses as well as from the international business community
 
@@ -555,6 +558,7 @@ Within the framework, you can break it down from the 5 core functions, following
 
 ## Cryptography & VPNs
 
+---
 | Terminology                 | Description                                                                                                                                                                               |
 | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Clear-text protocols**    | transmit data without any additional security or encryption/transformations which allows an attacker to be able to use **man in the middle** attacks or **eavesdrop** on the data packets |
@@ -571,9 +575,25 @@ This tunnel is the "wrap" where you are creating a cryptographic shield or tunne
 
 ## Wireshark
 
+---
 **Wireshark** is a network sniffer tool that lets you see data sent back and forth over the network. This monitoring of traffic is power as it allows you gain information regarding the connection packets sent when you interact with a destination server.
+
+### HTTP vs HTTPS
+
+---
+
 
 This is especially important when dealing with HTTP and HTTPS servers and the security features. If a **man in the middle** attacker is able to sniff the traffic on our network and we were to enter a HTTP website with our credentials; the network sniffer would be able to see the successful login and actually capture your username and password directly. This is one of the examples why you don't want to send sensitive information through clear-text protocols.
 
 Alternatively when going through HTTPS you will be able to see that the data packets and the contents are jumbled. The encrypted data is not readeable to someone who has intercepted the data.
+
+**Example of using HTTP to authenticate and wireshark to follow the TCP stream:**
+
+![alt text](https://i.imgur.com/0n6uPOQ.png)
+
+**Example of attempting the same through HTTPS:**
+
+![alt text](https://i.imgur.com/KcZjw4M.png)
+
+As you can see, the results are unreadable due to the encryption through using HTTPS.
 
