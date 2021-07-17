@@ -274,9 +274,11 @@ Addon for spicing up the konsole or commandline. Makes it a lot more visually ap
 
 ---
 
-Note: if you want your aliases separate then you can creat the ~/.bashrc_aliases file and have them collated there. However this won't run on startup and you would need to `source ~/.bashrc_aliases` each time you want to use the aliases
+Note: if you want your aliases separate then you can creat the `~/.bashrc_aliases` file and have them collated there. However this won't run on startup and you would need to `source ~/.bashrc_aliases` each time you want to use the aliases
 
-If you want to have aliases start up with each shell, add the aliases directly to the bottom of the ~/.bashrc file. Once done, run `source ~/.bashrc` to source the file or restart and it will auto source the file
+If you want to have aliases start up with each shell, add the aliases directly to the bottom of the `~/.bashrc` file. Once done, run `source ~/.bashrc` to source the file or restart and it will auto source the file
+
+**Note**: for kali linux, it has been switched from bash to zsh so to find and amend aliases you will need to amend `~/.zshrc` file instead of `.bashrc`
 
 | Command                      | Description                                          |
 | :--------------------------- | :--------------------------------------------------- |
