@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- HTTP vs HTTPS](#--http-vs-https)
+- [- The Physical Layer](#--the-physical-layer)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -32,6 +32,12 @@
   - [Virtual Proxy Networks VPNs](#virtual-proxy-networks-vpns)
 - [Wireshark](#wireshark)
   - [HTTP vs HTTPS](#http-vs-https)
+- [ISO/OSI Protocol Layering](#isoosi-protocol-layering)
+  - [Application Layer](#application-layer)
+  - [Transport Layer](#transport-layer)
+  - [Network Layer](#network-layer)
+  - [Link Layer](#link-layer)
+  - [The Physical Layer](#the-physical-layer)
 ---
 ## Key Definitions
 
@@ -625,5 +631,171 @@ Alternatively when going through HTTPS you will be able to see that the data pac
 ![alt text](https://i.imgur.com/KcZjw4M.png)
 
 As you can see, the results are unreadable due to the encryption through using HTTPS.
+
+[Back to Top](#table-of-contents)
+
+## ISO/OSI Protocol Layering
+
+---
+**Open Systems Interconnectivity** 
+
+This is a reference to how we can have each component of the chain can communicate to the right protocol. Networks are all about protocols and these protocols are each related to each step on this layering.
+
+When we send data, the data has the form of a **header**;**payload**. 
+- Header: all the relevant information for the protocol to handle it such as; where it needs to be, who has to handle it
+- Payload: the actual information you want delivered.
+
+As it follows the hierachy and the protocol wants to use another protocol on one of the **lower layers** then the payload being sent is the header;payload, with its own header. This is referred to as encapsulation as you are putting the original header;payload into the format of being the payload for the lower level protocol to handle.
+
+![alt text](https://i.imgur.com/DBnftLL.png)
+![alt text](https://i.imgur.com/7G8dYK3.png)
+
+At each step, the layer receives it owns header with its own instructions. The receiving host does the same operation in reverse order. Doing this means that the **application layer** does not need to know how the **transport or network** layers work: it just hands the packet to the transport layer and so on.
+
+
+| Five-Layer Internet Protocol Stack | Seven-Layer ISO OSI Reference | TCP/IP Layers |
+| :--------------------------------: | :---------------------------: | :-----------: |
+|            Application             |          Application          |  Application  |
+|                                    |         Presentation          |
+|                                    |           Sessions            |
+|             Transport              |           Transport           |   Transport   |
+|              Network               |            Network            |    Network    |
+|                Link                |             Link              |     Link      |
+|              Physical              |           Physical            |
+
+### Application Layer
+
+---
+
+Network apps and their protocols reside in this layer.
+
+There include many protocols such as HTTP (which provides for web document request and transfer), SMTP (which provides for transfer of e-mail messages) and FTP (which provides for transfer of files between two end systems).
+
+Certain network functions such as translation of human-friendly names for internet end systems like www.google.com to a 32-bit network address, are also done with the help of a specific application-layer protocol *DNS* or *domain name system*. This transfer of information on the application layer is to exchange packets of info with an application in another end system so we can refer to this packet of information as the message.
+
+What are the responsibilities of each layer\
+    Application:
+
+- HTTP provides web doc request & transfer (HyperText Transfer Protocol)
+- SMTP email transfer (Simple Mail Transfer Protocol)
+- FTP File transfer (File Transfer Protocol)
+
+What is an application-layer message? A transport-layer segment? a network-layer datagram? a link-layer frame?
+
+- application message: packet of information between two end systems in the application layer.
+- Transport segment: segment is that packet of information being within the transport layer.
+- Network datagram: packets of info that is the responsibility of the network layer to move. Processing the transport-layer segment using the address in the header, delivering the datagram packet to the destination transport-layer.
+- Link frames: packets being handled by the link layer, being passed up to the network layer and back receiving again at each node towards the destination
+
+5 Tasks that a layer can perform. Is it possible that one or more of these tasks could be performed by two layers or more?
+
+- error control
+- flow control
+- segmentation and reassembly
+- multiplexing
+- connection setup
+- These tasks can be duplicated at different layers for example error control often is provided at more than one layer
+
+[Back to Top](#table-of-contents)
+
+
+### Transport Layer
+
+---
+
+The transport layer transports application-layer messages between app endpoints.\
+There are two transport protocols: TCP and UDP. Either one can transport app-layer messages.
+
+TCP provides a connection-oriented service to its apps. This services includes guaranteed delivery of app-layer messages to the destination and flow control (sender/receiver speed matching). TCP breaks long messages into short segments and provides a congestion-control mechanism, so that a source throttles its transmission rate when the network is congested.
+
+UDP protocol provides a connectionless service to its apps. This is a no-frills service that provides no reliability, no flow control and no congestion control.
+
+We can refer to the transport layer packet as a segment.
+
+What are the responsibilities of each layer\
+    Transport:
+
+- TCP provides connection-oriented service with guaranteed delivery of application-layer messages. Sender/receiver speed matching also known as Flow Control. Break long messages into short segments and provides congestion-control mechanism so that a source throttles its transmission rate when the network is congested. (Transmission Control Protocol)
+- UDP provides connectionless service to its apps. A no frills services that provides no reliability, no flow control and no congestion control.(User Datagram Protocol)
+
+[Back to Top](#table-of-contents)
+
+
+### Network Layer
+
+---
+
+The network layer is responsible for moving network-layer packets known as datagrams from one host to another.
+
+Similar to providing a postal service the address of the destination, the transport layer is responsible for getting those segments or messages organised with an address and ready for transport.
+
+The Network layer is responsible for the service of delivering the segment to the destination host.
+
+Network-layer includes the celebrated IP Protocol which defines the fields in the datagram as well as how the end systems and routers act on these fields. There is only one IP Protocol and all internet components that have a network layer must run a IP Protocol.
+
+The internet's network layer also contains routing protocols that determine the routes that datagrams take between sources and destinations. There are many routing protocols and the network admin can run any routing protocol desired. Although the network layer has both the IP protocol and numerous routing protocols, it is often referred to as the IP layer.
+
+IP Protocol:
+  - Defines the fields in the datagram as well as how the end systems and routers act on these fields. Routes the datagram through a series of routers between the source and destination
+
+TCP/IP internet protocol relies on send information to a target address. This address is known as an IP Address. IP Addresses consists of a 4 octet (byte), 8 bit address in the form of xx.xx.xx.xx.
+- 8 bits can support or represent a number from 0 - 255
+- This doesn't mean you can assign **any** address starting 0.0.0.0 or 255.255.255.255 to a host. Some addresses are reserved i.e:
+  - 0.0.0.0 - 0.255.255.255 represents **this network**
+  - 127.0.0.0 - 127.255.255.255 represents **the local host, eg your computer**
+  - 192.168.0.0 - 192.168.255.255 reserved for **private networks**
+
+In order to **fully identify a host** you need to know its **network**. To do that you will need an IP address and **netmask or subnet mask**
+
+![alt text](https://i.imgur.com/qrUzGKR.png)
+
+Using **bitwise AND operation** between netmask and IP will allow you to find the network part. For example:
+- 192.168.33.12/255.255.224.0
+  - converting to its binary form
+  - AND operation to find the common characters between each represented binary form
+  - produces the **network prefix**
+
+![alt text](https://i.imgur.com/xclZz5A.png)
+![alt text](https://i.imgur.com/gNPYo6O.png)
+
+You can uncover the host part of the IP address by doing the inverse of a **bitwise AND** operation: **bitwise NOT**
+- This will also tell you how many hosts a network can contain. With our example, having 13 bits to represent the hosts, we can work out that 2^13 = 8192 different addresses available.
+
+![alt text](https://i.imgur.com/4MMohlA.png)
+![alt text](https://i.imgur.com/nOv506G.png)
+
+[Back to Top](#table-of-contents)
+
+
+### Link Layer
+
+---
+
+We can refer to link-layer packets as frames. At each node within the chain from host to destination node, the network layer routes the datagram to the link layer, which delivers the datagram to the next node along the route. Some link-layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node.
+
+This reliable delivery service is different from the reliable delivery service of TCP: which provides reliable delivery from one end system to another. Examples of link-layer protocols include Ethernet, WiFi, and the cable access networks' DOCSIS protocol.
+
+As datagrams need to traverse several links to travel from source to destination, a datagram may be handled by different link-layer protocols at different links along its route.
+
+What are the responsibilities of each layer\
+    Link:
+
+- To move a packet from one node to the next, the network layer relies on the services of the link layer. The network layer passes down the datagram to the link layer and at each node or router, the link layer passes up the datagram to the network again and repeat.
+- differing from TCP benefits some link layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node. TCP provide reliability from one end-system to another.
+- Examples of protocols in the link layer include Ethernet, WiFi and cable access network's DOCSIS protocol (Data over cable service interface specification)
+
+[Back to Top](#table-of-contents)
+
+
+### The Physical Layer
+
+---
+
+Link layer moves entire frames from one network element to another network element. The Physical layer is to move the individual bits within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on.
+
+What are the responsibilities of each layer\
+    Physical:
+
+- Link layer moves entire frames from one network element to another network element. The Physical layer is to move the individual bits within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on
 
 [Back to Top](#table-of-contents)
