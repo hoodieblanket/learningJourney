@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [- The Physical Layer](#--the-physical-layer)
+- [- Routing](#--routing)
 - [Key Definitions](#key-definitions)
 - [CIA Triad](#cia-triad)
 - [AAA of Security](#aaa-of-security)
@@ -36,8 +36,16 @@
   - [Application Layer](#application-layer)
   - [Transport Layer](#transport-layer)
   - [Network Layer](#network-layer)
+    - [**IP Protocol**](#ip-protocol)
+    - [**Identify a HOST network**](#identify-a-host-network)
+    - [**bitwise AND, OR operation to find network**](#bitwise-and-or-operation-to-find-network)
   - [Link Layer](#link-layer)
+    - [**Forwarding**](#forwarding)
+    - [**MAC Address - Discovery**](#mac-address---discovery)
+    - [**ARP - Address Resolution Protocol**](#arp---address-resolution-protocol)
+    - [**ARP - Discovery**](#arp---discovery)
   - [The Physical Layer](#the-physical-layer)
+- [Routing](#routing)
 ---
 ## Key Definitions
 
@@ -648,6 +656,7 @@ When we send data, the data has the form of a **header**;**payload**.
 As it follows the hierachy and the protocol wants to use another protocol on one of the **lower layers** then the payload being sent is the header;payload, with its own header. This is referred to as encapsulation as you are putting the original header;payload into the format of being the payload for the lower level protocol to handle.
 
 ![alt text](https://i.imgur.com/DBnftLL.png)
+
 ![alt text](https://i.imgur.com/7G8dYK3.png)
 
 At each step, the layer receives it owns header with its own instructions. The receiving host does the same operation in reverse order. Doing this means that the **application layer** does not need to know how the **transport or network** layers work: it just hands the packet to the transport layer and so on.
@@ -673,8 +682,7 @@ There include many protocols such as HTTP (which provides for web document reque
 
 Certain network functions such as translation of human-friendly names for internet end systems like www.google.com to a 32-bit network address, are also done with the help of a specific application-layer protocol *DNS* or *domain name system*. This transfer of information on the application layer is to exchange packets of info with an application in another end system so we can refer to this packet of information as the message.
 
-What are the responsibilities of each layer\
-    Application:
+**What are the responsibilities of the Application Layer:**
 
 - HTTP provides web doc request & transfer (HyperText Transfer Protocol)
 - SMTP email transfer (Simple Mail Transfer Protocol)
@@ -712,11 +720,12 @@ UDP protocol provides a connectionless service to its apps. This is a no-frills 
 
 We can refer to the transport layer packet as a segment.
 
-What are the responsibilities of each layer\
-    Transport:
+**What are the responsibilities of the Transport Layer:**
 
 - TCP provides connection-oriented service with guaranteed delivery of application-layer messages. Sender/receiver speed matching also known as Flow Control. Break long messages into short segments and provides congestion-control mechanism so that a source throttles its transmission rate when the network is congested. (Transmission Control Protocol)
 - UDP provides connectionless service to its apps. A no frills services that provides no reliability, no flow control and no congestion control.(User Datagram Protocol)
+
+
 
 [Back to Top](#table-of-contents)
 
@@ -725,29 +734,32 @@ What are the responsibilities of each layer\
 
 ---
 
-The network layer is responsible for moving network-layer packets known as datagrams from one host to another.
-
+The network layer is responsible for moving network-layer packets known as datagrams from one host to another.\
 Similar to providing a postal service the address of the destination, the transport layer is responsible for getting those segments or messages organised with an address and ready for transport.
 
-The Network layer is responsible for the service of delivering the segment to the destination host.
-
+The Network layer is responsible for the service of delivering the segment to the destination host.\
 Network-layer includes the celebrated IP Protocol which defines the fields in the datagram as well as how the end systems and routers act on these fields. There is only one IP Protocol and all internet components that have a network layer must run a IP Protocol.
 
 The internet's network layer also contains routing protocols that determine the routes that datagrams take between sources and destinations. There are many routing protocols and the network admin can run any routing protocol desired. Although the network layer has both the IP protocol and numerous routing protocols, it is often referred to as the IP layer.
 
-IP Protocol:
+#### **IP Protocol**
+
   - Defines the fields in the datagram as well as how the end systems and routers act on these fields. Routes the datagram through a series of routers between the source and destination
 
-TCP/IP internet protocol relies on send information to a target address. This address is known as an IP Address. IP Addresses consists of a 4 octet (byte), 8 bit address in the form of xx.xx.xx.xx.
+TCP/IP internet protocol relies on sending information to a target address. This address is known as an IP Address. IP Addresses consists of a 4 octet (bytes), 8 bit address in the form of xx.xx.xx.xx
 - 8 bits can support or represent a number from 0 - 255
 - This doesn't mean you can assign **any** address starting 0.0.0.0 or 255.255.255.255 to a host. Some addresses are reserved i.e:
   - 0.0.0.0 - 0.255.255.255 represents **this network**
   - 127.0.0.0 - 127.255.255.255 represents **the local host, eg your computer**
   - 192.168.0.0 - 192.168.255.255 reserved for **private networks**
 
-In order to **fully identify a host** you need to know its **network**. To do that you will need an IP address and **netmask or subnet mask**
+#### **Identify a HOST network**
+
+In order to **fully identify a host** you need to **know its network**. To do that you will need an IP address and **netmask or subnet mask**
 
 ![alt text](https://i.imgur.com/qrUzGKR.png)
+
+#### **bitwise AND, OR operation to find network**
 
 Using **bitwise AND operation** between netmask and IP will allow you to find the network part. For example:
 - 192.168.33.12/255.255.224.0
@@ -756,12 +768,14 @@ Using **bitwise AND operation** between netmask and IP will allow you to find th
   - produces the **network prefix**
 
 ![alt text](https://i.imgur.com/xclZz5A.png)
+
 ![alt text](https://i.imgur.com/gNPYo6O.png)
 
 You can uncover the host part of the IP address by doing the inverse of a **bitwise AND** operation: **bitwise NOT**
 - This will also tell you how many hosts a network can contain. With our example, having 13 bits to represent the hosts, we can work out that 2^13 = 8192 different addresses available.
 
 ![alt text](https://i.imgur.com/4MMohlA.png)
+
 ![alt text](https://i.imgur.com/nOv506G.png)
 
 [Back to Top](#table-of-contents)
@@ -771,18 +785,92 @@ You can uncover the host part of the IP address by doing the inverse of a **bitw
 
 ---
 
-We can refer to link-layer packets as frames. At each node within the chain from host to destination node, the network layer routes the datagram to the link layer, which delivers the datagram to the next node along the route. Some link-layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node.
+We can refer to link-layer packets as frames. At each node within the chain from host to destination node, the network layer routes the datagram to the link layer, which delivers the datagram to the next node along the route.\
+Some link-layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node.
 
-This reliable delivery service is different from the reliable delivery service of TCP: which provides reliable delivery from one end system to another. Examples of link-layer protocols include Ethernet, WiFi, and the cable access networks' DOCSIS protocol.
-
+This reliable delivery service is different from the reliable delivery service of TCP: which provides reliable delivery from one end system to another. Examples of link-layer protocols include Ethernet, WiFi, and the cable access networks' DOCSIS protocol.\
 As datagrams need to traverse several links to travel from source to destination, a datagram may be handled by different link-layer protocols at different links along its route.
 
-What are the responsibilities of each layer\
-    Link:
-
+**What are the responsibilities of the Link layer:**
 - To move a packet from one node to the next, the network layer relies on the services of the link layer. The network layer passes down the datagram to the link layer and at each node or router, the link layer passes up the datagram to the network again and repeat.
 - differing from TCP benefits some link layer protocols provide reliable delivery, from transmitting node, over one link, to receiving node. TCP provide reliability from one end-system to another.
 - Examples of protocols in the link layer include Ethernet, WiFi and cable access network's DOCSIS protocol (Data over cable service interface specification)
+
+Hubs & Switches are network devices that forward frames (layer 2 packets) on a local network. They work with link layer network addresses: 
+- **MAC (Media Access Control or Physical Address) addresses**:- Uniquely identify a network **card** (layer 2) and this differs from IP addresses identifying a host in a network (layer 3)
+  - MAC addresses are 48 bit (6 bytes) long and are expressed in hexadecimal *00:11:AA:22:EE:FF*
+  - every host has a MAC & IP address
+  - While routers work with IP addresses, **switches work with mac addresses**
+    - Switches have multiple interfaces and need ot keep a **forwarding table, CAM table** that binds one or more MAC addresses to an interface.
+
+Switches can be small such as home devices with 4 ports or large such as corporate switches with 64 ports (with potentially additional switches linked off for more ports).\
+The main differences between one switch and another is the packet forwarding speed: varying between 10Mbps to 10Gbps.
+
+**Delivering data gram from `A` to `router` to `B`**
+
+When a device sends packet, this packet is handled similar to how you would handle post or mail if you were to do it from home.
+- You would write the address of the destination (destination IP address, such as `B`)
+- You would also include the address of the post office (destination of **first stop or hop**, MAC address such as `router`)
+- On the back you will write your own information (origination IP address, such as `A`)
+- On the back you will also write what stop it just departed (**latest stop or hop**, MAC address)
+
+To follow this example; the router will receive the packet from computer A and then rewrite some details about the hop, or stop, the packet has done. It will rewrite the destination MAC address to indicate the next stop and then it will rewrite the origination MAC address to indicate where it just left (the routers MAC address). It will not change the origination or destination IP address.
+
+Special MAC address
+- FF:FF:FF:FF:FF:FF - The **broadcast** MAC address that means its delivered to all hosts in the local network (within the same broadcast domain)
+- routers do not forward packets coming from one interface if they have the broadcast MAC address
+
+#### **Forwarding**
+
+Forwarding tables or CAM, Content Addressable Memory, is how an interface, switch or router determines the destination, or next hop, the packet needs to make.\
+To forward a packet:
+- switch reads destination MAC of the frame
+- performs look-up in CAM table
+- Forwards the packet to the corresponding interface
+- If there is no entry with that MAC address, the switch will forward the frame to all its interfaces.
+
+![alt text](https://i.imgur.com/Cjvap80.png)
+
+Example of a forwarding, or CAM table stored in devices RAM. You can also see that a single interface (2) is assigned to **two** different MAC addresses.\
+There can be multiple hosts on the same interface and some interfaces without any hosts attached. In this case, it is common for the additional entry to be another switch.
+
+While routers use complex routing protocols to update routing rules, switches just use the source MAC of the packets they process to decide which interface to use when forwarding packets.
+
+| How the CAM table is managed                        |                    Instructions                     |
+| :-------------------------------------------------- | :-------------------------------------------------: |
+| If MAC not in table:                                |   switch adds new MAC-interface binding to table    |
+| if MAC-interface binding already in table:          | its Time to live (TTL) gets updated to avoid expiry |
+| if MAC in table but not bound to another interface: |                switch updates table                 |
+
+#### **MAC Address - Discovery**
+- IPconfig /all (windows)
+- ifconfig (*nix operating systems such as MacOS)(linux)
+- ip addr (linux)
+
+#### **ARP - Address Resolution Protocol**
+
+When the source (origination host) knows the IP address of the destination but not the MAC address:
+- For a host to send a packet, it needs to know **both** the IP and MAC to build a proper packet.
+
+So when this situation happens, the ARP is used to determine to information we needs.\
+An example would be for a PC to power up, it knows the IP address of the printers, webservers and such but not the MAC addresses.
+
+If this is the case then the host just needs to know the MAC of other network nodes; then it can learn the MAC addresses of those devices through ARP.
+
+| Using ARP, Host sends traffic to Recipient with only IP | Descriptions                                                                        |
+| :------------------------------------------------------ | :---------------------------------------------------------------------------------- |
+| 1. **HOST** builds a **ARP** **request**                | Contains IP of Recipient and uses special MAC FF:FF:FF:FF:FF:FF                     |
+| 2. **Every** **HOST** receives **ARP** **request**      | Switches using Broadcast MAC or special MAC will broadcast to every host on network |
+| 3. **Recipient** responds with **APR** **reply**        | Advising HOST of its MAC address                                                    |
+
+Information is saved in the ARP cache and further traffic does not require a new ARP request. ARP cache entries have a TTL and the host discards an entry at the power off or when the TTL expires.
+
+#### **ARP - Discovery**
+- arp -a (windows)
+- arp (*nix operating systems, macOS & unix)
+- ip neighbour (or neigh, neighbor: equivalent output) (linux)
+
+
 
 [Back to Top](#table-of-contents)
 
@@ -793,9 +881,25 @@ What are the responsibilities of each layer\
 
 Link layer moves entire frames from one network element to another network element. The Physical layer is to move the individual bits within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on.
 
-What are the responsibilities of each layer\
-    Physical:
+**What are the responsibilities of the Physical Layer:**
 
 - Link layer moves entire frames from one network element to another network element. The Physical layer is to move the individual bits within the frame from one node to the next. Depending on the transmission medium or access technology, the physical layer is dependent on which one is used for example ethernet has many physical-layer protocols: one for twisted-pair copper and another for coaxial cable and so on
 
 [Back to Top](#table-of-contents)
+
+## Routing
+
+---
+
+Routing protocols determine the **best path** to reach a network. Inspects the destination address and forwards through one of its **forwarding interfaces**
+
+The router performs a **lookup in the routing table** to find an IP-to-interface binding. If the destination is an **unknown network**, or destination doesn't match any other entry on the routing table, then the router defaults to 0.0.0.0 as the address (which can be in the routing table).
+
+Routing protocols are also assigned a **metric to each link** which is selected based on bandwidth and congestion. This ensures that if there are **two paths** to reach the destination with the same number of hops; it will select the fastest route to get to the destination.
+
+Along with routers, hosts stores its own tables as well, use the following to see:
+- ip route (linux)
+- route print (windows)
+- netstat -r (osx)
+
+

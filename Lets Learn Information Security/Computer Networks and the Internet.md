@@ -287,7 +287,7 @@ Difficult to say as the internet's answer is always the same: it's up to the dev
 | :--------------------------------: | :---------------------------: |
 |            Application             |          Application          |
 |                                    |         Presentation          |
-|                                    |           Sessions            |
+|                                    |           Sessions            | $$ |
 |             Transport              |           Transport           |
 |              Network               |            Network            |
 |                Link                |             Link              |
